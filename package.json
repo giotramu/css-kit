@@ -1,7 +1,7 @@
 {
   "name": "@giotramu/css-root",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal CSS library that provides consistent, cross-browser and useful defaults.",
   "author": "giotramu <https://twitter.com/giotramu>",
   "homepage": "https://github.com/giotramu/css-root#readme",
   "license": "MIT",
@@ -23,11 +23,12 @@
   "style": "reset.css",
   "types": "index.d.ts",
   "files": [
-    "lib/",
-    "LICENSE"
+    "font/",
+    "reset.css",
+    "base.css"
   ],
   "scripts": {
-    "lint": "stylelint ./lib/*.css"
+    "lint": "stylelint ./*.css"
   },
   "devDependencies": {
     "@giotramu/stylelint-config": "^2.2.3",
