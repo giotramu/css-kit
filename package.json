@@ -1,16 +1,16 @@
 {
-  "name": "@giotramu/css-root",
+  "name": "@giotramu/css-kit",
   "version": "1.0.0",
   "description": "Personal CSS library that provides consistent, cross-browser and useful defaults.",
   "author": "giotramu <https://twitter.com/giotramu>",
-  "homepage": "https://github.com/giotramu/css-root#readme",
+  "homepage": "https://github.com/giotramu/css-kit#readme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/giotramu/css-root.git"
+    "url": "git+https://github.com/giotramu/css-kit.git"
   },
   "bugs": {
-    "url": "https://github.com/giotramu/css-root/issues"
+    "url": "https://github.com/giotramu/css-kit/issues"
   },
   "engines": {
     "node": ">=10.x",
@@ -25,7 +25,7 @@
   "files": [
     "font/",
     "reset.css",
-    "base.css"
+    "commons.css"
   ],
   "scripts": {
     "lint": "stylelint ./*.css"
