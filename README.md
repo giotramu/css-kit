@@ -9,7 +9,7 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 <link href="https://unpkg.com/@giotramu/css-kit/commons.css" rel="stylesheet" />
 ```
 
-## What does it do?
+#### What does it do?
 
 - Normalizes styles for a wide range of elements.
 - Corrects bugs and common browser inconsistencies.
@@ -21,7 +21,7 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 npm install @giotramu/css-kit --save
 ```
 
-### Webpack usage
+#### Webpack usage
 
 Import css-kit in CSS:
 
