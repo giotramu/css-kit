@@ -21,7 +21,7 @@
   },
   "main": "reset.css",
   "style": "reset.css",
-  "types": "index.d.ts",
+  "types": "types/css-kit.d.ts",
   "files": [
     "font/",
     "reset.css",
