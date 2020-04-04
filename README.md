@@ -21,7 +21,7 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 npm install @giotramu/css-kit --save
 ```
 
-#### Webpack Usage
+### Webpack usage
 
 Import css-kit in CSS:
 
