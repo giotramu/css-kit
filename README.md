@@ -9,8 +9,8 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 ## Usage
 
 ```html
-<link href="https://unpkg.com/@giotramu/css-kit/resets.css" rel="stylesheet" />
-<link href="https://unpkg.com/@giotramu/css-kit/commons.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/resets.css" />
+<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/commons.css" />
 ```
 
 #### What does it do?
