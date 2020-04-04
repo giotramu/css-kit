@@ -3,7 +3,6 @@
 Personal CSS library that provides consistent, cross-browser and useful defaults.
 
 [![NPM][npm-badge]][npm]
-[![Build Status][ci-badge]][ci]
 [![Dependencies][deps-badge]][deps]
 [![Dev Dependencies][devdeps-badge]][devdeps]
 
@@ -83,8 +82,6 @@ module.exports = {
 
 [npm]: https://www.npmjs.com/package/@giotramu/css-kit
 [npm-badge]: https://badgen.net/npm/v/@giotramu/css-kit?icon=npm&label=npm%20package
-[ci]: https://github.com/giotramu/css-kit/actions
-[ci-badge]: https://github.com/giotramu/css-kit/workflows/release/badge.svg?branch=master
 [deps]: https://david-dm.org/giotramu/css-kit
 [deps-badge]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps]: https://david-dm.org/giotramu/css-kit?type=dev
