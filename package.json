@@ -1,0 +1,39 @@
+{
+  "name": "@giotramu/css-root",
+  "version": "1.0.0",
+  "description": "",
+  "author": "giotramu <https://twitter.com/giotramu>",
+  "homepage": "https://github.com/giotramu/css-root#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giotramu/css-root.git"
+  },
+  "bugs": {
+    "url": "https://github.com/giotramu/css-root/issues"
+  },
+  "engines": {
+    "node": ">=10.x",
+    "npm": ">=6.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "reset.css",
+  "style": "reset.css",
+  "types": "index.d.ts",
+  "files": [
+    "lib/",
+    "LICENSE"
+  ],
+  "scripts": {
+    "lint": "stylelint ./lib/*.css"
+  },
+  "devDependencies": {
+    "@giotramu/stylelint-config": "^2.2.3",
+    "husky": "^4.2.3",
+    "prettier": "^2.0.2",
+    "pretty-quick": "^2.0.1",
+    "stylelint": "^13.3.0"
+  }
+}

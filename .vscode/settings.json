@@ -1,0 +1,11 @@
+{
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.quickSuggestions": true,
+    "editor.formatOnSave": true
+  },
+  "[css]": {
+    "editor.formatOnSave": true
+  },
+  "css.validate": false
+}
