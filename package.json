@@ -24,8 +24,8 @@
   "types": "types/css-kit.d.ts",
   "files": [
     "font/",
-    "reset.css",
-    "commons.css"
+    "common.css",
+    "reset.css"
   ],
   "scripts": {
     "lint": "stylelint ./*.css"

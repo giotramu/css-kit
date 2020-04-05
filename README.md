@@ -9,15 +9,15 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 ## Usage
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/resets.css" />
-<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/commons.css" />
+<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/reset.css" />
+<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/common.css" />
 ```
 
 #### What does it do?
 
 - Normalizes styles for a wide range of elements.
 - Corrects bugs and common browser inconsistencies.
-- A separate stylesheet (`css-kit/commons.css`) provides **common, useful and personal defaults** to plain documents.
+- A separate stylesheet (`css-kit/common.css`) provides useful and **personal** defaults to plain documents.
 
 ## Install
 
@@ -31,14 +31,14 @@ Import css-kit in CSS:
 
 ```css
 @import '~@giotramu/css-kit/reset.css';
-@import '~@giotramu/css-kit/commons.css';
+@import '~@giotramu/css-kit/common.css';
 ```
 
 Alternatively, import css-kit in JS:
 
 ```js
 import '@giotramu/css-kit/reset.css';
-import '@giotramu/css-kit/commons.css';
+import '@giotramu/css-kit/common.css';
 ```
 
 In `webpack.config.js`, be sure to use the appropriate loaders:
