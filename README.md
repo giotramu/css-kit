@@ -8,6 +8,8 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 
 ## Usage
 
+Put the link tags in the head of your `index.html` document:
+
 ```html
 <link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/reset.css" />
 <link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/common.css" />
@@ -25,7 +27,7 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 npm install @giotramu/css-kit --save
 ```
 
-#### Webpack usage
+#### [Webpack][webpack] usage
 
 Import css-kit in CSS:
 
@@ -50,15 +52,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.woff(2)?$/,
+        loader: 'url-loader?limit=100000'
       }
     ]
   }
 };
 ```
 
-## Browser support
+## Browsers support
 
-- Chrome and all Chromium based browsers (last 3)
+- Chrome & Chromium based browsers (last 3)
 - Firefox (last 3)
 - Firefox ESR
 - Opera (last 3)
@@ -86,6 +92,7 @@ module.exports = {
 [deps-badge]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps]: https://david-dm.org/giotramu/css-kit?type=dev
 [devdeps-badge]: https://badgen.net/david/dev/giotramu/css-kit
+[webpack]: https://webpack.js.org/
 [normalize.css]: https://github.com/csstools/normalize.css
 [reset.css]: http://meyerweb.com/eric/tools/css/reset
 [sanitize.css]: https://github.com/csstools/sanitize.css
