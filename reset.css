@@ -41,6 +41,13 @@ body {
 }
 
 /**
+  * Remove the margin-bottom in all browsers.
+  */
+p {
+  margin-bottom: 0;
+}
+
+/**
   * Correct the font size and margin on `h1` elements within `section` and
   * `article` contexts in Chrome, Edge, Firefox, and Safari.
   */
@@ -130,7 +137,7 @@ small {
   font-size: 80%;
 }
 
-/*
+/**
   * Change the alignment on media elements in all browsers.
   */
 audio,
@@ -310,14 +317,14 @@ textarea {
   box-shadow: none;
 }
 
-/*
+/**
   * Add the correct display in Edge 18-.
   */
 details {
   display: block;
 }
 
-/*
+/**
   * Add the correct styles in Edge 18- and Safari.
   */
 dialog {
@@ -342,14 +349,14 @@ dialog:not([open]) {
   display: none;
 }
 
-/*
+/**
   * Add the correct display in all browsers.
   */
 summary {
   display: list-item;
 }
 
-/*
+/**
   * Remove the tapping delay on clickable elements in all browsers.
   */
 a,
@@ -371,14 +378,14 @@ textarea,
   cursor: progress;
 }
 
-/*
+/**
   * Change the cursor on control elements in all browsers.
   */
 [aria-controls] {
   cursor: pointer;
 }
 
-/*
+/**
   * Change the cursor on disabled, not-editable, or otherwise
   * inoperable elements in all browsers.
   */
@@ -387,7 +394,7 @@ textarea,
   cursor: not-allowed;
 }
 
-/*
+/**
   * Change the display on visually hidden accessible elements
   * in all browsers.
   */

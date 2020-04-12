@@ -54,6 +54,14 @@ pre {
 }
 
 /**
+ * Highlight the body text on selection.
+ */
+*::selection {
+  color: var(--color-light);
+  background: rgba(12, 87, 251, 0.8);
+}
+
+/**
  * Restrict sizing to the page width in all browsers.
  */
 iframe,
