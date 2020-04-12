@@ -25,7 +25,7 @@
   "files": [
     "font/",
     "common.css",
-    "media-queries.css",
+    "custom-media.css",
     "reset.css"
   ],
   "scripts": {
