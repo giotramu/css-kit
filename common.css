@@ -2,10 +2,10 @@
  * Personal brand colors.
  */
 :root {
-  --giotramu-digital: #0c57fb;
-  --giotramu-silver: #d3dde6;
-  --giotramu-dark: #1d2b3b;
-  --giotramu-light: #fff;
+  --gt-color-accent: #0c57fb;
+  --gt-color-gray: #d3dde6;
+  --gt-color-dark: #1d2b3b;
+  --gt-color-light: #fff;
 }
 
 /**
@@ -57,7 +57,7 @@ pre {
  * Highlight the body text on selection.
  */
 *::selection {
-  color: var(--color-light);
+  color: var(--gt-color-light);
   background: rgba(12, 87, 251, 0.8);
 }
 
