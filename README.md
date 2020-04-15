@@ -3,6 +3,7 @@
 Personal CSS library that provides consistent, cross-browser and useful defaults.
 
 [![NPM][npm-badge]][npm]
+![Bundle Size][bundle-size-badge]
 [![Test Status][ci-badge]][ci]
 [![Dependencies][deps-badge]][deps]
 [![Dev Dependencies][devdeps-badge]][devdeps]
@@ -13,8 +14,8 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
   - [CDN Usage](#cdn-usage)
   - [Install](#install)
   - [Webpack usage](#webpack-usage)
-  - [CSS Custom Properties](./docs/custom-properties)
-  - [CSS Custom Media](./docs/custom-media)
+  - [CSS Custom Properties](./docs/custom-properties.md)
+  - [CSS Custom Media](./docs/custom-media.md)
   - [Browsers support](#browsers-support)
   - [Thanks](#thanks)
   - [License](#license)
@@ -35,7 +36,7 @@ Put the link tags in the head of your `index.html` document:
 
 - Normalizes styles for a wide range of elements.
 - Corrects bugs and common browser inconsistencies.
-- A separate stylesheet (`common.css`) provides useful and **personal** defaults to plain HTML documents. [This file includes some CSS Custom Properties (aka CSS variables)](./docs/custom-properties).
+- A separate stylesheet (`common.css`) provides useful and **personal** defaults to plain HTML documents. [This file includes some CSS Custom Properties (aka CSS variables)](./docs/custom-properties.md).
 
 ## Install
 
@@ -89,7 +90,7 @@ module.exports = {
 
 #### CSS Custom Media Queries
 
-You can consume the predefined [CSS Custom Media Queries](./docs/custom-media). In Webpack bundler, import the `custom-media.css` as dependency.
+You can consume the predefined [CSS Custom Media Queries](./docs/custom-media.md). In Webpack bundler, import the `custom-media.css` as dependency.
 
 Import Custom Media in CSS:
 
