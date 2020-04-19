@@ -170,7 +170,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   L I N K S
 -->
 
-[css-custom-properties]: ./src/abstract/custom-properties.scss
+[css-custom-properties]: ./src/abstract/_custom-properties.scss
 [css-custom-mq]: ./src/custom-media.scss
 [ci-url]: https://github.com/giotramu/css-kit/actions
 [deps-url]: https://david-dm.org/giotramu/css-kit
