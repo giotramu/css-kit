@@ -1,0 +1,152 @@
+/**
+ * 1. Personal brand colors.
+ */
+:root {
+  --gt-color-accent: #0c57fb; /* 1 */
+  --gt-color-gray: #d3dde6; /* 1 */
+  --gt-color-dark: #1d2b3b; /* 1 */
+  --gt-color-light: #fff; /* 1 */
+}
+
+/**
+ * The base font-size is set at 62.5% for having the convenience
+ * of sizing rems in a way that is similar to using px: 1.6rem = 16px
+ */
+html {
+  font-size: 62.5%;
+}
+
+/**
+ ********************
+ * Typography rules *
+ ********************
+ */
+body {
+  color: var(--gt-color-dark);
+  font-size: 1.4em;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: var(--gt-color-accent);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: hsla(221, 97, 52, 80%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-text {
+  margin-top: 0;
+  color: var(--gt-color-dark);
+  font-weight: bold;
+  letter-spacing: -0.04rem;
+}
+
+.hero-text {
+  margin-bottom: 2.6rem;
+  font-size: 6.4rem;
+  line-height: 1em;
+}
+
+h1 {
+  margin-bottom: 2.4rem;
+  font-size: 3rem;
+  line-height: 1.2em;
+}
+
+h2 {
+  margin-bottom: 2.2rem;
+  font-size: 2.8rem;
+  line-height: 1.2em;
+}
+
+h3 {
+  margin-bottom: 2rem;
+  font-size: 2.6rem;
+  line-height: 1.2em;
+}
+
+h4 {
+  margin-bottom: 1.8rem;
+  font-size: 2.4rem;
+  line-height: 1.4em;
+}
+
+h5 {
+  margin-bottom: 1.6rem;
+  font-size: 2.2rem;
+  line-height: 1.4em;
+}
+
+h6 {
+  margin-bottom: 1.4rem;
+  font-size: 2rem;
+  line-height: 1.4em;
+}
+
+.subheading-1,
+.subheading-2,
+.subheading-3 {
+  color: var(--gt-color-dark);
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+  line-height: 1.3em;
+}
+
+.subheading-1 {
+  display: block;
+  margin-bottom: 1.6rem;
+  font-size: 2.2rem;
+}
+
+.subheading-2 {
+  display: block;
+  margin-bottom: 1.4rem;
+  font-size: 2rem;
+}
+
+.subheading-3 {
+  display: block;
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+}
+
+p {
+  margin-bottom: 1.4rem;
+}
+
+mark {
+  border-radius: 2px;
+  padding: 1.5px 4px;
+  color: var(--gt-color-light);
+  background-color: var(--gt-color-accent);
+}
+
+small {
+  color: var(--gt-color-gray);
+  font-size: 1.2rem;
+  line-height: 1.4em;
+}
+
+/**
+ * Highlight the body text on selection.
+ */
+*::selection {
+  color: var(--gt-color-light);
+  background: hsla(221, 97, 52, 80%);
+}
+
+/**
+ *****************
+ * HTML Elements *
+ *****************
+ */
