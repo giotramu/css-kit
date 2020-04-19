@@ -1,4 +1,5 @@
 /**
+ * CSS Custom Properties:
  * 1. Personal brand colors.
  */
 :root {
@@ -9,132 +10,59 @@
 }
 
 /**
- * The base font-size is set at 62.5% for having the convenience
- * of sizing rems in a way that is similar to using px: 1.6rem = 16px
+ **************
+ * Type scale *
+ **************
  */
 html {
-  font-size: 62.5%;
+  font-size: 100%; //- 16px
 }
 
-/**
- ********************
- * Typography rules *
- ********************
- */
 body {
   color: var(--gt-color-dark);
-  font-size: 1.4em;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
+  background-color: var(--body-bg-color, var(--gt-color-light));
+  font-weight: normal;
+  line-height: 1.65;
 }
 
-a {
-  color: var(--gt-color-accent);
-  text-decoration: none;
-}
-
-a:focus,
-a:hover {
-  color: hsla(221, 97, 52, 80%);
+p {
+  margin-bottom: 1.15rem;
 }
 
 h1,
 h2,
 h3,
 h4,
-h5,
-h6,
-.hero-text {
-  margin-top: 0;
-  color: var(--gt-color-dark);
+h5 {
+  margin: 2.75rem 0 1.05rem;
+  font-family: giotramu-sans, sans-serif;
   font-weight: bold;
-  letter-spacing: -0.04rem;
-}
-
-.hero-text {
-  margin-bottom: 2.6rem;
-  font-size: 6.4rem;
-  line-height: 1em;
+  line-height: 1.15;
 }
 
 h1 {
-  margin-bottom: 2.4rem;
-  font-size: 3rem;
-  line-height: 1.2em;
+  margin-top: 0;
+  font-size: 3.052em;
 }
 
 h2 {
-  margin-bottom: 2.2rem;
-  font-size: 2.8rem;
-  line-height: 1.2em;
+  font-size: 2.441em;
 }
 
 h3 {
-  margin-bottom: 2rem;
-  font-size: 2.6rem;
-  line-height: 1.2em;
+  font-size: 1.953em;
 }
 
 h4 {
-  margin-bottom: 1.8rem;
-  font-size: 2.4rem;
-  line-height: 1.4em;
+  font-size: 1.563em;
 }
 
 h5 {
-  margin-bottom: 1.6rem;
-  font-size: 2.2rem;
-  line-height: 1.4em;
-}
-
-h6 {
-  margin-bottom: 1.4rem;
-  font-size: 2rem;
-  line-height: 1.4em;
-}
-
-.subheading-1,
-.subheading-2,
-.subheading-3 {
-  color: var(--gt-color-dark);
-  font-weight: normal;
-  text-rendering: optimizeLegibility;
-  line-height: 1.3em;
-}
-
-.subheading-1 {
-  display: block;
-  margin-bottom: 1.6rem;
-  font-size: 2.2rem;
-}
-
-.subheading-2 {
-  display: block;
-  margin-bottom: 1.4rem;
-  font-size: 2rem;
-}
-
-.subheading-3 {
-  display: block;
-  margin-bottom: 1.2rem;
-  font-size: 1.8rem;
-}
-
-p {
-  margin-bottom: 1.4rem;
-}
-
-mark {
-  border-radius: 2px;
-  padding: 1.5px 4px;
-  color: var(--gt-color-light);
-  background-color: var(--gt-color-accent);
+  font-size: 1.25em;
 }
 
 small {
-  color: var(--gt-color-gray);
-  font-size: 1.2rem;
-  line-height: 1.4em;
+  font-size: 0.8em;
 }
 
 /**

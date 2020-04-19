@@ -27,7 +27,7 @@
     "normalizer.css"
   ],
   "scripts": {
-    "lint": "stylelint ./*.css",
+    "lint": "stylelint ./src/**/*.scss",
     "build": "postcss ./src/*.scss --dir ./ --ext css",
     "build:watch": "postcss ./src/*.scss --dir ./demo --ext css --watch",
     "serve": "serve ./demo -l 3333",

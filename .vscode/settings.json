@@ -4,8 +4,9 @@
     "editor.quickSuggestions": true,
     "editor.formatOnSave": true
   },
-  "[css]": {
+  "[scss]": {
     "editor.formatOnSave": true
   },
-  "css.validate": false
+  "css.validate": false,
+  "scss.validate": false
 }
