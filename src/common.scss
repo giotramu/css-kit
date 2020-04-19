@@ -1,80 +1,83 @@
-/**
- * CSS Custom Properties:
- * 1. Personal brand colors.
- */
-:root {
-  --gt-color-accent: #0c57fb; /* 1 */
-  --gt-color-gray: #d3dde6; /* 1 */
-  --gt-color-dark: #1d2b3b; /* 1 */
-  --gt-color-light: #fff; /* 1 */
-}
+// Abstract
+@import './abstract/custom-properties';
+@import './abstract/functions';
 
 /**
- **************
- * Type scale *
- **************
+ ************
+ * Document *
+ ************
  */
 html {
-  font-size: 100%; //- 16px
+  font-size: var(--ck-root-font-size);
+  scroll-behavior: var(--ck-scroll-behavior);
+  scroll-padding: var(--ck-scroll-padding);
+}
+
+*::selection {
+  color: var(--ck-selection-foreground);
+  background: var(--ck-selection-background);
+}
+
+*:focus {
+  outline: var(--ck-outline-style) var(--ck-outline-color);
+}
+
+[tabindex='-1'] {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  outline-color: var(--ck-outline-color);
 }
 
 body {
-  color: var(--gt-color-dark);
-  background-color: var(--body-bg-color, var(--gt-color-light));
+  color: var(--ck-body-foreground);
+  background-color: var(--ck-body-background);
+  font-size: var(--ck-body-font-size);
   font-weight: normal;
-  line-height: 1.65;
+  line-height: var(--ck-body-line-height);
 }
+
+/**
+ ***********************
+ * Basic HTML Elements *
+ ***********************
+ */
 
 p {
   margin-bottom: 1.15rem;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  margin: 2.75rem 0 1.05rem;
-  font-family: giotramu-sans, sans-serif;
-  font-weight: bold;
-  line-height: 1.15;
+address {
+  font-style: normal;
+  line-height: inherit;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 3.052em;
+dd {
+  margin: 0;
+  padding: 0;
 }
 
-h2 {
-  font-size: 2.441em;
+ol,
+ul {
+  padding-left: 1rem;
 }
 
-h3 {
-  font-size: 1.953em;
-}
-
-h4 {
-  font-size: 1.563em;
-}
-
-h5 {
-  font-size: 1.25em;
-}
-
-small {
-  font-size: 0.8em;
-}
+@import './elements/a';
+@import './elements/blockquote';
+@import './elements/code';
+@import './elements/del';
+@import './elements/headings';
+@import './elements/hr';
+@import './elements/ins';
+@import './elements/kbd';
+@import './elements/mark';
+@import './elements/small';
 
 /**
- * Highlight the body text on selection.
- */
-*::selection {
-  color: var(--gt-color-light);
-  background: hsla(221, 97, 52, 80%);
-}
-
-/**
- *****************
- * HTML Elements *
- *****************
+ **************************
+ * Advanced HTML Elements *
+ **************************
  */

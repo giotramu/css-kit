@@ -1,0 +1,9 @@
+hr {
+  display: block;
+  width: 100%;
+  height: var(--ck-hr-height);
+  margin-top: var(--ck-hr-margin);
+  margin-bottom: var(--ck-hr-margin);
+  border: none;
+  background-color: var(--ck-hr-background);
+}

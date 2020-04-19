@@ -2,6 +2,10 @@
 
 Personal CSS library that provides consistent, cross-browser and useful defaults.
 
+### 🚧 In the development stage.
+
+---
+
 [![NPM][npm-img]][npm-url]
 ![Bundle Size][bundle-size-img]
 [![Test Status][ci-img]][ci-url]
@@ -14,8 +18,8 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
   - [CDN Usage](#cdn-usage)
   - [Install](#install)
   - [Webpack usage](#webpack-usage)
-  - [CSS Custom Properties](./docs/custom-properties.md)
-  - [CSS Custom Media](./docs/custom-media.md)
+  - [CSS Custom Properties][css-custom-properties]
+  - [CSS Custom Media][css-custom-mq]
   - [Browsers support](#browsers-support)
   - [Thanks](#thanks)
   - [License](#license)
@@ -39,9 +43,8 @@ Put the link tags in the head of your `index.html` document:
 
 - Normalizes styles for a wide range of elements (like `normalize.css`, but smaller).
 - Corrects bugs and common browser inconsistencies.
-- A separate stylesheet (`common.css`) provides useful and personal defaults to plain HTML documents.
-- A separate stylesheet (`vars.css`) dispatches the [CSS Custom Properties (aka CSS variables)](./docs/custom-properties.md).
-- A separate stylesheet (`custom-media.css`) dispatches the [CSS Custom Media Queries](./docs/custom-media.md).
+- A separate stylesheet (`common.css`) provides useful and personal defaults to plain HTML documents. This stylesheet dispatches the [CSS Custom Properties][css-custom-properties].
+- A separate stylesheet (`custom-media.css`) dispatches the [CSS Custom Media Queries][css-custom-mq].
 
 ## Install
 
@@ -167,6 +170,8 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   L I N K S
 -->
 
+[css-custom-properties]: ./src/abstract/custom-properties.scss
+[css-custom-mq]: ./src/custom-media.scss
 [ci-url]: https://github.com/giotramu/css-kit/actions
 [deps-url]: https://david-dm.org/giotramu/css-kit
 [devdeps-url]: https://david-dm.org/giotramu/css-kit?type=dev

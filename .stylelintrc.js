@@ -1,8 +1,8 @@
 module.exports = {
   extends: '@giotramu/stylelint-config/dist/scss',
-  defaultSeverity: 'error',
   rules: {
     'scss/operator-no-unspaced': null,
+    'scss/no-duplicate-dollar-variables': null,
     'property-no-unknown': null,
     'property-no-vendor-prefix': [
       true,

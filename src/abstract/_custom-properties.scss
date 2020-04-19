@@ -1,0 +1,66 @@
+/**
+ * CSS Custom Properties
+ */
+:root {
+  // 1. Personal brand colors.
+  --color-accent: hsl(221, 97%, 52%); /* 1 */
+  --color-gray: hsl(208, 28%, 86%); /* 1 */
+  --color-dark: hsl(212, 34%, 17%); /* 1 */
+  --color-light: #fff; /* 1 */
+
+  // 2. Global document styles.
+  --ck-root-font-size: 100%;
+  --ck-body-foreground: var(--color-dark);
+  --ck-body-background: var(--color-light);
+  --ck-body-font-size: 1rem;
+  --ck-body-line-height: 1.65;
+  --ck-scroll-padding: 100px;
+  --ck-scroll-behavior: smooth;
+
+  // 4. a11y
+  --ck-selection-foreground: var(--color-light);
+  --ck-selection-background: hsl(221, 97%, 52%);
+  --ck-outline-style: 2px solid;
+  --ck-outline-color: var(--color-accent);
+
+  // 5. <a>
+  --ck-link-foreground: var(--color-accent);
+  --ck-link-active-foreground: var(--color-accent);
+
+  // 6. <blockquote> & <cite>
+  --ck-blockquote-font-size: 2rem;
+  --ck-cite-foreground: var(--color-accent);
+  --ck-cite-font-size: 1rem;
+  --ck-cite-start-sign: '—';
+
+  // 7. <code>
+  --ck-code-border-radius: 2px;
+  --ck-code-background: hsl(220, 10%, 95%);
+
+  // 8. <del>
+  --ck-del-foreground: hsl(337, 74%, 31%);
+  --ck-del-background: hsl(0, 100%, 94%);
+
+  // 9. <h1>, <h2>, etc.
+  --ck-heading-line-height: 1.15;
+
+  // 10. <hr>
+  --ck-hr-height: 2px;
+  --ck-hr-margin: 50px;
+  --ck-hr-background: var(--color-gray);
+
+  // 11. <ins>
+  --ck-ins-foreground: hsl(161, 98%, 18%);
+  --ck-ins-background: hsl(138, 100%, 88%);
+
+  // 12. <kbd>
+  --ck-kbd-color: hsl(233, 34%, 96%);
+  --ck-kbd-border-radius: 4px;
+
+  // 13. <mark>
+  --ck-mark-foreground: var(--color-light);
+  --ck-mark-background: var(--color-accent);
+
+  // 13. <small>
+  --ck-small-font-size: 0.8em;
+}

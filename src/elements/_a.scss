@@ -1,0 +1,10 @@
+a:link,
+a:visited {
+  color: var(--ck-link-foreground);
+  text-decoration: none;
+  transition: color 100ms linear;
+
+  &:hover {
+    color: var(--ck-link-active-foreground);
+  }
+}

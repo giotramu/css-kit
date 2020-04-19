@@ -1,0 +1,23 @@
+blockquote {
+  margin: 2.5em 0;
+  padding: 0;
+  font-size: var(--ck-blockquote-font-size);
+  line-height: calc(var(--ck-global-line-height) / 1.2);
+  letter-spacing: 0.03em;
+
+  > * {
+    font-size: inherit;
+  }
+
+  cite {
+    display: block;
+    margin-top: calc(var(--ck-cite-font-size));
+    color: var(--ck-cite-foreground);
+    font-size: var(--ck-cite-font-size);
+
+    &::before {
+      content: var(--ck-cite-start-sign);
+      margin-right: 4px;
+    }
+  }
+}
