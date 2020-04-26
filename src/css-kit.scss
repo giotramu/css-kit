@@ -3,16 +3,16 @@
  * Abstract *
  ************
  */
-@import './abstract/functions';
-@import './abstract/variables';
+@import './abstract/config';
+@import './abstract/theme';
 
 /**
- ************
- * Generals *
- ************
+ *************
+ * Utilities *
+ *************
  */
-@import './generals/normalizer';
-@import './generals/document';
+@import './utils/functions';
+@import './utils/normalizer';
 
 /**
  *****************
@@ -28,7 +28,7 @@
  */
 :root {
   @each $color, $hex in $colors {
-    #{_defineVar('color', $color, $prefix: false)}: $hex;
+    #{_defineVar('color', $color, $scope: false)}: $hex;
   }
 
   @each $element, $props in $elements {

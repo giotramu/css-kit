@@ -1,17 +1,17 @@
 @mixin field {
-  min-height: var(--#{$global-prefix}-field-min-height);
-  border: var(--#{$global-prefix}-field-border);
-  border-radius: var(--#{$global-prefix}-field-border-radius);
-  color: var(--#{$global-prefix}-field-foreground);
-  background: var(--#{$global-prefix}-field-background);
+  min-height: _var($field-prefix, 'min-height');
+  border: _var($field-prefix, 'border');
+  border-radius: _var($field-prefix, 'border-radius');
+  color: _var($field-prefix, 'foreground');
+  background: _var($field-prefix, 'background');
   font-weight: 600;
   letter-spacing: 0.04rem;
   appearance: none;
   transition: color 0.1s ease-out, box-shadow 0.2s ease-out;
 
   &::selection {
-    color: var(--#{$global-prefix}-field-selection-foreground);
-    background-color: var(--#{$global-prefix}-field-selection-background);
+    color: _var($field-prefix, 'selection-foreground');
+    background-color: _var($field-prefix, 'selection-background');
   }
 
   &:-moz-ui-invalid {
@@ -19,66 +19,66 @@
   }
 
   &::placeholder {
-    color: var(--#{$global-prefix}-field-placeholder-foreground);
+    color: _var($field-prefix, 'placeholder-foreground');
     font-weight: normal;
   }
 
   &:hover {
-    border: var(--#{$global-prefix}-field-hover-border);
-    color: var(--#{$global-prefix}-field-hover-foreground);
-    background: var(--#{$global-prefix}-field-hover-background);
+    border: _var($field-prefix, 'hover-border');
+    color: _var($field-prefix, 'hover-foreground');
+    background: _var($field-prefix, 'hover-background');
 
     &::placeholder {
-      color: var(--#{$global-prefix}-field-hover-placeholder-foreground);
+      color: _var($field-prefix, 'hover-placeholder-foreground');
     }
   }
 
   &:focus {
-    border: var(--#{$global-prefix}-field-focus-border);
-    color: var(--#{$global-prefix}-field-focus-foreground);
-    background: var(--#{$global-prefix}-field-focus-background);
+    border: _var($field-prefix, 'focus-border');
+    color: _var($field-prefix, 'focus-foreground');
+    background: _var($field-prefix, 'focus-background');
 
     &::placeholder {
-      color: var(--#{$global-prefix}-field-focus-placeholder-foreground);
+      color: _var($field-prefix, 'focus-placeholder-foreground');
     }
   }
 
   &:disabled,
   &[aria-disabled='true'] {
-    border: var(--#{$global-prefix}-field-disabled-border);
-    color: var(--#{$global-prefix}-field-disabled-foreground);
-    background: var(--#{$global-prefix}-field-disabled-background);
+    border: _var($field-prefix, 'disabled-border');
+    color: _var($field-prefix, 'disabled-foreground');
+    background: _var($field-prefix, 'disabled-background');
     cursor: not-allowed;
 
     &::placeholder {
-      color: var(--#{$global-prefix}-field-disabled-placeholder-foreground);
+      color: _var($field-prefix, 'disabled-placeholder-foreground');
     }
   }
 
   &[readonly] {
-    border: var(--#{$global-prefix}-field-readonly-border);
-    color: var(--#{$global-prefix}-field-readonly-foreground);
-    background: var(--#{$global-prefix}-field-background);
+    border: _var($field-prefix, 'readonly-border');
+    color: _var($field-prefix, 'readonly-foreground');
+    background: _var($field-prefix, 'background');
     cursor: default;
 
     &:focus {
-      border: var(--#{$global-prefix}-field-readonly-focus-border);
+      border: _var($field-prefix, 'readonly-focus-border');
     }
 
     &::placeholder {
-      color: var(--#{$global-prefix}-field-disabled-placeholder-foreground);
+      color: _var($field-prefix, 'disabled-placeholder-foreground');
     }
   }
 
   &:required {
     &:invalid {
-      border-color: var(--#{$global-prefix}-field-invalid-border-color);
-      color: var(--#{$global-prefix}-field-invalid-foreground);
-      background: var(--#{$global-prefix}-field-invalid-background);
+      border-color: _var($field-prefix, 'invalid-border-color');
+      color: _var($field-prefix, 'invalid-foreground');
+      background: _var($field-prefix, 'invalid-background');
     }
 
     &:invalid:focus {
-      outline-color: var(--#{$global-prefix}-field-invalid-border-color);
+      outline-color: _var($field-prefix, 'invalid-border-color');
     }
   }
 }
@@ -86,9 +86,8 @@
 input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']) {
   @include field;
   display: block;
-  width: var(--#{$global-prefix}-field-width);
-  padding: var(--#{$global-prefix}-field-ypadding)
-    var(--#{$global-prefix}-field-xpadding);
+  width: _var($field-prefix, 'width');
+  padding: _var($field-prefix, 'ypadding') _var($field-prefix, 'xpadding');
 }
 
 input[type='number']::-webkit-inner-spin-button,
@@ -108,18 +107,17 @@ input[type='search']::-webkit-search-decoration {
 
 textarea {
   @include field;
-  width: var(--#{$global-prefix}-field-width);
+  width: _var($field-prefix, 'width');
   height: auto;
-  padding: var(--#{$global-prefix}-field-ypadding)
-    var(--#{$global-prefix}-field-xpadding);
-  resize: var(--#{$global-prefix}-field-resize);
+  padding: _var($field-prefix, 'ypadding') _var($field-prefix, 'xpadding');
+  resize: _var($field-prefix, 'resize');
 
   &::-webkit-datetime-edit-text {
     opacity: 0.3;
   }
 
   &::-webkit-calendar-picker-indicator {
-    color: var(--#{$global-prefix}-field-foreground);
+    color: _var($field-prefix, 'foreground');
   }
 
   &::-webkit-calendar-picker-indicator:hover {

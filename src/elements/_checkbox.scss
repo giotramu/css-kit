@@ -1,12 +1,12 @@
 @mixin check {
-  width: var(--#{$global-prefix}-check-size);
-  height: var(--#{$global-prefix}-check-size);
-  border: var(--#{$global-prefix}-check-border);
-  border-radius: var(--#{$global-prefix}-check-border-radius);
+  width: _var($checkradio-prefix, 'size');
+  height: _var($checkradio-prefix, 'size');
+  border: _var($checkradio-prefix, 'border');
+  border-radius: _var($checkradio-prefix, 'border-radius');
   position: relative;
   vertical-align: middle;
-  color: var(--#{$global-prefix}-check-color);
-  background: var(--#{$global-prefix}-check-background);
+  color: _var($checkradio-prefix, 'color');
+  background: _var($checkradio-prefix, 'background');
   cursor: pointer;
   appearance: none;
 
@@ -26,14 +26,14 @@
   }
 
   &:not(:disabled):active {
-    border-color: var(--#{$global-prefix}-check-color);
+    border-color: _var($checkradio-prefix, 'color');
   }
 
   &:checked {
-    border-color: var(--#{$global-prefix}-check-color);
-    color: var(--#{$global-prefix}-check-tick-color);
-    background-color: var(--#{$global-prefix}-check-color);
-    filter: drop-shadow(var(--#{$global-prefix}-check-shadow));
+    border-color: _var($checkradio-prefix, 'color');
+    color: _var($checkradio-prefix, 'tick-color');
+    background-color: _var($checkradio-prefix, 'color');
+    filter: drop-shadow(_var($checkradio-prefix, 'shadow'));
 
     &::before {
       opacity: 1;
@@ -47,10 +47,10 @@
   }
 
   &:indeterminate {
-    border-color: var(--#{$global-prefix}-check-color);
-    color: var(--#{$global-prefix}-check-tick-color);
-    background-color: var(--#{$global-prefix}-check-color);
-    filter: drop-shadow(var(--#{$global-prefix}-check-shadow));
+    border-color: _var($checkradio-prefix, 'color');
+    color: _var($checkradio-prefix, 'tick-color');
+    background-color: _var($checkradio-prefix, 'color');
+    filter: drop-shadow(_var($checkradio-prefix, 'shadow'));
 
     &::before {
       width: 8px;

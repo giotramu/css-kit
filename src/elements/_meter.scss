@@ -1,26 +1,26 @@
 %meter-progress {
   overflow: hidden;
-  border-radius: var(--#{$global-prefix}-meter-border-radius);
-  background: var(--#{$global-prefix}-meter-background);
-  box-shadow: inset 0 0 0 1px var(--#{$global-prefix}-meter-border-color);
+  border-radius: _var($meter-prefix, 'border-radius');
+  background: _var($meter-prefix, 'background');
+  box-shadow: inset 0 0 0 1px _var($meter-prefix, 'border-color');
 }
 
 %meter-strong {
-  background: var(--#{$global-prefix}-meter-filled-color-strong);
+  background: _var($meter-prefix, 'filled-color-strong');
 }
 
 %meter-good {
-  background: var(--#{$global-prefix}-meter-filled-color-good);
+  background: _var($meter-prefix, 'filled-color-good');
 }
 
 %meter-weak {
-  background: var(--#{$global-prefix}-meter-filled-color-weak);
+  background: _var($meter-prefix, 'filled-color-weak');
 }
 
 meter {
   @extend %meter-progress;
-  width: var(--#{$global-prefix}-meter-width);
-  height: var(--#{$global-prefix}-meter-height);
+  width: _var($meter-prefix, 'width');
+  height: _var($meter-prefix, 'height');
   vertical-align: middle;
 
   &::-webkit-meter-bar {

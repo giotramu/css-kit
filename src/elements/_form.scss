@@ -15,9 +15,9 @@ legend {
   display: block;
   width: 100%;
   max-width: 100%;
-  margin: var(--#{$global-prefix}-form-legend-margin);
+  margin: _var($form-prefix, 'legend-margin');
   color: inherit;
-  font-weight: var(--#{$global-prefix}-form-legend-weight);
+  font-weight: _var($form-prefix, 'legend-weight');
   line-height: inherit;
   white-space: normal;
 }

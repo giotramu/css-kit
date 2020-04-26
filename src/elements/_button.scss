@@ -1,16 +1,15 @@
 @mixin button {
   display: inline-flex;
-  border: var(--#{$global-prefix}-button-border);
-  border-radius: var(--#{$global-prefix}-button-border-radius);
-  padding: var(--#{$global-prefix}-button-ypadding)
-    var(--#{$global-prefix}-button-xpadding);
+  border: _var($button-prefix, 'border');
+  border-radius: _var($button-prefix, 'border-radius');
+  padding: _var($button-prefix, 'ypadding') _var($button-prefix, 'xpadding');
   align-items: center;
   justify-content: center;
-  color: var(--#{$global-prefix}-button-foreground);
-  background: var(--#{$global-prefix}-button-background);
-  box-shadow: var(--#{$global-prefix}-button-shadow);
-  font-size: var(--#{$global-prefix}-button-font-size);
-  font-weight: var(--#{$global-prefix}-button-font-weight);
+  color: _var($button-prefix, 'foreground');
+  background: _var($button-prefix, 'background');
+  box-shadow: _var($button-prefix, 'shadow');
+  font-size: _var($button-prefix, 'font-size');
+  font-weight: _var($button-prefix, 'font-weight');
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.1s ease-out, box-shadow 0.1s ease-out;
@@ -23,38 +22,37 @@
   }
 
   &:-moz-focusring {
-    outline: var(--#{$global-prefix}-outline-style)
-      var(--#{$global-prefix}-outline-color);
+    outline: _var($outline-prefix, 'style') _var($outline-prefix, 'color');
   }
 
   &:hover {
-    border: var(--#{$global-prefix}-button-hover-border);
-    color: var(--#{$global-prefix}-button-hover-foreground);
-    background: var(--#{$global-prefix}-button-hover-background);
+    border: _var($button-prefix, 'hover-border');
+    color: _var($button-prefix, 'hover-foreground');
+    background: _var($button-prefix, 'hover-background');
   }
 
   &:disabled,
   &[aria-disabled='true'] {
-    border: var(--#{$global-prefix}-button-disabled-border);
+    border: _var($button-prefix, 'disabled-border');
     opacity: 0.4;
-    color: var(--#{$global-prefix}-button-disabled-foreground);
-    background: var(--#{$global-prefix}-button-disabled-background);
+    color: _var($button-prefix, 'disabled-foreground');
+    background: _var($button-prefix, 'disabled-background');
     box-shadow: none;
     cursor: not-allowed;
   }
 
   &:not(:disabled):not([aria-disabled='true']):active {
-    border: var(--#{$global-prefix}-button-active-border);
+    border: _var($button-prefix, 'active-border');
     transform: translateY(1px);
-    color: var(--#{$global-prefix}-button-active-foreground);
-    background: var(--#{$global-prefix}-button-active-background);
+    color: _var($button-prefix, 'active-foreground');
+    background: _var($button-prefix, 'active-background');
   }
 
   i,
   svg {
     width: 1em;
     height: 1em;
-    margin-inline-end: var(--#{$global-prefix}-button-icon-margin);
+    margin-inline-end: _var($button-prefix, 'icon-margin');
     color: inherit;
     font-style: normal;
     fill: currentColor;

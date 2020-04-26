@@ -1,0 +1,32 @@
+html {
+  font-size: _var($document-prefix, 'root-font-size');
+  scroll-behavior: _var($scroll-prefix, 'behavior');
+  scroll-padding: _var($scroll-prefix, 'padding');
+}
+
+*::selection {
+  color: _var($selection-prefix, 'foreground');
+  background: _var($selection-prefix, 'background');
+}
+
+*:focus {
+  outline: _var($outline-prefix, 'style') _var($outline-prefix, 'color');
+}
+
+[tabindex='-1'] {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  outline-color: _var($outline-prefix, 'color');
+}
+
+body {
+  color: _var($document-prefix, 'foreground');
+  background-color: _var($document-prefix, 'background');
+  font-size: _var($document-prefix, 'font-size');
+  font-weight: _var($document-prefix, 'font-weight');
+  line-height: _var($document-prefix, 'line-height');
+}

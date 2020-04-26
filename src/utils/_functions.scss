@@ -16,9 +16,9 @@
 /**
  * Return a CSS Custom Property definition (e.g. --ck-button-font-size).
  */
-@function _defineVar($element, $prop, $prefix: true) {
-  @if $prefix {
-    @return unquote('--#{$global-prefix}-#{$element}-#{$prop}');
+@function _defineVar($element, $prop, $scope: true) {
+  @if $scope == true {
+    @return unquote('--#{$domain}-#{$element}-#{$prop}');
   }
 
   @return unquote('--#{$element}-#{$prop}');

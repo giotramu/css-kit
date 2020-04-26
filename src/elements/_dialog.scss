@@ -1,17 +1,16 @@
 dialog {
   width: fit-content;
-  max-width: var(--#{$global-prefix}-dialog-max-width);
+  max-width: _var($dialog-prefix, 'max-width');
   height: fit-content;
   margin: auto;
-  border: var(--#{$global-prefix}-dialog-border);
-  border-radius: var(--#{$global-prefix}-dialog-border-radius);
-  padding: var(--#{$global-prefix}-dialog-ypadding)
-    var(--#{$global-prefix}-dialog-xpadding);
+  border: _var($dialog-prefix, 'border');
+  border-radius: _var($dialog-prefix, 'border-radius');
+  padding: _var($dialog-prefix, 'ypadding') _var($dialog-prefix, 'xpadding');
   position: fixed;
   top: 50%;
   bottom: 50%;
-  background: var(--#{$global-prefix}-dialog-background);
-  box-shadow: var(--#{$global-prefix}-dialog-shadow);
+  background: _var($dialog-prefix, 'background');
+  box-shadow: _var($dialog-prefix, 'shadow');
 
   &:not([open]) {
     display: none;
@@ -24,8 +23,8 @@ dialog {
   }
 
   &::backdrop {
-    background-color: var(--#{$global-prefix}-dialog-backdrop);
-    backdrop-filter: var(--#{$global-prefix}-dialog-backdrop-filter);
+    background-color: _var($dialog-prefix, 'backdrop');
+    backdrop-filter: _var($dialog-prefix, 'backdrop-filter');
   }
 
   > header > * {

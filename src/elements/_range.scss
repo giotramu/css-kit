@@ -1,36 +1,39 @@
+$range-height: _var($range-prefix, 'height');
+$thumb-height: _var($range-prefix, 'thumb-height');
+
 @mixin track {
   width: 100%;
-  height: var(--#{$global-prefix}-range-height);
-  border-radius: var(--#{$global-prefix}-range-border-radius);
-  background: var(--#{$global-prefix}-range-background);
-  box-shadow: inset 0 0 0 var(--#{$global-prefix}-range-border);
+  height: _var($range-prefix, 'height');
+  border-radius: _var($range-prefix, 'border-radius');
+  background: _var($range-prefix, 'background');
+  box-shadow: inset 0 0 0 _var($range-prefix, 'border');
   transition: background-color 0.2s ease-out;
   cursor: pointer;
 }
 
 @mixin disabled-track {
-  background-color: var(--#{$global-prefix}-range-disabled-background);
-  box-shadow: inset 0 0 0 var(--#{$global-prefix}-range-disabled-border-color);
+  background-color: _var($range-prefix, 'disabled-background');
+  box-shadow: inset 0 0 0 _var($range-prefix, 'disabled-border-color');
   cursor: not-allowed;
 }
 
 @mixin thumb {
-  width: var(--#{$global-prefix}-range-thumb-width);
-  height: var(--#{$global-prefix}-range-thumb-height);
+  width: _var($range-prefix, 'thumb-width');
+  height: $thumb-height;
   border-color: transparent;
-  border-radius: var(--#{$global-prefix}-range-thumb-radius);
+  border-radius: _var($range-prefix, 'thumb-radius');
   background: repeating-linear-gradient(
       to right,
       transparent,
       transparent 2px,
-      var(--#{$global-prefix}-range-thumb-sripes-color) 2px,
-      var(--#{$global-prefix}-range-thumb-sripes-color) 3px
+      _var($range-prefix, 'thumb-sripes-color') 2px,
+      _var($range-prefix, 'thumb-sripes-color') 3px
     ),
-    var(--#{$global-prefix}-range-thumb-background);
+    _var($range-prefix, 'thumb-background');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 14px 54%;
-  box-shadow: var(--#{$global-prefix}-range-thumb-shadow);
+  box-shadow: _var($range-prefix, 'thumb-shadow');
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   appearance: none;
 
@@ -44,10 +47,10 @@
         to right,
         transparent,
         transparent 2px,
-        var(--#{$global-prefix}-range-thumb-sripes-active-color) 2px,
-        var(--#{$global-prefix}-range-thumb-sripes-active-color) 3px
+        _var($range-prefix, 'thumb-sripes-active-color') 2px,
+        _var($range-prefix, 'thumb-sripes-active-color') 3px
       ),
-      var(--#{$global-prefix}-range-thumb-active-background);
+      _var($range-prefix, 'thumb-active-background');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 14px 54%;
@@ -56,7 +59,7 @@
 }
 
 @mixin disabled-thumb {
-  background-color: var(--#{$global-prefix}-range-thumb-disabled-background);
+  background-color: _var($range-prefix, 'thumb-disabled-background');
   background-image: none;
   cursor: not-allowed;
 }
@@ -66,20 +69,19 @@
       to right,
       transparent,
       transparent 2px,
-      var(--#{$global-prefix}-range-thumb-sripes-active-color) 2px,
-      var(--#{$global-prefix}-range-thumb-sripes-active-color) 3px
+      _var($range-prefix, 'thumb-sripes-active-color') 2px,
+      _var($range-prefix, 'thumb-sripes-active-color') 3px
     ),
-    var(--#{$global-prefix}-range-thumb-active-background);
+    _var($range-prefix, 'thumb-active-background');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: 14px 54%;
-  outline: var(--#{$global-prefix}-outline-style)
-    var(--#{$global-prefix}-outline-color);
+  outline: _var($outline-prefix, 'style') _var($outline-prefix, 'color');
 }
 
 input[type='range'] {
-  width: var(--#{$global-prefix}-range-width);
-  margin: calc(var(--#{$global-prefix}-range-thumb-height) / 2) 0;
+  width: _var($range-prefix, 'width');
+  margin: unquote('calc(#{$thumb-height} / 2) 0');
   background: transparent;
   outline: 0;
   appearance: none;
@@ -94,7 +96,7 @@ input[type='range'] {
 
   &::-ms-track {
     @include track;
-    border-width: var(--#{$global-prefix}-range-thumb-height);
+    border-width: $thumb-height;
     border-color: transparent;
     color: transparent;
     background-color: transparent;
@@ -105,41 +107,37 @@ input[type='range'] {
   }
 
   &::-ms-fill-upper {
-    background: var(--#{$global-prefix}-range-background);
+    background: _var($range-prefix, 'background');
   }
 
   &::-ms-fill-lower {
-    background: var(--#{$global-prefix}-range-background);
+    background: _var($range-prefix, 'background');
   }
 
   &:active::-webkit-slider-runnable-track,
   &:focus::-webkit-slider-runnable-track {
-    background: var(--#{$global-prefix}-range-focus-background);
+    background: _var($range-prefix, 'focus-background');
   }
 
   &:active::-moz-range-track,
   &:focus::-moz-range-track {
-    background: var(--#{$global-prefix}-range-focus-background);
+    background: _var($range-prefix, 'focus-background');
   }
 
   &:active::-ms-fill-lower,
   &:focus::-ms-fill-lower {
-    background: var(--#{$global-prefix}-range-focus-background);
+    background: _var($range-prefix, 'focus-background');
   }
 
   &:active::-ms-fill-upper,
   &:focus::-ms-fill-upper {
-    background: var(--#{$global-prefix}-range-focus-background);
+    background: _var($range-prefix, 'focus-background');
   }
 
   &::-webkit-slider-thumb {
     @include thumb;
-    margin-top: calc(
-      0.5 *
-        calc(
-          var(--#{$global-prefix}-range-height) -
-            var(--#{$global-prefix}-range-thumb-height)
-        )
+    margin-top: unquote(
+      'calc(0.5 * calc(#{$range-height} - #{$thumb-height}))'
     );
   }
 
@@ -152,15 +150,15 @@ input[type='range'] {
   }
 
   &:active::-webkit-slider-thumb {
-    background-color: var(--#{$global-prefix}-range-thumb-active-background);
+    background-color: _var($range-prefix, 'thumb-active-background');
   }
 
   &:active::-moz-range-thumb {
-    background-color: var(--#{$global-prefix}-range-thumb-active-background);
+    background-color: _var($range-prefix, 'thumb-active-background');
   }
 
   &:active::-ms-thumb {
-    background-color: var(--#{$global-prefix}-range-thumb-active-background);
+    background-color: _var($range-prefix, 'thumb-active-background');
   }
 
   &:not(:active):focus::-webkit-slider-thumb {

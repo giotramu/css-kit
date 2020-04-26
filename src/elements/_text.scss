@@ -1,3 +1,5 @@
+$document-line-height: _var($document-prefix, 'line-height');
+
 address {
   font-style: normal;
   line-height: inherit;
@@ -6,8 +8,8 @@ address {
 blockquote {
   margin: 2.5em 0;
   padding: 0;
-  font-size: var(--#{$global-prefix}-blockquote-font-size);
-  line-height: calc(var(--#{$global-prefix}-document-line-height) / 1.2);
+  font-size: _var($blockquote-prefix, 'font-size');
+  line-height: unquote('calc(#{$document-line-height} / 1.2)');
   letter-spacing: 0.03em;
 
   > * {
@@ -16,12 +18,12 @@ blockquote {
 
   cite {
     display: block;
-    margin-top: var(--#{$global-prefix}-cite-font-size);
-    color: var(--#{$global-prefix}-cite-foreground);
-    font-size: var(--#{$global-prefix}-cite-font-size);
+    margin-top: _var($cite-prefix, 'font-size');
+    color: _var($cite-prefix, 'foreground');
+    font-size: _var($cite-prefix, 'font-size');
 
     &::before {
-      content: var(--#{$global-prefix}-cite-start-sign);
+      content: _var($cite-prefix, 'start-sign');
       margin-right: 4px;
     }
   }
@@ -29,31 +31,31 @@ blockquote {
 
 del {
   padding: 2px 4px;
-  color: var(--#{$global-prefix}-del-foreground);
-  background-color: var(--#{$global-prefix}-del-background);
-  box-shadow: 0 0 0 2px var(--#{$global-prefix}-del-background);
+  color: _var($del-prefix, 'foreground');
+  background-color: _var($del-prefix, 'background');
+  box-shadow: 0 0 0 2px _var($del-prefix, 'background');
 }
 
 ins {
   padding: 2px 4px;
-  color: var(--#{$global-prefix}-ins-foreground);
-  background-color: var(--#{$global-prefix}-ins-background);
-  box-shadow: 0 0 0 2px var(--#{$global-prefix}-ins-background);
+  color: _var($ins-prefix, 'foreground');
+  background-color: _var($ins-prefix, 'background');
+  box-shadow: 0 0 0 2px _var($ins-prefix, 'background');
   text-decoration: none;
 }
 
 kbd {
-  border: 1px solid var(--#{$global-prefix}-kbd-border-color);
-  border-radius: var(--#{$global-prefix}-kbd-border-radius);
+  border: 1px solid _var($kdb-prefix, 'border-color');
+  border-radius: _var($kdb-prefix, 'border-radius');
   padding: 2px 4px;
-  box-shadow: 0 3px 0 var(--#{$global-prefix}-kbd-border-color),
+  box-shadow: 0 3px 0 _var($kdb-prefix, 'border-color'),
     0 3px 10px rgba(0, 0, 0, 0.04);
 }
 
 mark {
-  color: var(--#{$global-prefix}-mark-foreground);
-  background: var(--#{$global-prefix}-mark-background);
-  box-shadow: 0 0 0 2px var(--#{$global-prefix}-mark-background);
+  color: _var($mark-prefix, 'foreground');
+  background: _var($mark-prefix, 'background');
+  box-shadow: 0 0 0 2px _var($mark-prefix, 'background');
 }
 
 p {
@@ -62,12 +64,12 @@ p {
   code {
     display: inline-block;
     margin: 2px 0;
-    border-radius: var(--#{$global-prefix}-code-border-radius);
+    border-radius: _var($code-prefix, 'border-radius');
     padding: 0 4px;
-    background-color: var(--#{$global-prefix}-code-background);
+    background-color: _var($code-prefix, 'background');
   }
 }
 
 small {
-  font-size: var(--#{$global-prefix}-small-font-size);
+  font-size: _var($small-prefix, 'font-size');
 }

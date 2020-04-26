@@ -1,14 +1,14 @@
 @mixin color-swatch {
-  border: var(--#{$global-prefix}-color-picker-border);
-  border-radius: var(--#{$global-prefix}-color-picker-border-radius);
-  box-shadow: var(--#{$global-prefix}-color-picker-shadow);
+  border: _var($color-picker-prefix, 'border');
+  border-radius: _var($color-picker-prefix, 'border-radius');
+  box-shadow: _var($color-picker-prefix, 'shadow');
 }
 
 input[type='color'] {
   width: 1.6rem;
   height: 1.6rem;
   border: none;
-  border-radius: var(--#{$global-prefix}-color-picker-border-radius);
+  border-radius: _var($color-picker-prefix, 'border-radius');
   padding: 0;
   background: transparent;
   cursor: pointer;
@@ -33,6 +33,6 @@ input[type='color'] {
 
   &:focus::-webkit-color-swatch,
   &:active::-webkit-color-swatch {
-    box-shadow: inset 0 0 0 2px var(--#{$global-prefix}-outline-color);
+    box-shadow: inset 0 0 0 2px _var($outline-prefix, 'color');
   }
 }

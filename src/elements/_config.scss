@@ -1,35 +1,38 @@
-$root: (
-  font-size: 100%
-);
-
+$document-prefix: 'document';
 $document: (
   foreground: var(--color-dark),
   background: var(--color-light),
+  root-font-size: 100%,
   font-size: 1rem,
   font-weight: 400,
   line-height: 1.65
 );
 
+$outline-prefix: 'outline';
 $outline: (
   color: var(--color-accent),
   style: 2px solid
 );
 
+$selection-prefix: 'selection';
 $selection: (
   background: var(--color-accent),
   foreground: var(--color-light)
 );
 
+$scroll-prefix: 'scroll';
 $scroll: (
   scroll-padding: 100px,
   scroll-behavior: smooth
 );
 
+$link-prefix: 'link';
 $link: (
   foreground: var(--color-accent),
   active-foreground: hsl(221, 97%, 42%)
 );
 
+$button-prefix: 'button';
 $button: (
   border: 0,
   border-radius: 4px,
@@ -52,63 +55,75 @@ $button: (
   icon-margin: 0.8em
 );
 
+$heading-prefix: 'heading';
 $heading: (
   font-family: unquote('giotramu-sans, inherit'),
   font-weight: 700,
   line-height: 1.15
 );
 
+$blockquote-prefix: 'blockquote';
 $blockquote: (
   font-size: 2rem
 );
 
+$cite-prefix: 'cite';
 $cite: (
   foreground: var(--color-accent),
   font-size: 1rem,
   start-sign: '—'
 );
 
+$del-prefix: 'del';
 $del: (
   foreground: hsl(337, 74%, 31%),
   background: hsl(0, 100%, 94%)
 );
 
+$ins-prefix: 'ins';
 $ins: (
   foreground: hsl(161, 98%, 18%),
   background: hsl(138, 100%, 88%)
 );
 
+$kdb-prefix: 'kdb';
 $kbd: (
   border-radius: 4px,
   border-color: hsl(208, 28%, 96%)
 );
 
+$mark-prefix: 'mark';
 $mark: (
   foreground: var(--color-white),
   background: var(--color-accent)
 );
 
+$code-prefix: 'code';
 $code: (
   border-radius: 2px,
   background: hsl(208, 28%, 96%)
 );
 
+$hr-prefix: 'hr';
 $hr: (
   height: 2px,
   margin: 48px,
   background: var(--color-gray)
 );
 
+$small-prefix: 'small';
 $small: (
   font-size: 0.8rem
 );
 
+$form-prefix: 'form';
 $form: (
   legend-margin: 0 0 0.4rem,
   legend-weight: 600
 );
 
-$check: (
+$checkradio-prefix: 'check';
+$checkradio: (
   size: 18px,
   border: var(--color-gray),
   border-radius: 4px,
@@ -118,6 +133,7 @@ $check: (
   tick-color: var(--color-white)
 );
 
+$field-prefix: 'field';
 $field: (
   width: 100%,
   min-height: 48px,
@@ -151,6 +167,8 @@ $field: (
   invalid-foreground: var(--color-dark)
 );
 
+$select-prefix: 'select';
+$select-icon: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" stroke-miterlimit="10" d="M7 8l5-5 5 5m0 8l-5 5-5-5"/></svg>');
 $select: (
   width: 100%,
   border: 1px solid var(--color-gray),
@@ -174,6 +192,7 @@ $select: (
   option-checked-background: var(--color-accent)
 );
 
+$range-prefix: 'range';
 $range: (
   width: 100%,
   height: 4px,
@@ -194,6 +213,7 @@ $range: (
   disabled-background: hsl(208, 28%, 96%)
 );
 
+$progress-prefix: 'progress';
 $progress: (
   background: hsl(208, 28%, 96%),
   filled-color: var(--color-accent),
@@ -202,6 +222,7 @@ $progress: (
   border-radius: 10px
 );
 
+$meter-prefix: 'meter';
 $meter: (
   width: 32px,
   height: 4px,
@@ -213,6 +234,7 @@ $meter: (
   filled-color-weak: hsl(354, 100%, 65%)
 );
 
+$table-prefix: 'table';
 $table: (
   cells-xpadding: 16px,
   cells-ypadding: 16px,
@@ -222,6 +244,8 @@ $table: (
   striped-background: transparent
 );
 
+$details-prefix: 'details';
+$details-icon: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path fill="currentColor" d="M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z"/></svg>');
 $details: (
   max-height: 280px,
   border-radius: 4px,
@@ -237,12 +261,14 @@ $details: (
   icon: $details-icon
 );
 
+$color-picker-prefix: 'color-picker';
 $color-picker: (
   border: 0,
   border-radius: 100%,
   shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
 );
 
+$dialog-prefix: 'dialog';
 $dialog: (
   border: 0,
   shadow:
@@ -259,7 +285,6 @@ $dialog: (
 );
 
 $elements: (
-  'root': $root,
   'document': $document,
   'scroll': $scroll,
   'outline': $outline,
@@ -277,7 +302,7 @@ $elements: (
   'small': $small,
   'hr': $hr,
   'form': $form,
-  'check': $check,
+  'check': $checkradio,
   'field': $field,
   'select': $select,
   'range': $range,

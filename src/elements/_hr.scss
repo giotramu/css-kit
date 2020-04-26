@@ -1,9 +1,9 @@
 hr {
   display: block;
   width: 100%;
-  height: var(--#{$global-prefix}-hr-height);
-  margin-top: var(--#{$global-prefix}-hr-margin);
-  margin-bottom: var(--#{$global-prefix}-hr-margin);
+  height: _var($hr-prefix, 'height');
+  margin-top: _var($hr-prefix, 'margin');
+  margin-bottom: _var($hr-prefix, 'margin');
   border: none;
-  background-color: var(--#{$global-prefix}-hr-background);
+  background-color: _var($hr-prefix, 'background');
 }
