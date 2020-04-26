@@ -31,7 +31,7 @@
     #{_defineVar('color', $color, $scope: false)}: $hex;
   }
 
-  @each $element, $props in $elements {
+  @each $element, $props in $elements-config {
     @each $prop, $val in $props {
       #{_defineVar($element, $prop)}: $val;
     }

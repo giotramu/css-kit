@@ -1,5 +1,5 @@
 $document-prefix: 'document';
-$document: (
+$document-props: (
   foreground: var(--color-dark),
   background: var(--color-light),
   root-font-size: 100%,
@@ -9,31 +9,31 @@ $document: (
 );
 
 $outline-prefix: 'outline';
-$outline: (
+$outline-props: (
   color: var(--color-accent),
   style: 2px solid
 );
 
 $selection-prefix: 'selection';
-$selection: (
+$selection-props: (
   background: var(--color-accent),
   foreground: var(--color-light)
 );
 
 $scroll-prefix: 'scroll';
-$scroll: (
+$scroll-props: (
   padding: 100px,
   behavior: smooth
 );
 
 $link-prefix: 'link';
-$link: (
+$link-props: (
   foreground: var(--color-accent),
   active-foreground: hsl(221, 97%, 42%)
 );
 
 $button-prefix: 'button';
-$button: (
+$button-props: (
   border: 0,
   border-radius: 4px,
   xpadding: 2em,
@@ -56,74 +56,74 @@ $button: (
 );
 
 $heading-prefix: 'heading';
-$heading: (
+$heading-props: (
   font-family: unquote('giotramu-sans, inherit'),
   font-weight: 700,
   line-height: 1.15
 );
 
 $blockquote-prefix: 'blockquote';
-$blockquote: (
+$blockquote-props: (
   font-size: 2rem
 );
 
 $cite-prefix: 'cite';
-$cite: (
+$cite-props: (
   foreground: var(--color-accent),
   font-size: 1rem,
   start-sign: '—'
 );
 
 $del-prefix: 'del';
-$del: (
+$del-props: (
   foreground: hsl(337, 74%, 31%),
   background: hsl(0, 100%, 94%)
 );
 
 $ins-prefix: 'ins';
-$ins: (
+$ins-props: (
   foreground: hsl(161, 98%, 18%),
   background: hsl(138, 100%, 88%)
 );
 
 $kbd-prefix: 'kdb';
-$kbd: (
+$kbd-props: (
   border-radius: 4px,
   border-color: hsl(208, 28%, 96%)
 );
 
 $mark-prefix: 'mark';
-$mark: (
+$mark-props: (
   foreground: var(--color-white),
   background: var(--color-accent)
 );
 
 $code-prefix: 'code';
-$code: (
+$code-props: (
   border-radius: 2px,
   background: hsl(208, 28%, 96%)
 );
 
 $hr-prefix: 'hr';
-$hr: (
+$hr-props: (
   height: 2px,
   margin: 48px,
   background: var(--color-gray)
 );
 
 $small-prefix: 'small';
-$small: (
+$small-props: (
   font-size: 0.8rem
 );
 
 $form-prefix: 'form';
-$form: (
+$form-props: (
   legend-margin: 0 0 0.4rem,
   legend-weight: 600
 );
 
 $checkradio-prefix: 'checkradio';
-$checkradio: (
+$checkradio-props: (
   size: 18px,
   border: var(--color-gray),
   border-radius: 4px,
@@ -134,7 +134,7 @@ $checkradio: (
 );
 
 $field-prefix: 'field';
-$field: (
+$field-props: (
   width: 100%,
   min-height: 48px,
   xpadding: 1em,
@@ -169,7 +169,7 @@ $field: (
 
 $select-prefix: 'select';
 $select-icon: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" stroke-miterlimit="10" d="M7 8l5-5 5 5m0 8l-5 5-5-5"/></svg>');
-$select: (
+$select-props: (
   width: 100%,
   border: 1px solid var(--color-gray),
   border-radius: 4px,
@@ -193,7 +193,7 @@ $select: (
 );
 
 $range-prefix: 'range';
-$range: (
+$range-props: (
   width: 100%,
   height: 4px,
   border-radius: 10px,
@@ -214,7 +214,7 @@ $range: (
 );
 
 $progress-prefix: 'progress';
-$progress: (
+$progress-props: (
   background: hsl(208, 28%, 96%),
   filled-color: var(--color-accent),
   height: 8px,
@@ -223,7 +223,7 @@ $progress: (
 );
 
 $meter-prefix: 'meter';
-$meter: (
+$meter-props: (
   width: 32px,
   height: 4px,
   border-radius: 4px,
@@ -235,7 +235,7 @@ $meter: (
 );
 
 $table-prefix: 'table';
-$table: (
+$table-props: (
   cells-xpadding: 16px,
   cells-ypadding: 16px,
   head-separator: 2px solid var(--color-gray),
@@ -246,7 +246,7 @@ $table: (
 
 $details-prefix: 'details';
 $details-icon: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12"><path fill="currentColor" d="M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z"/></svg>');
-$details: (
+$details-props: (
   max-height: 280px,
   border-radius: 4px,
   background: var(--color-white),
@@ -262,14 +262,14 @@ $details: (
 );
 
 $color-picker-prefix: 'color-picker';
-$color-picker: (
+$color-picker-props: (
   border: 0,
   border-radius: 100%,
   shadow: 0 1px 2px rgba(0, 0, 0, 0.2)
 );
 
 $dialog-prefix: 'dialog';
-$dialog: (
+$dialog-props: (
   border: 0,
   shadow:
     unquote(
@@ -284,32 +284,32 @@ $dialog: (
   backdrop-filter: blur(10px)
 );
 
-$elements: (
-  $document-prefix: $document,
-  $scroll-prefix: $scroll,
-  $outline-prefix: $outline,
-  $selection-prefix: $selection,
-  $link-prefix: $link,
-  $button-prefix: $button,
-  $heading-prefix: $heading,
-  $blockquote-prefix: $blockquote,
-  $cite-prefix: $cite,
-  $code-prefix: $code,
-  $del-prefix: $del,
-  $ins-prefix: $ins,
-  $kbd-prefix: $kbd,
-  $mark-prefix: $mark,
-  $small-prefix: $small,
-  $hr-prefix: $hr,
-  $form-prefix: $form,
-  $checkradio-prefix: $checkradio,
-  $field-prefix: $field,
-  $select-prefix: $select,
-  $range-prefix: $range,
-  $progress-prefix: $progress,
-  $meter-prefix: $meter,
-  $table-prefix: $table,
-  $details-prefix: $details,
-  $color-picker-prefix: $color-picker,
-  $dialog-prefix: $dialog
+$elements-config: (
+  $document-prefix: $document-props,
+  $scroll-prefix: $scroll-props,
+  $outline-prefix: $outline-props,
+  $selection-prefix: $selection-props,
+  $link-prefix: $link-props,
+  $button-prefix: $button-props,
+  $heading-prefix: $heading-props,
+  $blockquote-prefix: $blockquote-props,
+  $cite-prefix: $cite-props,
+  $code-prefix: $code-props,
+  $del-prefix: $del-props,
+  $ins-prefix: $ins-props,
+  $kbd-prefix: $kbd-props,
+  $mark-prefix: $mark-props,
+  $small-prefix: $small-props,
+  $hr-prefix: $hr-props,
+  $form-prefix: $form-props,
+  $checkradio-prefix: $checkradio-props,
+  $field-prefix: $field-props,
+  $select-prefix: $select-props,
+  $range-prefix: $range-props,
+  $progress-prefix: $progress-props,
+  $meter-prefix: $meter-props,
+  $table-prefix: $table-props,
+  $details-prefix: $details-props,
+  $color-picker-prefix: $color-picker-props,
+  $dialog-prefix: $dialog-props
 );
