@@ -45,10 +45,10 @@ ins {
 }
 
 kbd {
-  border: 1px solid _var($kdb-prefix, 'border-color');
-  border-radius: _var($kdb-prefix, 'border-radius');
+  border: 1px solid _var($kbd-prefix, 'border-color');
+  border-radius: _var($kbd-prefix, 'border-radius');
   padding: 2px 4px;
-  box-shadow: 0 3px 0 _var($kdb-prefix, 'border-color'),
+  box-shadow: 0 3px 0 _var($kbd-prefix, 'border-color'),
     0 3px 10px rgba(0, 0, 0, 0.04);
 }
 

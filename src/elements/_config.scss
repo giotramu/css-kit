@@ -22,8 +22,8 @@ $selection: (
 
 $scroll-prefix: 'scroll';
 $scroll: (
-  scroll-padding: 100px,
-  scroll-behavior: smooth
+  padding: 100px,
+  behavior: smooth
 );
 
 $link-prefix: 'link';
@@ -86,7 +86,7 @@ $ins: (
   background: hsl(138, 100%, 88%)
 );
 
-$kdb-prefix: 'kdb';
+$kbd-prefix: 'kdb';
 $kbd: (
   border-radius: 4px,
   border-color: hsl(208, 28%, 96%)
@@ -122,7 +122,7 @@ $form: (
   legend-weight: 600
 );
 
-$checkradio-prefix: 'check';
+$checkradio-prefix: 'checkradio';
 $checkradio: (
   size: 18px,
   border: var(--color-gray),
@@ -285,31 +285,31 @@ $dialog: (
 );
 
 $elements: (
-  'document': $document,
-  'scroll': $scroll,
-  'outline': $outline,
-  'selection': $selection,
-  'link': $link,
-  'button': $button,
-  'heading': $heading,
-  'blockquote': $blockquote,
-  'cite': $cite,
-  'code': $code,
-  'del': $del,
-  'ins': $ins,
-  'kbd': $kbd,
-  'mark': $mark,
-  'small': $small,
-  'hr': $hr,
-  'form': $form,
-  'check': $checkradio,
-  'field': $field,
-  'select': $select,
-  'range': $range,
-  'progress': $progress,
-  'meter': $meter,
-  'table': $table,
-  'details': $details,
-  'color-picker': $color-picker,
-  'dialog': $dialog
+  $document-prefix: $document,
+  $scroll-prefix: $scroll,
+  $outline-prefix: $outline,
+  $selection-prefix: $selection,
+  $link-prefix: $link,
+  $button-prefix: $button,
+  $heading-prefix: $heading,
+  $blockquote-prefix: $blockquote,
+  $cite-prefix: $cite,
+  $code-prefix: $code,
+  $del-prefix: $del,
+  $ins-prefix: $ins,
+  $kbd-prefix: $kbd,
+  $mark-prefix: $mark,
+  $small-prefix: $small,
+  $hr-prefix: $hr,
+  $form-prefix: $form,
+  $checkradio-prefix: $checkradio,
+  $field-prefix: $field,
+  $select-prefix: $select,
+  $range-prefix: $range,
+  $progress-prefix: $progress,
+  $meter-prefix: $meter,
+  $table-prefix: $table,
+  $details-prefix: $details,
+  $color-picker-prefix: $color-picker,
+  $dialog-prefix: $dialog
 );
