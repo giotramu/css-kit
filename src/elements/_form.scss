@@ -1,0 +1,27 @@
+fieldset {
+  min-width: 0;
+  margin: 0 0 1rem;
+  border: 0 solid transparent;
+  padding: 0;
+}
+
+label {
+  display: block;
+  margin: 0 0 0.25rem;
+  padding: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: var(--#{$global-prefix}-form-legend-margin);
+  color: inherit;
+  font-weight: var(--#{$global-prefix}-form-legend-weight);
+  line-height: inherit;
+  white-space: normal;
+}
+
+output {
+  display: inline-block;
+}

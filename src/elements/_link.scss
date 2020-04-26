@@ -1,0 +1,10 @@
+a:link,
+a:visited {
+  color: var(--#{$global-prefix}-link-foreground);
+  text-decoration: none;
+  transition: color 100ms linear;
+
+  &:hover {
+    color: var(--#{$global-prefix}-link-active-foreground);
+  }
+}

@@ -1,0 +1,73 @@
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+blockquote {
+  margin: 2.5em 0;
+  padding: 0;
+  font-size: var(--#{$global-prefix}-blockquote-font-size);
+  line-height: calc(var(--#{$global-prefix}-document-line-height) / 1.2);
+  letter-spacing: 0.03em;
+
+  > * {
+    font-size: inherit;
+  }
+
+  cite {
+    display: block;
+    margin-top: var(--#{$global-prefix}-cite-font-size);
+    color: var(--#{$global-prefix}-cite-foreground);
+    font-size: var(--#{$global-prefix}-cite-font-size);
+
+    &::before {
+      content: var(--#{$global-prefix}-cite-start-sign);
+      margin-right: 4px;
+    }
+  }
+}
+
+del {
+  padding: 2px 4px;
+  color: var(--#{$global-prefix}-del-foreground);
+  background-color: var(--#{$global-prefix}-del-background);
+  box-shadow: 0 0 0 2px var(--#{$global-prefix}-del-background);
+}
+
+ins {
+  padding: 2px 4px;
+  color: var(--#{$global-prefix}-ins-foreground);
+  background-color: var(--#{$global-prefix}-ins-background);
+  box-shadow: 0 0 0 2px var(--#{$global-prefix}-ins-background);
+  text-decoration: none;
+}
+
+kbd {
+  border: 1px solid var(--#{$global-prefix}-kbd-border-color);
+  border-radius: var(--#{$global-prefix}-kbd-border-radius);
+  padding: 2px 4px;
+  box-shadow: 0 3px 0 var(--#{$global-prefix}-kbd-border-color),
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+mark {
+  color: var(--#{$global-prefix}-mark-foreground);
+  background: var(--#{$global-prefix}-mark-background);
+  box-shadow: 0 0 0 2px var(--#{$global-prefix}-mark-background);
+}
+
+p {
+  margin-bottom: 1.15rem;
+
+  code {
+    display: inline-block;
+    margin: 2px 0;
+    border-radius: var(--#{$global-prefix}-code-border-radius);
+    padding: 0 4px;
+    background-color: var(--#{$global-prefix}-code-background);
+  }
+}
+
+small {
+  font-size: var(--#{$global-prefix}-small-font-size);
+}

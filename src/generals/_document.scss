@@ -1,0 +1,33 @@
+html {
+  font-size: var(--#{$global-prefix}-root-font-size);
+  scroll-behavior: var(--#{$global-prefix}-scroll-behavior);
+  scroll-padding: var(--#{$global-prefix}-scroll-padding);
+}
+
+*::selection {
+  color: var(--#{$global-prefix}-selection-foreground);
+  background: var(--#{$global-prefix}-selection-background);
+}
+
+*:focus {
+  outline: var(--#{$global-prefix}-outline-style)
+    var(--#{$global-prefix}-outline-color);
+}
+
+[tabindex='-1'] {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  outline-color: var(--#{$global-prefix}-outline-color);
+}
+
+body {
+  color: var(--#{$global-prefix}-document-foreground);
+  background-color: var(--#{$global-prefix}-document-background);
+  font-size: var(--#{$global-prefix}-document-font-size);
+  font-weight: var(--#{$global-prefix}-document-font-weight);
+  line-height: var(--#{$global-prefix}-document-line-height);
+}

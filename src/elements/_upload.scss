@@ -1,0 +1,10 @@
+input[type='file'] {
+  overflow: hidden;
+  width: 100%;
+  font-size: inherit;
+
+  &::-webkit-file-upload-button {
+    @include button;
+    margin-right: 16px;
+  }
+}

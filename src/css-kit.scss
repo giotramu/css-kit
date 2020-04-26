@@ -1,0 +1,39 @@
+/**
+ ************
+ * Abstract *
+ ************
+ */
+@import './abstract/functions';
+@import './abstract/variables';
+
+/**
+ ************
+ * Generals *
+ ************
+ */
+@import './generals/normalizer';
+@import './generals/document';
+
+/**
+ *****************
+ * HTML Elements *
+ *****************
+ */
+@import './elements/bundle';
+
+/**
+ *************************
+ * CSS Custom Properties *
+ *************************
+ */
+:root {
+  @each $color, $hex in $colors {
+    #{_defineVar('color', $color, $prefix: false)}: $hex;
+  }
+
+  @each $element, $props in $elements {
+    @each $prop, $val in $props {
+      #{_defineVar($element, $prop)}: $val;
+    }
+  }
+}

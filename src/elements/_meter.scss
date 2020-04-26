@@ -1,0 +1,56 @@
+%meter-progress {
+  overflow: hidden;
+  border-radius: var(--#{$global-prefix}-meter-border-radius);
+  background: var(--#{$global-prefix}-meter-background);
+  box-shadow: inset 0 0 0 1px var(--#{$global-prefix}-meter-border-color);
+}
+
+%meter-strong {
+  background: var(--#{$global-prefix}-meter-filled-color-strong);
+}
+
+%meter-good {
+  background: var(--#{$global-prefix}-meter-filled-color-good);
+}
+
+%meter-weak {
+  background: var(--#{$global-prefix}-meter-filled-color-weak);
+}
+
+meter {
+  @extend %meter-progress;
+  width: var(--#{$global-prefix}-meter-width);
+  height: var(--#{$global-prefix}-meter-height);
+  vertical-align: middle;
+
+  &::-webkit-meter-bar {
+    @extend %meter-progress;
+  }
+
+  /* Low value */
+  &::-webkit-meter-even-less-good-value {
+    @extend %meter-weak;
+  }
+
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    @extend %meter-weak;
+  }
+
+  /* Mid value */
+  &::-webkit-meter-suboptimum-value {
+    @extend %meter-good;
+  }
+
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    @extend %meter-good;
+  }
+
+  /* Top value */
+  &::-webkit-meter-optimum-value {
+    @extend %meter-strong;
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    @extend %meter-strong;
+  }
+}

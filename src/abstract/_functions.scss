@@ -1,14 +1,32 @@
 /**
  * Positive integer exponent.
  */
-@function exponent($number, $exponent) {
-  $value: 1;
+@function pow($number, $exponent) {
+  $result: 1;
 
   @if $exponent > 0 {
-    @for $i from 1 through $exponent {
-      $value: $value * $number;
+    @for $_ from 1 through $exponent {
+      $result: $result * $number;
     }
   }
 
-  @return $value;
+  @return $result;
+}
+
+/**
+ * Return a CSS Custom Property definition (e.g. --ck-button-font-size).
+ */
+@function _defineVar($element, $prop, $prefix: true) {
+  @if $prefix {
+    @return unquote('--#{$global-prefix}-#{$element}-#{$prop}');
+  }
+
+  @return unquote('--#{$element}-#{$prop}');
+}
+
+/**
+ * Return a CSS Custom Property (e.g. var(--ck-button-font-size)).
+ */
+@function _var($element, $prop) {
+  @return var(_defineVar($element, $prop));
 }

@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--#{$global-prefix}-table-background);
+}
+
+thead {
+  border-bottom: var(--#{$global-prefix}-table-head-separator);
+  text-align: left;
+}
+
+td,
+th {
+  padding: var(--#{$global-prefix}-table-cells-ypadding)
+    var(--#{$global-prefix}-table-cells-xpadding);
+}
+
+tr + tr {
+  border-top: var(--#{$global-prefix}-table-row-separator);
+}
+
+tr:nth-child(even) {
+  background-color: var(--#{$global-prefix}-table-striped-background);
+}

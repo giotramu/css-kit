@@ -1,0 +1,50 @@
+dialog {
+  width: fit-content;
+  max-width: var(--#{$global-prefix}-dialog-max-width);
+  height: fit-content;
+  margin: auto;
+  border: var(--#{$global-prefix}-dialog-border);
+  border-radius: var(--#{$global-prefix}-dialog-border-radius);
+  padding: var(--#{$global-prefix}-dialog-ypadding)
+    var(--#{$global-prefix}-dialog-xpadding);
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  background: var(--#{$global-prefix}-dialog-background);
+  box-shadow: var(--#{$global-prefix}-dialog-shadow);
+
+  &:not([open]) {
+    display: none;
+  }
+
+  &[open] {
+    animation-name: modal-show;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+  }
+
+  &::backdrop {
+    background-color: var(--#{$global-prefix}-dialog-backdrop);
+    backdrop-filter: var(--#{$global-prefix}-dialog-backdrop-filter);
+  }
+
+  > header > * {
+    margin-top: 0;
+  }
+
+  > footer {
+    margin-top: 32px;
+  }
+}
+
+@keyframes modal-show {
+  from {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: initial;
+  }
+}

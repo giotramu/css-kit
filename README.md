@@ -1,20 +1,19 @@
-# CSS Kit
+# CSS-Kit — Minimalist stylesheet for HTML elements
 
-Personal CSS library that provides consistent, cross-browser and useful defaults.
+Out of the box CSS styling for HTML elements. No class names, no framework to learn.
 
 ### 🚧 In the development stage.
 
 ---
 
 [![NPM][npm-img]][npm-url]
-![Bundle Size][bundle-size-img]
 [![Test Status][ci-img]][ci-url]
 [![Dependencies][deps-img]][deps-url]
 [![Dev Dependencies][devdeps-img]][devdeps-url]
 
 ## Table of contents
 
-- [CSS Kit](#css-kit)
+- [CSS-Kit](#css-kit)
   - [CDN Usage](#cdn-usage)
   - [Install](#install)
   - [Webpack usage](#webpack-usage)
@@ -29,14 +28,7 @@ Personal CSS library that provides consistent, cross-browser and useful defaults
 Put the link tags in the head of your `index.html` document:
 
 ```html
-<!-- CSS Normalizer -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@giotramu/css-kit/normalizer.css"
-/>
-
-<!-- Personal & Common Styles -->
-<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit/common.css" />
+<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit" />
 ```
 
 #### What does it do?
@@ -59,21 +51,14 @@ npm install @giotramu/css-kit --save
 Import css-kit in CSS:
 
 ```css
-/* CSS Normalizer */
-@import '~@giotramu/css-kit/normalizer.css';
-
-/* Personal & Common Styles */
-@import '~@giotramu/css-kit/common.css';
+@import '~@giotramu/css-kit/css-kit.css';
 ```
 
 Alternatively, import css-kit in JS:
 
 ```js
 // CSS Normalizer
-import '@giotramu/css-kit/normalizer.css';
-
-// Personal & Common Styles
-import '@giotramu/css-kit/common.css';
+import '@giotramu/css-kit/css-kit.css';
 ```
 
 In `webpack.config.js`, be sure to use the appropriate loaders:
@@ -160,7 +145,6 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   B A D G E S
 -->
 
-[bundle-size-img]: https://badgen.net/badge/unpacked%20size/172kb/blue
 [ci-img]: https://github.com/giotramu/css-kit/workflows/test/badge.svg?branch=master
 [deps-img]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit

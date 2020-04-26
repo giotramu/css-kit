@@ -1,0 +1,21 @@
+@font-face {
+  font-display: swap;
+  font-family: giotramu-sans;
+  src: local(giotramu-sans), url('book.woff2') format('woff2'),
+    url('book.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+  /* Download only latin glyphs */
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: giotramu-sans;
+  src: local(giotramu-sans), url('bold.woff2') format('woff2'),
+    url('bold.woff') format('woff');
+  font-style: normal;
+  font-weight: bold;
+  /* Download only latin glyphs */
+  unicode-range: U+000-5FF;
+}

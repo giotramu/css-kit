@@ -26,6 +26,9 @@ jobs:
         env:
           CI: true
 
+      - name: 'Print version'
+        run: echo ${{ github.ref }}
+
       - name: 'Publish to npm'
         run: npm publish --access public
         env:

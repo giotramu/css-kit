@@ -1,0 +1,13 @@
+input[type='radio'] {
+  @include check;
+  border-radius: 100%;
+
+  &::before {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    background-color: currentColor;
+  }
+}
