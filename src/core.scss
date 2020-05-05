@@ -1,31 +1,15 @@
-/**
- ************
- * Abstract *
- ************
- */
-@import './abstract/config';
-@import './abstract/theme';
+// Abstracts
+@import './abstracts/config';
+@import './abstracts/theme';
 
-/**
- *************
- * Utilities *
- *************
- */
+// Utilities
 @import './utils/functions';
 @import './utils/normalizer';
 
-/**
- *****************
- * HTML Elements *
- *****************
- */
+// HTML Elements
 @import './elements/bundle';
 
-/**
- *************************
- * CSS Custom Properties *
- *************************
- */
+// CSS Custom Properties
 :root {
   @each $color, $hex in $colors {
     #{_defineVar('color', $color, $scope: false)}: $hex;

@@ -1,7 +1,7 @@
 {
   "name": "@giotramu/css-kit",
   "version": "2.1.0",
-  "description": "Personal CSS library that provides consistent, cross-browser and useful defaults.",
+  "description": "Minimalist stylesheet for HTML elements.",
   "author": "giotramu <https://twitter.com/giotramu>",
   "homepage": "https://github.com/giotramu/css-kit#readme",
   "license": "MIT",
@@ -19,32 +19,32 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "css-kit.css",
+  "main": "core.css",
   "types": "typings/css-kit.d.ts",
   "files": [
     "font/",
-    "css-kit.css",
+    "core.css",
     "custom-media.css"
   ],
   "scripts": {
     "lint:css": "stylelint ./src/**/*.scss --ignore-path .gitignore --fix",
-    "lint": "npm run lint:css",
+    "lint": "npm run lint:css --fix",
     "build": "postcss ./src/*.scss --dir ./ --ext css",
     "watch": "postcss ./src/*.scss --dir ./demo --watch --ext css",
     "serve": "serve ./demo -u -l 3333",
     "dev": "run-p -clns watch serve"
   },
   "devDependencies": {
-    "@giotramu/postcss-config": "^2.4.0",
-    "@giotramu/stylelint-config": "^2.3.0",
+    "@giotramu/postcss-config": "^3.1.0",
+    "@giotramu/stylelint-config": "^3.0.3",
     "husky": "^4.2.3",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.0",
-    "prettier": "^2.0.2",
+    "postcss-cli": "^7.1.1",
+    "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "serve": "^11.3.0",
-    "stylelint": "^13.3.2",
-    "stylelint-scss": "^3.17.0"
+    "stylelint": "^13.3.3",
+    "stylelint-scss": "^3.17.1"
   },
   "keywords": [
     "css",

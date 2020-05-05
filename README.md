@@ -1,6 +1,6 @@
-# CSS-Kit — Minimalist stylesheet for HTML elements
+# CSS-Kit
 
-Out of the box CSS styling for HTML elements. No class names, no framework to learn.
+Out of the box CSS styling for HTML elements with no class names.
 
 ### 🚧 In the development stage.
 
@@ -17,8 +17,8 @@ Out of the box CSS styling for HTML elements. No class names, no framework to le
   - [CDN Usage](#cdn-usage)
   - [Install](#install)
   - [Webpack usage](#webpack-usage)
-  - [CSS Custom Properties][css-custom-properties]
-  - [CSS Custom Media][css-custom-mq]
+  - [CSS Custom Properties][css-custom-props-url]
+  - [CSS Custom Media][css-custom-mq-url]
   - [Browsers support](#browsers-support)
   - [Thanks](#thanks)
   - [License](#license)
@@ -28,15 +28,18 @@ Out of the box CSS styling for HTML elements. No class names, no framework to le
 Put the link tags in the head of your `index.html` document:
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@giotramu/css-kit" />
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit@2.1"
+/>
 ```
 
 #### What does it do?
 
 - Normalizes styles for a wide range of elements (like `normalize.css`, but smaller).
 - Corrects bugs and common browser inconsistencies.
-- A separate stylesheet (`common.css`) provides useful and personal defaults to plain HTML documents. This stylesheet dispatches the [CSS Custom Properties][css-custom-properties].
-- A separate stylesheet (`custom-media.css`) dispatches the [CSS Custom Media Queries][css-custom-mq].
+- The `core.css` stylesheet provides useful defaults to plain HTML documents. It dispatches the [CSS Custom Properties][css-custom-props-url].
+- A separate stylesheet, `custom-media.css`, injects the [CSS Custom Media Queries][css-custom-mq-url].
 
 ## Install
 
@@ -51,14 +54,14 @@ npm install @giotramu/css-kit --save
 Import css-kit in CSS:
 
 ```css
-@import '~@giotramu/css-kit/css-kit.css';
+@import '~@giotramu/css-kit/core.css';
 ```
 
 Alternatively, import css-kit in JS:
 
 ```js
 // CSS Normalizer
-import '@giotramu/css-kit/css-kit.css';
+import '@giotramu/css-kit/core.css';
 ```
 
 In `webpack.config.js`, be sure to use the appropriate loaders:
@@ -71,10 +74,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
-        test: /\.woff(2)?$/,
-        loader: 'url-loader?limit=100000'
       }
     ]
   }
@@ -154,8 +153,8 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   L I N K S
 -->
 
-[css-custom-properties]: ./src/abstract/_custom-properties.scss
-[css-custom-mq]: ./src/custom-media.scss
+[css-custom-props-url]: ./src/abstract/_custom-properties.scss
+[css-custom-mq-url]: ./src/custom-media.scss
 [ci-url]: https://github.com/giotramu/css-kit/actions
 [deps-url]: https://david-dm.org/giotramu/css-kit
 [devdeps-url]: https://david-dm.org/giotramu/css-kit?type=dev

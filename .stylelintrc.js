@@ -1,16 +1,14 @@
 module.exports = {
-  extends: '@giotramu/stylelint-config/dist/scss',
+  extends: '@giotramu/stylelint-config/scss',
   rules: {
-    'scss/operator-no-unspaced': null,
-    'scss/no-duplicate-dollar-variables': null,
-    'comment-word-blacklist': null,
-    'font-weight-notation': null,
-    'property-no-unknown': null,
-    'property-no-vendor-prefix': [
-      true,
-      {
-        ignoreProperties: ['appearance', 'tab-size', 'text-size-adjust']
-      }
-    ]
+    'font-weight-notation': ['numeric', {ignore: ['relative']}],
+    'declaration-property-value-blacklist': {
+      '/^border(?!-(width|spacing))/': [
+        /thin/,
+        /medium/,
+        /thick/,
+        '0' // prefer `none`
+      ]
+    }
   }
 };

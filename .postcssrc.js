@@ -1,6 +1,11 @@
-module.exports = require('@giotramu/postcss-config').extends({
-  plugins: {
-    'css-nano': false,
-    'postcss-custom-media': false
-  }
-});
+const options = {
+  debug: false
+};
+
+module.exports = require('@giotramu/postcss-config/lib/extends')(
+  [
+    ['cssnano', false],
+    ['postcss-custom-media', false]
+  ],
+  options
+);

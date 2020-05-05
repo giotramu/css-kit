@@ -20,7 +20,7 @@
 
   &::placeholder {
     color: _var($field-prefix, 'placeholder-foreground');
-    font-weight: normal;
+    font-weight: 400;
   }
 
   &:hover {
