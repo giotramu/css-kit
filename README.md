@@ -60,7 +60,6 @@ Import css-kit in CSS:
 Alternatively, import css-kit in JS:
 
 ```js
-// CSS Normalizer
 import '@giotramu/css-kit/core.css';
 ```
 
@@ -94,7 +93,7 @@ Import Custom Media in CSS:
 Import Custom Media in JavaScript:
 
 ```js
-// Custom Media Queries
+/* Custom Media Queries */
 import '@giotramu/css-kit/custom-media.css';
 ```
 

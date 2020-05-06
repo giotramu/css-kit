@@ -1,5 +1,6 @@
 @import './config';
 @import './mixins';
+@import './animations';
 
 progress {
   display: block;
@@ -43,15 +44,5 @@ progress {
     &::-moz-progress-bar {
       @include progress-indeterminate;
     }
-  }
-}
-
-@keyframes progress-stripes {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: _var($progress, 'height') 0;
   }
 }

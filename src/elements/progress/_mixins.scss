@@ -13,5 +13,5 @@
     ),
     radial-gradient(_var($progress, 'filled-color') 30%, transparent 30%);
   background-size: _var($progress, 'height') _var($progress, 'height');
-  animation: progress-stripes 0.4s linear infinite;
+  animation: progressStripes 0.4s linear infinite;
 }
