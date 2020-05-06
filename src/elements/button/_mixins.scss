@@ -1,0 +1,60 @@
+@mixin button {
+  display: inline-flex;
+  border: _var($button, 'border');
+  border-radius: _var($button, 'border-radius');
+  padding: _var($button, 'ypadding') _var($button, 'xpadding');
+  align-items: center;
+  justify-content: center;
+  color: _var($button, 'foreground');
+  background: _var($button, 'background');
+  box-shadow: _var($button, 'shadow');
+  font-size: _var($button, 'font-size');
+  font-weight: _var($button, 'font-weight');
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.1s ease-out, box-shadow 0.1s ease-out;
+  cursor: pointer;
+  user-select: none;
+  -webkit-touch-callout: none;
+
+  &::-moz-focus-inner {
+    border: none;
+  }
+
+  &:-moz-focusring {
+    outline: _var($outline, 'style') _var($outline, 'color');
+  }
+
+  &:hover {
+    border: _var($button, 'hover-border');
+    color: _var($button, 'hover-foreground');
+    background: _var($button, 'hover-background');
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    border: _var($button, 'disabled-border');
+    opacity: 0.4;
+    color: _var($button, 'disabled-foreground');
+    background: _var($button, 'disabled-background');
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):not([aria-disabled='true']):active {
+    border: _var($button, 'active-border');
+    transform: translateY(1px);
+    color: _var($button, 'active-foreground');
+    background: _var($button, 'active-background');
+  }
+
+  i,
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-inline-end: _var($button, 'icon-margin');
+    color: inherit;
+    font-style: normal;
+    fill: currentColor;
+  }
+}

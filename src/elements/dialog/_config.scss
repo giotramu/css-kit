@@ -1,0 +1,16 @@
+$dialog: 'dialog';
+
+$dialog-props: (
+  border: 0,
+  shadow:
+    unquote(
+      '0 19px 38px 0 rgba(0, 0, 0, 0.16), 0 15px 12px 0 rgba(0, 0, 0, 0.12)'
+    ),
+  background: var(--color-white),
+  border-radius: 4px,
+  ypadding: 2rem,
+  xpadding: 2rem,
+  max-width: 40rem,
+  backdrop: rgba(0, 0, 0, 0.3),
+  backdrop-filter: blur(10px)
+);

@@ -1,0 +1,6 @@
+@import './config';
+@import './mixins';
+
+input[type='checkbox'] {
+  @include check;
+}

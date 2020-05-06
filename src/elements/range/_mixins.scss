@@ -1,0 +1,77 @@
+@mixin track {
+  width: 100%;
+  height: _var($range, 'height');
+  border-radius: _var($range, 'border-radius');
+  background: _var($range, 'background');
+  box-shadow: inset 0 0 0 _var($range, 'border');
+  transition: background-color 0.2s ease-out;
+  cursor: pointer;
+}
+
+@mixin disabled-track {
+  background-color: _var($range, 'disabled-background');
+  box-shadow: inset 0 0 0 _var($range, 'disabled-border-color');
+  cursor: not-allowed;
+}
+
+@mixin thumb {
+  width: _var($range, 'thumb-width');
+  height: $thumb-height;
+  border-color: transparent;
+  border-radius: _var($range, 'thumb-radius');
+  background: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 2px,
+      _var($range, 'thumb-sripes-color') 2px,
+      _var($range, 'thumb-sripes-color') 3px
+    ),
+    _var($range, 'thumb-background');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 54%;
+  box-shadow: _var($range, 'thumb-shadow');
+  transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
+  appearance: none;
+
+  &:hover {
+    cursor: grab;
+  }
+
+  &:active,
+  &:focus {
+    background: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent 2px,
+        _var($range, 'thumb-sripes-active-color') 2px,
+        _var($range, 'thumb-sripes-active-color') 3px
+      ),
+      _var($range, 'thumb-active-background');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 14px 54%;
+    cursor: grabbing;
+  }
+}
+
+@mixin disabled-thumb {
+  background-color: _var($range, 'thumb-disabled-background');
+  background-image: none;
+  cursor: not-allowed;
+}
+
+@mixin focus-thumb {
+  background: repeating-linear-gradient(
+      to right,
+      transparent,
+      transparent 2px,
+      _var($range, 'thumb-sripes-active-color') 2px,
+      _var($range, 'thumb-sripes-active-color') 3px
+    ),
+    _var($range, 'thumb-active-background');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 54%;
+  outline: _var($outline, 'style') _var($outline, 'color');
+}

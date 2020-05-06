@@ -1,0 +1,25 @@
+@import './config';
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: _var($table, 'background');
+}
+
+thead {
+  border-bottom: _var($table, 'head-separator');
+  text-align: left;
+}
+
+td,
+th {
+  padding: _var($table, 'cells-ypadding') _var($table, 'cells-xpadding');
+}
+
+tr + tr {
+  border-top: _var($table, 'row-separator');
+}
+
+tr:nth-child(even) {
+  background-color: _var($table, 'striped-background');
+}

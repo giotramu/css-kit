@@ -1,0 +1,124 @@
+@import './config';
+@import './mixins';
+
+input[type='range'] {
+  width: _var($range, 'width');
+  margin: unquote('calc(#{$thumb-height} / 2) 0');
+  background: transparent;
+  outline: 0;
+  appearance: none;
+
+  &::-webkit-slider-runnable-track {
+    @include track;
+  }
+
+  &::-moz-range-track {
+    @include track;
+  }
+
+  &::-ms-track {
+    @include track;
+    border-width: $thumb-height;
+    border-color: transparent;
+    color: transparent;
+    background-color: transparent;
+  }
+
+  &::-moz-focus-outer {
+    border: none;
+  }
+
+  &::-ms-fill-upper {
+    background: _var($range, 'background');
+  }
+
+  &::-ms-fill-lower {
+    background: _var($range, 'background');
+  }
+
+  &:active::-webkit-slider-runnable-track,
+  &:focus::-webkit-slider-runnable-track {
+    background: _var($range, 'focus-background');
+  }
+
+  &:active::-moz-range-track,
+  &:focus::-moz-range-track {
+    background: _var($range, 'focus-background');
+  }
+
+  &:active::-ms-fill-lower,
+  &:focus::-ms-fill-lower {
+    background: _var($range, 'focus-background');
+  }
+
+  &:active::-ms-fill-upper,
+  &:focus::-ms-fill-upper {
+    background: _var($range, 'focus-background');
+  }
+
+  &::-webkit-slider-thumb {
+    @include thumb;
+    margin-top: unquote(
+      'calc(0.5 * calc(#{$range-height} - #{$thumb-height}))'
+    );
+  }
+
+  &::-moz-range-thumb {
+    @include thumb;
+  }
+
+  &::-ms-thumb {
+    @include thumb;
+  }
+
+  &:active::-webkit-slider-thumb {
+    background-color: _var($range, 'thumb-active-background');
+  }
+
+  &:active::-moz-range-thumb {
+    background-color: _var($range, 'thumb-active-background');
+  }
+
+  &:active::-ms-thumb {
+    background-color: _var($range, 'thumb-active-background');
+  }
+
+  &:not(:active):focus::-webkit-slider-thumb {
+    @include focus-thumb;
+  }
+
+  &:not(:active):focus::-moz-range-thumb {
+    @include focus-thumb;
+  }
+
+  &:not(:active):focus::-ms-thumb {
+    @include focus-thumb;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    &::-webkit-slider-runnable-track {
+      @include disabled-track;
+    }
+
+    &::-moz-range-track {
+      @include disabled-track;
+    }
+
+    &::-ms-track {
+      @include disabled-track;
+    }
+
+    &::-webkit-slider-thumb {
+      @include disabled-thumb;
+    }
+
+    &::-moz-range-thumb {
+      @include disabled-thumb;
+    }
+
+    &::-ms-thumb {
+      @include disabled-thumb;
+    }
+  }
+}

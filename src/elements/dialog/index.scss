@@ -1,0 +1,51 @@
+@import './config';
+
+dialog {
+  width: fit-content;
+  max-width: _var($dialog, 'max-width');
+  height: fit-content;
+  margin: auto;
+  border: _var($dialog, 'border');
+  border-radius: _var($dialog, 'border-radius');
+  padding: _var($dialog, 'ypadding') _var($dialog, 'xpadding');
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  background: _var($dialog, 'background');
+  box-shadow: _var($dialog, 'shadow');
+
+  &:not([open]) {
+    display: none;
+  }
+
+  &[open] {
+    animation-name: modal-show;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+  }
+
+  &::backdrop {
+    background-color: _var($dialog, 'backdrop');
+    backdrop-filter: _var($dialog, 'backdrop-filter');
+  }
+
+  > header > * {
+    margin-top: 0;
+  }
+
+  > footer {
+    margin-top: 32px;
+  }
+}
+
+@keyframes modal-show {
+  from {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+
+  to {
+    transform: none;
+    opacity: initial;
+  }
+}

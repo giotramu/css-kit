@@ -1,0 +1,48 @@
+@import './config';
+@import './mixins';
+
+input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']) {
+  @include field;
+  display: block;
+  width: _var($field, 'width');
+  padding: _var($field, 'ypadding') _var($field, 'xpadding');
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  display: none;
+}
+
+input[type='search'] {
+  outline-offset: -2px;
+  appearance: none;
+}
+
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-decoration {
+  appearance: none;
+}
+
+textarea {
+  @include field;
+  width: _var($field, 'width');
+  height: auto;
+  padding: _var($field, 'ypadding') _var($field, 'xpadding');
+  resize: _var($field, 'resize');
+
+  &::-webkit-datetime-edit-text {
+    opacity: 0.3;
+  }
+
+  &::-webkit-calendar-picker-indicator {
+    color: _var($field, 'foreground');
+  }
+
+  &::-webkit-calendar-picker-indicator:hover {
+    background-color: transparent;
+  }
+
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,37 @@
+@import './document-config';
+@import './outline-config';
+@import './scroll-config';
+@import './selection-config';
+
+html {
+  font-size: _var($document, 'root-font-size');
+  scroll-behavior: _var($scroll, 'behavior');
+  scroll-padding: _var($scroll, 'padding');
+}
+
+*::selection {
+  color: _var($selection, 'foreground');
+  background: _var($selection, 'background');
+}
+
+*:focus {
+  outline: _var($outline, 'style') _var($outline, 'color');
+}
+
+[tabindex='-1'] {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  outline-color: _var($outline, 'color');
+}
+
+body {
+  color: _var($document, 'foreground');
+  background-color: _var($document, 'background');
+  font-size: _var($document, 'font-size');
+  font-weight: _var($document, 'font-weight');
+  line-height: _var($document, 'line-height');
+}

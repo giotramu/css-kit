@@ -1,0 +1,40 @@
+@import './config';
+@import './mixins';
+
+meter {
+  @include meter-progress;
+  width: _var($meter, 'width');
+  height: _var($meter, 'height');
+  vertical-align: middle;
+
+  &::-webkit-meter-bar {
+    @include meter-progress;
+  }
+
+  /* Low value */
+  &::-webkit-meter-even-less-good-value {
+    @include meter-weak;
+  }
+
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    @include meter-weak;
+  }
+
+  /* Mid value */
+  &::-webkit-meter-suboptimum-value {
+    @include meter-good;
+  }
+
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    @include meter-good;
+  }
+
+  /* Top value */
+  &::-webkit-meter-optimum-value {
+    @include meter-strong;
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    @include meter-strong;
+  }
+}

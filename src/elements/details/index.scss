@@ -1,0 +1,119 @@
+@import './config';
+
+details {
+  display: block;
+  overflow: auto;
+  max-height: _var($details, 'max-height');
+  border-radius: _var($details, 'border-radius');
+  position: relative;
+  background: _var($details, 'background');
+  box-shadow: _var($details, 'shadow');
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+
+  [details-group] > &:first-of-type {
+    border-radius: _var($details, 'border-radius')
+      _var($details, 'border-radius') 0 0;
+  }
+
+  [details-group] > &:last-of-type {
+    border-radius: 0 0 _var($details, 'border-radius')
+      _var($details, 'border-radius');
+  }
+
+  [details-group] > &:not(:first-of-type, :last-of-type) {
+    border-radius: none;
+  }
+
+  [details-group] > &:only-of-type {
+    border-radius: _var($details, 'border-radius');
+  }
+
+  [details-group] > &:not(:last-of-type) {
+    border-bottom: _var($details, 'separator');
+  }
+
+  summary {
+    display: list-item;
+    overflow: hidden;
+    border-radius: _var($details, 'border-radius')
+      _var($details, 'border-radius') 0 0;
+    padding: _var($details, 'summary-padding') _var($details, 'summary-padding')
+      _var($details, 'summary-padding') 32px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: _var($details, 'summary-background');
+    background-size: 16px auto;
+    font-size: _var($details, 'summary-font-size');
+    font-weight: _var($details, 'summary-font-weight');
+    text-overflow: ellipsis;
+    line-height: 1;
+    white-space: nowrap;
+    transition: color 200ms;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+
+    &:first-of-type {
+      list-style: none;
+      list-style-type: none;
+    }
+
+    &::before {
+      content: '';
+      width: $details-icon-size;
+      height: $details-icon-size;
+      margin-top: unquote('calc(-1 * (#{$details-icon-size} / 2))');
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: rotate(-90deg);
+      transform-origin: 50% center;
+      transform-box: fill-box;
+      background-image: _var($details, 'icon');
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: transform 200ms ease-out;
+    }
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:focus {
+      border-radius: inherit;
+      outline-offset: -5px;
+    }
+  }
+
+  > * {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  &[open] > *:not(summary) {
+    animation: fadeInDown 600ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &[open] summary {
+    color: _var($details, 'summary-open-color');
+  }
+
+  &[open] summary::before {
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}

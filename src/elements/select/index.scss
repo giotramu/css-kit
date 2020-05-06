@@ -1,0 +1,99 @@
+@import './config';
+
+select {
+  display: block;
+  overflow: hidden;
+  width: _var($select, 'width');
+  margin: 0;
+  border: _var($select, 'border');
+  border-radius: _var($select, 'border-radius');
+  padding: $select-padding;
+  padding-right: unquote(
+    'calc((#{$select-padding} * 2) + #{$select-icon-size}))'
+  );
+  color: _var($select, 'foreground');
+  background: _var($select, 'background');
+  box-shadow: _var($select, 'shadow');
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  line-height: inherit;
+  letter-spacing: 0.5px;
+  transition: color 0.1s ease-out, box-shadow 0.1s ease-out;
+  appearance: none;
+
+  &:hover {
+    border: _var($select, 'hover-border');
+    color: _var($select, 'hover-foreground');
+    background: _var($select, 'hover-background');
+  }
+
+  &:focus {
+    border: _var($select, 'focus-border');
+    color: _var($select, 'focus-foreground');
+    background: _var($select, 'focus-background');
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 _var($select, 'focus-foreground');
+    transition: none;
+
+    * {
+      color: _var($select, 'focus-foreground');
+      text-shadow: none;
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    border: _var($select, 'disabled-border');
+    opacity: 0.4;
+    color: _var($select, 'disabled-foreground');
+    background: _var($select, 'disabled-background');
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:not([multiple]) {
+    background-image: _var($select, 'icon');
+    background-repeat: no-repeat;
+    background-position: right $select-padding center;
+    background-size: $select-icon-size;
+  }
+
+  &[multiple] {
+    height: auto;
+    padding: $select-padding;
+    padding-left: unquote('calc(#{$select-padding} / 16)');
+
+    @supports (padding-left: var(safe-area-inset-left)) {
+      padding: $select-padding;
+    }
+
+    option {
+      padding: 0.5rem;
+
+      &:checked {
+        color: _var($select, 'option-checked-foreground');
+        background: linear-gradient(
+          to bottom,
+          _var($select, 'option-checked-background') 0%,
+          _var($select, 'option-checked-background') 100%
+        );
+        background-color: _var($select, 'option-checked-background');
+      }
+    }
+  }
+
+  optgroup {
+    margin: 0 0 1rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

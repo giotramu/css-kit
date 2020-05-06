@@ -1,0 +1,10 @@
+$table: 'table';
+
+$table-props: (
+  cells-xpadding: 16px,
+  cells-ypadding: 16px,
+  head-separator: 2px solid var(--color-gray),
+  row-separator: 1px solid var(--color-gray),
+  background: transparent,
+  striped-background: transparent
+);

@@ -27,8 +27,8 @@
     "custom-media.css"
   ],
   "scripts": {
-    "lint:css": "stylelint ./src/**/*.scss --ignore-path .gitignore --fix",
-    "lint": "npm run lint:css --fix",
+    "lint:css": "stylelint ./src/**/*.scss --ignore-path .gitignore",
+    "lint": "npm run lint:css",
     "build": "postcss ./src/*.scss --dir ./ --ext css",
     "watch": "postcss ./src/*.scss --dir ./demo --watch --ext css",
     "serve": "serve ./demo -u -l 3333",

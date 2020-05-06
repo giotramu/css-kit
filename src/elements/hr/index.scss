@@ -1,0 +1,11 @@
+@import './config';
+
+hr {
+  display: block;
+  width: 100%;
+  height: _var($hr, 'height');
+  margin-top: _var($hr, 'margin');
+  margin-bottom: _var($hr, 'margin');
+  border: none;
+  background-color: _var($hr, 'background');
+}

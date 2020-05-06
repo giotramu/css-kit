@@ -1,0 +1,12 @@
+$meter: 'meter';
+
+$meter-props: (
+  width: 32px,
+  height: 4px,
+  border-radius: 4px,
+  background: hsl(208, 28%, 96%),
+  border-color: hsl(208, 28%, 96%),
+  filled-color-strong: hsl(67, 78%, 52%),
+  filled-color-good: hsl(41, 100%, 60%),
+  filled-color-weak: hsl(354, 100%, 65%)
+);

@@ -1,0 +1,12 @@
+@import './config';
+
+a:link,
+a:visited {
+  color: _var($link, 'foreground');
+  text-decoration: none;
+  transition: color 100ms linear;
+
+  &:hover {
+    color: _var($link, 'active-foreground');
+  }
+}

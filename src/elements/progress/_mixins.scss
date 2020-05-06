@@ -1,0 +1,17 @@
+@mixin progress-indeterminate {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: _var($progress, 'background');
+  background-image: radial-gradient(
+      _var($progress, 'filled-color') 20%,
+      transparent 30%
+    ),
+    radial-gradient(_var($progress, 'filled-color') 30%, transparent 30%);
+  background-size: _var($progress, 'height') _var($progress, 'height');
+  animation: progress-stripes 0.4s linear infinite;
+}

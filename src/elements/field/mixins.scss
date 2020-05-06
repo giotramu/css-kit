@@ -1,0 +1,84 @@
+@mixin field {
+  min-height: _var($field, 'min-height');
+  border: _var($field, 'border');
+  border-radius: _var($field, 'border-radius');
+  color: _var($field, 'foreground');
+  background: _var($field, 'background');
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+  appearance: none;
+  transition: color 0.1s ease-out, box-shadow 0.2s ease-out;
+
+  &::selection {
+    color: _var($field, 'selection-foreground');
+    background-color: _var($field, 'selection-background');
+  }
+
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  &::placeholder {
+    color: _var($field, 'placeholder-foreground');
+    font-weight: 400;
+  }
+
+  &:hover {
+    border: _var($field, 'hover-border');
+    color: _var($field, 'hover-foreground');
+    background: _var($field, 'hover-background');
+
+    &::placeholder {
+      color: _var($field, 'hover-placeholder-foreground');
+    }
+  }
+
+  &:focus {
+    border: _var($field, 'focus-border');
+    color: _var($field, 'focus-foreground');
+    background: _var($field, 'focus-background');
+
+    &::placeholder {
+      color: _var($field, 'focus-placeholder-foreground');
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    border: _var($field, 'disabled-border');
+    color: _var($field, 'disabled-foreground');
+    background: _var($field, 'disabled-background');
+    cursor: not-allowed;
+
+    &::placeholder {
+      color: _var($field, 'disabled-placeholder-foreground');
+    }
+  }
+
+  &[readonly] {
+    border: _var($field, 'readonly-border');
+    color: _var($field, 'readonly-foreground');
+    background: _var($field, 'background');
+    cursor: default;
+
+    &:focus {
+      border: _var($field, 'readonly-focus-border');
+    }
+
+    &::placeholder {
+      color: _var($field, 'disabled-placeholder-foreground');
+    }
+  }
+
+  &:required {
+    &:invalid {
+      border-color: _var($field, 'invalid-border-color');
+      color: _var($field, 'invalid-foreground');
+      background: _var($field, 'invalid-background');
+    }
+
+    &:invalid:focus {
+      outline-color: _var($field, 'invalid-border-color');
+    }
+  }
+}
