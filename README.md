@@ -51,13 +51,13 @@ npm install @giotramu/css-kit --save
 
 ## [Webpack][webpack-url] usage
 
-Import css-kit in CSS:
+Import CSS-Kit in CSS:
 
 ```css
 @import '~@giotramu/css-kit/core.css';
 ```
 
-Alternatively, import css-kit in JS:
+Import CSS-Kit in JavaScript:
 
 ```js
 import '@giotramu/css-kit/core.css';
@@ -83,17 +83,15 @@ module.exports = {
 
 You can consume the predefined [CSS Custom Media Queries](./docs/custom-media.md). If you have the Webpack bundler installed, import the `custom-media.css` as a dependency in your CSS or JavaScript file.
 
-Import Custom Media in CSS:
+Import Custom Media Queries in CSS:
 
 ```css
-/* Custom Media Queries */
 @import '~@giotramu/css-kit/custom-media.css';
 ```
 
-Import Custom Media in JavaScript:
+Import Custom Media Queries in JavaScript:
 
 ```js
-/* Custom Media Queries */
 import '@giotramu/css-kit/custom-media.css';
 ```
 
@@ -146,7 +144,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 [ci-img]: https://github.com/giotramu/css-kit/workflows/test/badge.svg?branch=master
 [deps-img]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
-[npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?icon=npm&label=npm%20package
+[npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?label=npm%20package
 
 <!---
   L I N K S

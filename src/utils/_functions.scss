@@ -1,6 +1,4 @@
-/**
- * Positive integer exponent.
- */
+// Positive integer exponent.
 @function pow($number, $exponent) {
   $result: 1;
 
@@ -13,9 +11,7 @@
   @return $result;
 }
 
-/**
- * Return a CSS Custom Property definition (e.g. --ck-button-font-size).
- */
+// Return a CSS Custom Property definition (e.g. --ck-button-font-size).
 @function _defineVar($element, $prop, $scope: true) {
   @if $scope == true {
     @return unquote('--#{$domain}-#{$element}-#{$prop}');
@@ -24,9 +20,7 @@
   @return unquote('--#{$element}-#{$prop}');
 }
 
-/**
- * Return a CSS Custom Property (e.g. var(--ck-button-font-size)).
- */
+// Return a CSS Custom Property (e.g. var(--ck-button-font-size)).
 @function _var($element, $prop) {
   @return var(_defineVar($element, $prop));
 }
