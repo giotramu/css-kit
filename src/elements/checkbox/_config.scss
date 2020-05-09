@@ -2,10 +2,10 @@ $checkradio: 'checkradio';
 
 $checkradio-props: (
   size: 18px,
-  border: var(--color-gray),
+  border: 1px solid transparent,
   border-radius: 4px,
   color: var(--color-accent),
-  background: var(--color-gray),
-  shadow: 0 1px 2px rgba(0, 0, 0, 0.2),
+  background: _morph('flat', 'background', 2),
+  shadow: _morph('flat', 'shadow', 2),
   tick-color: var(--color-white)
 );

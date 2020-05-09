@@ -33,7 +33,7 @@
     border-color: _var($checkradio, 'color');
     color: _var($checkradio, 'tick-color');
     background-color: _var($checkradio, 'color');
-    filter: drop-shadow(_var($checkradio, 'shadow'));
+    box-shadow: _var($checkradio, 'shadow');
 
     &::before {
       opacity: 1;
@@ -50,7 +50,7 @@
     border-color: _var($checkradio, 'color');
     color: _var($checkradio, 'tick-color');
     background-color: _var($checkradio, 'color');
-    filter: drop-shadow(_var($checkradio, 'shadow'));
+    box-shadow: _var($checkradio, 'shadow');
 
     &::before {
       width: 8px;
