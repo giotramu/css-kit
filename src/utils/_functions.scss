@@ -24,3 +24,7 @@
 @function _var($element, $prop) {
   @return var(_defineVar($element, $prop));
 }
+
+@function morph($shape, $prop) {
+  @return map-get(map-get($neumorphism, $shape), $prop);
+}

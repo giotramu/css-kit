@@ -2,7 +2,26 @@ $colors: (
   accent: #0e58fb,
   gray: #d3dde6,
   dark: #1d2b3b,
-  light: #fff,
+  light: #ebecf0,
   white: #fff,
   black: #000
+);
+
+$neumorphism: (
+  concave: (
+    background: linear-gradient(145deg, #d4d4d8, #fbfdff),
+    shadow: unquote('8px 8px 16px #c5c6ca, -8px -8px 16px #fff')
+  ),
+  convex: (
+    background: linear-gradient(145deg, #fbfdff, #d4d4d8),
+    shadow: unquote('8px 8px 16px #c5c6ca, -8px -8px 16px #fff')
+  ),
+  flat: (
+    background: #ebecf0,
+    shadow: unquote('8px 8px 16px #c5c6ca, -8px -8px 16px #fff')
+  ),
+  pressed: (
+    background: #ebecf0,
+    shadow: unquote('inset 8px 8px 16px #c5c6ca, inset -8px -8px 16px #fff')
+  )
 );

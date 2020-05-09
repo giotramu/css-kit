@@ -4,3 +4,19 @@ main {
   margin: 4rem auto;
   padding: 0 2rem;
 }
+
+section {
+  margin-bottom: 4rem;
+}
+
+section h3 {
+  margin-bottom: 2.4rem;
+}
+
+.buttons button {
+  margin-right: 2.4rem;
+}
+
+.buttons button.rounded {
+  --ck-button-border-radius: 25px;
+}

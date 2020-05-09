@@ -12,8 +12,8 @@
 
     <title>CSS-Kit — Minimalist stylesheet for HTML elements</title>
 
-    <link rel="stylesheet" href="./css-kit.css" />
-    <link rel="stylesheet" href="./custom-media.css" />
+    <!-- <link rel="stylesheet" href="./custom-media.css" /> -->
+    <link rel="stylesheet" href="./core.css" />
     <link rel="stylesheet" href="./demo.css" />
   </head>
 
@@ -23,6 +23,7 @@
         <h3>Horizontal Rule</h3>
         <hr />
       </section>
+
       <section>
         <h3>Table</h3>
         <table>
@@ -69,6 +70,7 @@
           </tbody>
         </table>
       </section>
+
       <section>
         <table class="Striped">
           <thead>
@@ -114,6 +116,7 @@
           </tbody>
         </table>
       </section>
+
       <section>
         <h3>
           Typography
@@ -241,32 +244,36 @@ p q r s t u v w x y z { | } ~</pre
         <p></p>
       </section>
 
-      <section>
+      <section class="buttons">
         <h3>Buttons</h3>
-        <button name="puppo" tabindex="2">Button</button>
-        <button class="SecondButton">Button</button>
-        <button class="ThirdButton">Button</button>
 
-        <button disabled>Button</button>
+        <button name="FooButton" tabindex="2">Button</button>
+
+        <button name="BarButton" class="rounded">Button</button>
+
+        <button name="BazButton" disabled>Button</button>
       </section>
 
-      <section>
-        <h3>Buttons &amp; icon</h3>
+      <section class="buttons">
+        <h3>Buttons with icon</h3>
         <button>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
             <path d="M6 0a6 6 0 106 6 6 6 0 00-6-6zm0 9L3 5h6z" />
           </svg>
           Button
         </button>
-        <button dir="rtl" class="FullRound">
+
+        <button dir="rtl" class="rounded">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
             <path d="M6 0a6 6 0 106 6 6 6 0 00-6-6zm0 9L3 5h6z" />
           </svg>
           Button
         </button>
 
-        <button disabled>
-          <i>&#x2190;</i>
+        <button dir="rtl" disabled>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12">
+            <path d="M6 0a6 6 0 106 6 6 6 0 00-6-6zm0 9L3 5h6z" />
+          </svg>
           Button
         </button>
       </section>
