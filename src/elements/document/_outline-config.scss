@@ -1,6 +1,6 @@
 $outline: 'outline';
 
 $outline-props: (
-  color: var(--color-accent),
+  color: _colors(accent),
   style: 0 solid
 );

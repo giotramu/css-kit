@@ -7,11 +7,7 @@ $colors: (
   black: #000
 );
 
-@function _neu-background(
-  $shape: 'flat',
-  $color: map-get($colors, light),
-  $deg: 145
-) {
+@function _neu-background($shape: 'flat', $color: _colors(light), $deg: 145) {
   $degree: unquote($deg + 'deg');
   $shade: _shade($color, 10%);
   $tint: _tint($color, 90%);
@@ -30,11 +26,7 @@ $colors: (
   @return $color;
 }
 
-@function _neu-shadow(
-  $shape: 'flat',
-  $color: map-get($colors, white),
-  $size: 6
-) {
+@function _neu-shadow($shape: 'flat', $color: _colors(white), $size: 6) {
   // shadow sizes
   $x: $size;
   $y: $size;

@@ -1,8 +1,8 @@
 $document: 'document';
 
 $document-props: (
-  foreground: var(--color-dark),
-  background: var(--color-light),
+  foreground: _colors(dark),
+  background: _colors(light),
   root-font-size: 100%,
   font-size: 1rem,
   font-weight: 400,

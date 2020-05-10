@@ -1,6 +1,6 @@
 $selection: 'selection';
 
 $selection-props: (
-  background: var(--color-accent),
-  foreground: var(--color-white)
+  background: _colors(accent),
+  foreground: _colors(white)
 );

@@ -34,3 +34,10 @@
 @function _var($element, $prop) {
   @return var(_defineVar($element, $prop));
 }
+
+@function _colors($type) {
+  @return map-get($colors, $type);
+
+  @error 'No color "#{$type}" found.';
+  @return null;
+}
