@@ -7,6 +7,7 @@
   vertical-align: middle;
   color: _var($checkradio, 'color');
   background: _var($checkradio, 'background');
+  box-shadow: _var($checkradio, 'shadow');
   cursor: pointer;
   appearance: none;
 
@@ -41,7 +42,8 @@
   }
 
   &:disabled {
-    opacity: 0.4;
+    opacity: 0.5;
+    color: _var($checkradio, 'disabled-tick-color');
     pointer-events: none;
     cursor: not-allowed;
   }

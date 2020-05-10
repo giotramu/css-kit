@@ -26,7 +26,7 @@
   }
 
   &:hover {
-    border: _var($button, 'hover-border');
+    border-color: _var($button, 'hover-border-color');
     color: _var($button, 'hover-foreground');
     background: _var($button, 'hover-background');
     box-shadow: _var($button, 'hover-shadow');
@@ -34,7 +34,7 @@
 
   &:disabled,
   &[aria-disabled='true'] {
-    border: _var($button, 'disabled-border');
+    border-color: _var($button, 'disabled-border-color');
     opacity: 0.5;
     color: _var($button, 'disabled-foreground');
     background: _var($button, 'disabled-background');
@@ -43,7 +43,7 @@
   }
 
   &:not(:disabled):not([aria-disabled='true']):active {
-    border: _var($button, 'active-border');
+    border-color: _var($button, 'active-border-color');
     transform: translateY(1px);
     color: _var($button, 'active-foreground');
     background: _var($button, 'active-background');

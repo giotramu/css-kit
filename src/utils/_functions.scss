@@ -11,6 +11,16 @@
   @return $result;
 }
 
+// Slightly lighten a color
+@function _tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+// Slightly darken a color
+@function _shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
 // Return a CSS Custom Property definition (e.g. --ck-button-font-size).
 @function _defineVar($element, $prop, $scope: true) {
   @if $scope == true {
@@ -23,41 +33,4 @@
 // Return a CSS Custom Property (e.g. var(--ck-button-font-size)).
 @function _var($element, $prop) {
   @return var(_defineVar($element, $prop));
-}
-
-@function _morph($shape, $prop, $unit: 8) {
-  $double: $unit * 2;
-
-  @if $shape == 'concave' {
-    @if $prop == 'background' {
-      @return linear-gradient(145deg, #d4d4d4, #fdfdfd);
-    }
-    @return unquote(
-      '#{$unit}px #{$unit}px #{$double}px #c6c6c6, -#{$unit}px -#{$unit}px #{$double}px #fff'
-    );
-  } @else if $shape == 'convex' {
-    @if $prop == 'background' {
-      @return linear-gradient(145deg, #fdfdfd, #d4d4d4);
-    }
-    @return unquote(
-      '#{$unit}px #{$unit}px #{$double}px #c6c6c6, -#{$unit}px -#{$unit}px #{$double}px #fff'
-    );
-  } @else if $shape == 'flat' {
-    @if $prop == 'background' {
-      @return #ececec;
-    }
-    @return unquote(
-      '#{$unit}px #{$unit}px #{$double}px #c6c6c6, -#{$unit}px -#{$unit}px #{$double}px #fff'
-    );
-  } @else if $shape == 'pressed' {
-    @if $prop == 'background' {
-      @return #ebecf0;
-    }
-    @return unquote(
-      'inset #{$unit}px #{$unit}px #{$double}px #c6c6c6, inset -#{$unit}px -#{$unit}px #{$double}px #fff'
-    );
-  }
-
-  @error 'Unknown shape `#{$shape}`.';
-  @return null;
 }
