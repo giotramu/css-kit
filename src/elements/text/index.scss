@@ -7,6 +7,8 @@
 @import './mark-config';
 @import './small-config';
 
+$document-line-height: _var($document, 'line-height');
+
 address {
   font-style: normal;
   line-height: inherit;
@@ -54,7 +56,7 @@ ins {
 kbd {
   border: 1px solid _var($kbd, 'border-color');
   border-radius: _var($kbd, 'border-radius');
-  padding: 2px 4px;
+  padding: 2px 6px;
   box-shadow: 0 3px 0 _var($kbd, 'border-color'), 0 3px 10px rgba(0, 0, 0, 0.04);
 }
 

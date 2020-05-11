@@ -1,7 +1,7 @@
 $cite: 'cite';
 
 $cite-props: (
-  foreground: var(--color-accent),
+  foreground: _color('accent'),
   font-size: 1rem,
   start-sign: '—'
 );

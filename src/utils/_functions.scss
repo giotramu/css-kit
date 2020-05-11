@@ -89,3 +89,13 @@
   @warn 'Unknown `#{$type}` in $shadows map.';
   @return null;
 }
+
+@function _field-shadow($hex) {
+  $inner: _shadow('inset-top', $size: 12, $color: $hex),
+    _shadow('inset-left-right', $size: 8, $color: $hex);
+
+  $outer: _shadow('top', $size: 8, $color: $hex),
+    _shadow('bottom', $size: 16, $color: $hex);
+
+  @return $inner, $outer;
+}
