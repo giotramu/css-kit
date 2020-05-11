@@ -5,9 +5,7 @@
   border-radius: _var($checkradio, 'border-radius');
   position: relative;
   vertical-align: middle;
-  color: _var($checkradio, 'color');
   background: _var($checkradio, 'background');
-  box-shadow: _var($checkradio, 'shadow');
   cursor: pointer;
   appearance: none;
 
@@ -33,17 +31,20 @@
   &:checked {
     border-color: _var($checkradio, 'color');
     color: _var($checkradio, 'tick-color');
-    background-color: _var($checkradio, 'color');
-    box-shadow: _var($checkradio, 'shadow');
+    background: _var($checkradio, 'color');
 
     &::before {
       opacity: 1;
+    }
+
+    &:not(:disabled) {
+      box-shadow: _var($checkradio, 'shadow');
     }
   }
 
   &:disabled {
     opacity: 0.5;
-    color: _var($checkradio, 'disabled-tick-color');
+    color: _var($checkradio, 'tick-color');
     pointer-events: none;
     cursor: not-allowed;
   }
@@ -51,8 +52,6 @@
   &:indeterminate {
     border-color: _var($checkradio, 'color');
     color: _var($checkradio, 'tick-color');
-    background-color: _var($checkradio, 'color');
-    box-shadow: _var($checkradio, 'shadow');
 
     &::before {
       width: 8px;

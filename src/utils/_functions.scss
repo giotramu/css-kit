@@ -35,9 +35,57 @@
   @return var(_defineVar($element, $prop));
 }
 
-@function _colors($type) {
-  @return map-get($colors, $type);
+@function _color($type) {
+  @if map-has-key($colors, $type) {
+    @return map-get($colors, $type);
+  }
 
-  @error 'No color "#{$type}" found.';
+  @warn 'Unknown `#{$type}` in $colors map.';
+  @return null;
+}
+
+@function _radial-gradient(
+  $color: _color(accent),
+  $percentage: 16%,
+  $direction: 'bottom center',
+  $shape: 'ellipse'
+) {
+  @return radial-gradient(
+    unquote('#{$shape} farthest-corner at #{$direction}'),
+    _tint($color, $percentage) 0%,
+    $color 72%,
+    _shade($color, $percentage / 2)
+  );
+}
+
+@function _shadow($type: bottom, $size: 16, $color: _color(accent)) {
+  $w: unquote('#{$size}px');
+
+  /* prettier-ignore */
+  $shadows: (
+    /*  CSS Spec:  | style | offset-x | offset-y | blur-radius | spread-radius | color */
+    top          :            0          (-$w)       $w            (-$w)       $color,
+    right        :            $w         0           $w            (-$w)       $color,
+    bottom       :            0          $w          $w            (-$w)       $color,
+    left         :            (-$w)      0           $w            (-$w)       $color,
+    all          :            0          0           $w                        $color,
+    inset-top    : inset      0          $w          $w            (-$w)       $color,
+    inset-right  : inset      (-$w)      0           $w            (-$w)       $color,
+    inset-bottom : inset      0          (-$w)       $w            (-$w)       $color,
+    inset-left   : inset      $w         0           $w            (-$w)       $color,
+    inset-all    : inset      0          0           $w                        $color,
+
+    /* You may also combine and comma separate any shadows from above */
+    left-right       : (       (-$w) 0     $w (-$w) $color,       $w    0     $w (-$w) $color),
+    top-bottom       : (       0     (-$w) $w (-$w) $color,       0     $w    $w (-$w) $color),
+    inset-left-right : (inset  $w    0     $w (-$w) $color, inset (-$w) 0     $w (-$w) $color),
+    inset-top-bottom : (inset  0     $w    $w (-$w) $color, inset 0     (-$w) $w (-$w) $color),
+  );
+
+  @if map-has-key($shadows, $type) {
+    @return map-get($shadows, $type);
+  }
+
+  @warn 'Unknown `#{$type}` in $shadows map.';
   @return null;
 }

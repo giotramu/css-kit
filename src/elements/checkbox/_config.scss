@@ -2,11 +2,10 @@ $checkradio: 'checkradio';
 
 $checkradio-props: (
   size: 20px,
-  border: 1px solid rgba(_colors(white), 0.15),
+  border: none,
   border-radius: 4px,
-  color: _neu-background('pressed'),
-  background: _neu-background('pressed'),
-  shadow: _neu-shadow('pressed', $size: 2),
-  tick-color: _colors(accent),
-  disabled-tick-color: _colors(dark)
+  color: _radial-gradient(),
+  background: _shade(_color('light'), 24%),
+  shadow: _shadow('all', $size: 4, $color: rgba(_color('accent'), 0.72)),
+  tick-color: #fff
 );

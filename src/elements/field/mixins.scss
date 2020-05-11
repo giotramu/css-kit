@@ -4,6 +4,7 @@
   border-radius: _var($field, 'border-radius');
   color: _var($field, 'foreground');
   background: _var($field, 'background');
+  box-shadow: _var($field, 'shadow');
   font-weight: 600;
   letter-spacing: 0.04rem;
   appearance: none;
@@ -11,7 +12,7 @@
 
   &::selection {
     color: _var($field, 'selection-foreground');
-    background-color: _var($field, 'selection-background');
+    background: _var($field, 'selection-background');
   }
 
   &:-moz-ui-invalid {
@@ -24,9 +25,10 @@
   }
 
   &:hover {
-    border: _var($field, 'hover-border');
+    border-color: _var($field, 'hover-border-color');
     color: _var($field, 'hover-foreground');
     background: _var($field, 'hover-background');
+    box-shadow: _var($field, 'hover-shadow');
 
     &::placeholder {
       color: _var($field, 'hover-placeholder-foreground');
@@ -34,9 +36,10 @@
   }
 
   &:focus {
-    border: _var($field, 'focus-border');
+    border-color: _var($field, 'focus-border-color');
     color: _var($field, 'focus-foreground');
     background: _var($field, 'focus-background');
+    box-shadow: _var($field, 'focus-shadow');
 
     &::placeholder {
       color: _var($field, 'focus-placeholder-foreground');
@@ -45,9 +48,10 @@
 
   &:disabled,
   &[aria-disabled='true'] {
-    border: _var($field, 'disabled-border');
+    border-color: _var($field, 'disabled-border-color');
     color: _var($field, 'disabled-foreground');
     background: _var($field, 'disabled-background');
+    box-shadow: none;
     cursor: not-allowed;
 
     &::placeholder {
@@ -56,13 +60,15 @@
   }
 
   &[readonly] {
-    border: _var($field, 'readonly-border');
+    border-color: _var($field, 'readonly-border-color');
+    border-style: dashed;
     color: _var($field, 'readonly-foreground');
     background: _var($field, 'background');
+    box-shadow: none;
     cursor: default;
 
     &:focus {
-      border: _var($field, 'readonly-focus-border');
+      border-color: _var($field, 'readonly-focus-border-color');
     }
 
     &::placeholder {
@@ -75,6 +81,7 @@
       border-color: _var($field, 'invalid-border-color');
       color: _var($field, 'invalid-foreground');
       background: _var($field, 'invalid-background');
+      box-shadow: _var($field, 'invalid-shadow');
     }
 
     &:invalid:focus {

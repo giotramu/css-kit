@@ -1,53 +1,7 @@
 $colors: (
   accent: #0e58fb,
-  gray: #d3dde6,
-  dark: #1d2b3b,
+  base: #1d2b3b,
+  error: #ff4d5e,
   light: #ececec,
-  white: #fff,
-  black: #000
+  dark: #1d2b3b
 );
-
-@function _neu-background($shape: 'flat', $color: _colors(light), $deg: 145) {
-  $degree: unquote($deg + 'deg');
-  $shade: _shade($color, 10%);
-  $tint: _tint($color, 90%);
-
-  // @debug ($shade);
-  // @debug ($tint);
-
-  @if $shape == 'concave' {
-    @return linear-gradient(#{$degree}, $shade, $tint);
-  } @else if $shape == 'convex' {
-    @return linear-gradient(#{$degree}, $tint, $shade);
-  } @else if $shape == 'pressed' {
-    @return _tint($color, 25%);
-  }
-
-  @return $color;
-}
-
-@function _neu-shadow($shape: 'flat', $color: _colors(white), $size: 6) {
-  // shadow sizes
-  $x: $size;
-  $y: $size;
-  $blur: $size + 10;
-
-  // shadow colors
-  $shade: _shade($color, 90%);
-  $tint: $color;
-
-  $light-shadow: '-#{$x}px -#{$y}px #{$blur}px #{rgba($tint, 0.85)}';
-  $dark-shadow: '#{$x}px #{$y}px #{$blur}px #{rgba($shade, 0.25)}';
-
-  // shadow strings
-  $box-shadow: unquote($dark-shadow + ', ' + $light-shadow);
-  $box-shadow-inset: unquote(
-    'inset ' + $dark-shadow + ', ' + 'inset ' + $light-shadow
-  );
-
-  @if $shape == 'pressed' {
-    @return $box-shadow-inset;
-  }
-
-  @return $box-shadow;
-}

@@ -1,34 +1,48 @@
 $field: 'field';
 
+@function _field-shadow($hex) {
+  $inner: _shadow('inset-left-right', $size: 8, $color: $hex),
+    _shadow('inset-top', $size: 4, $color: $hex);
+
+  $outer: _shadow('all', $size: 4, $color: $hex),
+    _shadow('bottom', $size: 16, $color: $hex);
+
+  @return $inner, $outer;
+}
+
 $field-props: (
   width: 100%,
   min-height: 48px,
   xpadding: 1em,
   ypadding: 0.4em,
   resize: vertical,
-  border: 1px solid var(--color-gray),
-  border-radius: 4px,
-  foreground: var(--color-dark),
-  background: var(--color-white),
-  selection-foreground: var(--color-dark),
-  selection-background: var(--color-gray),
-  placeholder-foreground: var(--color-gray),
-  hover-border: 1px solid var(--color-gray),
-  hover-foreground: var(--color-black),
-  hover-background: var(--color-white),
-  hover-placeholder-foreground: hsl(208, 28%, 56%),
-  focus-border: 1px solid var(--color-gray),
-  focus-foreground: var(--color-dark),
-  focus-background: var(--color-white),
-  focus-placeholder-foreground: hsl(208, 28%, 56%),
-  disable-border: 1px solid var(--color-gray),
-  disable-foreground: hsl(208, 28%, 36%),
-  disable-background: var(--color-gray),
-  disable-placeholder-foreground: hsl(208, 28%, 56%),
-  readonly-border: 1px dashed var(--color-gray),
-  readonly-focus-border: 1px dashed var(--color-accent),
-  readonly-foreground: var(--color-dark),
-  invalid-border-color: hsl(354, 100%, 65%),
-  invalid-background: var(--color-white),
-  invalid-foreground: var(--color-dark)
+  border: 1.4px solid _shade(_color('light'), 4%),
+  border-radius: 8px,
+  foreground: _color('base'),
+  background: #fff,
+  shadow: none,
+  selection-foreground: #fff,
+  selection-background: _color('accent'),
+  placeholder-foreground: _tint(_color('base'), 32%),
+  hover-border-color: _shade(_color('light'), 8%),
+  hover-foreground: _color('base'),
+  hover-background: #fff,
+  hover-placeholder-foreground: _tint(_color('base'), 32%),
+  hover-shadow: none,
+  focus-border-color: _color('accent'),
+  focus-foreground: _color('base'),
+  focus-background: #fff,
+  focus-placeholder-foreground: _tint(_color('base'), 62%),
+  focus-shadow: _field-shadow(rgba(_color('accent'), 0.15)),
+  disabled-border-color: _shade(_color('light'), 8%),
+  disabled-foreground: _tint(_color('base'), 40%),
+  disabled-background: _shade(_color('light'), 4%),
+  disabled-placeholder-foreground: _tint(_color('base'), 56%),
+  readonly-border-color: _shade(_color('light'), 16%),
+  readonly-focus-border-color: _color('accent'),
+  readonly-foreground: _color('base'),
+  invalid-border-color: _color('error'),
+  invalid-background: #fff,
+  invalid-foreground: _color('base'),
+  invalid-shadow: _field-shadow(rgba(_color('error'), 0.15))
 );
