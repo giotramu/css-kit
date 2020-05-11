@@ -333,13 +333,17 @@ p q r s t u v w x y z { | } ~</pre
             <input type="checkbox" data-indeterminate />
             Indeterminate
           </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Checkbox</legend>
           <label>
             <input type="checkbox" disabled />
-            Disabled
+            Default
           </label>
           <label>
             <input type="checkbox" checked disabled />
-            Checked &amp; Disabled
+            Checked
           </label>
         </fieldset>
 
@@ -350,12 +354,20 @@ p q r s t u v w x y z { | } ~</pre
             Default
           </label>
           <label>
-            <input checked name="group" type="radio" />
+            <input name="group" type="radio" checked />
             Checked
           </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Disabled radio</legend>
           <label>
-            <input name="group" disabled type="radio" />
-            Disabled
+            <input name="disabled" type="radio" disabled />
+            Default
+          </label>
+          <label>
+            <input name="disabled" type="radio" checked disabled />
+            Checked &amp; disabled
           </label>
         </fieldset>
       </section>
@@ -387,22 +399,29 @@ p q r s t u v w x y z { | } ~</pre
           <input type="text" placeholder="Text" />
         </p>
         <p>
-          <input type="text" disabled placeholder="Text (Disabled)" />
-        </p>
-        <p>
           <input
             type="text"
             disabled
-            value="Text (Disabled with Content)"
-            placeholder="Text"
+            placeholder="Text (Disabled placeholder)"
           />
         </p>
         <p>
           <input
             type="text"
+            disabled
+            value="Text (Disabled with content)"
+            placeholder="Text..."
+          />
+        </p>
+        <p>
+          <input type="text" readonly placeholder="Readonly placeholder" />
+        </p>
+        <p>
+          <input
+            type="text"
             readonly
-            value="I'm readonly"
-            placeholder="Readonly text"
+            value="Readonly with content"
+            placeholder="Readonly placeholder"
           />
         </p>
         <p>

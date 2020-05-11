@@ -8,7 +8,8 @@
   font-weight: 600;
   letter-spacing: 0.04rem;
   appearance: none;
-  transition: color 0.1s ease-out, box-shadow 0.2s ease-out;
+  transition: color 0.1s ease-out, border-color 0.25s ease-out,
+    box-shadow 0.25s ease-out;
 
   &::selection {
     color: _var($field, 'selection-foreground');
