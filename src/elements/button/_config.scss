@@ -11,7 +11,7 @@ $button-props: (
   background: _radial-gradient(),
   shadow: _shadow('bottom'),
   active-foreground: #fff,
-  active-background: _radial-gradient(_tint(_color('accent'), 10%)),
+  active-background: _radial-gradient(_tint(_color('accent'), 16%)),
   active-border-color: none,
   active-shadow: _shadow('bottom', $size: 8),
   disabled-foreground: #fff,
@@ -19,7 +19,7 @@ $button-props: (
   disabled-border-color: none,
   disabled-shadow: none,
   hover-foreground: #fff,
-  hover-background: _radial-gradient(_tint(_color('accent'), 5%)),
+  hover-background: _radial-gradient(_tint(_color('accent'), 8%)),
   hover-border-color: none,
   hover-shadow: _shadow('bottom'),
   icon-margin: 0.8em

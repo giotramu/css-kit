@@ -1,6 +1,8 @@
 @import './config';
 @import './animations';
 
+$details-icon-size: _var($details, 'icon-size');
+
 details {
   display: block;
   overflow: auto;
@@ -23,7 +25,7 @@ details {
   }
 
   [details-group] > &:not(:first-of-type, :last-of-type) {
-    border-radius: none;
+    border-radius: initial;
   }
 
   [details-group] > &:only-of-type {
@@ -37,8 +39,6 @@ details {
   summary {
     display: list-item;
     overflow: hidden;
-    border-radius: _var($details, 'border-radius')
-      _var($details, 'border-radius') 0 0;
     padding: _var($details, 'summary-padding') _var($details, 'summary-padding')
       _var($details, 'summary-padding') 32px;
     position: sticky;
