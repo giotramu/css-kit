@@ -6,9 +6,10 @@ progress {
   overflow: hidden;
   width: 100%;
   height: _var($progress, 'height');
-  border: _var($progress, 'border');
+  border-width: _var($progress, 'border-size');
+  border-color: _var($progress, 'border-color');
+  border-style: _var($progress, 'border-style');
   border-radius: _var($progress, 'border-radius');
-  padding: _var($progress, 'ypadding') _var($progress, 'xpadding');
   position: relative;
   background: _var($progress, 'background');
   box-shadow: _var($progress, 'shadow');

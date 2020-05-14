@@ -5,7 +5,7 @@ $checkradio-props: (
   border: none,
   border-radius: 4px,
   color: _radial-gradient(),
-  background: _shade(_color('light'), 24%),
+  background: _shade(_color('light'), 16%),
   shadow: _shadow('all', $size: 4, $color: rgba(_color('accent'), 0.72)),
   tick-color: #fff
 );

@@ -58,6 +58,19 @@
   );
 }
 
+@function _linear-gradient(
+  $color: _color(accent),
+  $percentage: 16%,
+  $direction: 225deg
+) {
+  @return linear-gradient(
+    $direction,
+    $color,
+    _tint($color, $percentage),
+    $color
+  );
+}
+
 @function _shadow($type: bottom, $size: 16, $color: _color(accent)) {
   $w: unquote('#{$size}px');
 

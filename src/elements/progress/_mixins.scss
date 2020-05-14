@@ -1,19 +1,16 @@
 $progress-height: _var($progress, 'height');
-$progress-ypadding: _var($progress, 'ypadding');
-$progress-xpadding: _var($progress, 'xpadding');
+$progress-border-size: _var($progress, 'border-size');
 
 @mixin progress-indeterminate {
   content: '';
   display: block;
-  height: unquote('calc(#{$progress-height} - #{$progress-ypadding} * 2)');
+  height: unquote('calc(#{$progress-height} - #{$progress-border-size} * 2)');
   border-radius: _var($progress, 'border-radius');
   position: absolute;
-  top: $progress-ypadding;
-  right: $progress-xpadding;
-  bottom: $progress-ypadding;
-  left: $progress-xpadding;
+  top: 0;
+  left: 0;
   background: _var($progress, 'filled-color');
-  animation: moving-indeterminate 1s infinite;
+  animation: moving-indeterminate 1s ease-in-out infinite;
 }
 
 @keyframes moving-indeterminate {
@@ -22,13 +19,11 @@ $progress-xpadding: _var($progress, 'xpadding');
     margin-right: 100%;
     margin-left: 0;
   }
-
   50% {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
   }
-
   to {
     width: 0;
     margin-right: 0;
