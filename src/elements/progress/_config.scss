@@ -1,9 +1,17 @@
 $progress: 'progress';
 
+$shadow: 8px 8px 16px rgba(_color('dark'), 0.16),
+  -8px -8px 24px rgba(255, 255, 255, 1), inset 0 0 4px rgba(255, 255, 255, 0),
+  inset 8px 8px 16px rgba(_color('dark'), 0.16),
+  inset -8px -8px 24px rgba(255, 255, 255, 1), 0 0 4px rgba(255, 255, 255, 0.2);
+
 $progress-props: (
-  background: hsl(208, 28%, 96%),
-  filled-color: var(--color-accent),
-  height: 8px,
-  border: hsl(208, 28%, 96%),
-  border-radius: 10px
+  background: _color('light'),
+  filled-color: _radial-gradient(),
+  height: 16px,
+  border: none,
+  border-radius: 10px,
+  xpadding: 6px,
+  ypadding: 4px,
+  shadow: $shadow
 );

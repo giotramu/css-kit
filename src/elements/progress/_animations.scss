@@ -1,9 +1,0 @@
-@keyframes progressStripes {
-  from {
-    background-position: 0 0;
-  }
-
-  to {
-    background-position: _var($progress, 'height') 0;
-  }
-}

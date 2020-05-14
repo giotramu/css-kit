@@ -1,17 +1,37 @@
+$progress-height: _var($progress, 'height');
+$progress-ypadding: _var($progress, 'ypadding');
+$progress-xpadding: _var($progress, 'xpadding');
+
 @mixin progress-indeterminate {
   content: '';
   display: block;
+  height: unquote('calc(#{$progress-height} - #{$progress-ypadding} * 2)');
+  border-radius: _var($progress, 'border-radius');
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: _var($progress, 'background');
-  background-image: radial-gradient(
-      _var($progress, 'filled-color') 20%,
-      transparent 30%
-    ),
-    radial-gradient(_var($progress, 'filled-color') 30%, transparent 30%);
-  background-size: _var($progress, 'height') _var($progress, 'height');
-  animation: progressStripes 0.4s linear infinite;
+  top: $progress-ypadding;
+  right: $progress-xpadding;
+  bottom: $progress-ypadding;
+  left: $progress-xpadding;
+  background: _var($progress, 'filled-color');
+  animation: moving-indeterminate 1s infinite;
+}
+
+@keyframes moving-indeterminate {
+  from {
+    width: 0;
+    margin-right: 100%;
+    margin-left: 0;
+  }
+
+  50% {
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  to {
+    width: 0;
+    margin-right: 0;
+    margin-left: 100%;
+  }
 }
