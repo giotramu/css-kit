@@ -4,7 +4,7 @@
   src: local(giotramu-sans), url('book.woff2') format('woff2'),
     url('book.woff') format('woff');
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   /* Download only latin glyphs */
   unicode-range: U+000-5FF;
 }
@@ -15,7 +15,7 @@
   src: local(giotramu-sans), url('bold.woff2') format('woff2'),
     url('bold.woff') format('woff');
   font-style: normal;
-  font-weight: bold;
+  font-weight: 700;
   /* Download only latin glyphs */
   unicode-range: U+000-5FF;
 }
