@@ -9,15 +9,15 @@ section {
   margin-bottom: 4rem;
 }
 
-section h3 {
-  margin-bottom: 2.4rem;
-}
-
-.buttons button {
+section.buttons button {
   margin-right: 2.4rem;
   margin-bottom: 1.6rem;
 }
 
-.buttons button.rounded {
+section.buttons button.rounded {
   --ck-button-border-radius: 25px;
+}
+
+table.striped {
+  --ck-table-striped-background: rgba(255, 255, 255, 0.16);
 }

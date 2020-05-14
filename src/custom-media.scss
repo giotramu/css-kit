@@ -11,18 +11,18 @@
   */
 
 // Mobile first queries
-@custom-media --from-xsmall (min-width: 30em); /* 480px */
-@custom-media --from-small (min-width: 48em); /* 768px */
-@custom-media --from-medium (min-width: 60em); /* 960px */
-@custom-media --from-large (min-width: 80em); /* 1280px */
-@custom-media --from-xlarge (min-width: 100em); /* 1600px */
+@custom-media --from-xsmall (min-width: 30em); // 480px
+@custom-media --from-small (min-width: 48em); // 768px
+@custom-media --from-medium (min-width: 60em); // 960px
+@custom-media --from-large (min-width: 80em); // 1280px
+@custom-media --from-xlarge (min-width: 100em); // 1600px
 
 // Desktop first queries
-@custom-media --to-xsmall (max-width: 30em); /* 480px */
-@custom-media --to-small (max-width: 48em); /* 768px */
-@custom-media --to-medium (max-width: 60em); /* 960px */
-@custom-media --to-large (max-width: 80em); /* 1280px */
-@custom-media --to-xlarge (max-width: 100em); /* 1600px */
+@custom-media --to-xsmall (max-width: 30em); // 480px
+@custom-media --to-small (max-width: 48em); // 768px
+@custom-media --to-medium (max-width: 60em); // 960px
+@custom-media --to-large (max-width: 80em); // 1280px
+@custom-media --to-xlarge (max-width: 100em); // 1600px
 
 // Orientation
 @custom-media --landscape (orientation: landscape);
