@@ -6,5 +6,12 @@ input[type='file'] {
   &::-webkit-file-upload-button {
     @include button;
     margin-right: 16px;
+    box-shadow: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: none;
+    }
   }
 }

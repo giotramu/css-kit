@@ -6,6 +6,7 @@
   background: _var($field, 'background');
   box-shadow: _var($field, 'shadow');
   font-weight: 600;
+  line-height: inherit;
   letter-spacing: 0.04rem;
   appearance: none;
   transition: color 0.8s ease-out, border-color 0.24s ease-out,

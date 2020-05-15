@@ -284,7 +284,7 @@ p q r s t u v w x y z { | } ~</pre
         </button>
       </section>
 
-      <section>
+      <section class="progress-bars">
         <h3>Progress</h3>
         <p>
           <progress value="50" max="100">progress</progress>
@@ -378,7 +378,7 @@ p q r s t u v w x y z { | } ~</pre
         </fieldset>
       </section>
 
-      <section>
+      <section class="range-inputs">
         <h3>Range</h3>
         <input
           type="range"
@@ -606,8 +606,8 @@ p q r s t u v w x y z { | } ~</pre
 
       <section>
         <h3>Input color</h3>
-        <input type="color" value="#606fdc" />
-        <input type="color" value="#70e7bd" />
+        <input type="color" value="#13a699" />
+        <input type="color" value="#ff2f6c" />
       </section>
 
       <section>
@@ -628,8 +628,9 @@ p q r s t u v w x y z { | } ~</pre
             alt="Chromium Edge"
           />)
         </h3>
-        <button data-modal="default-dialog" class="modalTrigger">
-          Open default dialog
+
+        <button id="DialogTrigger" data-dialog="native-dialog">
+          Open native HTML dialog
         </button>
       </section>
 
@@ -660,7 +661,7 @@ p q r s t u v w x y z { | } ~</pre
       </section>
     </main>
 
-    <dialog data-modal-name="default-dialog">
+    <dialog data-dialog-name="native-dialog">
       <header>
         <h3>Dialog Header</h3>
       </header>
@@ -670,51 +671,49 @@ p q r s t u v w x y z { | } ~</pre
         cumque repellendus at. Repellendus molestias ea labore error iste dicta.
       </p>
       <footer>
-        <button class="SecondButton modalClose">Yeah, confirm</button>
-        <button class="SecondButton MutedButton modalClose">Cancel</button>
-      </footer>
-    </dialog>
-
-    <dialog data-modal-name="default-dialog">
-      <header>
-        <h3>Dialog Header</h3>
-      </header>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus minus
-        aut laborum eum, obcaecati odit accusantium enim tempore, nam suscipit
-        cumque repellendus at. Repellendus molestias ea labore error iste dicta.
-      </p>
-      <footer>
-        <button class="SecondButton modalClose">Yeah, confirm</button>
-        <button class="SecondButton MutedButton modalClose">Cancel</button>
+        <button>Yeah, confirm</button>
+        <button id="DialogClose">Cancel</button>
       </footer>
     </dialog>
 
     <script>
-      let indeterminates = document.querySelectorAll('[data-indeterminate]');
-      [].forEach.call(indeterminates, function (item) {
-        item.indeterminate = true;
-      });
+      (function (doc) {
+        doc.addEventListener('DOMContentLoaded', run);
 
-      let modalTriggers = document.querySelectorAll('.modalTrigger');
-      let modalClose = document.querySelectorAll('.modalClose');
+        function run() {
+          initIndeterminates();
+          initDialog();
+        }
 
-      [].forEach.call(modalClose, function (item) {
-        item.addEventListener('click', function () {
-          item.closest('dialog').close();
-        });
-      });
-
-      [].forEach.call(modalTriggers, function (item) {
-        item.addEventListener('click', function () {
-          let modal = document.querySelector(
-            '[data-modal-name="' + item.getAttribute('data-modal') + '"]'
+        function initIndeterminates() {
+          const indeterminates = doc.querySelectorAll('[data-indeterminate]');
+          Array.prototype.forEach.call(
+            indeterminates,
+            item => (item.indeterminate = true)
           );
-          typeof HTMLDialogElement === 'function'
-            ? modal.showModal()
-            : alert("Your browser doesn't support this component yet");
-        });
-      });
+        }
+
+        function initDialog() {
+          const dialogTrigger = doc.querySelector('#DialogTrigger');
+          const dialogClose = doc.querySelector('#DialogClose');
+
+          dialogClose.addEventListener('click', e => {
+            const button = e.target;
+            button.closest('dialog').close();
+          });
+
+          dialogTrigger.addEventListener('click', e => {
+            const dialogName = e.target.getAttribute('data-dialog');
+            const dialog = doc.querySelector(
+              '[data-dialog-name="' + dialogName + '"]'
+            );
+
+            typeof HTMLDialogElement === 'function'
+              ? dialog.showModal()
+              : alert("Your browser doesn't support dialog yet.");
+          });
+        }
+      })(window.document);
     </script>
   </body>
 </html>

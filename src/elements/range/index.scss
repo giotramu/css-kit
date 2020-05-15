@@ -1,6 +1,8 @@
 @import './config';
 @import './mixins';
 
+$range-height: _var($range, 'height');
+
 input[type='range'] {
   width: _var($range, 'width');
   margin: unquote('calc(#{$thumb-height} / 2) 0');

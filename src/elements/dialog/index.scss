@@ -1,5 +1,4 @@
 @import './config';
-@import './animations';
 
 dialog {
   width: fit-content;
@@ -36,5 +35,16 @@ dialog {
 
   > footer {
     margin-top: 32px;
+  }
+}
+
+@keyframes modalShow {
+  from {
+    transform: translateY(32px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: initial;
   }
 }

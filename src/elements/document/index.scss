@@ -15,7 +15,7 @@ html {
 }
 
 *:focus {
-  outline: _var($outline, 'style') _var($outline, 'color');
+  outline: _var($outline, 'size') solid _var($outline, 'color');
 }
 
 [tabindex='-1'] {

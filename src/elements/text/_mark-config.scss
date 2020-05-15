@@ -1,6 +1,4 @@
-$mark: 'mark';
-
 $mark-props: (
-  foreground: #fff,
+  foreground: $white,
   background: _color('accent')
 );

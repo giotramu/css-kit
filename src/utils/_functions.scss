@@ -60,7 +60,7 @@
 
 @function _linear-gradient(
   $color: _color(accent),
-  $percentage: 16%,
+  $percentage: 8%,
   $direction: 225deg
 ) {
   @return linear-gradient(
@@ -71,7 +71,7 @@
   );
 }
 
-@function _shadow($type: bottom, $size: 16, $color: _color(accent)) {
+@function _shadow($type: bottom, $size: 8, $color: _color(accent)) {
   $w: unquote('#{$size}px');
 
   /* prettier-ignore */

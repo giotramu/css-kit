@@ -1,6 +1,4 @@
-$del: 'del';
-
 $del-props: (
-  foreground: _shade(_color('error'), 40%),
-  background: _tint(_color('error'), 72%)
+  foreground: _shade(_color('ko'), 40%),
+  background: _tint(_color('ko'), 72%)
 );

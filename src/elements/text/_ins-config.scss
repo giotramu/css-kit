@@ -1,6 +1,4 @@
-$ins: 'ins';
-
 $ins-props: (
-  foreground: _shade(_color('success'), 40%),
-  background: _tint(_color('success'), 72%)
+  foreground: _shade(_color('ok'), 40%),
+  background: _tint(_color('ok'), 72%)
 );

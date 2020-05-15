@@ -8,7 +8,7 @@ progress {
   height: _var($progress, 'height');
   border-width: _var($progress, 'border-size');
   border-color: _var($progress, 'border-color');
-  border-style: _var($progress, 'border-style');
+  border-style: solid;
   border-radius: _var($progress, 'border-radius');
   position: relative;
   background: _var($progress, 'background');

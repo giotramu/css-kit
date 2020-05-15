@@ -1,25 +1,30 @@
 $range: 'range';
 
-$range-height: _var($range, 'height');
+$shadow: 4px 4px 12px _shade(_color('light'), 16%), -4px -4px 20px $white,
+  inset 0 0 2px rgba($white, 0), inset 4px 4px 12px _shade(_color('light'), 16%),
+  inset -4px -4px 20px $white, 0 0 2px rgba($white, 0.2);
 
-$thumb-height: _var($range, 'thumb-height');
+$disabled-shadow: inset 1px 1px 2px _shade(_color('light'), 16%),
+  inset -1px -1px 2px $white;
 
 $range-props: (
   width: 100%,
   height: 4px,
+  border: 1px solid $white,
   border-radius: 10px,
-  background: hsl(208, 28%, 96%),
-  focus-background: hsl(208, 28%, 90%),
-  border: 1px hsl(208, 28%, 96%),
-  thumb-width: 28px,
-  thumb-height: 32px,
-  thumb-radius: 4px,
-  thumb-sripes-color: var(--color-white),
-  thumb-sripes-active-color: var(--color-white),
-  thumb-background: var(--color-accent),
-  thumb-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16),
-  thumb-active-background: var(--color-accent),
-  thumb-disabled-background: var(--color-gray),
-  disabled-border-color: 1px rgba(0, 0, 0, 0),
-  disabled-background: hsl(208, 28%, 96%)
+  disabled-shadow: $disabled-shadow,
+  shadow: $shadow,
+  background: _color('light'),
+  focus-background: _color('light'),
+  disabled-background: _color('light'),
+  thumb-width: 24px,
+  thumb-height: 24px,
+  thumb-radius: 50%,
+  thumb-sripes-color: rgba($white, 0.15),
+  thumb-sripes-active-color: rgba($white, 0.25),
+  thumb-background: _radial-gradient(),
+  thumb-active-background: _radial-gradient(_tint(_color('accent'), 8%)),
+  thumb-disabled-background: _tint(_color('accent'), 64%),
+  thumb-shadow: _shadow('all', $size: 4),
+  thumb-active-shadow: _shadow('all', $size: 6)
 );

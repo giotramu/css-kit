@@ -1,16 +1,15 @@
 $progress: 'progress';
 
-$shadow: 7px 7px 16px _shade(_color('light'), 16%), -7px -7px 25px #fff,
-  inset 0 0 4px rgba(#fff, 0), inset 7px 7px 16px _shade(_color('light'), 16%),
-  inset -7px -7px 25px #fff, 0 0 4px rgba(#fff, 0.2);
+$shadow: 8px 8px 16px _shade(_color('light'), 16%), -8px -8px 24px $white,
+  inset 0 0 4px rgba($white, 0), inset 8px 8px 16px _shade(_color('light'), 16%),
+  inset -8px -8px 24px $white, 0 0 4px rgba($white, 0.2);
 
 $progress-props: (
-  background: transparent,
-  filled-color: _linear-gradient(),
   height: 16px,
-  border-size: 4px,
-  border-style: solid,
-  border-color: transparent,
+  border-size: 3px,
+  border-color: $white,
   border-radius: 10px,
+  filled-color: _linear-gradient(),
+  background: transparent,
   shadow: $shadow
 );

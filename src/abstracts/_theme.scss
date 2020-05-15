@@ -3,6 +3,12 @@ $colors: (
   base: #1d2b3b,
   dark: #1d2b3b,
   light: #fbfcfd,
-  success: #13a699,
-  error: #ff2f6c
+  ok: #13a699,
+  ko: #ff2f6c,
+  warn: #ffbe33
 );
+
+// Internal variables
+$white: #fff;
+$black: #000;
+$border-radius: 8px;

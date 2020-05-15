@@ -8,7 +8,7 @@
   color: _var($button, 'foreground');
   background: _var($button, 'background');
   box-shadow: _var($button, 'shadow');
-  font-size: _var($button, 'font-size');
+  font-size: inherit;
   font-weight: _var($button, 'font-weight');
   text-decoration: none;
   white-space: nowrap;

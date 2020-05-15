@@ -1,3 +1,4 @@
+@import './domains';
 @import './document';
 @import './button';
 @import './checkbox';
@@ -18,33 +19,4 @@
 @import './table';
 @import './text';
 @import './upload';
-
-$elements-config: (
-  $document: $document-props,
-  $scroll: $scroll-props,
-  $outline: $outline-props,
-  $selection: $selection-props,
-  $link: $link-props,
-  $button: $button-props,
-  $heading: $heading-props,
-  $blockquote: $blockquote-props,
-  $cite: $cite-props,
-  $code: $code-props,
-  $del: $del-props,
-  $ins: $ins-props,
-  $kbd: $kbd-props,
-  $mark: $mark-props,
-  $small: $small-props,
-  $hr: $hr-props,
-  $form: $form-props,
-  $checkradio: $checkradio-props,
-  $field: $field-props,
-  $select: $select-props,
-  $range: $range-props,
-  $progress: $progress-props,
-  $meter: $meter-props,
-  $table: $table-props,
-  $details: $details-props,
-  $color-picker: $color-picker-props,
-  $dialog: $dialog-props
-);
+@import './map';

@@ -1,10 +1,8 @@
-$table: 'table';
-
 $table-props: (
-  cells-xpadding: 16px,
-  cells-ypadding: 16px,
   head-separator: 2px solid _shade(_color('light'), 8%),
   row-separator: 1px solid _shade(_color('light'), 8%),
+  cells-ypadding: 16px,
+  cells-xpadding: 16px,
   background: transparent,
   striped-background: transparent
 );
