@@ -12,11 +12,7 @@
 
   function initIndeterminates() {
     const indeterminates = doc.querySelectorAll('[data-indeterminate]');
-
-    Array.prototype.forEach.call(
-      indeterminates,
-      item => (item.indeterminate = true)
-    );
+    [].forEach.call(indeterminates, item => (item.indeterminate = true));
   }
 
   function initDialog() {

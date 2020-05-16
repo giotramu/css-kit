@@ -4,8 +4,24 @@
     "editor.quickSuggestions": true,
     "editor.formatOnSave": true
   },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true
+  },
   "[scss]": {
     "editor.formatOnSave": true
+  },
+  "typescript.validate.enable": true,
+  "typescript.reportStyleChecksAsWarnings": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": ["typescript", "javascript"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
   "css.validate": false,
   "scss.validate": false
