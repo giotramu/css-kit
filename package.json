@@ -22,22 +22,30 @@
   "main": "core.css",
   "types": "typings/css-kit.d.ts",
   "files": [
-    "font/",
+    "color-scheme-switcher.js",
     "core.css",
-    "custom-media.css"
+    "custom-media.css",
+    "font/",
+    "typings/"
   ],
   "scripts": {
     "lint:css": "stylelint ./src/**/*.scss --ignore-path .gitignore",
-    "lint": "npm run lint:css",
-    "postcss": "postcss ./src/*.scss --ext css",
-    "build": "npm run postcss -- --dir ./",
-    "watch": "watch \"npm run postcss -- --dir ./demo\" ./src",
+    "lint:src": "eslint . --ext .js,.ts --ignore-path .gitignore",
+    "lint": "run-s -cln lint:*",
+    "build:css": "postcss ./src/styles/*.scss --ext css",
+    "build:ts": "tsc",
+    "build": "run-s \"build:css -- --dir {1}\" \"build:ts -- --outDir {1}\" --",
+    "watch": "watch \"npm run build ./demo\" ./src",
     "serve": "serve ./demo -u -l 3333",
-    "dev": "run-p -cln watch serve"
+    "dev": "run-p -cln watch serve",
+    "dist": "npm run build ./"
   },
   "devDependencies": {
     "@giotramu/postcss-config": "^3.1.0",
     "@giotramu/stylelint-config": "^3.0.4",
+    "eslint": "^7.0.0",
+    "eslint-config-contactlab": "^4.2.2",
+    "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.3",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.1",
@@ -46,6 +54,7 @@
     "serve": "^11.3.0",
     "stylelint": "^13.3.3",
     "stylelint-scss": "^3.17.2",
+    "typescript": "^3.9.2",
     "watch": "^1.0.2"
   },
   "keywords": [

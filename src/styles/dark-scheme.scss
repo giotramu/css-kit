@@ -1,0 +1,19 @@
+@import './abstracts/config';
+@import './abstracts/theme';
+@import './utils/functions';
+@import './elements/domains';
+
+$dark-overrides: (
+  $document: (
+    'foreground': _color('light'),
+    'background': _color('dark')
+  )
+);
+
+html[data-color-scheme='dark'] {
+  @each $element, $props in $dark-overrides {
+    @each $prop, $val in $props {
+      #{_defineVar($element, $prop)}: $val;
+    }
+  }
+}

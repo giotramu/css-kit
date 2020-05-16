@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>CSS-Kit — Minimalist stylesheet for HTML elements</title>
     <meta charset="UTF-8" />
-
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <title>CSS-Kit — Minimalist stylesheet for HTML elements</title>
-
-    <!-- custom font -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit@2.2/font/giotramu-sans.css"
     />
-
-    <!-- <link rel="stylesheet" href="./custom-media.css" /> -->
+    <link rel="stylesheet" href="./custom-media.css" />
     <link rel="stylesheet" href="./core.css" />
+    <link rel="stylesheet" href="./dark-scheme.css" />
     <link rel="stylesheet" href="./demo.css" />
   </head>
 
   <body>
+    <div class="toggles">
+      <button data-ck="set-color-scheme">Switch theme</button>
+      <button data-ck="unset-color-scheme">Clear storage</button>
+    </div>
+
     <main>
       <section>
         <h3>Horizontal Rule</h3>
@@ -661,7 +662,7 @@ p q r s t u v w x y z { | } ~</pre
       </section>
     </main>
 
-    <dialog data-dialog-name="native-dialog">
+    <dialog data-dialog="native-dialog">
       <header>
         <h3>Dialog Header</h3>
       </header>
@@ -676,44 +677,7 @@ p q r s t u v w x y z { | } ~</pre
       </footer>
     </dialog>
 
-    <script>
-      (function (doc) {
-        doc.addEventListener('DOMContentLoaded', run);
-
-        function run() {
-          initIndeterminates();
-          initDialog();
-        }
-
-        function initIndeterminates() {
-          const indeterminates = doc.querySelectorAll('[data-indeterminate]');
-          Array.prototype.forEach.call(
-            indeterminates,
-            item => (item.indeterminate = true)
-          );
-        }
-
-        function initDialog() {
-          const dialogTrigger = doc.querySelector('#DialogTrigger');
-          const dialogClose = doc.querySelector('#DialogClose');
-
-          dialogClose.addEventListener('click', e => {
-            const button = e.target;
-            button.closest('dialog').close();
-          });
-
-          dialogTrigger.addEventListener('click', e => {
-            const dialogName = e.target.getAttribute('data-dialog');
-            const dialog = doc.querySelector(
-              '[data-dialog-name="' + dialogName + '"]'
-            );
-
-            typeof HTMLDialogElement === 'function'
-              ? dialog.showModal()
-              : alert("Your browser doesn't support dialog yet.");
-          });
-        }
-      })(window.document);
-    </script>
+    <script src="./demo.js"></script>
+    <script src="./color-scheme-switcher.js"></script>
   </body>
 </html>
