@@ -29,16 +29,17 @@
     "typings/"
   ],
   "scripts": {
+    "check:src": "tsc --noEmit",
     "lint:css": "stylelint ./src/**/*.scss --ignore-path .gitignore",
     "lint:src": "eslint . --ext .js,.ts --ignore-path .gitignore",
     "lint": "run-s -cln lint:*",
     "build:css": "postcss ./src/styles/*.scss --ext css",
     "build:ts": "tsc",
-    "build": "run-s \"build:css -- --dir {1}\" \"build:ts -- --outDir {1}\" --",
-    "watch": "watch \"npm run build ./demo\" ./src",
+    "build:src": "run-s \"build:css -- --dir {1}\" \"build:ts -- --outDir {1}\" --",
+    "build": "npm run build ./",
+    "watch": "watch \"npm run build:src ./demo\" ./src",
     "serve": "serve ./demo -u -l 3333",
-    "dev": "run-p -cln watch serve",
-    "dist": "npm run build ./"
+    "dev": "run-p -cln watch serve"
   },
   "devDependencies": {
     "@giotramu/postcss-config": "^3.1.0",
