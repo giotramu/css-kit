@@ -35,11 +35,11 @@
     "lint": "run-s -cln lint:*",
     "build:css": "postcss ./src/styles/*.scss --ext css",
     "build:ts": "tsc",
-    "build:src": "run-s \"build:css -- --dir {1}\" \"build:ts -- --outDir {1}\" --",
-    "build": "npm run build ./",
-    "watch": "watch \"npm run build:src ./demo\" ./src",
+    "build": "run-s \"build:css -- --dir .\" \"build:ts -- --outDir .\"",
+    "watch:css": "watch \"npm run build:css -- --dir ./demo\" ./src/styles",
+    "watch:ts": "watch \"npm run build:ts -- --outDir ./demo\" ./src/scripts",
     "serve": "serve ./demo -u -l 3333",
-    "dev": "run-p -cln watch serve"
+    "dev": "run-p -cln watch:** serve"
   },
   "devDependencies": {
     "@giotramu/postcss-config": "^3.1.0",
