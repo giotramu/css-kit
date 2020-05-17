@@ -33,3 +33,10 @@ section.progress-bars p:not(:last-of-type) {
 section.range-inputs input:not(:last-of-type) {
   margin-bottom: 2.4rem;
 }
+
+.toggles {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  left: auto;
+}

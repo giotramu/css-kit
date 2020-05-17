@@ -17,12 +17,23 @@
     <link rel="stylesheet" href="./core.css" />
     <link rel="stylesheet" href="./dark-scheme.css" />
     <link rel="stylesheet" href="./demo.css" />
+
+    <script defer="true" src="./demo.js"></script>
+    <script defer="true" src="./color-scheme-switcher.js"></script>
   </head>
 
   <body>
     <div class="toggles">
-      <button data-ck="set-color-scheme">Switch theme</button>
-      <button data-ck="unset-color-scheme">Clear storage</button>
+      <button
+        data-ck="set-color-scheme"
+        class="icon-switch"
+        aria-label="Toggle color scheme"
+      ></button>
+      <button
+        data-ck="unset-color-scheme"
+        class="icon-switch"
+        aria-label="Clear local storage"
+      ></button>
     </div>
 
     <main>
@@ -676,8 +687,5 @@ p q r s t u v w x y z { | } ~</pre
         <button id="DialogClose">Cancel</button>
       </footer>
     </dialog>
-
-    <script src="./demo.js"></script>
-    <script src="./color-scheme-switcher.js"></script>
   </body>
 </html>

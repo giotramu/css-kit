@@ -1,10 +1,11 @@
 (function (window: Window): void {
   const doc = window.document;
+  const localStorage = window.localStorage;
+
   doc.addEventListener('DOMContentLoaded', init, false);
 
   function init(): void {
     const {documentElement} = doc;
-    const localStorage = window.localStorage;
     const triggers = {
       set: doc.querySelector('[data-ck="set-color-scheme"]'),
       unset: doc.querySelector('[data-ck="unset-color-scheme"]')
@@ -17,7 +18,7 @@
       storage: localStorage
     });
 
-    if (triggers.set === null || triggers.unset === null) {
+    if (triggers.set === null) {
       return;
     }
 
@@ -26,14 +27,17 @@
       () => {
         const {colorScheme} = documentElement.dataset;
         setColorScheme({
-          colorEnum:
-            colorScheme === 'dark' ? ColorScheme.light : ColorScheme.dark,
+          colorEnum: switchColorScheme(colorScheme),
           html: documentElement,
           storage: localStorage
         });
       },
       false
     );
+
+    if (triggers.unset === null) {
+      return;
+    }
 
     triggers.unset.addEventListener(
       'click',
@@ -80,16 +84,36 @@
     return {colorScheme, supports};
   }
 
+  function switchColorScheme(color: unknown): ColorScheme {
+    switch (color) {
+      case 'light':
+        return ColorScheme.dark;
+
+      case 'dark':
+        return ColorScheme.light;
+
+      default:
+        return ColorScheme.none;
+    }
+  }
+
   function setColorScheme({colorEnum, html, storage}: SetColorScheme): void {
+    const event = new CustomEvent('setColorScheme', {
+      detail: ColorScheme[colorEnum]
+    });
+    html.dispatchEvent(event);
+
     switch (colorEnum) {
       case ColorScheme.light:
         html.dataset.colorScheme = 'light';
         storage.setItem('color-scheme', 'light');
         break;
+
       case ColorScheme.dark:
         html.dataset.colorScheme = 'dark';
         storage.setItem('color-scheme', 'dark');
         break;
+
       case ColorScheme.none:
         html.dataset.colorScheme = 'light';
         storage.setItem('color-scheme', 'light');
@@ -98,6 +122,11 @@
   }
 
   function unsetColorScheme({html, storage}: UnsetColorScheme): void {
+    const event = new CustomEvent('unsetColorScheme', {
+      detail: ColorScheme[ColorScheme.none]
+    });
+    html.dispatchEvent(event);
+
     html.removeAttribute('data-color-scheme');
     storage.removeItem('color-scheme');
   }

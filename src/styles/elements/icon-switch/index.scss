@@ -1,0 +1,56 @@
+@import './config';
+
+.icon-switch {
+  overflow: hidden;
+  width: _var($icon-switch, 'size');
+  height: _var($icon-switch, 'size');
+  border: none;
+  border-radius: 50%;
+  padding: _var($icon-switch, 'padding');
+  position: relative;
+  perspective: 10em;
+  color: _var($icon-switch, 'foreground');
+  background: _var($icon-switch, 'background');
+  box-shadow: _var($icon-switch, 'shadow');
+  line-height: inherit;
+
+  &::before,
+  &::after {
+    content: '';
+    width: calc(#{_var($icon-switch, 'size')} / 2);
+    height: calc(#{_var($icon-switch, 'size')} / 2);
+    position: absolute;
+    top: calc(50% - 0.5em);
+    left: calc(50% - 0.5em);
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-size: _var($icon-switch, 'icon-size');
+    line-height: 1;
+    will-change: transform;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  &::before {
+    transform: translateY(0%);
+    opacity: 1;
+    background: _var($icon-switch, 'icon-on');
+  }
+
+  &::after {
+    transform: translateY(100%);
+    opacity: 0;
+    background: _var($icon-switch, 'icon-off');
+  }
+
+  &.icon-switch-off {
+    &::before {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    &::after {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}

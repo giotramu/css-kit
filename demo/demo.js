@@ -4,11 +4,28 @@
   doc.addEventListener(
     'DOMContentLoaded',
     () => {
-      initIndeterminates(doc);
-      initDialog(doc);
+      initIconSwitch();
+      initIndeterminates();
+      initDialog();
     },
     false
   );
+
+  function initIconSwitch() {
+    doc.documentElement.addEventListener('setColorScheme', evt => {
+      const colorScheme = evt.detail;
+      const colorSchemeTrigger = doc.querySelector(
+        '.icon-switch[data-ck="set-color-scheme"]'
+      );
+
+      if (colorScheme === 'dark') {
+        colorSchemeTrigger.classList.remove('icon-switch-off');
+        return;
+      }
+
+      colorSchemeTrigger.classList.add('icon-switch-off');
+    });
+  }
 
   function initIndeterminates() {
     const indeterminates = doc.querySelectorAll('[data-indeterminate]');

@@ -1,14 +1,18 @@
+// Domains
 @import './domains';
-@import './document';
+
+// Elements
 @import './button';
 @import './checkbox';
 @import './color-picker';
 @import './details';
 @import './dialog';
+@import './document';
 @import './field';
 @import './form';
 @import './heading';
 @import './hr';
+@import './icon-switch';
 @import './link';
 @import './list';
 @import './meter';
@@ -19,4 +23,34 @@
 @import './table';
 @import './text';
 @import './upload';
-@import './map';
+
+$elements: (
+  $document: $document-props,
+  $scroll: $scroll-props,
+  $outline: $outline-props,
+  $selection: $selection-props,
+  $link: $link-props,
+  $button: $button-props,
+  $heading: $heading-props,
+  $blockquote: $blockquote-props,
+  $cite: $cite-props,
+  $code: $code-props,
+  $del: $del-props,
+  $ins: $ins-props,
+  $kbd: $kbd-props,
+  $mark: $mark-props,
+  $small: $small-props,
+  $hr: $hr-props,
+  $form: $form-props,
+  $checkradio: $checkradio-props,
+  $field: $field-props,
+  $select: $select-props,
+  $range: $range-props,
+  $progress: $progress-props,
+  $meter: $meter-props,
+  $table: $table-props,
+  $details: $details-props,
+  $color-picker: $color-picker-props,
+  $dialog: $dialog-props,
+  $icon-switch: $icon-switch-props
+);

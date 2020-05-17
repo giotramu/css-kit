@@ -71,7 +71,7 @@
   );
 }
 
-@function _shadow($type: bottom, $size: 8, $color: _color(accent)) {
+@function _shadow($type: 'bottom', $size: 8, $color: _color(accent)) {
   $w: unquote('#{$size}px');
 
   /* prettier-ignore */
