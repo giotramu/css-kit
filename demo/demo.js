@@ -12,10 +12,10 @@
   );
 
   function initIconSwitch() {
-    doc.documentElement.addEventListener('setColorScheme', evt => {
-      const colorScheme = evt.detail;
+    doc.addEventListener('SetColorScheme', evt => {
+      const colorScheme = evt.detail.colorScheme;
       const colorSchemeTrigger = doc.querySelector(
-        '.icon-switch[data-ck="set-color-scheme"]'
+        '.icon-switch[data-ck-trigger="set-color-scheme"]'
       );
 
       if (colorScheme === 'dark') {
@@ -25,6 +25,11 @@
 
       colorSchemeTrigger.classList.add('icon-switch-off');
     });
+
+    doc.addEventListener('ResetColorScheme', () =>
+      // eslint-disable-next-line no-console
+      console.log('The color scheme has been reset.')
+    );
   }
 
   function initIndeterminates() {

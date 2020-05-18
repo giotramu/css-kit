@@ -2,21 +2,16 @@
   const doc = window.document;
   const localStorage = window.localStorage;
 
-  doc.addEventListener('DOMContentLoaded', init, false);
+  doc.addEventListener('DOMContentLoaded', initColorSchemeSwitcher, false);
 
-  function init(): void {
+  function initColorSchemeSwitcher(): void {
     const {documentElement} = doc;
     const triggers = {
-      set: doc.querySelector('[data-ck="set-color-scheme"]'),
-      unset: doc.querySelector('[data-ck="unset-color-scheme"]')
+      set: doc.querySelector('[data-ck-trigger="set-color-scheme"]'),
+      reset: doc.querySelector('[data-ck-trigger="reset-color-scheme"]')
     };
 
-    const userPreference = readColorPreferences(localStorage);
-    setColorScheme({
-      colorEnum: userPreference.colorScheme,
-      html: documentElement,
-      storage: localStorage
-    });
+    resetColorScheme({html: documentElement, storage: localStorage});
 
     if (triggers.set === null) {
       return;
@@ -26,8 +21,9 @@
       'click',
       () => {
         const {colorScheme} = documentElement.dataset;
+
         setColorScheme({
-          colorEnum: switchColorScheme(colorScheme),
+          scheme: switchColorScheme(colorScheme),
           html: documentElement,
           storage: localStorage
         });
@@ -35,122 +31,98 @@
       false
     );
 
-    if (triggers.unset === null) {
+    if (triggers.reset === null) {
       return;
     }
 
-    triggers.unset.addEventListener(
+    triggers.reset.addEventListener(
       'click',
-      () => unsetColorScheme({html: documentElement, storage: localStorage}),
+      () => resetColorScheme({html: documentElement, storage: localStorage}),
       false
     );
   }
 
-  function readColorPreferences(storage: Storage): ReadColorPreferences {
-    const previousSettings = storage.getItem('color-scheme');
-
-    let colorScheme: ColorScheme = ColorScheme.none;
-    let supports = false;
-
-    switch (previousSettings) {
-      case 'light':
-        colorScheme = ColorScheme.light;
-        break;
-
-      case 'dark':
-        colorScheme = ColorScheme.dark;
-        break;
-
-      case null:
-        if (window.matchMedia(`(prefers-color-scheme: light)`).matches) {
-          colorScheme = ColorScheme.light;
-          supports = true;
-        }
-
-        if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
-          colorScheme = ColorScheme.dark;
-          supports = true;
-        }
-
-        if (
-          window.matchMedia(`(prefers-color-scheme: no-preference)`).matches
-        ) {
-          colorScheme = ColorScheme.none;
-          supports = true;
-        }
-        break;
-    }
-
-    return {colorScheme, supports};
-  }
-
-  function switchColorScheme(color: unknown): ColorScheme {
-    switch (color) {
-      case 'light':
-        return ColorScheme.dark;
-
-      case 'dark':
-        return ColorScheme.light;
-
-      default:
-        return ColorScheme.none;
-    }
-  }
-
-  function setColorScheme({colorEnum, html, storage}: SetColorScheme): void {
-    const event = new CustomEvent('setColorScheme', {
-      detail: ColorScheme[colorEnum]
+  function resetColorScheme({html, storage}: ResetColorScheme): void {
+    const event = new CustomEvent('ResetColorScheme', {
+      detail: {colorScheme: null}
     });
-    html.dispatchEvent(event);
 
-    switch (colorEnum) {
-      case ColorScheme.light:
-        html.dataset.colorScheme = 'light';
-        storage.setItem('color-scheme', 'light');
-        break;
-
-      case ColorScheme.dark:
-        html.dataset.colorScheme = 'dark';
-        storage.setItem('color-scheme', 'dark');
-        break;
-
-      case ColorScheme.none:
-        html.dataset.colorScheme = 'light';
-        storage.setItem('color-scheme', 'light');
-        break;
-    }
-  }
-
-  function unsetColorScheme({html, storage}: UnsetColorScheme): void {
-    const event = new CustomEvent('unsetColorScheme', {
-      detail: ColorScheme[ColorScheme.none]
-    });
-    html.dispatchEvent(event);
-
-    html.removeAttribute('data-color-scheme');
     storage.removeItem('color-scheme');
+    html.removeAttribute('data-color-scheme');
+
+    const initialColorScheme = readUserPreferences({
+      html,
+      storage
+    });
+
+    setColorScheme({
+      scheme: initialColorScheme,
+      html,
+      storage
+    });
+
+    doc.dispatchEvent(event);
+  }
+
+  function readUserPreferences({
+    html,
+    storage
+  }: ReadUserPreferences): ColorScheme {
+    // 1. Read `html` tag, and ignore the rest
+    if (
+      html.dataset.colorScheme === 'light' ||
+      html.dataset.colorScheme === 'dark'
+    ) {
+      return html.dataset.colorScheme;
+    }
+
+    // 2. Read the `color-scheme` key from browser local storage, and ignore the rest
+    const prevColorScheme = storage.getItem('color-scheme');
+    if (prevColorScheme === 'light' || prevColorScheme === 'dark') {
+      return prevColorScheme;
+    }
+
+    // 3. Finally, read the `prefers-color-scheme` media queries
+    if (window.matchMedia(`(prefers-color-scheme: dark)`).matches) {
+      return 'dark';
+    }
+
+    // If the local storage returns null
+    // If the prefers-color-scheme is `light`
+    // If the prefers-color-scheme is `no-preferences`
+    return 'light';
+  }
+
+  function setColorScheme({scheme, html, storage}: SetColorScheme): void {
+    const event = new CustomEvent('SetColorScheme', {
+      detail: {colorScheme: scheme}
+    });
+
+    storage.setItem('color-scheme', scheme);
+    html.dataset.colorScheme = scheme;
+    doc.dispatchEvent(event);
+  }
+
+  function switchColorScheme(scheme: unknown): ColorScheme {
+    return scheme === 'light' ? 'dark' : 'light';
   }
 })(window);
 
 // --- typings
-enum ColorScheme {
-  'dark' = 1,
-  'light' = 2,
-  'none' = -1
-}
+type ColorScheme = 'light' | 'dark';
 
-interface ReadColorPreferences {
-  colorScheme: ColorScheme;
-  supports: boolean;
-}
-
-interface SetColorScheme {
-  colorEnum: ColorScheme;
+interface ResetColorScheme {
   html: Document['documentElement'];
   storage: Storage;
 }
 
-interface UnsetColorScheme {
+interface ReadUserPreferences {
+  html: Document['documentElement'];
+  storage: Storage;
+}
+
+interface SetColorScheme {
+  scheme: ColorScheme;
   html: Document['documentElement'];
   storage: Storage;
 }

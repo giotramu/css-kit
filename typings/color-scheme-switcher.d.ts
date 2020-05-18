@@ -1,18 +1,14 @@
-declare enum ColorScheme {
-  'dark' = 1,
-  'light' = 2,
-  'none' = -1
-}
-interface ReadColorPreferences {
-  colorScheme: ColorScheme;
-  supports: boolean;
-}
-interface SetColorScheme {
-  colorEnum: ColorScheme;
+declare type ColorScheme = 'light' | 'dark';
+interface ResetColorScheme {
   html: Document['documentElement'];
   storage: Storage;
 }
-interface UnsetColorScheme {
+interface ReadUserPreferences {
+  html: Document['documentElement'];
+  storage: Storage;
+}
+interface SetColorScheme {
+  scheme: ColorScheme;
   html: Document['documentElement'];
   storage: Storage;
 }
