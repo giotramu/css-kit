@@ -1,12 +1,17 @@
-$icon-switch-shadow: _shadow('bottom', $color: $light-shadow-color);
+$icon-switch-shadow: _shadow(
+  'bottom',
+  $size: 10,
+  $color: _tint(_color('base'), 16%)
+);
+
 $icon-switch-active-shadow: _shadow(
   'bottom',
-  $color: $light-shadow-color,
-  $size: 4
+  $size: 8,
+  $color: _tint(_color('base'), 16%)
 );
 
 $icon-switch-props: (
-  size: 1rem,
+  size: 1.16rem,
   padding: calc(0.375 * 0.8rem),
   border-radius: 50%,
   border: none,
@@ -14,8 +19,8 @@ $icon-switch-props: (
   active-border-color: transparent,
   disabled-border-color: transparent,
   background: _color('light'),
-  hover-background: _color('accent'),
-  active-background: _color('accent'),
+  hover-background: _color('light'),
+  active-background: _color('light'),
   disabled-background: _color('light'),
   shadow: $icon-switch-shadow,
   active-shadow: $icon-switch-active-shadow,

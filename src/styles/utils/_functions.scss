@@ -44,7 +44,7 @@
   @return null;
 }
 
-@function _shadow($type: 'bottom', $color: _color(accent), $size: 8) {
+@function _shadow($type: 'bottom', $size: 8, $color: _color('accent')) {
   $w: unquote('#{$size}px');
 
   /* prettier-ignore */
@@ -76,44 +76,7 @@
   @return null;
 }
 
-@function _field-shadow($hex) {
-  $inner: _shadow('inset-top', $size: 10, $color: $hex),
-    _shadow('inset-left-right', $size: 8, $color: $hex);
-
-  $outer: _shadow('top', $size: 8, $color: $hex),
-    _shadow('bottom', $size: 16, $color: $hex);
-
-  @return $inner, $outer;
-}
-
-@function _radial-gradient(
-  $color: _color(accent),
-  $percentage: 8%,
-  $direction: 'bottom center',
-  $shape: 'ellipse'
-) {
-  @return radial-gradient(
-    unquote('#{$shape} farthest-corner at #{$direction}'),
-    _tint($color, $percentage) 0%,
-    $color 72%,
-    _shade($color, $percentage / 2)
-  );
-}
-
-@function _linear-gradient(
-  $color: _color(accent),
-  $percentage: 8%,
-  $direction: 225deg
-) {
-  @return linear-gradient(
-    $direction,
-    $color,
-    _tint($color, $percentage),
-    $color
-  );
-}
-
-@function _gradient($type: 'dark', $percentage: 0%) {
+@function _gradient($type: 'accent', $percentage: 0%) {
   @if $type == 'accent' {
     @return radial-gradient(
       circle farthest-corner at 10% 20%,
@@ -133,11 +96,11 @@
   @if $type == 'light' {
     @return radial-gradient(
       circle farthest-corner at 18.7% 37.8%,
-      _tint(#fafafa, $percentage) 0%,
-      _tint(#e1eaee, $percentage) 90%
+      _shade(#fafafa, $percentage) 0%,
+      _shade(#e1eaee, $percentage) 90%
     );
   }
 
-  @warn 'Unknown `#{$type}`.';
+  @warn 'Unknown `#{$type}` in _gradient function.';
   @return null;
 }

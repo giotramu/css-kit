@@ -1,16 +1,17 @@
-$range: 'range';
-
-$shadow: 4px 4px 12px _shade(_color('light'), 16%), -4px -4px 20px $white,
-  inset 0 0 2px rgba($white, 0), inset 4px 4px 12px _shade(_color('light'), 16%),
-  inset -4px -4px 20px $white, 0 0 2px rgba($white, 0.2);
+$shadow: 4px 4px 12px _shade(_color('light'), 16%),
+  -4px -4px 20px _tint(_color('light'), 100%),
+  inset 0 0 2px rgba(_tint(_color('light'), 100%), 0),
+  inset 4px 4px 12px _shade(_color('light'), 16%),
+  inset -4px -4px 20px _tint(_color('light'), 100%),
+  0 0 2px rgba(_tint(_color('light'), 100%), 0.2);
 
 $disabled-shadow: inset 1px 1px 2px _shade(_color('light'), 16%),
-  inset -1px -1px 2px $white;
+  inset -1px -1px 2px _tint(_color('light'), 100%);
 
 $range-props: (
   width: 100%,
   height: 4px,
-  border: 1px solid $white,
+  border: 1px solid _tint(_color('light'), 100%),
   border-radius: 10px,
   disabled-shadow: $disabled-shadow,
   shadow: $shadow,
@@ -20,11 +21,11 @@ $range-props: (
   thumb-width: 24px,
   thumb-height: 24px,
   thumb-radius: 50%,
-  thumb-sripes-color: rgba($white, 0.15),
-  thumb-sripes-active-color: rgba($white, 0.25),
-  thumb-background: _radial-gradient(),
-  thumb-active-background: _radial-gradient(_tint(_color('accent'), 8%)),
+  thumb-sripes-color: rgba(_tint(_color('light'), 100%), 0.15),
+  thumb-sripes-active-color: rgba(_tint(_color('light'), 100%), 0.25),
+  thumb-background: _gradient('accent'),
+  thumb-active-background: _gradient('accent', 8%),
   thumb-disabled-background: _tint(_color('accent'), 64%),
-  thumb-shadow: _shadow('all', $size: 4),
-  thumb-active-shadow: _shadow('all', $size: 6)
+  thumb-shadow: _shadow('all', $size: 8, $color: _color('accent')),
+  thumb-active-shadow: _shadow('all', $size: 4, $color: _color('accent'))
 );

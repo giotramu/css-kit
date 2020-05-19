@@ -1,8 +1,16 @@
-$focus-shadow: _shadow('inset-left-right', $color: rgba(_color('accent'), 0.16)),
-  _shadow('bottom', $color: rgba(_color('accent'), 0.16));
+$focus-shadow: _shadow(
+    'inset-left-right',
+    $size: 8,
+    $color: rgba(_color('accent'), 0.16)
+  ),
+  _shadow('bottom', $size: 8, $color: rgba(_color('accent'), 0.16));
 
-$invalid-shadow: _shadow('inset-left-right', $color: rgba(_color('ko'), 0.16)),
-  _shadow('bottom', $color: rgba(_color('ko'), 0.16));
+$invalid-shadow: _shadow(
+    'inset-left-right',
+    $size: 8,
+    $color: rgba(_color('ko'), 0.16)
+  ),
+  _shadow('bottom', $size: 8, $color: rgba(_color('ko'), 0.16));
 
 $field-props: (
   width: 100%,
@@ -10,7 +18,7 @@ $field-props: (
   ypadding: 0.5em,
   xpadding: 1em,
   border-radius: $border-radius,
-  border: 2px solid _tint(_color('base'), 80%),
+  border: 1px solid _tint(_color('base'), 80%),
   hover-border-color: _tint(_color('base'), 72%),
   focus-border-color: _color('accent'),
   disabled-border-color: _tint(_color('base'), 72%),
@@ -33,7 +41,7 @@ $field-props: (
   hover-shadow: none,
   focus-shadow: $focus-shadow,
   invalid-shadow: $invalid-shadow,
-  selection-foreground: $white,
+  selection-foreground: _color('light'),
   selection-background: _color('accent'),
   resize: vertical
 );

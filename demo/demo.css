@@ -4,11 +4,15 @@
   bottom: 1rem;
   right: 1rem;
   left: auto;
-  z-index: 1;
+  z-index: 99;
+}
+
+.toggles > .icon-switch:not(:last-of-type) {
+  margin-right: 0.5rem;
 }
 
 main {
-  max-width: 54rem;
+  max-width: 56rem;
   min-width: 32rem;
   margin: 4rem auto;
   padding: 0 2rem;

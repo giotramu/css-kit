@@ -5,5 +5,5 @@ $checkradio-props: (
   color: _gradient('accent'),
   background: _tint(_color('base'), 72%),
   shadow: _shadow('all', $size: 4, $color: rgba(_color('accent'), 0.72)),
-  tick-color: $white
+  tick-color: _color('light')
 );

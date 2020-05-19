@@ -1,6 +1,12 @@
+$color-picker-shadow: _shadow(
+  'bottom',
+  $size: 10,
+  $color: _tint(_color('base'), 16%)
+);
+
 $color-picker-props: (
   border: none,
   border-radius: 50%,
-  shadow: _shadow('bottom', $color: _shade(_color('light'), 16%)),
-  focus-border: rgba($white, 0.5)
+  shadow: $color-picker-shadow,
+  focus-border: rgba(_color('light'), 0.56)
 );

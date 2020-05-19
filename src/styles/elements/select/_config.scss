@@ -1,7 +1,9 @@
-$select-icon: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" stroke-miterlimit="10" d="M7 8l5-5 5 5m0 8l-5 5-5-5"/></svg>');
-
-$focus-shadow: _shadow('top', $color: _color('accent')),
-  _shadow('bottom', $color: _color('accent'));
+$focus-shadow: _shadow(
+    'inset-left-right',
+    $size: 8,
+    $color: rgba(_color('accent'), 0.16)
+  ),
+  _shadow('bottom', $size: 8, $color: rgba(_color('accent'), 0.16));
 
 $select-props: (
   width: 100%,
@@ -9,7 +11,7 @@ $select-props: (
   ypadding: 0.5em,
   xpadding: 1em,
   border-radius: $border-radius,
-  border: 2px solid _tint(_color('base'), 80%),
+  border: 1px solid _tint(_color('base'), 80%),
   hover-border-color: _tint(_color('base'), 72%),
   focus-border-color: _color('accent'),
   disabled-border-color: _tint(_color('base'), 72%),
@@ -25,7 +27,7 @@ $select-props: (
   hover-shadow: none,
   focus-shadow: $focus-shadow,
   icon-size: 1rem,
-  icon: $select-icon,
+  icon: svg-load('assets/select.svg', fill=#{_tint(_color('base'), 32%)}),
   option-checked-foreground: _color('light'),
   option-checked-background: _color('accent')
 );

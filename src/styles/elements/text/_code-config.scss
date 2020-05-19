@@ -1,4 +1,4 @@
 $code-props: (
   border-radius: 2px,
-  background: $white
+  background: _shade(_color('light'), 8%)
 );

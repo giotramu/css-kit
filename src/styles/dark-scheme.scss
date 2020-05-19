@@ -3,41 +3,45 @@
 @import './abstracts/theme';
 @import './elements/domains';
 
-$icon-switch-shadow: _shadow('bottom', $color: $dark-shadow-color);
+$color-picker-shadow: _shadow(
+  'bottom',
+  $size: 10,
+  $color: _shade(_color('base'), 72%)
+);
+
+$icon-switch-shadow: _shadow(
+  'bottom',
+  $size: 10,
+  $color: _shade(_color('base'), 72%)
+);
+
 $icon-switch-active-shadow: _shadow(
   'bottom',
-  $color: $dark-shadow-color,
-  $size: 4
+  $size: 8,
+  $color: _shade(_color('base'), 72%)
 );
 
 $dark-overrides: (
+  $checkradio: (
+    background: _color('base')
+  ),
+  $code: (
+    background: _tint(_color('dark'), 16%)
+  ),
+  $color-picker: (
+    shadow: $color-picker-shadow
+  ),
+  $details: (
+    background: _color('dark'),
+    summary-background: _color('dark'),
+    shadow: none
+  ),
   $document: (
     foreground: _color('light'),
     background: _color('dark')
   ),
-  $icon-switch: (
-    shadow: $icon-switch-shadow,
-    active-shadow: $icon-switch-active-shadow
-  ),
-  $button: (
-    foreground: _color('dark'),
-    background: _gradient('light'),
-    hover-background: _gradient('light', $percentage: 8),
-    active-background: _gradient('light', $percentage: 16),
-    disabled-background: _color('light')
-  ),
-  $hr: (
-    background: _shade(_color('base'), 16%)
-  ),
-  $table: (
-    head-separator: 2px solid _shade(_color('base'), 16%),
-    row-separator: 1px solid _shade(_color('base'), 16%)
-  ),
-  $checkradio: (
-    background: _color('base')
-  ),
   $field: (
-    border: 2px solid _color('base'),
+    border: 1px solid _color('base'),
     hover-border-color: _tint(_color('base'), 8%),
     focus-border-color: _color('accent'),
     disabled-border-color: _shade(_color('base'), 16%),
@@ -45,31 +49,45 @@ $dark-overrides: (
     foreground: _color('light'),
     hover-foreground: _color('light'),
     focus-foreground: _color('light'),
-    disabled-foreground: _tint(_color('base'), 8%),
+    disabled-foreground: _tint(_color('base'), 16%),
     invalid-foreground: _color('light'),
     placeholder-foreground: _tint(_color('base'), 32%),
     hover-placeholder-foreground: _tint(_color('base'), 32%),
-    focus-placeholder-foreground: _color('base'),
+    focus-placeholder-foreground: _tint(_color('base'), 16%),
     disabled-placeholder-foreground: _color('base'),
     background: _tint(_color('dark'), 8%),
     hover-background: _tint(_color('dark'), 8%),
-    focus-background: _tint(_color('dark'), 8%),
+    focus-background: _tint(_color('dark'), 10%),
     disabled-background: _color('dark'),
     invalid-background: _tint(_color('dark'), 8%)
   ),
+  $hr: (
+    background: _shade(_color('base'), 16%)
+  ),
+  $kbd: (
+    border-color: _tint(_color('dark'), 16%)
+  ),
+  $icon-switch: (
+    shadow: $icon-switch-shadow,
+    active-shadow: $icon-switch-active-shadow
+  ),
   $select: (
-    border: 2px solid _color('base'),
+    border: 1px solid _color('base'),
     hover-border-color: _tint(_color('base'), 8%),
     focus-border-color: _color('accent'),
     disabled-border-color: _shade(_color('base'), 16%),
     foreground: _color('light'),
     hover-foreground: _color('light'),
     focus-foreground: _color('light'),
-    disabled-foreground: _tint(_color('base'), 8%),
+    disabled-foreground: _tint(_color('base'), 16%),
     background: _tint(_color('dark'), 8%),
     hover-background: _tint(_color('dark'), 8%),
-    focus-background: _tint(_color('dark'), 8%),
+    focus-background: _tint(_color('dark'), 10%),
     disabled-background: _color('dark')
+  ),
+  $table: (
+    head-separator: 2px solid _shade(_color('base'), 16%),
+    row-separator: 1px solid _shade(_color('base'), 16%)
   )
 );
 
@@ -82,10 +100,10 @@ html[data-color-scheme='dark'] {
 }
 
 .icon-switch[data-ck-trigger='set-color-scheme'] {
-  --ck-icon-switch-before: svg-load('assets/sun.svg', fill=#{_color('dark')});
-  --ck-icon-switch-after: svg-load('assets/moon.svg', fill=#{_color('dark')});
+  --ck-icon-switch-before: svg-load('assets/sun.svg', fill=#{_color('base')});
+  --ck-icon-switch-after: svg-load('assets/moon.svg', fill=#{_color('base')});
 }
 
 .icon-switch[data-ck-trigger='reset-color-scheme'] {
-  --ck-icon-switch-before: svg-load('assets/reset.svg', fill=#{_color('dark')});
+  --ck-icon-switch-before: svg-load('assets/reset.svg', fill=#{_color('base')});
 }

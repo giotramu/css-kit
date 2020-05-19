@@ -8,11 +8,11 @@ $button-props: (
   hover-border-color: transparent,
   font-weight: 700,
   foreground: _color('light'),
-  background: _gradient('dark'),
-  hover-background: _gradient('dark', $percentage: 4),
-  active-background: _gradient('dark', $percentage: 8),
-  disabled-background: _color('dark'),
-  shadow: _shadow('bottom', $color: _color('base')),
-  active-shadow: _shadow('bottom', $color: _color('base'), $size: 4),
+  background: _gradient('accent'),
+  hover-background: _gradient('accent', 4%),
+  active-background: _gradient('accent', 8%),
+  disabled-background: _color('accent'),
+  shadow: _shadow('bottom', $size: 8, $color: _color('accent')),
+  active-shadow: _shadow('bottom', $size: 4, $color: _color('base')),
   icon-margin: 0.8em
 );
