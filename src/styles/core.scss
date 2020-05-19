@@ -1,9 +1,6 @@
-// Abstracts
 @import './abstracts/config';
-@import './abstracts/theme';
-
-// Utilities
 @import './utils/functions';
+@import './abstracts/theme';
 @import './utils/normalizer';
 
 // HTML Elements

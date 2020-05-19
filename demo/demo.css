@@ -1,3 +1,12 @@
+.toggles {
+  position: fixed;
+  top: auto;
+  bottom: 1rem;
+  right: 1rem;
+  left: auto;
+  z-index: 1;
+}
+
 main {
   max-width: 54rem;
   min-width: 32rem;
@@ -14,7 +23,7 @@ section > h3:first-of-type {
 }
 
 table.striped {
-  --ck-table-striped-background: rgba(255, 255, 255, 0.16);
+  --ck-table-striped-background: rgba(255, 255, 255, 0.02);
 }
 
 section.buttons button:not(:last-of-type) {
@@ -32,11 +41,4 @@ section.progress-bars p:not(:last-of-type) {
 
 section.range-inputs input:not(:last-of-type) {
   margin-bottom: 2.4rem;
-}
-
-.toggles {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  left: auto;
 }

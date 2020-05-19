@@ -39,7 +39,7 @@
     "watch:css": "watch \"npm run build:css -- --dir ./demo\" ./src/styles",
     "watch:ts": "watch \"npm run build:ts -- --outDir ./demo\" ./src/scripts",
     "serve": "serve ./demo -u -l 3333",
-    "dev": "run-p -cln watch:** serve"
+    "dev": "run-p -cln watch:css serve"
   },
   "devDependencies": {
     "@giotramu/postcss-config": "^3.1.0",

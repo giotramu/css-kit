@@ -1,0 +1,13 @@
+@mixin icon {
+  content: '';
+  width: _var($icon-switch, 'size');
+  height: _var($icon-switch, 'size');
+  position: absolute;
+  top: calc(50% - (#{_var($icon-switch, 'size')} / 2));
+  left: calc(50% - (#{_var($icon-switch, 'size')} / 2));
+  background-repeat: no-repeat;
+  background-size: _var($icon-switch, 'size');
+  line-height: 1;
+  will-change: transform;
+  transition: opacity 0.3s, transform 0.3s;
+}

@@ -1,8 +1,8 @@
 $colors: (
-  accent: #0e58fb,
-  base: #1d2b3b,
-  dark: #1d2b3b,
-  light: #fbfcfd,
+  accent: #0084ff,
+  base: #5a5c6a,
+  dark: #202d3a,
+  light: #fafafa,
   ok: #13a699,
   ko: #ff2f6c,
   warn: #ffbe33
@@ -12,3 +12,5 @@ $colors: (
 $white: #fff;
 $black: #000;
 $border-radius: 8px;
+$light-shadow-color: _shade(_color('light'), 40%);
+$dark-shadow-color: _shade(_color('dark'), 80%);

@@ -1,22 +1,24 @@
-$unset-scheme-icon: unquote(
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g fill="currentColor"><path d="M2 6v8c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V6H2z"/><path d="M12 3V1c0-.6-.4-1-1-1H5c-.6 0-1 .4-1 1v2H0v2h16V3h-4zm-2 0H6V2h4v1z"/></g></svg>'
-);
-
-$icon-on: unquote(
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g fill="currentColor"><path d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.414-1.414zM14 7h2v2h-2zM12.95 14.433l-1.415-1.414 1.414-1.414 1.415 1.413zM7 14h2v2H7zM2.98 14.363L1.566 12.95l1.415-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.707L4.465 3.12 3.05 4.535 1.636 3.121z"/><path d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4z"/></g></svg>'
-);
-
-$icon-off: unquote(
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="currentColor" d="M6 0C2.5.9 0 4.1 0 7.9 0 12.4 3.6 16 8.1 16c3.8 0 6.9-2.5 7.9-6C9.9 11.7 4.3 6.1 6 0z"/></svg>'
+$icon-switch-shadow: _shadow('bottom', $color: $light-shadow-color);
+$icon-switch-active-shadow: _shadow(
+  'bottom',
+  $color: $light-shadow-color,
+  $size: 4
 );
 
 $icon-switch-props: (
-  size: 2rem,
-  padding: calc(0.375 * 8px),
-  foreground: _color('dark'),
+  size: 1rem,
+  padding: calc(0.375 * 0.8rem),
+  border-radius: 50%,
+  border: none,
+  hover-border-color: transparent,
+  active-border-color: transparent,
+  disabled-border-color: transparent,
   background: _color('light'),
-  shadow: _shadow('bottom', $color: _tint(_color('dark'), 16%)),
-  icon-size: 1em,
-  icon-on: url('data:image/svg+xml;utf-8,#{$icon-on}'),
-  icon-off: url('data:image/svg+xml;utf-8,#{$icon-off}')
+  hover-background: _color('accent'),
+  active-background: _color('accent'),
+  disabled-background: _color('light'),
+  shadow: $icon-switch-shadow,
+  active-shadow: $icon-switch-active-shadow,
+  before: svg-load('assets/power.svg', fill=#{_color('ok')}),
+  after: svg-load('assets/power.svg', fill=#{_color('ko')})
 );

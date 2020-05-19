@@ -62,15 +62,15 @@
   }
 
   &[readonly] {
-    border-color: _var($field, 'readonly-border-color');
+    border-color: _var($field, 'disabled-border-color');
     border-style: dashed;
-    color: _var($field, 'readonly-foreground');
-    background: _var($field, 'background');
+    color: _var($field, 'foreground');
+    background: _var($field, 'disabled-background');
     box-shadow: none;
     cursor: default;
 
     &:focus {
-      border-color: _var($field, 'readonly-focus-border-color');
+      border-color: _var($field, 'focus-border-color');
     }
 
     &::placeholder {

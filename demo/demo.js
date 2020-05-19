@@ -19,11 +19,11 @@
       );
 
       if (colorScheme === 'dark') {
-        colorSchemeTrigger.classList.remove('icon-switch-off');
+        colorSchemeTrigger.classList.remove('icon-switch-after');
         return;
       }
 
-      colorSchemeTrigger.classList.add('icon-switch-off');
+      colorSchemeTrigger.classList.add('icon-switch-after');
     });
 
     doc.addEventListener('ResetColorScheme', () =>
