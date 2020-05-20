@@ -22,17 +22,17 @@
 }
 
 // Return a CSS Custom Property definition (e.g. --ck-button-font-size).
-@function _defineVar($element, $prop, $scope: true) {
-  @if $scope == true {
-    @return unquote('--#{$domain}-#{$element}-#{$prop}');
+@function _defineVar($component: null, $property) {
+  @if $component {
+    @return unquote('--#{$domain}-#{$component}-#{$property}');
   }
 
-  @return unquote('--#{$element}-#{$prop}');
+  @return unquote('--#{$domain}-#{$property}');
 }
 
 // Return a CSS Custom Property (e.g. var(--ck-button-font-size)).
-@function _var($element, $prop) {
-  @return var(_defineVar($element, $prop));
+@function _var($component, $property) {
+  @return var(_defineVar($component, $property));
 }
 
 @function _color($type) {
@@ -44,7 +44,7 @@
   @return null;
 }
 
-@function _shadow($type: 'bottom', $size: 8, $color: _color('accent')) {
+@function _shadow($type: 'bottom', $size: 8, $color: _color('accent-low')) {
   $w: unquote('#{$size}px');
 
   /* prettier-ignore */
@@ -80,24 +80,24 @@
   @if $type == 'accent' {
     @return radial-gradient(
       circle farthest-corner at 10% 20%,
-      _tint(#0072ff, $percentage) 0%,
-      _tint(#0084ff, $percentage) 90%
+      _shade(_color('accent-high'), $percentage) 0%,
+      _shade(_color('accent-low'), $percentage) 90%
     );
   }
 
   @if $type == 'dark' {
     @return radial-gradient(
       circle farthest-corner at 10% 20%,
-      _tint(#5a5c6a, $percentage) 0%,
-      _tint(#202d3a, $percentage) 81.3%
+      _shade(_color('base-low'), $percentage) 0%,
+      _shade(_color('base-high'), $percentage) 81.3%
     );
   }
 
   @if $type == 'light' {
     @return radial-gradient(
       circle farthest-corner at 18.7% 37.8%,
-      _shade(#fafafa, $percentage) 0%,
-      _shade(#e1eaee, $percentage) 90%
+      _shade(_color('light-low'), $percentage) 0%,
+      _shade(_color('light-high'), $percentage) 90%
     );
   }
 

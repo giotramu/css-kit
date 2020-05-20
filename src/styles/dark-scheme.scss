@@ -1,96 +1,110 @@
 @import './abstracts/config';
-@import './utils/functions';
 @import './abstracts/theme';
-@import './elements/domains';
+@import './utils/functions';
+@import './components/domains';
 
 $color-picker-shadow: _shadow(
   'bottom',
   $size: 10,
-  $color: _shade(_color('base'), 72%)
+  $color: _shade(_color('base-high'), 40%)
 );
 
-$icon-switch-shadow: _shadow(
+$dialog-shadow: _shadow(
   'bottom',
-  $size: 10,
-  $color: _shade(_color('base'), 72%)
+  $size: 24,
+  $color: _shade(_color('base-high'), 40%)
 );
 
-$icon-switch-active-shadow: _shadow(
-  'bottom',
-  $size: 8,
-  $color: _shade(_color('base'), 72%)
-);
+$progress-shadow: 8px 8px 16px _shade(_color('base-high'), 32%),
+  -8px -8px 24px _tint(_color('base-high'), 16%),
+  inset 0 0 4px rgba(_tint(_color('base-high'), 16%), 0),
+  inset 8px 8px 16px _shade(_color('base-high'), 32%),
+  inset -8px -8px 24px _tint(_color('base-high'), 16%),
+  0 0 4px rgba(_tint(_color('base-high'), 16%), 0.2);
 
 $dark-overrides: (
-  $checkradio: (
-    background: _color('base')
+  $document: (
+    foreground: _color('light-low'),
+    background: _color('base-high')
+  ),
+  $hr: (
+    background: _shade(_color('base-low'), 16%)
   ),
   $code: (
-    background: _tint(_color('dark'), 16%)
+    background: _tint(_color('base-high'), 16%)
+  ),
+  $kbd: (
+    border-color: _tint(_color('base-high'), 16%)
+  ),
+  $table: (
+    head-separator: 2px solid _shade(_color('base-low'), 16%),
+    row-separator: 1px solid _shade(_color('base-low'), 16%)
+  ),
+  $checkradio: (
+    background: _color('base-low')
+  ),
+  $field: (
+    border: 1px solid _color('base-low'),
+    hover-border-color: _tint(_color('base-low'), 8%),
+    focus-border-color: _color('accent-low'),
+    disabled-border-color: _shade(_color('base-low'), 16%),
+    invalid-border-color: _color('ko'),
+    foreground: _color('light-high'),
+    disabled-foreground: _tint(_color('base-low'), 16%),
+    invalid-foreground: _color('light-high'),
+    placeholder-foreground: _tint(_color('base-low'), 32%),
+    hover-placeholder-foreground: _tint(_color('base-low'), 32%),
+    focus-placeholder-foreground: _tint(_color('base-low'), 16%),
+    disabled-placeholder-foreground: _color('base-low'),
+    background: _tint(_color('base-high'), 8%),
+    hover-background: _tint(_color('base-high'), 8%),
+    focus-background: _tint(_color('base-high'), 16%),
+    disabled-background: _color('base-high'),
+    invalid-background: _tint(_color('base-high'), 8%)
+  ),
+  $select: (
+    border: 1px solid _color('base-low'),
+    hover-border-color: _tint(_color('base-low'), 8%),
+    focus-border-color: _color('accent-low'),
+    disabled-border-color: _shade(_color('base-low'), 16%),
+    foreground: _color('light-low'),
+    disabled-foreground: _tint(_color('base-low'), 16%),
+    background: _tint(_color('base-high'), 8%),
+    hover-background: _tint(_color('base-high'), 8%),
+    focus-background: _tint(_color('base-high'), 16%),
+    disabled-background: _color('base-high')
+  ),
+  $progress: (
+    border-color: _tint(_color('base-high'), 4%),
+    shadow:
+      _shadow(
+        'inset-top-bottom',
+        $size: 24,
+        $color: _tint(_color('base-high'), 8%)
+      )
+  ),
+  $range: (
+    background: _shade(_color('base-low'), 16%),
+    focus-background: _shade(_color('base-low'), 8%),
+    disabled-background: _shade(_color('base-low'), 16%),
+    shadow: _shadow('inset-top-bottom', $size: 8, $color: _color('base-low')),
+    thumb-disabled-background: _color('base-low')
+  ),
+  $details: (
+    background: _color('base-high'),
+    summary-background: _color('base-high'),
+    shadow: none
   ),
   $color-picker: (
     shadow: $color-picker-shadow
   ),
-  $details: (
-    background: _color('dark'),
-    summary-background: _color('dark'),
-    shadow: none
-  ),
-  $document: (
-    foreground: _color('light'),
-    background: _color('dark')
-  ),
-  $field: (
-    border: 1px solid _color('base'),
-    hover-border-color: _tint(_color('base'), 8%),
-    focus-border-color: _color('accent'),
-    disabled-border-color: _shade(_color('base'), 16%),
-    invalid-border-color: _color('ko'),
-    foreground: _color('light'),
-    hover-foreground: _color('light'),
-    focus-foreground: _color('light'),
-    disabled-foreground: _tint(_color('base'), 16%),
-    invalid-foreground: _color('light'),
-    placeholder-foreground: _tint(_color('base'), 32%),
-    hover-placeholder-foreground: _tint(_color('base'), 32%),
-    focus-placeholder-foreground: _tint(_color('base'), 16%),
-    disabled-placeholder-foreground: _color('base'),
-    background: _tint(_color('dark'), 8%),
-    hover-background: _tint(_color('dark'), 8%),
-    focus-background: _tint(_color('dark'), 10%),
-    disabled-background: _color('dark'),
-    invalid-background: _tint(_color('dark'), 8%)
-  ),
-  $hr: (
-    background: _shade(_color('base'), 16%)
-  ),
-  $kbd: (
-    border-color: _tint(_color('dark'), 16%)
-  ),
-  $icon-switch: (
-    shadow: $icon-switch-shadow,
-    active-shadow: $icon-switch-active-shadow
-  ),
-  $select: (
-    border: 1px solid _color('base'),
-    hover-border-color: _tint(_color('base'), 8%),
-    focus-border-color: _color('accent'),
-    disabled-border-color: _shade(_color('base'), 16%),
-    foreground: _color('light'),
-    hover-foreground: _color('light'),
-    focus-foreground: _color('light'),
-    disabled-foreground: _tint(_color('base'), 16%),
-    background: _tint(_color('dark'), 8%),
-    hover-background: _tint(_color('dark'), 8%),
-    focus-background: _tint(_color('dark'), 10%),
-    disabled-background: _color('dark')
-  ),
-  $table: (
-    head-separator: 2px solid _shade(_color('base'), 16%),
-    row-separator: 1px solid _shade(_color('base'), 16%)
+  $dialog: (
+    background: _tint(_color('base-high'), 8%),
+    shadow: $dialog-shadow
   )
 );
 
+// Generate the CSS Custom Properties
 html[data-color-scheme='dark'] {
   @each $element, $props in $dark-overrides {
     @each $prop, $val in $props {
@@ -99,11 +113,21 @@ html[data-color-scheme='dark'] {
   }
 }
 
+// Use `icon-switch` component as color scheme trigger
 .icon-switch[data-ck-trigger='set-color-scheme'] {
-  --ck-icon-switch-before: svg-load('assets/sun.svg', fill=#{_color('base')});
-  --ck-icon-switch-after: svg-load('assets/moon.svg', fill=#{_color('base')});
+  --ck-icon-switch-before: svg-load(
+    'assets/sun.svg',
+    fill=#{_color('light-low')}
+  );
+  --ck-icon-switch-after: svg-load(
+    'assets/moon.svg',
+    fill=#{_color('light-low')}
+  );
 }
 
 .icon-switch[data-ck-trigger='reset-color-scheme'] {
-  --ck-icon-switch-before: svg-load('assets/reset.svg', fill=#{_color('base')});
+  --ck-icon-switch-before: svg-load(
+    'assets/reset.svg',
+    fill=#{_color('light-low')}
+  );
 }

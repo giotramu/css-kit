@@ -1,20 +1,24 @@
 @import './abstracts/config';
-@import './utils/functions';
 @import './abstracts/theme';
+@import './utils/functions';
 @import './utils/normalizer';
-
-// HTML Elements
-@import './elements/bundle';
+@import './components/bundle';
 
 // CSS Custom Properties
-:root {
-  @each $color, $hex in $colors {
-    #{_defineVar('color', $color, $scope: false)}: $hex;
-  }
+$maps: $colors, $elements;
 
-  @each $element, $props in $elements {
-    @each $prop, $val in $props {
-      #{_defineVar($element, $prop)}: $val;
+:root {
+  @each $map in $maps {
+    @each $key, $config in $map {
+      @if type-of($config) == 'map' {
+        @each $prop, $val in $config {
+          #{_defineVar($key, $prop)}: $val;
+        }
+      }
+
+      @each $item in $config {
+        #{_defineVar($property: $key)}: $item;
+      }
     }
   }
 }

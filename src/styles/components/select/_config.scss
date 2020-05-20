@@ -1,0 +1,31 @@
+$focus-shadow: _shadow(
+    'inset-left-right',
+    $size: 8,
+    $color: rgba(_color('accent-low'), 0.16)
+  ),
+  _shadow('bottom', $size: 8, $color: rgba(_color('accent-low'), 0.16));
+
+$select-props: (
+  width: 100%,
+  min-height: 48px,
+  ypadding: 0.5em,
+  xpadding: 1em,
+  border-radius: $border-radius,
+  border: 1px solid _color('light-high'),
+  hover-border-color: _shade(_color('light-high'), 8%),
+  focus-border-color: _color('accent-low'),
+  disabled-border-color: _color('light-high'),
+  foreground: _color('base-low'),
+  disabled-foreground: _shade(_color('light-high'), 56%),
+  background: #fff,
+  hover-background: #fff,
+  focus-background: #fff,
+  disabled-background: _color('light-high'),
+  shadow: none,
+  hover-shadow: none,
+  focus-shadow: $focus-shadow,
+  icon-size: 1rem,
+  icon: svg-load('assets/select.svg', fill=#{_tint(_color('base-low'), 32%)}),
+  option-checked-foreground: _color('light-low'),
+  option-checked-background: _color('accent-low')
+);

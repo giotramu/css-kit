@@ -1,0 +1,17 @@
+$icon-switch-props: (
+  size: 1.125rem,
+  padding: calc(0.375 * 0.8rem),
+  border-radius: 50%,
+  border: none,
+  hover-border-color: transparent,
+  active-border-color: transparent,
+  disabled-border-color: transparent,
+  background: _gradient('accent'),
+  hover-background: _gradient('accent', 4%),
+  active-background: _gradient('accent', 8%),
+  disabled-background: _color('accent-low'),
+  shadow: _shadow('bottom', $size: 8, $color: _color('accent-low')),
+  active-shadow: _shadow('bottom', $size: 4, $color: _color('accent-low')),
+  before: svg-load('assets/power.svg', fill=#{_color('ok')}),
+  after: svg-load('assets/power.svg', fill=#{_color('ko')})
+);

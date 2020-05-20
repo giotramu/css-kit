@@ -1,0 +1,106 @@
+@import './config';
+
+$select-icon-size: _var($select, 'icon-size');
+$select-xpadding: _var($select, 'xpadding');
+$select-ypadding: _var($select, 'ypadding');
+
+select {
+  display: block;
+  overflow: hidden;
+  width: _var($select, 'width');
+  min-height: _var($select, 'min-height');
+  margin: 0;
+  border: _var($select, 'border');
+  border-radius: _var($select, 'border-radius');
+  padding: $select-ypadding $select-xpadding;
+  padding-right: unquote(
+    'calc(#{$select-xpadding} * 2 + #{$select-icon-size})'
+  );
+  color: _var($select, 'foreground');
+  background: _var($select, 'background');
+  box-shadow: _var($select, 'shadow');
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  line-height: inherit;
+  letter-spacing: 0.5px;
+  transition: color 0.1s ease-out, border-color 0.25s ease-out,
+    box-shadow 0.25s ease-out;
+  appearance: none;
+
+  &:hover {
+    border-color: _var($select, 'hover-border-color');
+    color: _var($select, 'foreground');
+    background: _var($select, 'hover-background');
+    box-shadow: _var($select, 'hover-shadow');
+  }
+
+  &:focus {
+    border-color: _var($select, 'focus-border-color');
+    color: _var($select, 'foreground');
+    background: _var($select, 'focus-background');
+    box-shadow: _var($select, 'focus-shadow');
+  }
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 _var($select, 'focus-foreground');
+    transition: none;
+
+    * {
+      color: _var($select, 'focus-foreground');
+      text-shadow: none;
+    }
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    border-color: _var($select, 'disabled-border-color');
+    opacity: 0.5;
+    color: _var($select, 'disabled-foreground');
+    background: _var($select, 'disabled-background');
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:not([multiple]) {
+    background-image: _var($select, 'icon');
+    background-repeat: no-repeat;
+    background-position: right $select-xpadding center;
+    background-size: $select-icon-size;
+  }
+
+  &[multiple] {
+    height: auto;
+    padding: $select-ypadding $select-xpadding;
+
+    @supports (padding-left: var(safe-area-inset-left)) {
+      padding: $select-ypadding $select-xpadding;
+    }
+
+    option {
+      padding: 0.4rem;
+
+      &:checked {
+        color: _var($select, 'option-checked-foreground');
+        background: linear-gradient(
+          to bottom,
+          _var($select, 'option-checked-background') 0%,
+          _var($select, 'option-checked-background') 100%
+        );
+        background-color: _var($select, 'option-checked-background');
+      }
+    }
+  }
+
+  optgroup {
+    margin: 0.4rem 0 0.8rem;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

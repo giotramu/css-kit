@@ -1,0 +1,18 @@
+$button-props: (
+  ypadding: 1em,
+  xpadding: 2em,
+  border-radius: $border-radius,
+  border: none,
+  active-border-color: transparent,
+  disabled-border-color: transparent,
+  hover-border-color: transparent,
+  font-weight: 700,
+  foreground: _color('light-low'),
+  background: _gradient('accent'),
+  hover-background: _gradient('accent', 4%),
+  active-background: _gradient('accent', 8%),
+  disabled-background: _color('accent-low'),
+  shadow: _shadow('bottom', $size: 8, $color: _color('accent-low')),
+  active-shadow: _shadow('bottom', $size: 4, $color: _color('accent-low')),
+  icon-margin: 0.8em
+);

@@ -48,7 +48,6 @@
     });
 
     storage.removeItem('color-scheme');
-    html.removeAttribute('data-color-scheme');
 
     const initialColorScheme = readUserPreferences({
       html,

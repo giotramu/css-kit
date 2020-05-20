@@ -1,0 +1,45 @@
+$focus-shadow: _shadow(
+    'inset-left-right',
+    $size: 8,
+    $color: rgba(_color('accent-low'), 0.16)
+  ),
+  _shadow('bottom', $size: 8, $color: rgba(_color('accent-low'), 0.16));
+
+$invalid-shadow: _shadow(
+    'inset-left-right',
+    $size: 8,
+    $color: rgba(_color('ko'), 0.16)
+  ),
+  _shadow('bottom', $size: 8, $color: rgba(_color('ko'), 0.16));
+
+$field-props: (
+  width: 100%,
+  min-height: 48px,
+  ypadding: 0.5em,
+  xpadding: 1em,
+  border-radius: $border-radius,
+  border: 1px solid _color('light-high'),
+  hover-border-color: _shade(_color('light-high'), 8%),
+  focus-border-color: _color('accent-low'),
+  disabled-border-color: _color('light-high'),
+  invalid-border-color: _color('ko'),
+  foreground: _color('base-low'),
+  disabled-foreground: _shade(_color('light-high'), 56%),
+  invalid-foreground: _color('base-low'),
+  placeholder-foreground: _shade(_color('light-high'), 40%),
+  hover-placeholder-foreground: _shade(_color('light-high'), 40%),
+  focus-placeholder-foreground: _shade(_color('light-high'), 16%),
+  disabled-placeholder-foreground: _shade(_color('light-high'), 32%),
+  background: #fff,
+  hover-background: #fff,
+  focus-background: #fff,
+  disabled-background: _color('light-high'),
+  invalid-background: #fff,
+  shadow: none,
+  hover-shadow: none,
+  focus-shadow: $focus-shadow,
+  invalid-shadow: $invalid-shadow,
+  selection-foreground: _color('light-low'),
+  selection-background: _color('accent-low'),
+  resize: vertical
+);

@@ -1,9 +1,0 @@
-$checkradio-props: (
-  size: 20px,
-  border: none,
-  border-radius: $border-radius / 2,
-  color: _gradient('accent'),
-  background: _tint(_color('base'), 72%),
-  shadow: _shadow('all', $size: 4, $color: rgba(_color('accent'), 0.72)),
-  tick-color: _color('light')
-);

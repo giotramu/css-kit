@@ -1,0 +1,11 @@
+$dialog-props: (
+  max-width: 40rem,
+  ypadding: 2rem,
+  xpadding: 2rem,
+  border: 0,
+  border-radius: $border-radius,
+  background: _color('light-low'),
+  shadow: _shadow('bottom', $size: 24, $color: _color('light-high')),
+  backdrop: rgba(0, 0, 0, 0.3),
+  backdrop-filter: blur(10px)
+);

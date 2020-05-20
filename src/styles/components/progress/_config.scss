@@ -1,0 +1,9 @@
+$progress-props: (
+  height: 16px,
+  border-size: 1px,
+  border-color: _color('light-high'),
+  border-radius: 10px,
+  filled-color: _gradient('accent'),
+  background: transparent,
+  shadow: _shadow('inset-top-bottom', $size: 8, $color: _color('light-high'))
+);
