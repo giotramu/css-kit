@@ -141,7 +141,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   B A D G E S
 -->
 
-[ci-img]: https://github.com/giotramu/css-kit/workflows/test/badge.svg?branch=master
+[ci-img]: https://github.com/giotramu/css-kit/workflows/test%20+%20build/badge.svg?branch=master
 [deps-img]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
 [npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?label=npm%20package

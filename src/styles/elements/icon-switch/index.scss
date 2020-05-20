@@ -34,6 +34,7 @@
 
   &:not(:disabled):not([aria-disabled='true']):active {
     border-color: _var($icon-switch, 'active-border-color');
+    transform: none;
     background: _var($icon-switch, 'active-background');
     box-shadow: _var($icon-switch, 'active-shadow');
   }

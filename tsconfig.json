@@ -23,6 +23,6 @@
     "target": "esnext",
     "typeRoots": ["typings", "node_modules/@types"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/scripts/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
