@@ -1,7 +1,7 @@
 {
   "name": "@giotramu/css-kit",
   "version": "2.2.0",
-  "description": "Minimalist stylesheet for HTML elements.",
+  "description": "A tiny CSS scaffold for quick, consistent, and scalable user interface development.",
   "author": "giotramu <https://twitter.com/giotramu>",
   "homepage": "https://github.com/giotramu/css-kit#readme",
   "license": "MIT",
@@ -59,9 +59,8 @@
     "watch": "^1.0.2"
   },
   "keywords": [
-    "css",
-    "css-reset",
-    "normalize-css",
-    "sanitize-css"
+    "css-library",
+    "pattern-library",
+    "ui-components"
   ]
 }

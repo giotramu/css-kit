@@ -1,6 +1,6 @@
 # CSS-Kit
 
-Out of the box CSS styling for HTML elements with no class names.
+A tiny CSS scaffold for quick, consistent, and scalable user interface development.
 
 ### 🚧 In the development stage.
 
