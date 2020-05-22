@@ -2,11 +2,8 @@
 
 A tiny CSS scaffold for quick, consistent, and scalable user interface development.
 
-### 🚧 In the development stage.
-
----
-
 [![NPM][npm-img]][npm-url]
+[![Bundlephobia][bundlephobia-img]][bundlephobia-url]
 [![Test Status][ci-img]][ci-url]
 [![Dependencies][deps-img]][deps-url]
 [![Dev Dependencies][devdeps-img]][devdeps-url]
@@ -15,41 +12,38 @@ A tiny CSS scaffold for quick, consistent, and scalable user interface developme
 
 - [CSS-Kit](#css-kit)
   - [CDN Usage](#cdn-usage)
-  - [Install](#install)
   - [Webpack usage](#webpack-usage)
-  - [CSS Custom Properties][css-custom-props-url]
-  - [CSS Custom Media][css-custom-mq-url]
+  - [Dark color scheme](#dark-color-scheme)
+  - [Font](#font)
+  - [Custom media queries](#custom-media-queries)
   - [Browsers support](#browsers-support)
-  - [Thanks](#thanks)
   - [License](#license)
 
-## CDN Usage
+## CDN usage
 
-Put the link tags in the head of your `index.html` document:
+Copy/paste the link tag in the head of your `index.html` document:
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit@2.1"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit" />
 ```
 
 #### What does it do?
 
-- Normalizes styles for a wide range of elements (like `normalize.css`, but smaller).
 - Corrects bugs and common browser inconsistencies.
-- The `css-kit.css` stylesheet provides useful defaults to plain HTML documents. It dispatches the [CSS Custom Properties][css-custom-props-url].
-- A separate stylesheet, `custom-media.css`, injects the [CSS Custom Media Queries][css-custom-mq-url].
+- Normalizes styles for a wide range of elements.
+- The `css-kit.css` stylesheet provides useful defaults to plain HTML documents.
+- A separate stylesheet, `dark-scheme.css`, applies the dark color scheme.
+- A separate stylesheet, `custom-media.css`, injects the [Custom Media Queries][custom-mq-url].
 
-## Install
+## Webpack usage
 
-Install CSS-Kit and save them to your **package.json** `dependencies`:
+Install CSS-Kit and save them to your package.json `dependencies`:
 
 ```sh
 npm install @giotramu/css-kit --save
 ```
 
-## [Webpack][webpack-url] usage
+Install the [Webpack bundler][webpack-url] by following the official documentation and import the `css-kit.css` as a dependency in the CSS or JavaScript file of your choice.
 
 Import CSS-Kit in CSS:
 
@@ -57,7 +51,7 @@ Import CSS-Kit in CSS:
 @import '~@giotramu/css-kit/css-kit.css';
 ```
 
-Import CSS-Kit in JavaScript:
+Otherwise, import CSS-Kit in JavaScript:
 
 ```js
 import '@giotramu/css-kit/css-kit.css';
@@ -79,9 +73,80 @@ module.exports = {
 };
 ```
 
-#### CSS Custom Media Queries
+## Dark color scheme
 
-You can consume the predefined [CSS Custom Media Queries](./docs/custom-media.md). If you have the Webpack bundler installed, import the `custom-media.css` as a dependency in your CSS or JavaScript file.
+Copy/paste the HTML tags in the head of your `index.html` document:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/dark-scheme.css"
+/>
+
+<script
+  type="application/javascript"
+  crossorigin="anonymous"
+  defer="true"
+  src="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/color-scheme-switcher.js"
+></script>
+```
+
+Set the triggers for switch the color scheme light/dark:
+
+```html
+<button
+  aria-label="Toggle color scheme"
+  data-ck-trigger="set-color-scheme"
+  class="icon-switch"
+></button>
+
+<!-- Totally optional -->
+<button
+  aria-label="Clear local storage"
+  data-ck-trigger="reset-color-scheme"
+  class="icon-switch"
+></button>
+```
+
+Optionally, you can set the initial color scheme by adding the attribute `data-color-scheme` to the root tag, with the `light` or `dark` keywords:
+
+```html
+<!DOCTYPE html>
+<html lang="en" data-color-scheme="dark">
+  <!-- ... -->
+</html>
+```
+
+## Font
+
+Copy/paste the link tag in the head of your `index.html` document:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/font/giotramu-sans.css"
+/>
+```
+
+Use the custom font in your styles:
+
+```css
+body {
+  font-family: giotramu-sans, sans-serif;
+}
+```
+
+## Custom media queries
+
+Apply the predefined [Custom Media Queries][custom-mq-url] to your responsive layout.
+
+Install CSS-Kit and save them to your package.json `dependencies`:
+
+```sh
+npm install @giotramu/css-kit --save
+```
+
+Install the [Webpack bundler][webpack-url] by following the official documentation and import the `custom-media.css` as a dependency in the CSS or JavaScript file of your choice.
 
 Import Custom Media Queries in CSS:
 
@@ -89,7 +154,7 @@ Import Custom Media Queries in CSS:
 @import '~@giotramu/css-kit/custom-media.css';
 ```
 
-Import Custom Media Queries in JavaScript:
+Otherwise, import CSS-Kit in JavaScript:
 
 ```js
 import '@giotramu/css-kit/custom-media.css';
@@ -125,7 +190,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 
 ## Browsers support
 
-- Chrome & Chromium based browsers (last 3)
+- Chrome & chromium based browsers (last 3)
 - Firefox (last 3)
 - Firefox ESR
 - Opera (last 3)
@@ -141,6 +206,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   B A D G E S
 -->
 
+[bundlephobia-img]: https://badgen.net/bundlephobia/minzip/@giotramu/css-kit
 [ci-img]: https://github.com/giotramu/css-kit/workflows/test%20+%20build/badge.svg?branch=master
 [deps-img]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
@@ -150,9 +216,9 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   L I N K S
 -->
 
-[css-custom-props-url]: ./src/abstract/_custom-properties.scss
-[css-custom-mq-url]: ./src/custom-media.scss
+[bundlephobia-url]: https://bundlephobia.com/result?p=@giotramu/css-kit
 [ci-url]: https://github.com/giotramu/css-kit/actions
+[custom-mq-url]: ./src/styles/custom-media.scss
 [deps-url]: https://david-dm.org/giotramu/css-kit
 [devdeps-url]: https://david-dm.org/giotramu/css-kit?type=dev
 [npm-url]: https://www.npmjs.com/package/@giotramu/css-kit
