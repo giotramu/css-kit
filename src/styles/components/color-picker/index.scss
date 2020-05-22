@@ -5,7 +5,7 @@ input[type='color'] {
   width: 1.8rem;
   height: 1.8rem;
   border: none;
-  border-radius: _var($color-picker, 'border-radius');
+  border-radius: _config-var($color-picker, 'border-radius');
   padding: 0;
   background: transparent;
   cursor: pointer;
@@ -30,6 +30,6 @@ input[type='color'] {
 
   &:focus::-webkit-color-swatch,
   &:active::-webkit-color-swatch {
-    box-shadow: inset 0 0 0 2px _var($color-picker, 'focus-border');
+    box-shadow: inset 0 0 0 2px _config-var($color-picker, 'focus-border');
   }
 }

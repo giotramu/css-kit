@@ -2,18 +2,18 @@
 
 dialog {
   width: fit-content;
-  max-width: _var($dialog, 'max-width');
+  max-width: _config-var($dialog, 'max-width');
   height: fit-content;
   margin: auto;
-  border: _var($dialog, 'border');
-  border-radius: _var($dialog, 'border-radius');
-  padding: _var($dialog, 'ypadding') _var($dialog, 'xpadding');
+  border: _config-var($dialog, 'border');
+  border-radius: _config-var($dialog, 'border-radius');
+  padding: _config-var($dialog, 'ypadding') _config-var($dialog, 'xpadding');
   position: fixed;
   top: 50%;
   bottom: 50%;
   color: inherit;
-  background: _var($dialog, 'background');
-  box-shadow: _var($dialog, 'shadow');
+  background: _config-var($dialog, 'background');
+  box-shadow: _config-var($dialog, 'shadow');
 
   &:not([open]) {
     display: none;
@@ -26,8 +26,8 @@ dialog {
   }
 
   &::backdrop {
-    background-color: _var($dialog, 'backdrop');
-    backdrop-filter: _var($dialog, 'backdrop-filter');
+    background-color: _config-var($dialog, 'backdrop');
+    backdrop-filter: _config-var($dialog, 'backdrop-filter');
   }
 
   > header > * {

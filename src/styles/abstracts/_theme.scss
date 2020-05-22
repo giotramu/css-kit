@@ -10,5 +10,11 @@ $colors: (
   warn: #ffbe33
 );
 
-// Internal variables
-$border-radius: 8px;
+$misc: (
+  global-border-radius: 8px,
+  global-font-size: 1rem,
+  global-line-height: 1.65,
+  outline-size: 2px,
+  outline-style: solid,
+  outline-color: #0072ff
+);

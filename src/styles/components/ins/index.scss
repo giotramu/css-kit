@@ -1,0 +1,9 @@
+@import './config';
+
+ins {
+  padding: 2px 4px;
+  color: _config-var($ins, 'foreground');
+  background-color: _config-var($ins, 'background');
+  box-shadow: 0 0 0 2px _config-var($ins, 'background');
+  text-decoration: none;
+}

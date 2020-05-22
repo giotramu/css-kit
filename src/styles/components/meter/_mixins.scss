@@ -1,18 +1,18 @@
 @mixin meter-progress {
   overflow: hidden;
-  border-radius: _var($meter, 'border-radius');
-  background: _var($meter, 'background');
-  box-shadow: inset 0 0 0 1px _var($meter, 'border-color');
+  border-radius: _config-var($meter, 'border-radius');
+  background: _config-var($meter, 'background');
+  box-shadow: inset 0 0 0 1px _config-var($meter, 'border-color');
 }
 
 @mixin meter-strong {
-  background: _var($meter, 'filled-color-strong');
+  background: _config-var($meter, 'filled-color-strong');
 }
 
 @mixin meter-good {
-  background: _var($meter, 'filled-color-good');
+  background: _config-var($meter, 'filled-color-good');
 }
 
 @mixin meter-weak {
-  background: _var($meter, 'filled-color-weak');
+  background: _config-var($meter, 'filled-color-weak');
 }

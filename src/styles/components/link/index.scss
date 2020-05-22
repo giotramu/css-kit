@@ -2,11 +2,11 @@
 
 a:link,
 a:visited {
-  color: _var($link, 'foreground');
+  color: _config-var($link, 'foreground');
   text-decoration: none;
   transition: color 100ms linear;
 
   &:hover {
-    color: _var($link, 'active-foreground');
+    color: _config-var($link, 'active-foreground');
   }
 }

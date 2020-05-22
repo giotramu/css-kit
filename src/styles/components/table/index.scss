@@ -3,23 +3,24 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  background-color: _var($table, 'background');
+  background-color: _config-var($table, 'background');
 }
 
 thead {
-  border-bottom: _var($table, 'head-separator');
+  border-bottom: _config-var($table, 'head-separator');
   text-align: left;
 }
 
 td,
 th {
-  padding: _var($table, 'cells-ypadding') _var($table, 'cells-xpadding');
+  padding: _config-var($table, 'cells-ypadding')
+    _config-var($table, 'cells-xpadding');
 }
 
 tr + tr {
-  border-top: _var($table, 'row-separator');
+  border-top: _config-var($table, 'row-separator');
 }
 
 tr:nth-child(even) {
-  background-color: _var($table, 'striped-background');
+  background-color: _config-var($table, 'striped-background');
 }

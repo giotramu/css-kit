@@ -17,9 +17,9 @@ legend {
   display: block;
   width: 100%;
   max-width: 100%;
-  margin: _var($form, 'legend-margin');
+  margin: _config-var($form, 'legend-margin');
   color: inherit;
-  font-weight: _var($form, 'legend-weight');
+  font-weight: _config-var($form, 'legend-weight');
   line-height: inherit;
   white-space: normal;
 }

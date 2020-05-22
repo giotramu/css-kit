@@ -1,0 +1,8 @@
+@import './config';
+
+del {
+  padding: 2px 4px;
+  color: _config-var($del, 'foreground');
+  background-color: _config-var($del, 'background');
+  box-shadow: 0 0 0 2px _config-var($del, 'background');
+}

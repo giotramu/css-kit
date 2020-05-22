@@ -3,8 +3,8 @@
 
 meter {
   @include meter-progress;
-  width: _var($meter, 'width');
-  height: _var($meter, 'height');
+  width: _config-var($meter, 'width');
+  height: _config-var($meter, 'height');
   vertical-align: middle;
 
   &::-webkit-meter-bar {

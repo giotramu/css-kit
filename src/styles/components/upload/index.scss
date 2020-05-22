@@ -1,3 +1,6 @@
+@import '../button/config';
+@import '../button/mixins';
+
 input[type='file'] {
   overflow: hidden;
   width: 100%;

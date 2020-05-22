@@ -1,7 +1,6 @@
-@import './abstracts/config';
 @import './abstracts/theme';
 @import './utils/functions';
-@import './components/domains';
+@import './components/namespaces';
 
 $color-picker-shadow: _shadow(
   'bottom',
@@ -15,33 +14,48 @@ $dialog-shadow: _shadow(
   $color: _shade(_color('base-high'), 40%)
 );
 
-$progress-shadow: 8px 8px 16px _shade(_color('base-high'), 32%),
-  -8px -8px 24px _tint(_color('base-high'), 16%),
-  inset 0 0 4px rgba(_tint(_color('base-high'), 16%), 0),
-  inset 8px 8px 16px _shade(_color('base-high'), 32%),
-  inset -8px -8px 24px _tint(_color('base-high'), 16%),
-  0 0 4px rgba(_tint(_color('base-high'), 16%), 0.2);
+$progress-shadow: _shadow(
+  'inset-top-bottom',
+  $size: 24,
+  $color: _tint(_color('base-high'), 8%)
+);
 
 $dark-overrides: (
+  $checkradio: (
+    background: _color('base-low')
+  ),
+  $color-picker: (
+    shadow: $color-picker-shadow
+  ),
+  $details: (
+    background: _color('base-high'),
+    summary-background: _color('base-high'),
+    shadow: none
+  ),
+  $dialog: (
+    background: _tint(_color('base-high'), 8%),
+    shadow: $dialog-shadow
+  ),
   $document: (
     foreground: _color('light-low'),
     background: _color('base-high')
   ),
-  $hr: (
-    background: _shade(_color('base-low'), 16%)
-  ),
   $code: (
     background: _tint(_color('base-high'), 16%)
+  ),
+  $hr: (
+    background: _shade(_color('base-low'), 16%)
   ),
   $kbd: (
     border-color: _tint(_color('base-high'), 16%)
   ),
+  $progress: (
+    border-color: _tint(_color('base-high'), 4%),
+    shadow: $progress-shadow
+  ),
   $table: (
     head-separator: 2px solid _shade(_color('base-low'), 16%),
     row-separator: 1px solid _shade(_color('base-low'), 16%)
-  ),
-  $checkradio: (
-    background: _color('base-low')
   ),
   $field: (
     border: 1px solid _color('base-low'),
@@ -62,6 +76,13 @@ $dark-overrides: (
     disabled-background: _color('base-high'),
     invalid-background: _tint(_color('base-high'), 8%)
   ),
+  $range: (
+    background: _shade(_color('base-low'), 16%),
+    focus-background: _shade(_color('base-low'), 8%),
+    disabled-background: _shade(_color('base-low'), 16%),
+    shadow: _shadow('inset-top-bottom', $size: 8, $color: _color('base-low')),
+    thumb-disabled-background: _color('base-low')
+  ),
   $select: (
     border: 1px solid _color('base-low'),
     hover-border-color: _tint(_color('base-low'), 8%),
@@ -73,34 +94,6 @@ $dark-overrides: (
     hover-background: _tint(_color('base-high'), 8%),
     focus-background: _tint(_color('base-high'), 16%),
     disabled-background: _color('base-high')
-  ),
-  $progress: (
-    border-color: _tint(_color('base-high'), 4%),
-    shadow:
-      _shadow(
-        'inset-top-bottom',
-        $size: 24,
-        $color: _tint(_color('base-high'), 8%)
-      )
-  ),
-  $range: (
-    background: _shade(_color('base-low'), 16%),
-    focus-background: _shade(_color('base-low'), 8%),
-    disabled-background: _shade(_color('base-low'), 16%),
-    shadow: _shadow('inset-top-bottom', $size: 8, $color: _color('base-low')),
-    thumb-disabled-background: _color('base-low')
-  ),
-  $details: (
-    background: _color('base-high'),
-    summary-background: _color('base-high'),
-    shadow: none
-  ),
-  $color-picker: (
-    shadow: $color-picker-shadow
-  ),
-  $dialog: (
-    background: _tint(_color('base-high'), 8%),
-    shadow: $dialog-shadow
   )
 );
 
@@ -108,7 +101,7 @@ $dark-overrides: (
 html[data-color-scheme='dark'] {
   @each $element, $props in $dark-overrides {
     @each $prop, $val in $props {
-      #{_defineVar($element, $prop)}: $val;
+      #{_define-var($element, $prop)}: $val;
     }
   }
 }

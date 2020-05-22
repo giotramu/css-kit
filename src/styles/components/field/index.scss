@@ -4,8 +4,8 @@
 input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='color']):not([type='file']) {
   @include field;
   display: block;
-  width: _var($field, 'width');
-  padding: _var($field, 'ypadding') _var($field, 'xpadding');
+  width: _config-var($field, 'width');
+  padding: _config-var($field, 'ypadding') _config-var($field, 'xpadding');
 }
 
 input[type='number']::-webkit-inner-spin-button,
@@ -25,17 +25,17 @@ input[type='search']::-webkit-search-decoration {
 
 textarea {
   @include field;
-  width: _var($field, 'width');
+  width: _config-var($field, 'width');
   height: auto;
-  padding: _var($field, 'ypadding') _var($field, 'xpadding');
-  resize: _var($field, 'resize');
+  padding: _config-var($field, 'ypadding') _config-var($field, 'xpadding');
+  resize: _config-var($field, 'resize');
 
   &::-webkit-datetime-edit-text {
     opacity: 0.3;
   }
 
   &::-webkit-calendar-picker-indicator {
-    color: _var($field, 'foreground');
+    color: _config-var($field, 'foreground');
   }
 
   &::-webkit-calendar-picker-indicator:hover {

@@ -1,26 +1,26 @@
 @import './config';
 
-$details-icon-size: _var($details, 'icon-size');
+$details-icon-size: _config-var($details, 'icon-size');
 
 details {
   display: block;
   overflow: auto;
-  max-height: _var($details, 'max-height');
-  border-radius: _var($details, 'border-radius');
+  max-height: _config-var($details, 'max-height');
+  border-radius: _config-var($details, 'border-radius');
   position: relative;
-  background: _var($details, 'background');
-  box-shadow: _var($details, 'shadow');
+  background: _config-var($details, 'background');
+  box-shadow: _config-var($details, 'shadow');
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 
   [details-group] > &:first-of-type {
-    border-radius: _var($details, 'border-radius')
-      _var($details, 'border-radius') 0 0;
+    border-radius: _config-var($details, 'border-radius')
+      _config-var($details, 'border-radius') 0 0;
   }
 
   [details-group] > &:last-of-type {
-    border-radius: 0 0 _var($details, 'border-radius')
-      _var($details, 'border-radius');
+    border-radius: 0 0 _config-var($details, 'border-radius')
+      _config-var($details, 'border-radius');
   }
 
   [details-group] > &:not(:first-of-type, :last-of-type) {
@@ -28,25 +28,26 @@ details {
   }
 
   [details-group] > &:only-of-type {
-    border-radius: _var($details, 'border-radius');
+    border-radius: _config-var($details, 'border-radius');
   }
 
   [details-group] > &:not(:last-of-type) {
-    border-bottom: _var($details, 'separator');
+    border-bottom: _config-var($details, 'separator');
   }
 
   summary {
     display: list-item;
     overflow: hidden;
-    padding: _var($details, 'summary-padding') _var($details, 'summary-padding')
-      _var($details, 'summary-padding') 32px;
+    padding: _config-var($details, 'summary-padding')
+      _config-var($details, 'summary-padding')
+      _config-var($details, 'summary-padding') 32px;
     position: sticky;
     top: 0;
     z-index: 1;
-    background: _var($details, 'summary-background');
+    background: _config-var($details, 'summary-background');
     background-size: 16px auto;
     font-size: initial;
-    font-weight: _var($details, 'summary-font-weight');
+    font-weight: _config-var($details, 'summary-font-weight');
     text-overflow: ellipsis;
     line-height: 1;
     white-space: nowrap;
@@ -71,7 +72,7 @@ details {
       transform: rotate(-90deg);
       transform-origin: 50% center;
       transform-box: fill-box;
-      background-image: _var($details, 'icon');
+      background-image: _config-var($details, 'icon');
       background-repeat: no-repeat;
       background-size: cover;
       transition: transform 200ms ease-out;
@@ -98,7 +99,7 @@ details {
   }
 
   &[open] summary {
-    color: _var($details, 'summary-open-color');
+    color: _config-var($details, 'summary-open-color');
   }
 
   &[open] summary::before {

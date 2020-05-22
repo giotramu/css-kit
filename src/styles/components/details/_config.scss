@@ -1,9 +1,9 @@
 $details-shadow: _shadow('all', $size: 4, $color: _color('light-high')),
   _shadow('bottom', $size: 8, $color: _color('light-high'));
 
-$details-props: (
+$properties: (
   max-height: 280px,
-  border-radius: $border-radius,
+  border-radius: _var('global', 'border-radius'),
   background: _color('light-low'),
   shadow: $details-shadow,
   summary-padding: 16px,

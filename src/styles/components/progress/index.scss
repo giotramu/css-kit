@@ -5,30 +5,30 @@ progress {
   display: block;
   overflow: hidden;
   width: 100%;
-  height: _var($progress, 'height');
-  border-width: _var($progress, 'border-size');
-  border-color: _var($progress, 'border-color');
+  height: _config-var($progress, 'height');
+  border-width: _config-var($progress, 'border-size');
+  border-color: _config-var($progress, 'border-color');
   border-style: solid;
-  border-radius: _var($progress, 'border-radius');
+  border-radius: _config-var($progress, 'border-radius');
   position: relative;
-  background: _var($progress, 'background');
-  box-shadow: _var($progress, 'shadow');
+  background: _config-var($progress, 'background');
+  box-shadow: _config-var($progress, 'shadow');
   appearance: none;
 
   &::-webkit-progress-bar {
-    border-radius: _var($progress, 'border-radius');
-    background: _var($progress, 'background');
+    border-radius: _config-var($progress, 'border-radius');
+    background: _config-var($progress, 'background');
   }
 
   &::-webkit-progress-value {
-    border-radius: _var($progress, 'border-radius');
-    background: _var($progress, 'filled-color');
+    border-radius: _config-var($progress, 'border-radius');
+    background: _config-var($progress, 'filled-color');
     transition: width 200ms ease-out;
   }
 
   &::-moz-progress-bar {
-    border-radius: _var($progress, 'border-radius');
-    background: _var($progress, 'filled-color');
+    border-radius: _config-var($progress, 'border-radius');
+    background: _config-var($progress, 'filled-color');
   }
 
   &:indeterminate {

@@ -1,10 +1,10 @@
 @mixin field {
-  min-height: _var($field, 'min-height');
-  border: _var($field, 'border');
-  border-radius: _var($field, 'border-radius');
-  color: _var($field, 'foreground');
-  background: _var($field, 'background');
-  box-shadow: _var($field, 'shadow');
+  min-height: _config-var($field, 'min-height');
+  border: _config-var($field, 'border');
+  border-radius: _config-var($field, 'border-radius');
+  color: _config-var($field, 'foreground');
+  background: _config-var($field, 'background');
+  box-shadow: _config-var($field, 'shadow');
   font-weight: 600;
   line-height: inherit;
   letter-spacing: 0.04rem;
@@ -13,8 +13,8 @@
     box-shadow 0.24s ease-out;
 
   &::selection {
-    color: _var($field, 'selection-foreground');
-    background: _var($field, 'selection-background');
+    color: _config-var($field, 'selection-foreground');
+    background: _config-var($field, 'selection-background');
   }
 
   &:-moz-ui-invalid {
@@ -22,73 +22,73 @@
   }
 
   &::placeholder {
-    color: _var($field, 'placeholder-foreground');
+    color: _config-var($field, 'placeholder-foreground');
     font-weight: 400;
   }
 
   &:hover {
-    border-color: _var($field, 'hover-border-color');
-    color: _var($field, 'foreground');
-    background: _var($field, 'hover-background');
-    box-shadow: _var($field, 'hover-shadow');
+    border-color: _config-var($field, 'hover-border-color');
+    color: _config-var($field, 'foreground');
+    background: _config-var($field, 'hover-background');
+    box-shadow: _config-var($field, 'hover-shadow');
 
     &::placeholder {
-      color: _var($field, 'hover-placeholder-foreground');
+      color: _config-var($field, 'hover-placeholder-foreground');
     }
   }
 
   &:focus {
-    border-color: _var($field, 'focus-border-color');
-    color: _var($field, 'foreground');
-    background: _var($field, 'focus-background');
-    box-shadow: _var($field, 'focus-shadow');
+    border-color: _config-var($field, 'focus-border-color');
+    color: _config-var($field, 'foreground');
+    background: _config-var($field, 'focus-background');
+    box-shadow: _config-var($field, 'focus-shadow');
 
     &::placeholder {
-      color: _var($field, 'focus-placeholder-foreground');
+      color: _config-var($field, 'focus-placeholder-foreground');
     }
   }
 
   &:disabled,
   &[aria-disabled='true'] {
-    border-color: _var($field, 'disabled-border-color');
+    border-color: _config-var($field, 'disabled-border-color');
     opacity: 0.5;
-    color: _var($field, 'disabled-foreground');
-    background: _var($field, 'disabled-background');
+    color: _config-var($field, 'disabled-foreground');
+    background: _config-var($field, 'disabled-background');
     box-shadow: none;
     cursor: not-allowed;
 
     &::placeholder {
-      color: _var($field, 'disabled-placeholder-foreground');
+      color: _config-var($field, 'disabled-placeholder-foreground');
     }
   }
 
   &[readonly] {
-    border-color: _var($field, 'disabled-border-color');
+    border-color: _config-var($field, 'disabled-border-color');
     border-style: dashed;
-    color: _var($field, 'foreground');
-    background: _var($field, 'disabled-background');
+    color: _config-var($field, 'foreground');
+    background: _config-var($field, 'disabled-background');
     box-shadow: none;
     cursor: default;
 
     &:focus {
-      border-color: _var($field, 'focus-border-color');
+      border-color: _config-var($field, 'focus-border-color');
     }
 
     &::placeholder {
-      color: _var($field, 'disabled-placeholder-foreground');
+      color: _config-var($field, 'disabled-placeholder-foreground');
     }
   }
 
   &:required {
     &:invalid {
-      border-color: _var($field, 'invalid-border-color');
-      color: _var($field, 'invalid-foreground');
-      background: _var($field, 'invalid-background');
-      box-shadow: _var($field, 'invalid-shadow');
+      border-color: _config-var($field, 'invalid-border-color');
+      color: _config-var($field, 'invalid-foreground');
+      background: _config-var($field, 'invalid-background');
+      box-shadow: _config-var($field, 'invalid-shadow');
     }
 
     &:invalid:focus {
-      outline-color: _var($field, 'invalid-border-color');
+      outline-color: _config-var($field, 'invalid-border-color');
     }
   }
 }

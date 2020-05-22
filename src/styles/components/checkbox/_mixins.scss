@@ -1,11 +1,11 @@
 @mixin check {
-  width: _var($checkradio, 'size');
-  height: _var($checkradio, 'size');
-  border: _var($checkradio, 'border');
-  border-radius: _var($checkradio, 'border-radius');
+  width: _config-var($checkradio, 'size');
+  height: _config-var($checkradio, 'size');
+  border: _config-var($checkradio, 'border');
+  border-radius: _config-var($checkradio, 'border-radius');
   position: relative;
   vertical-align: middle;
-  background: _var($checkradio, 'background');
+  background: _config-var($checkradio, 'background');
   cursor: pointer;
   appearance: none;
 
@@ -25,33 +25,33 @@
   }
 
   &:not(:disabled):active {
-    border-color: _var($checkradio, 'color');
+    border-color: _config-var($checkradio, 'color');
   }
 
   &:checked {
-    border-color: _var($checkradio, 'color');
-    color: _var($checkradio, 'tick-color');
-    background: _var($checkradio, 'color');
+    border-color: _config-var($checkradio, 'color');
+    color: _config-var($checkradio, 'tick-color');
+    background: _config-var($checkradio, 'color');
 
     &::before {
       opacity: 1;
     }
 
     &:not(:disabled) {
-      box-shadow: _var($checkradio, 'shadow');
+      box-shadow: _config-var($checkradio, 'shadow');
     }
   }
 
   &:disabled {
     opacity: 0.5;
-    color: _var($checkradio, 'tick-color');
+    color: _config-var($checkradio, 'tick-color');
     pointer-events: none;
     cursor: not-allowed;
   }
 
   &:indeterminate {
-    border-color: _var($checkradio, 'color');
-    color: _var($checkradio, 'tick-color');
+    border-color: _config-var($checkradio, 'color');
+    color: _config-var($checkradio, 'tick-color');
 
     &::before {
       width: 8px;

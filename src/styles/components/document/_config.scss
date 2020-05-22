@@ -1,0 +1,15 @@
+$properties: (
+  root-font-size: 100%,
+  font-size: _var('global', 'font-size'),
+  font-weight: 400,
+  line-height: _var('global', 'line-height'),
+  foreground: _color('base-high'),
+  background: _color('light-low'),
+  outline-size: _var('outline', 'size'),
+  outline-style: _var('outline', 'style'),
+  outline-color: _var('outline', 'color'),
+  scroll-padding: 100px,
+  scroll-behavior: smooth,
+  selection-foreground: _color('light-low'),
+  selection-background: _color('accent-low')
+);

@@ -1,3 +1,6 @@
+@import '../checkbox/config';
+@import '../checkbox/mixins';
+
 input[type='radio'] {
   @include check;
   border-radius: 100%;

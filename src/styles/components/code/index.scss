@@ -1,0 +1,13 @@
+@import './config';
+
+p {
+  margin-bottom: 1.15rem;
+
+  code {
+    display: inline-block;
+    margin: 2px 0;
+    border-radius: _config-var($code, 'border-radius');
+    padding: 0 4px;
+    background-color: _config-var($code, 'background');
+  }
+}

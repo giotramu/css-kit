@@ -1,5 +1,5 @@
 @mixin color-swatch {
-  border: _var($color-picker, 'border');
-  border-radius: _var($color-picker, 'border-radius');
-  box-shadow: _var($color-picker, 'shadow');
+  border: _config-var($color-picker, 'border');
+  border-radius: _config-var($color-picker, 'border-radius');
+  box-shadow: _config-var($color-picker, 'shadow');
 }

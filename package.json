@@ -19,26 +19,26 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "core.css",
+  "main": "css-kit.css",
   "types": "typings/css-kit.d.ts",
   "files": [
     "color-scheme-switcher.js",
-    "core.css",
+    "css-kit.css",
     "custom-media.css",
     "font/",
     "typings/"
   ],
   "scripts": {
     "check:src": "tsc --noEmit",
-    "lint:css": "stylelint ./src/**/*.scss --ignore-path .gitignore",
-    "lint:src": "eslint . --ext .js,.ts --ignore-path .gitignore",
+    "lint:css": "stylelint ./src/**/*.scss",
+    "lint:src": "eslint . --ext .js,.ts",
     "lint": "run-s -cln lint:*",
     "build:css": "postcss ./src/styles/*.scss --ext css",
     "build:ts": "tsc",
     "build": "run-s \"build:css -- --dir .\" \"build:ts -- --outDir .\"",
-    "watch:css": "watch \"npm run build:css -- --dir ./demo\" ./src/styles",
-    "watch:ts": "npm run build:ts -- --outDir ./demo -w",
-    "serve": "serve ./demo -u -l 3333",
+    "watch:css": "watch \"npm run build:css -- --dir ./docs\" ./src/styles",
+    "watch:ts": "npm run build:ts -- --outDir ./docs -w",
+    "serve": "serve ./docs -u -l 3333",
     "dev": "run-p -cln watch:** serve"
   },
   "devDependencies": {

@@ -1,15 +1,15 @@
 @mixin button {
   display: inline-flex;
-  border: _var($button, 'border');
-  border-radius: _var($button, 'border-radius');
-  padding: _var($button, 'ypadding') _var($button, 'xpadding');
+  border: _config-var($button, 'border');
+  border-radius: _config-var($button, 'border-radius');
+  padding: _config-var($button, 'ypadding') _config-var($button, 'xpadding');
   align-items: center;
   justify-content: center;
-  color: _var($button, 'foreground');
-  background: _var($button, 'background');
-  box-shadow: _var($button, 'shadow');
+  color: _config-var($button, 'foreground');
+  background: _config-var($button, 'background');
+  box-shadow: _config-var($button, 'shadow');
   font-size: inherit;
-  font-weight: _var($button, 'font-weight');
+  font-weight: _config-var($button, 'font-weight');
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.1s ease-out, box-shadow 0.1s ease-out;
@@ -22,35 +22,37 @@
   }
 
   &:-moz-focusring {
-    outline: _var($outline, 'style') _var($outline, 'color');
+    outline: _config-var($button, 'outline-size')
+      _config-var($button, 'outline-style')
+      _config-var($button, 'outline-color');
   }
 
   &:hover {
-    border-color: _var($button, 'hover-border-color');
-    background: _var($button, 'hover-background');
+    border-color: _config-var($button, 'hover-border-color');
+    background: _config-var($button, 'hover-background');
   }
 
   &:disabled,
   &[aria-disabled='true'] {
-    border-color: _var($button, 'disabled-border-color');
+    border-color: _config-var($button, 'disabled-border-color');
     opacity: 0.5;
-    background: _var($button, 'disabled-background');
+    background: _config-var($button, 'disabled-background');
     box-shadow: none;
     cursor: not-allowed;
   }
 
   &:not(:disabled):not([aria-disabled='true']):active {
-    border-color: _var($button, 'active-border-color');
+    border-color: _config-var($button, 'active-border-color');
     transform: translateY(1px);
-    background: _var($button, 'active-background');
-    box-shadow: _var($button, 'active-shadow');
+    background: _config-var($button, 'active-background');
+    box-shadow: _config-var($button, 'active-shadow');
   }
 
   i,
   svg {
     width: 1em;
     height: 1em;
-    margin-inline-end: _var($button, 'icon-margin');
+    margin-inline-end: _config-var($button, 'icon-margin');
     color: inherit;
     font-style: normal;
     fill: currentColor;

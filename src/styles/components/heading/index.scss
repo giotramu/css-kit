@@ -4,8 +4,8 @@
  * 1.250 - Major Third Scale
  * https://type-scale.com/
  */
-$heading-scale: 1.25;
-$heading-font-size: _var($document, 'font-size');
+$scale: 1.25;
+$font-size: _config-var($heading, 'font-size');
 
 h1,
 h2,
@@ -15,31 +15,31 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 1.05rem;
-  font-family: _var($heading, 'font-family');
-  font-weight: _var($heading, 'font-weight');
-  line-height: _var($heading, 'line-height');
+  font-family: _config-var($heading, 'font-family');
+  font-weight: _config-var($heading, 'font-weight');
+  line-height: _config-var($heading, 'line-height');
 }
 
 h1 {
-  font-size: unquote('calc(#{$heading-font-size} * #{pow($heading-scale, 5)})');
+  font-size: unquote('calc(#{$font-size} * #{pow($scale, 5)})');
 }
 
 h2 {
-  font-size: unquote('calc(#{$heading-font-size} * #{pow($heading-scale, 4)})');
+  font-size: unquote('calc(#{$font-size} * #{pow($scale, 4)})');
 }
 
 h3 {
-  font-size: unquote('calc(#{$heading-font-size} * #{pow($heading-scale, 3)})');
+  font-size: unquote('calc(#{$font-size} * #{pow($scale, 3)})');
 }
 
 h4 {
-  font-size: unquote('calc(#{$heading-font-size} * #{pow($heading-scale, 2)})');
+  font-size: unquote('calc(#{$font-size} * #{pow($scale, 2)})');
 }
 
 h5 {
-  font-size: unquote('calc(#{$heading-font-size} * #{pow($heading-scale, 1)})');
+  font-size: unquote('calc(#{$font-size} * #{pow($scale, 1)})');
 }
 
 h6 {
-  font-size: $heading-font-size;
+  font-size: $font-size;
 }

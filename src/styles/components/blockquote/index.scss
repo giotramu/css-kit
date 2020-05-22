@@ -1,0 +1,16 @@
+@import './config';
+
+$blockquote-line-height: _config-var($blockquote, 'line-height');
+
+blockquote {
+  margin: 2.5em 0;
+  padding: 0;
+  font-family: _config-var($blockquote, 'font-family');
+  font-size: _config-var($blockquote, 'font-size');
+  line-height: unquote('calc(#{$blockquote-line-height} / 1.2)');
+  letter-spacing: 0.03em;
+
+  > * {
+    font-size: inherit;
+  }
+}

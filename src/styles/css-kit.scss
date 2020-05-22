@@ -1,0 +1,14 @@
+@import './abstracts/theme';
+@import './utils/functions';
+@import './utils/normalizer';
+@import './components/bundle';
+
+:root {
+  @each $color, $hex in $colors {
+    #{_define-var('color', $color)}: $hex;
+  }
+
+  @each $key, $val in $misc {
+    #{_define-var($property: $key)}: $val;
+  }
+}

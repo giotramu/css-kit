@@ -1,10 +1,10 @@
 @import './config';
 @import './mixins';
 
-$range-height: _var($range, 'height');
+$range-height: _config-var($range, 'height');
 
 input[type='range'] {
-  width: _var($range, 'width');
+  width: _config-var($range, 'width');
   margin: unquote('calc(#{$thumb-height} / 2) 0');
   background: transparent;
   outline: 0;
@@ -31,31 +31,31 @@ input[type='range'] {
   }
 
   &::-ms-fill-upper {
-    background: _var($range, 'background');
+    background: _config-var($range, 'background');
   }
 
   &::-ms-fill-lower {
-    background: _var($range, 'background');
+    background: _config-var($range, 'background');
   }
 
   &:active::-webkit-slider-runnable-track,
   &:focus::-webkit-slider-runnable-track {
-    background: _var($range, 'focus-background');
+    background: _config-var($range, 'focus-background');
   }
 
   &:active::-moz-range-track,
   &:focus::-moz-range-track {
-    background: _var($range, 'focus-background');
+    background: _config-var($range, 'focus-background');
   }
 
   &:active::-ms-fill-lower,
   &:focus::-ms-fill-lower {
-    background: _var($range, 'focus-background');
+    background: _config-var($range, 'focus-background');
   }
 
   &:active::-ms-fill-upper,
   &:focus::-ms-fill-upper {
-    background: _var($range, 'focus-background');
+    background: _config-var($range, 'focus-background');
   }
 
   &::-webkit-slider-thumb {
@@ -74,15 +74,15 @@ input[type='range'] {
   }
 
   &:active::-webkit-slider-thumb {
-    background-color: _var($range, 'thumb-active-background');
+    background-color: _config-var($range, 'thumb-active-background');
   }
 
   &:active::-moz-range-thumb {
-    background-color: _var($range, 'thumb-active-background');
+    background-color: _config-var($range, 'thumb-active-background');
   }
 
   &:active::-ms-thumb {
-    background-color: _var($range, 'thumb-active-background');
+    background-color: _config-var($range, 'thumb-active-background');
   }
 
   &:not(:active):focus::-webkit-slider-thumb {

@@ -1,7 +1,7 @@
-$button-props: (
+$properties: (
   ypadding: 1em,
   xpadding: 2em,
-  border-radius: $border-radius,
+  border-radius: _var('global', 'border-radius'),
   border: none,
   active-border-color: transparent,
   disabled-border-color: transparent,
@@ -14,5 +14,8 @@ $button-props: (
   disabled-background: _color('accent-low'),
   shadow: _shadow('bottom', $size: 8, $color: _color('accent-low')),
   active-shadow: _shadow('bottom', $size: 4, $color: _color('accent-low')),
-  icon-margin: 0.8em
+  icon-margin: 0.8em,
+  outline-size: _var('outline', 'size'),
+  outline-style: _var('outline', 'style'),
+  outline-color: _var('outline', 'color')
 );

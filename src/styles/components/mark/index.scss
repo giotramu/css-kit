@@ -1,0 +1,7 @@
+@import './config';
+
+mark {
+  color: _config-var($mark, 'foreground');
+  background: _config-var($mark, 'background');
+  box-shadow: 0 0 0 2px _config-var($mark, 'background');
+}

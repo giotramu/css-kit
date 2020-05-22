@@ -1,10 +1,12 @@
-// Domains
-@import './domains';
-
-// Elements
+@import './namespaces';
+@import './address';
+@import './blockquote';
 @import './button';
 @import './checkbox';
+@import './cite';
+@import './code';
 @import './color-picker';
+@import './del';
 @import './details';
 @import './dialog';
 @import './document';
@@ -13,44 +15,16 @@
 @import './heading';
 @import './hr';
 @import './icon-switch';
+@import './ins';
+@import './kbd';
 @import './link';
 @import './list';
+@import './mark';
 @import './meter';
 @import './progress';
 @import './radio';
 @import './range';
 @import './select';
+@import './small';
 @import './table';
-@import './text';
 @import './upload';
-
-$elements: (
-  $document: $document-props,
-  $scroll: $scroll-props,
-  $outline: $outline-props,
-  $selection: $selection-props,
-  $link: $link-props,
-  $button: $button-props,
-  $heading: $heading-props,
-  $blockquote: $blockquote-props,
-  $cite: $cite-props,
-  $code: $code-props,
-  $del: $del-props,
-  $ins: $ins-props,
-  $kbd: $kbd-props,
-  $mark: $mark-props,
-  $small: $small-props,
-  $hr: $hr-props,
-  $form: $form-props,
-  $checkradio: $checkradio-props,
-  $field: $field-props,
-  $select: $select-props,
-  $range: $range-props,
-  $progress: $progress-props,
-  $meter: $meter-props,
-  $table: $table-props,
-  $details: $details-props,
-  $color-picker: $color-picker-props,
-  $dialog: $dialog-props,
-  $icon-switch: $icon-switch-props
-);

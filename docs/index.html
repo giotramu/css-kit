@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-color-scheme="light">
   <head>
-    <title>CSS-Kit — Minimalist stylesheet for HTML elements</title>
+    <title>CSS-Kit — Demo</title>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -14,7 +14,7 @@
       href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit@2.2/font/giotramu-sans.css"
     />
     <link rel="stylesheet" href="./custom-media.css" />
-    <link rel="stylesheet" href="./core.css" />
+    <link rel="stylesheet" href="./css-kit.css" />
     <link rel="stylesheet" href="./dark-scheme.css" />
     <link rel="stylesheet" href="./demo.css" />
 
@@ -23,19 +23,6 @@
   </head>
 
   <body>
-    <div class="toggles">
-      <button
-        data-ck-trigger="set-color-scheme"
-        class="icon-switch"
-        aria-label="Toggle color scheme"
-      ></button>
-      <button
-        data-ck-trigger="reset-color-scheme"
-        class="icon-switch"
-        aria-label="Clear local storage"
-      ></button>
-    </div>
-
     <main>
       <section>
         <h3>Horizontal Rule</h3>
@@ -672,6 +659,20 @@ p q r s t u v w x y z { | } ~</pre
         <input type="file" />
       </section>
     </main>
+
+    <div class="toggles">
+      <button
+        data-ck-trigger="set-color-scheme"
+        class="icon-switch"
+        aria-label="Toggle color scheme"
+      ></button>
+
+      <button
+        data-ck-trigger="reset-color-scheme"
+        class="icon-switch"
+        aria-label="Clear local storage"
+      ></button>
+    </div>
 
     <dialog data-dialog="native-dialog">
       <header>

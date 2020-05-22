@@ -1,0 +1,13 @@
+@import './config';
+
+blockquote cite {
+  display: block;
+  margin-top: _config-var($cite, 'font-size');
+  color: _config-var($cite, 'foreground');
+  font-size: _config-var($cite, 'font-size');
+
+  &::before {
+    content: _config-var($cite, 'start-sign');
+    margin-right: 4px;
+  }
+}

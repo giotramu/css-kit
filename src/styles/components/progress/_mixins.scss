@@ -1,15 +1,15 @@
-$progress-height: _var($progress, 'height');
-$progress-border-size: _var($progress, 'border-size');
+$progress-height: _config-var($progress, 'height');
+$progress-border-size: _config-var($progress, 'border-size');
 
 @mixin progress-indeterminate {
   content: '';
   display: block;
   height: unquote('calc(#{$progress-height} - #{$progress-border-size} * 2)');
-  border-radius: _var($progress, 'border-radius');
+  border-radius: _config-var($progress, 'border-radius');
   position: absolute;
   top: 0;
   left: 0;
-  background: _var($progress, 'filled-color');
+  background: _config-var($progress, 'filled-color');
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 

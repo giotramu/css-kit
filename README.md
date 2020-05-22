@@ -38,7 +38,7 @@ Put the link tags in the head of your `index.html` document:
 
 - Normalizes styles for a wide range of elements (like `normalize.css`, but smaller).
 - Corrects bugs and common browser inconsistencies.
-- The `core.css` stylesheet provides useful defaults to plain HTML documents. It dispatches the [CSS Custom Properties][css-custom-props-url].
+- The `css-kit.css` stylesheet provides useful defaults to plain HTML documents. It dispatches the [CSS Custom Properties][css-custom-props-url].
 - A separate stylesheet, `custom-media.css`, injects the [CSS Custom Media Queries][css-custom-mq-url].
 
 ## Install
@@ -54,13 +54,13 @@ npm install @giotramu/css-kit --save
 Import CSS-Kit in CSS:
 
 ```css
-@import '~@giotramu/css-kit/core.css';
+@import '~@giotramu/css-kit/css-kit.css';
 ```
 
 Import CSS-Kit in JavaScript:
 
 ```js
-import '@giotramu/css-kit/core.css';
+import '@giotramu/css-kit/css-kit.css';
 ```
 
 In `webpack.config.js`, be sure to use the appropriate loaders:

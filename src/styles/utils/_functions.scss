@@ -1,4 +1,3 @@
-// Positive integer exponent.
 @function pow($number, $exponent) {
   $result: 1;
 
@@ -11,18 +10,15 @@
   @return $result;
 }
 
-// Slightly lighten a color.
 @function _tint($color, $percentage: 8%) {
   @return mix(white, $color, $percentage);
 }
 
-// Slightly darken a color.
 @function _shade($color, $percentage: 8%) {
   @return mix(black, $color, $percentage);
 }
 
-// Return a CSS Custom Property definition (e.g. --ck-button-font-size).
-@function _defineVar($component: null, $property) {
+@function _define-var($component: null, $property, $domain: 'ck') {
   @if $component {
     @return unquote('--#{$domain}-#{$component}-#{$property}');
   }
@@ -30,9 +26,23 @@
   @return unquote('--#{$domain}-#{$property}');
 }
 
-// Return a CSS Custom Property (e.g. var(--ck-button-font-size)).
 @function _var($component, $property) {
-  @return var(_defineVar($component, $property));
+  @return var(_define-var($component, $property));
+}
+
+@function _config-var($component, $property, $map: $properties) {
+  @if not(type-of($map) == 'map') {
+    @error 'Unknown `#{$map}` map.';
+    @return null;
+  }
+
+  $default: map-get($map, $property);
+  @if (map-get($map, $property) == null) {
+    @error 'Unknown `#{$property}` in `#{$map}` map.';
+    @return null;
+  }
+
+  @return var(_define-var($component, $property), $default);
 }
 
 @function _color($type) {
@@ -40,7 +50,37 @@
     @return map-get($colors, $type);
   }
 
-  @warn 'Unknown `#{$type}` in $colors map.';
+  @error 'Unknown `#{$type}` in $colors map.';
+  @return null;
+}
+
+@function _gradient($type: 'accent', $percentage: 0%) {
+  $gradients: (
+    accent:
+      radial-gradient(
+        circle farthest-corner at 10% 20%,
+        _shade(_color('accent-high'), $percentage) 0%,
+        _shade(_color('accent-low'), $percentage) 90%
+      ),
+    base:
+      radial-gradient(
+        circle farthest-corner at 10% 20%,
+        _shade(_color('base-low'), $percentage) 0%,
+        _shade(_color('base-high'), $percentage) 81.3%
+      ),
+    light:
+      radial-gradient(
+        circle farthest-corner at 18.7% 37.8%,
+        _shade(_color('light-low'), $percentage) 0%,
+        _shade(_color('light-high'), $percentage) 90%
+      )
+  );
+
+  @if map-has-key($gradients, $type) {
+    @return map-get($gradients, $type);
+  }
+
+  @error 'Unknown `#{$type}` in $gradients map.';
   @return null;
 }
 
@@ -72,35 +112,6 @@
     @return map-get($shadows, $type);
   }
 
-  @warn 'Unknown `#{$type}` in $shadows map.';
-  @return null;
-}
-
-@function _gradient($type: 'accent', $percentage: 0%) {
-  @if $type == 'accent' {
-    @return radial-gradient(
-      circle farthest-corner at 10% 20%,
-      _shade(_color('accent-high'), $percentage) 0%,
-      _shade(_color('accent-low'), $percentage) 90%
-    );
-  }
-
-  @if $type == 'dark' {
-    @return radial-gradient(
-      circle farthest-corner at 10% 20%,
-      _shade(_color('base-low'), $percentage) 0%,
-      _shade(_color('base-high'), $percentage) 81.3%
-    );
-  }
-
-  @if $type == 'light' {
-    @return radial-gradient(
-      circle farthest-corner at 18.7% 37.8%,
-      _shade(_color('light-low'), $percentage) 0%,
-      _shade(_color('light-high'), $percentage) 90%
-    );
-  }
-
-  @warn 'Unknown `#{$type}` in _gradient function.';
+  @error 'Unknown `#{$type}` in $shadows map.';
   @return null;
 }
