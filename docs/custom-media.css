@@ -1,0 +1,32 @@
+@charset "UTF-8";
+/**
+  * CSS Media Queries specification: https://cssdb.org/#custom-media-queries
+  * Use with a postcss plugin: https://github.com/postcss/postcss-custom-media
+  *
+  * Conversion table (16px base):
+  * 30em  ➜ 480px
+  * 48em  ➜ 768px
+  * 60em  ➜ 960px
+  * 80em  ➜ 1280px
+  * 100em ➜ 1600px
+  */
+@custom-media --from-xsmall (min-width: 30em);
+@custom-media --from-small (min-width: 48em);
+@custom-media --from-medium (min-width: 60em);
+@custom-media --from-large (min-width: 80em);
+@custom-media --from-xlarge (min-width: 100em);
+@custom-media --to-xsmall (max-width: 30em);
+@custom-media --to-small (max-width: 48em);
+@custom-media --to-medium (max-width: 60em);
+@custom-media --to-large (max-width: 80em);
+@custom-media --to-xlarge (max-width: 100em);
+@custom-media --landscape (orientation: landscape);
+@custom-media --portrait (orientation: portrait);
+@custom-media --reduced-motion (prefers-reduced-motion: reduce);
+@custom-media --light-scheme (prefers-color-scheme: light);
+@custom-media --dark-scheme (prefers-color-scheme: dark);
+@custom-media --fine-pointer (hover: hover) and (pointer: fine);
+@custom-media --high-density (-webkit-min-device-pixel-ratio: 1.5),
+  (min--moz-device-pixel-ratio: 1.5),
+  (-o-min-device-pixel-ratio: 3 / 2),
+  (min-device-pixel-ratio: 1.5);
