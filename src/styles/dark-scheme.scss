@@ -60,7 +60,7 @@ $dark-overrides: (
   $field: (
     border: 1px solid _color('base-low'),
     hover-border-color: _tint(_color('base-low'), 8%),
-    focus-border-color: _color('accent-low'),
+    focus-border-color: _color('accent-high'),
     disabled-border-color: _shade(_color('base-low'), 16%),
     invalid-border-color: _color('ko'),
     foreground: _color('light-high'),
@@ -86,7 +86,7 @@ $dark-overrides: (
   $select: (
     border: 1px solid _color('base-low'),
     hover-border-color: _tint(_color('base-low'), 8%),
-    focus-border-color: _color('accent-low'),
+    focus-border-color: _color('accent-high'),
     disabled-border-color: _shade(_color('base-low'), 16%),
     foreground: _color('light-low'),
     disabled-foreground: _tint(_color('base-low'), 16%),

@@ -59,20 +59,20 @@
     accent:
       radial-gradient(
         circle farthest-corner at 10% 20%,
-        _shade(_color('accent-high'), $percentage) 0%,
-        _shade(_color('accent-low'), $percentage) 90%
+        _tint(_color('accent-high'), $percentage) 0%,
+        _tint(_color('accent-high'), $percentage) 90%
       ),
     base:
       radial-gradient(
         circle farthest-corner at 10% 20%,
-        _shade(_color('base-low'), $percentage) 0%,
-        _shade(_color('base-high'), $percentage) 81.3%
+        _tint(_color('base-low'), $percentage) 0%,
+        _tint(_color('base-high'), $percentage) 81.3%
       ),
     light:
       radial-gradient(
         circle farthest-corner at 18.7% 37.8%,
-        _shade(_color('light-low'), $percentage) 0%,
-        _shade(_color('light-high'), $percentage) 90%
+        _tint(_color('light-low'), $percentage) 0%,
+        _tint(_color('light-high'), $percentage) 90%
       )
   );
 
@@ -84,7 +84,7 @@
   @return null;
 }
 
-@function _shadow($type: 'bottom', $size: 8, $color: _color('accent-low')) {
+@function _shadow($type: 'bottom', $size: 8, $color: _color('accent-high')) {
   $w: unquote('#{$size}px');
 
   /* prettier-ignore */

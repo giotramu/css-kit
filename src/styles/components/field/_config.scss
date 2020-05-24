@@ -20,7 +20,7 @@ $properties: (
   border-radius: _var('global', 'border-radius'),
   border: 1px solid _color('light-high'),
   hover-border-color: _shade(_color('light-high'), 8%),
-  focus-border-color: _color('accent-low'),
+  focus-border-color: _color('accent-high'),
   disabled-border-color: _color('light-high'),
   invalid-border-color: _color('ko'),
   foreground: _color('base-low'),
@@ -40,6 +40,6 @@ $properties: (
   focus-shadow: $focus-shadow,
   invalid-shadow: $invalid-shadow,
   selection-foreground: _color('light-low'),
-  selection-background: _color('accent-low'),
+  selection-background: _color('accent-high'),
   resize: vertical
 );

@@ -13,7 +13,7 @@ $properties: (
   border-radius: _var('global', 'border-radius'),
   border: 1px solid _color('light-high'),
   hover-border-color: _shade(_color('light-high'), 8%),
-  focus-border-color: _color('accent-low'),
+  focus-border-color: _color('accent-high'),
   disabled-border-color: _color('light-high'),
   foreground: _color('base-low'),
   disabled-foreground: _shade(_color('light-high'), 56%),
@@ -25,7 +25,7 @@ $properties: (
   hover-shadow: none,
   focus-shadow: $focus-shadow,
   option-checked-foreground: _color('light-low'),
-  option-checked-background: _color('accent-low'),
+  option-checked-background: _color('accent-high'),
   icon-size: 1rem,
   icon: svg-load('assets/select.svg', fill=#{_tint(_color('base-low'), 32%)})
 );
