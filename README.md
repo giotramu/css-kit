@@ -84,7 +84,6 @@ Copy/paste the HTML tags in the head of your `index.html` document:
 />
 
 <script
-  type="application/javascript"
   crossorigin="anonymous"
   defer="true"
   src="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/color-scheme-switcher.js"
@@ -97,14 +96,14 @@ Set the triggers for switch the color scheme light/dark:
 <button
   aria-label="Toggle color scheme"
   data-ck-trigger="set-color-scheme"
-  class="icon-switch"
+  class="icon-switch rounded"
 ></button>
 
 <!-- Totally optional -->
 <button
-  aria-label="Clear local storage"
-  data-ck-trigger="reset-color-scheme"
-  class="icon-switch"
+  aria-label="Unset color scheme"
+  data-ck-trigger="unset-color-scheme"
+  class="icon-switch rounded"
 ></button>
 ```
 

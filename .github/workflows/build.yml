@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [10.x, 12.x]
+        node-version: [12.x, 14.x]
 
     steps:
       - name: 'Checkout'
@@ -31,7 +31,7 @@ jobs:
           npm run check:src --if-present
           npm run lint --if-present
 
-      - name: 'Build the source code'
+      - name: 'Build the artifact'
         run: npm run build
         env:
           CI: true
