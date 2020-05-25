@@ -1,5 +1,5 @@
 $properties: (
-  font-family: 'giotramu-sans',
+  font-family: unquote('giotramu-sans, sans-serif'),
   font-size: _var('global', 'font-size'),
   font-weight: 700,
   line-height: 1.15

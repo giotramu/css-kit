@@ -21,6 +21,6 @@ tr + tr {
   border-top: _config-var($table, 'row-separator');
 }
 
-tr:nth-child(even) {
+table.striped tr:nth-child(even) {
   background-color: _config-var($table, 'striped-background');
 }

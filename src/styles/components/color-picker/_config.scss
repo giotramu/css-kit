@@ -1,8 +1,6 @@
-$color-picker-shadow: _shadow('bottom', $size: 10, $color: _color('base-low'));
-
 $properties: (
   border: none,
   border-radius: 50%,
-  shadow: $color-picker-shadow,
-  focus-border: rgba(_color('light-low'), 0.56)
+  shadow: _shadow('bottom', $size: 8, $color: _color('base-low')),
+  focus-shadow: _shadow('bottom', $size: 4, $color: _color('base-low'))
 );

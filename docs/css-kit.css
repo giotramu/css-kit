@@ -168,7 +168,7 @@ button {
   align-items: center;
   justify-content: center;
   color: var(--ck-button-foreground, #fafafa);
-  background: var(--ck-button-background, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-button-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   box-shadow: var(--ck-button-shadow, 0 8px 8px -8px #0084ff);
   font-size: inherit;
   font-weight: var(--ck-button-font-weight, 700);
@@ -188,7 +188,7 @@ button:-moz-focusring {
 }
 button:hover {
   border-color: var(--ck-button-hover-border-color, transparent);
-  background: var(--ck-button-hover-background, radial-gradient(circle farthest-corner at 10% 20%, #0a78ff 0%, #0a78ff 90%));
+  background: var(--ck-button-hover-background, radial-gradient(135% 100% at 50% 100%, #007ff5 0%, #006df5 100%));
 }
 button:disabled, button[aria-disabled=true] {
   border-color: var(--ck-button-disabled-border-color, transparent);
@@ -200,7 +200,7 @@ button:disabled, button[aria-disabled=true] {
 button:not(:disabled):not([aria-disabled=true]):active {
   border-color: var(--ck-button-active-border-color, transparent);
   transform: translateY(1px);
-  background: var(--ck-button-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-button-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   box-shadow: var(--ck-button-active-shadow, 0 4px 4px -4px #0084ff);
 }
 button i,
@@ -212,6 +212,18 @@ button svg {
   color: inherit;
   font-style: normal;
   fill: currentColor;
+}
+button.rounded {
+  --ck-button-border-radius: 25px;
+}
+button.muted {
+  --ck-button-foreground: #202d3a;
+  --ck-button-background:radial-gradient(135% 100% at 50% 100%, #fafafa 0%, #e1eaee 100%);
+  --ck-button-hover-background:radial-gradient(135% 100% at 50% 100%, whitesmoke 0%, #dde5e9 100%);
+  --ck-button-active-background:radial-gradient(135% 100% at 50% 100%, #f0f0f0 0%, #d8e1e4 100%);
+  --ck-button-disabled-background: #e1eaee;
+  --ck-button-shadow: 0 8px 8px -8px #e1eaee;
+  --ck-button-active-shadow: 0 4px 4px -4px #e1eaee;
 }
 
 input[type=checkbox] {
@@ -242,12 +254,12 @@ input[type=checkbox]::before {
   pointer-events: none;
 }
 input[type=checkbox]:not(:disabled):active {
-  border-color: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
 }
 input[type=checkbox]:checked {
-  border-color: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   color: var(--ck-checkradio-tick-color, #fafafa);
-  background: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
 }
 input[type=checkbox]:checked::before {
   opacity: 1;
@@ -262,7 +274,7 @@ input[type=checkbox]:disabled {
   cursor: not-allowed;
 }
 input[type=checkbox]:indeterminate {
-  border-color: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   color: var(--ck-checkradio-tick-color, #fafafa);
 }
 input[type=checkbox]:indeterminate::before {
@@ -315,17 +327,17 @@ input[type=color]::-webkit-color-swatch-wrapper {
 input[type=color]::-moz-color-swatch {
   border: var(--ck-color-picker-border, none);
   border-radius: var(--ck-color-picker-border-radius, 50%);
-  box-shadow: var(--ck-color-picker-shadow, 0 10px 10px -10px #5a5c6a);
+  box-shadow: var(--ck-color-picker-shadow, 0 8px 8px -8px #5a5c6a);
   -moz-transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
 }
 input[type=color]::-webkit-color-swatch {
   border: var(--ck-color-picker-border, none);
   border-radius: var(--ck-color-picker-border-radius, 50%);
-  box-shadow: var(--ck-color-picker-shadow, 0 10px 10px -10px #5a5c6a);
+  box-shadow: var(--ck-color-picker-shadow, 0 8px 8px -8px #5a5c6a);
 }
 input[type=color]:focus::-webkit-color-swatch, input[type=color]:active::-webkit-color-swatch {
-  box-shadow: inset 0 0 0 2px var(--ck-color-picker-focus-border, rgba(250, 250, 250, 0.56));
+  box-shadow: var(--ck-color-picker-focus-shadow, 0 4px 4px -4px #5a5c6a);
 }
 
 del {
@@ -755,7 +767,7 @@ h5,
 h6 {
   margin-top: 0;
   margin-bottom: 1.05rem;
-  font-family: var(--ck-heading-font-family, "giotramu-sans");
+  font-family: var(--ck-heading-font-family, giotramu-sans, sans-serif);
   font-weight: var(--ck-heading-font-weight, 700);
   line-height: var(--ck-heading-line-height, 1.15);
 }
@@ -799,33 +811,11 @@ hr {
   overflow: hidden;
   width: calc(var(--ck-icon-switch-size, 1.125rem) * 2);
   height: calc(var(--ck-icon-switch-size, 1.125rem) * 2);
-  border: var(--ck-icon-switch-border, none);
-  border-radius: var(--ck-icon-switch-border-radius, 50%);
   padding: var(--ck-icon-switch-padding, calc(0.375 * 0.8rem));
   position: relative;
   align-items: center;
   justify-content: center;
-  background: var(--ck-icon-switch-background, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
-  box-shadow: var(--ck-icon-switch-shadow, 0 8px 8px -8px #0084ff);
   line-height: inherit;
-  transition: border-color 0.1s ease-out, background-color 0.1s ease-out, box-shadow 0.1s ease-out;
-}
-.icon-switch:hover {
-  border-color: var(--ck-icon-switch-hover-border-color, transparent);
-  background: var(--ck-icon-switch-hover-background, radial-gradient(circle farthest-corner at 10% 20%, #0a78ff 0%, #0a78ff 90%));
-}
-.icon-switch:disabled, .icon-switch[aria-disabled=true] {
-  border-color: var(--ck-icon-switch-disabled-border-color, transparent);
-  opacity: 0.5;
-  background: var(--ck-icon-switch-disabled-background, #0072ff);
-  box-shadow: none;
-  cursor: not-allowed;
-}
-.icon-switch:not(:disabled):not([aria-disabled=true]):active {
-  border-color: var(--ck-icon-switch-active-border-color, transparent);
-  transform: none;
-  background: var(--ck-icon-switch-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
-  box-shadow: var(--ck-icon-switch-active-shadow, 0 4px 4px -4px #0084ff);
 }
 .icon-switch::before, .icon-switch::after {
   content: "";
@@ -837,18 +827,22 @@ hr {
   background-repeat: no-repeat;
   background-size: var(--ck-icon-switch-size, 1.125rem);
   line-height: 1;
-  will-change: transform;
-  transition: opacity 0.3s, transform 0.3s;
+  will-change: transform, opacity;
+  transition: opacity 0.32s, transform 0.32s;
 }
 .icon-switch::before {
   transform: translateY(0%);
   opacity: 1;
-  background-image: var(--ck-icon-switch-before, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2313a699'%3E %3Cg%3E %3Cpath d='M17.497 3.47c-.478-.276-1.09-.113-1.366.366-.276.478-.112 1.09.366 1.366C19.274 6.808 21 9.796 21 13c0 4.963-4.037 9-9 9s-9-4.037-9-9c0-3.203 1.725-6.19 4.501-7.797.478-.276.642-.888.364-1.366-.275-.479-.887-.644-1.366-.364C3.107 5.435 1 9.086 1 13c0 6.065 4.935 11 11 11s11-4.935 11-11c0-3.916-2.108-7.568-5.503-9.53z'/%3E %3Cpath d='M12 9c.553 0 1-.447 1-1V1c0-.553-.447-1-1-1s-1 .447-1 1v7c0 .553.447 1 1 1z'/%3E %3C/g%3E %3C/svg%3E"));
+  background-color: var(--ck-icon-switch-before-color, #202d3a);
+  -webkit-mask: var(--ck-icon-switch-before, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg%3E %3Cpath d='M17.497 3.47c-.478-.276-1.09-.113-1.366.366-.276.478-.112 1.09.366 1.366C19.274 6.808 21 9.796 21 13c0 4.963-4.037 9-9 9s-9-4.037-9-9c0-3.203 1.725-6.19 4.501-7.797.478-.276.642-.888.364-1.366-.275-.479-.887-.644-1.366-.364C3.107 5.435 1 9.086 1 13c0 6.065 4.935 11 11 11s11-4.935 11-11c0-3.916-2.108-7.568-5.503-9.53z'/%3E %3Cpath d='M12 9c.553 0 1-.447 1-1V1c0-.553-.447-1-1-1s-1 .447-1 1v7c0 .553.447 1 1 1z'/%3E %3C/g%3E %3C/svg%3E"));
+          mask: var(--ck-icon-switch-before, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg%3E %3Cpath d='M17.497 3.47c-.478-.276-1.09-.113-1.366.366-.276.478-.112 1.09.366 1.366C19.274 6.808 21 9.796 21 13c0 4.963-4.037 9-9 9s-9-4.037-9-9c0-3.203 1.725-6.19 4.501-7.797.478-.276.642-.888.364-1.366-.275-.479-.887-.644-1.366-.364C3.107 5.435 1 9.086 1 13c0 6.065 4.935 11 11 11s11-4.935 11-11c0-3.916-2.108-7.568-5.503-9.53z'/%3E %3Cpath d='M12 9c.553 0 1-.447 1-1V1c0-.553-.447-1-1-1s-1 .447-1 1v7c0 .553.447 1 1 1z'/%3E %3C/g%3E %3C/svg%3E"));
 }
 .icon-switch::after {
   transform: translateY(100%);
   opacity: 0;
-  background-image: var(--ck-icon-switch-after, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff2f6c'%3E %3Cg%3E %3Cpath d='M17.497 3.47c-.478-.276-1.09-.113-1.366.366-.276.478-.112 1.09.366 1.366C19.274 6.808 21 9.796 21 13c0 4.963-4.037 9-9 9s-9-4.037-9-9c0-3.203 1.725-6.19 4.501-7.797.478-.276.642-.888.364-1.366-.275-.479-.887-.644-1.366-.364C3.107 5.435 1 9.086 1 13c0 6.065 4.935 11 11 11s11-4.935 11-11c0-3.916-2.108-7.568-5.503-9.53z'/%3E %3Cpath d='M12 9c.553 0 1-.447 1-1V1c0-.553-.447-1-1-1s-1 .447-1 1v7c0 .553.447 1 1 1z'/%3E %3C/g%3E %3C/svg%3E"));
+  background-color: var(--ck-icon-switch-after-color, #202d3a);
+  -webkit-mask: var(--ck-icon-switch-after, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg%3E %3Cpath d='M17.497 3.47c-.478-.276-1.09-.113-1.366.366-.276.478-.112 1.09.366 1.366C19.274 6.808 21 9.796 21 13c0 4.963-4.037 9-9 9s-9-4.037-9-9c0-3.203 1.725-6.19 4.501-7.797.478-.276.642-.888.364-1.366-.275-.479-.887-.644-1.366-.364C3.107 5.435 1 9.086 1 13c0 6.065 4.935 11 11 11s11-4.935 11-11c0-3.916-2.108-7.568-5.503-9.53z'/%3E %3Cpath d='M12 9c.553 0 1-.447 1-1V1c0-.553-.447-1-1-1s-1 .447-1 1v7c0 .553.447 1 1 1z'/%3E %3C/g%3E %3C/svg%3E"));
+          mask: var(--ck-icon-switch-after, url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E %3Cg%3E %3Cpath d='M17.497 3.47c-.478-.276-1.09-.113-1.366.366-.276.478-.112 1.09.366 1.366C19.274 6.808 21 9.796 21 13c0 4.963-4.037 9-9 9s-9-4.037-9-9c0-3.203 1.725-6.19 4.501-7.797.478-.276.642-.888.364-1.366-.275-.479-.887-.644-1.366-.364C3.107 5.435 1 9.086 1 13c0 6.065 4.935 11 11 11s11-4.935 11-11c0-3.916-2.108-7.568-5.503-9.53z'/%3E %3Cpath d='M12 9c.553 0 1-.447 1-1V1c0-.553-.447-1-1-1s-1 .447-1 1v7c0 .553.447 1 1 1z'/%3E %3C/g%3E %3C/svg%3E"));
 }
 .icon-switch.icon-switch-after::before {
   transform: translateY(-100%);
@@ -977,13 +971,13 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
   border-radius: var(--ck-progress-border-radius, 10px);
-  background: var(--ck-progress-filled-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   -webkit-transition: width 200ms ease-out;
   transition: width 200ms ease-out;
 }
 progress::-moz-progress-bar {
   border-radius: var(--ck-progress-border-radius, 10px);
-  background: var(--ck-progress-filled-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
 }
 progress:indeterminate {
   /* Safari only override */
@@ -996,7 +990,7 @@ progress:indeterminate::after {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--ck-progress-filled-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 progress:indeterminate::-webkit-progress-bar::after {
@@ -1007,7 +1001,7 @@ progress:indeterminate::-webkit-progress-bar::after {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--ck-progress-filled-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 progress:indeterminate::-moz-progress-bar {
@@ -1018,7 +1012,7 @@ progress:indeterminate::-moz-progress-bar {
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--ck-progress-filled-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 
@@ -1051,12 +1045,12 @@ input[type=radio]::before {
   pointer-events: none;
 }
 input[type=radio]:not(:disabled):active {
-  border-color: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
 }
 input[type=radio]:checked {
-  border-color: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   color: var(--ck-checkradio-tick-color, #fafafa);
-  background: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
 }
 input[type=radio]:checked::before {
   opacity: 1;
@@ -1071,7 +1065,7 @@ input[type=radio]:disabled {
   cursor: not-allowed;
 }
 input[type=radio]:indeterminate {
-  border-color: var(--ck-checkradio-color, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   color: var(--ck-checkradio-tick-color, #fafafa);
 }
 input[type=radio]:indeterminate::before {
@@ -1161,7 +1155,7 @@ input[type=range]::-webkit-slider-thumb {
   height: var(--ck-range-thumb-height, 24px);
   border-color: transparent;
   border-radius: var(--ck-range-thumb-radius, 50%);
-  background: var(--ck-range-thumb-background, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-range-thumb-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   box-shadow: var(--ck-range-thumb-shadow, 0 0 8px rgba(0, 132, 255, 0.72));
   -webkit-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
@@ -1173,7 +1167,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   cursor: grab;
 }
 input[type=range]::-webkit-slider-thumb:active, input[type=range]::-webkit-slider-thumb:focus {
-  background: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   box-shadow: var(--ck-range-thumb-active-shadow, 0 0 4px rgba(0, 132, 255, 0.72));
   cursor: grabbing;
 }
@@ -1182,7 +1176,7 @@ input[type=range]::-moz-range-thumb {
   height: var(--ck-range-thumb-height, 24px);
   border-color: transparent;
   border-radius: var(--ck-range-thumb-radius, 50%);
-  background: var(--ck-range-thumb-background, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-range-thumb-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   box-shadow: var(--ck-range-thumb-shadow, 0 0 8px rgba(0, 132, 255, 0.72));
   -moz-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
@@ -1193,7 +1187,7 @@ input[type=range]::-moz-range-thumb:hover {
   cursor: grab;
 }
 input[type=range]::-moz-range-thumb:active, input[type=range]::-moz-range-thumb:focus {
-  background: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   box-shadow: var(--ck-range-thumb-active-shadow, 0 0 4px rgba(0, 132, 255, 0.72));
   cursor: grabbing;
 }
@@ -1202,7 +1196,7 @@ input[type=range]::-ms-thumb {
   height: var(--ck-range-thumb-height, 24px);
   border-color: transparent;
   border-radius: var(--ck-range-thumb-radius, 50%);
-  background: var(--ck-range-thumb-background, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-range-thumb-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   box-shadow: var(--ck-range-thumb-shadow, 0 0 8px rgba(0, 132, 255, 0.72));
   -ms-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
@@ -1212,29 +1206,29 @@ input[type=range]::-ms-thumb:hover {
   cursor: grab;
 }
 input[type=range]::-ms-thumb:active, input[type=range]::-ms-thumb:focus {
-  background: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   box-shadow: var(--ck-range-thumb-active-shadow, 0 0 4px rgba(0, 132, 255, 0.72));
   cursor: grabbing;
 }
 input[type=range]:active::-webkit-slider-thumb {
-  background-color: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background-color: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
 }
 input[type=range]:active::-moz-range-thumb {
-  background-color: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background-color: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
 }
 input[type=range]:active::-ms-thumb {
-  background-color: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background-color: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
 }
 input[type=range]:not(:active):focus::-webkit-slider-thumb {
-  background: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   outline: var(--ck-range-outline-size, var(--ck-outline-size)) var(--ck-range-outline-style, var(--ck-outline-style)) var(--ck-range-outline-color, var(--ck-outline-color));
 }
 input[type=range]:not(:active):focus::-moz-range-thumb {
-  background: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   outline: var(--ck-range-outline-size, var(--ck-outline-size)) var(--ck-range-outline-style, var(--ck-outline-style)) var(--ck-range-outline-color, var(--ck-outline-color));
 }
 input[type=range]:not(:active):focus::-ms-thumb {
-  background: var(--ck-range-thumb-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   outline: var(--ck-range-outline-size, var(--ck-outline-size)) var(--ck-range-outline-style, var(--ck-outline-style)) var(--ck-range-outline-color, var(--ck-outline-color));
 }
 input[type=range]:disabled::-webkit-slider-runnable-track, input[type=range][aria-disabled=true]::-webkit-slider-runnable-track {
@@ -1381,8 +1375,8 @@ tr + tr {
   border-top: var(--ck-table-row-separator, 1px solid #e1eaee);
 }
 
-tr:nth-child(even) {
-  background-color: var(--ck-table-striped-background, transparent);
+table.striped tr:nth-child(even) {
+  background-color: var(--ck-table-striped-background, #f2f6f8);
 }
 
 input[type=file] {
@@ -1398,7 +1392,7 @@ input[type=file]::-webkit-file-upload-button {
   align-items: center;
   justify-content: center;
   color: var(--ck-button-foreground, #fafafa);
-  background: var(--ck-button-background, radial-gradient(circle farthest-corner at 10% 20%, #0072ff 0%, #0072ff 90%));
+  background: var(--ck-button-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
   box-shadow: var(--ck-button-shadow, 0 8px 8px -8px #0084ff);
   font-size: inherit;
   font-weight: var(--ck-button-font-weight, 700);
@@ -1421,7 +1415,7 @@ input[type=file]::-webkit-file-upload-button:-moz-focusring {
 }
 input[type=file]::-webkit-file-upload-button:hover {
   border-color: var(--ck-button-hover-border-color, transparent);
-  background: var(--ck-button-hover-background, radial-gradient(circle farthest-corner at 10% 20%, #0a78ff 0%, #0a78ff 90%));
+  background: var(--ck-button-hover-background, radial-gradient(135% 100% at 50% 100%, #007ff5 0%, #006df5 100%));
 }
 input[type=file]::-webkit-file-upload-button:disabled, input[type=file]::-webkit-file-upload-button[aria-disabled=true] {
   border-color: var(--ck-button-disabled-border-color, transparent);
@@ -1433,7 +1427,7 @@ input[type=file]::-webkit-file-upload-button:disabled, input[type=file]::-webkit
 input[type=file]::-webkit-file-upload-button:not(:disabled):not([aria-disabled=true]):active {
   border-color: var(--ck-button-active-border-color, transparent);
   transform: translateY(1px);
-  background: var(--ck-button-active-background, radial-gradient(circle farthest-corner at 10% 20%, #147dff 0%, #147dff 90%));
+  background: var(--ck-button-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
   box-shadow: var(--ck-button-active-shadow, 0 4px 4px -4px #0084ff);
 }
 input[type=file]::-webkit-file-upload-button i,

@@ -26,9 +26,15 @@
       colorSchemeTrigger.classList.add('icon-switch-after');
     });
 
-    doc.addEventListener('ResetColorScheme', () =>
+    doc.addEventListener('ResetColorScheme', evt => {
+      const colorScheme = evt.detail.colorScheme;
       // eslint-disable-next-line no-console
-      console.log('The color scheme has been reset.')
+      console.log('The default color scheme:', colorScheme);
+    });
+
+    doc.addEventListener('UnsetColorScheme', () =>
+      // eslint-disable-next-line no-console
+      console.log('The color scheme has been unset.')
     );
   }
 

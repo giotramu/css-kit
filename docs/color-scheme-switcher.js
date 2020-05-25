@@ -7,7 +7,7 @@
         const { documentElement } = doc;
         const triggers = {
             set: doc.querySelector('[data-ck-trigger="set-color-scheme"]'),
-            reset: doc.querySelector('[data-ck-trigger="reset-color-scheme"]')
+            unset: doc.querySelector('[data-ck-trigger="unset-color-scheme"]')
         };
         resetColorScheme({ html: documentElement, storage: localStorage });
         if (triggers.set === null) {
@@ -21,16 +21,12 @@
                 storage: localStorage
             });
         }, false);
-        if (triggers.reset === null) {
+        if (triggers.unset === null) {
             return;
         }
-        triggers.reset.addEventListener('click', () => resetColorScheme({ html: documentElement, storage: localStorage }), false);
+        triggers.unset.addEventListener('click', () => unsetColorScheme({ html: documentElement, storage: localStorage }), false);
     }
     function resetColorScheme({ html, storage }) {
-        const event = new CustomEvent('ResetColorScheme', {
-            detail: { colorScheme: null }
-        });
-        storage.removeItem('color-scheme');
         const initialColorScheme = readUserPreferences({
             html,
             storage
@@ -40,7 +36,29 @@
             html,
             storage
         });
+        const event = new CustomEvent('ResetColorScheme', {
+            detail: { colorScheme: initialColorScheme }
+        });
         doc.dispatchEvent(event);
+    }
+    function setColorScheme({ scheme, html, storage }) {
+        storage.setItem('color-scheme', scheme);
+        html.dataset.colorScheme = scheme;
+        const event = new CustomEvent('SetColorScheme', {
+            detail: { colorScheme: scheme }
+        });
+        doc.dispatchEvent(event);
+    }
+    function unsetColorScheme({ html, storage }) {
+        html.removeAttribute('data-color-scheme');
+        storage.removeItem('color-scheme');
+        const event = new CustomEvent('UnsetColorScheme', {
+            detail: { colorScheme: null }
+        });
+        doc.dispatchEvent(event);
+    }
+    function switchColorScheme(scheme) {
+        return scheme === 'light' ? 'dark' : 'light';
     }
     function readUserPreferences({ html, storage }) {
         // 1. Read `html` tag, and ignore the rest
@@ -61,16 +79,5 @@
         // If the prefers-color-scheme is `light`
         // If the prefers-color-scheme is `no-preferences`
         return 'light';
-    }
-    function setColorScheme({ scheme, html, storage }) {
-        const event = new CustomEvent('SetColorScheme', {
-            detail: { colorScheme: scheme }
-        });
-        storage.setItem('color-scheme', scheme);
-        html.dataset.colorScheme = scheme;
-        doc.dispatchEvent(event);
-    }
-    function switchColorScheme(scheme) {
-        return scheme === 'light' ? 'dark' : 'light';
     }
 })(window);

@@ -6,38 +6,11 @@
   overflow: hidden;
   width: calc(#{_config-var($icon-switch, 'size')} * 2);
   height: calc(#{_config-var($icon-switch, 'size')} * 2);
-  border: _config-var($icon-switch, 'border');
-  border-radius: _config-var($icon-switch, 'border-radius');
   padding: _config-var($icon-switch, 'padding');
   position: relative;
   align-items: center;
   justify-content: center;
-  background: _config-var($icon-switch, 'background');
-  box-shadow: _config-var($icon-switch, 'shadow');
   line-height: inherit;
-  transition: border-color 0.1s ease-out, background-color 0.1s ease-out,
-    box-shadow 0.1s ease-out;
-
-  &:hover {
-    border-color: _config-var($icon-switch, 'hover-border-color');
-    background: _config-var($icon-switch, 'hover-background');
-  }
-
-  &:disabled,
-  &[aria-disabled='true'] {
-    border-color: _config-var($icon-switch, 'disabled-border-color');
-    opacity: 0.5;
-    background: _config-var($icon-switch, 'disabled-background');
-    box-shadow: none;
-    cursor: not-allowed;
-  }
-
-  &:not(:disabled):not([aria-disabled='true']):active {
-    border-color: _config-var($icon-switch, 'active-border-color');
-    transform: none;
-    background: _config-var($icon-switch, 'active-background');
-    box-shadow: _config-var($icon-switch, 'active-shadow');
-  }
 
   &::before,
   &::after {
@@ -47,13 +20,15 @@
   &::before {
     transform: translateY(0%);
     opacity: 1;
-    background-image: _config-var($icon-switch, 'before');
+    background-color: _config-var($icon-switch, 'before-color');
+    mask: _config-var($icon-switch, 'before');
   }
 
   &::after {
     transform: translateY(100%);
     opacity: 0;
-    background-image: _config-var($icon-switch, 'after');
+    background-color: _config-var($icon-switch, 'after-color');
+    mask: _config-var($icon-switch, 'after');
   }
 
   &.icon-switch-after {

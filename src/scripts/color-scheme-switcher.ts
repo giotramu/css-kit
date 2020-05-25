@@ -8,7 +8,7 @@
     const {documentElement} = doc;
     const triggers = {
       set: doc.querySelector('[data-ck-trigger="set-color-scheme"]'),
-      reset: doc.querySelector('[data-ck-trigger="reset-color-scheme"]')
+      unset: doc.querySelector('[data-ck-trigger="unset-color-scheme"]')
     };
 
     resetColorScheme({html: documentElement, storage: localStorage});
@@ -31,24 +31,18 @@
       false
     );
 
-    if (triggers.reset === null) {
+    if (triggers.unset === null) {
       return;
     }
 
-    triggers.reset.addEventListener(
+    triggers.unset.addEventListener(
       'click',
-      () => resetColorScheme({html: documentElement, storage: localStorage}),
+      () => unsetColorScheme({html: documentElement, storage: localStorage}),
       false
     );
   }
 
   function resetColorScheme({html, storage}: ResetColorScheme): void {
-    const event = new CustomEvent('ResetColorScheme', {
-      detail: {colorScheme: null}
-    });
-
-    storage.removeItem('color-scheme');
-
     const initialColorScheme = readUserPreferences({
       html,
       storage
@@ -60,7 +54,34 @@
       storage
     });
 
+    const event = new CustomEvent('ResetColorScheme', {
+      detail: {colorScheme: initialColorScheme}
+    });
     doc.dispatchEvent(event);
+  }
+
+  function setColorScheme({scheme, html, storage}: SetColorScheme): void {
+    storage.setItem('color-scheme', scheme);
+    html.dataset.colorScheme = scheme;
+
+    const event = new CustomEvent('SetColorScheme', {
+      detail: {colorScheme: scheme}
+    });
+    doc.dispatchEvent(event);
+  }
+
+  function unsetColorScheme({html, storage}: UnsetColorScheme): void {
+    html.removeAttribute('data-color-scheme');
+    storage.removeItem('color-scheme');
+
+    const event = new CustomEvent('UnsetColorScheme', {
+      detail: {colorScheme: null}
+    });
+    doc.dispatchEvent(event);
+  }
+
+  function switchColorScheme(scheme: unknown): ColorScheme {
+    return scheme === 'light' ? 'dark' : 'light';
   }
 
   function readUserPreferences({
@@ -91,20 +112,6 @@
     // If the prefers-color-scheme is `no-preferences`
     return 'light';
   }
-
-  function setColorScheme({scheme, html, storage}: SetColorScheme): void {
-    const event = new CustomEvent('SetColorScheme', {
-      detail: {colorScheme: scheme}
-    });
-
-    storage.setItem('color-scheme', scheme);
-    html.dataset.colorScheme = scheme;
-    doc.dispatchEvent(event);
-  }
-
-  function switchColorScheme(scheme: unknown): ColorScheme {
-    return scheme === 'light' ? 'dark' : 'light';
-  }
 })(window);
 
 // --- typings
@@ -125,3 +132,5 @@ interface SetColorScheme {
   html: Document['documentElement'];
   storage: Storage;
 }
+
+interface UnsetColorScheme extends Omit<SetColorScheme, 'scheme'> {}

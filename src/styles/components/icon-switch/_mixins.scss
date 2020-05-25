@@ -8,6 +8,6 @@
   background-repeat: no-repeat;
   background-size: _config-var($icon-switch, 'size');
   line-height: 1;
-  will-change: transform;
-  transition: opacity 0.3s, transform 0.3s;
+  will-change: transform, opacity;
+  transition: opacity 0.32s, transform 0.32s;
 }

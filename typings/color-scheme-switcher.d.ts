@@ -12,3 +12,5 @@ interface SetColorScheme {
     html: Document['documentElement'];
     storage: Storage;
 }
+interface UnsetColorScheme extends Omit<SetColorScheme, 'scheme'> {
+}

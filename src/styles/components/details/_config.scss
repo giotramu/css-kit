@@ -1,11 +1,11 @@
-$details-shadow: _shadow('all', $size: 4, $color: _color('light-high')),
+$shadow: _shadow('all', $size: 4, $color: _color('light-high')),
   _shadow('bottom', $size: 8, $color: _color('light-high'));
 
 $properties: (
   max-height: 280px,
   border-radius: _var('global', 'border-radius'),
   background: _color('light-low'),
-  shadow: $details-shadow,
+  shadow: $shadow,
   summary-padding: 16px,
   summary-font-size: initial,
   summary-font-weight: 500,

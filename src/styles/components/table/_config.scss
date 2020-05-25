@@ -4,5 +4,5 @@ $properties: (
   cells-ypadding: 16px,
   cells-xpadding: 16px,
   background: transparent,
-  striped-background: transparent
+  striped-background: _tint(_color('light-high'), 56%)
 );

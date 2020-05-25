@@ -1,3 +1,7 @@
+[data-whatintent='mouse'] *:focus {
+  outline: none;
+}
+
 .toggles {
   position: fixed;
   top: auto;
@@ -26,17 +30,9 @@ section > h3:first-of-type {
   margin-bottom: 2.4rem;
 }
 
-table.striped {
-  --ck-table-striped-background: rgba(255, 255, 255, 0.02);
-}
-
 section.buttons button:not(:last-of-type) {
   margin-right: 2.4rem;
   margin-bottom: 1.6rem;
-}
-
-section.buttons button.rounded {
-  --ck-button-border-radius: 25px;
 }
 
 section.progress-bars p:not(:last-of-type) {
