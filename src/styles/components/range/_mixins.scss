@@ -3,7 +3,9 @@ $thumb-height: _config-var($range, 'thumb-height');
 @mixin track {
   width: 100%;
   height: _config-var($range, 'height');
-  border: _config-var($range, 'border');
+  border-width: _config-var($range, 'border-width');
+  border-color: _config-var($range, 'border-color');
+  border-style: solid;
   border-radius: _config-var($range, 'border-radius');
   background: _config-var($range, 'background');
   box-shadow: _config-var($range, 'shadow');
@@ -12,7 +14,7 @@ $thumb-height: _config-var($range, 'thumb-height');
 }
 
 @mixin disabled-track {
-  background-color: _config-var($range, 'disabled-background');
+  background: _config-var($range, 'disabled-background');
   box-shadow: none;
   cursor: not-allowed;
 }
@@ -40,7 +42,7 @@ $thumb-height: _config-var($range, 'thumb-height');
 }
 
 @mixin disabled-thumb {
-  background-color: _config-var($range, 'thumb-disabled-background');
+  background: _config-var($range, 'thumb-disabled-background');
   background-image: none;
   box-shadow: none;
   cursor: not-allowed;
@@ -48,6 +50,6 @@ $thumb-height: _config-var($range, 'thumb-height');
 
 @mixin focus-thumb {
   background: _config-var($range, 'thumb-active-background');
-  outline: _config-var($range, 'outline-size')
-    _config-var($range, 'outline-style') _config-var($range, 'outline-color');
+  outline: _config-var($range, 'outline-width') solid
+    _config-var($range, 'outline-color');
 }

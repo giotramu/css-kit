@@ -1,6 +1,8 @@
 @mixin field {
   min-height: _config-var($field, 'min-height');
-  border: _config-var($field, 'border');
+  border-width: _config-var($field, 'border-width');
+  border-color: _config-var($field, 'border-color');
+  border-style: solid;
   border-radius: _config-var($field, 'border-radius');
   color: _config-var($field, 'foreground');
   background: _config-var($field, 'background');

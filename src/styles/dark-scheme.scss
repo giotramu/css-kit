@@ -5,32 +5,39 @@
 $color-picker-shadow: _shadow(
   'bottom',
   $size: 10,
-  $color: _shade(_color('base-high'), 40%)
+  $color: _shade(_color('base-high'), 32%)
 );
+
+$details-shadow: _shadow(
+    'all',
+    $size: 8,
+    $color: _shade(_color('base-high'), 8%)
+  ),
+  _shadow('bottom', $size: 16, $color: _shade(_color('base-high'), 16%));
 
 $dialog-shadow: _shadow(
   'bottom',
-  $size: 24,
-  $color: _shade(_color('base-high'), 40%)
+  $size: 32,
+  $color: _shade(_color('base-high'), 32%)
 );
 
 $progress-shadow: _shadow(
   'inset-top-bottom',
-  $size: 24,
-  $color: _tint(_color('base-high'), 8%)
+  $size: 32,
+  $color: _tint(_color('base-high'), 16%)
 );
 
 $dark-overrides: (
   $checkradio: (
-    background: _color('base-low')
+    background: _gradient('base', 32%)
   ),
   $color-picker: (
     shadow: $color-picker-shadow
   ),
   $details: (
-    background: _color('base-high'),
-    summary-background: _color('base-high'),
-    shadow: none
+    background: _tint(_color('base-high'), 4%),
+    summary-background: _tint(_color('base-high'), 4%),
+    shadow: $details-shadow
   ),
   $dialog: (
     background: _color('base-high'),
@@ -47,8 +54,8 @@ $dark-overrides: (
     background: _shade(_color('base-low'), 16%)
   ),
   $icon-switch: (
-    before-color: _color('light-high'),
-    after-color: _color('light-high')
+    before-color: _color('light-low'),
+    after-color: _color('light-low')
   ),
   $kbd: (
     border-color: _tint(_color('base-high'), 16%)
@@ -63,7 +70,7 @@ $dark-overrides: (
     striped-background: _tint(_color('base-high'), 4%)
   ),
   $field: (
-    border: 1px solid _color('base-low'),
+    border-color: _color('base-low'),
     hover-border-color: _tint(_color('base-low'), 8%),
     focus-border-color: _color('accent-high'),
     disabled-border-color: _shade(_color('base-low'), 16%),
@@ -89,7 +96,7 @@ $dark-overrides: (
     thumb-disabled-background: _color('base-low')
   ),
   $select: (
-    border: 1px solid _color('base-low'),
+    border-color: _color('base-low'),
     hover-border-color: _tint(_color('base-low'), 8%),
     focus-border-color: _color('accent-high'),
     disabled-border-color: _shade(_color('base-low'), 16%),
@@ -113,18 +120,18 @@ html[data-color-scheme='dark'] {
   button.muted {
     #{_define-var('button', 'foreground')}: _color('light-low');
     #{_define-var('button', 'background')}: _gradient('base');
-    #{_define-var('button', 'hover-background')}: _gradient('base', 2%);
-    #{_define-var('button', 'active-background')}: _gradient('base', 4%);
+    #{_define-var('button', 'hover-background')}: _gradient('base', 8%);
+    #{_define-var('button', 'active-background')}: _gradient('base', 16%);
     #{_define-var('button', 'disabled-background')}: _color('base-low');
     #{_define-var('button', 'shadow')}: _shadow(
       'bottom',
       $size: 8,
-      $color: _color('base-low')
+      $color: _shade(_color('base-high'), 16%)
     );
     #{_define-var('button', 'active-shadow')}: _shadow(
       'bottom',
       $size: 4,
-      $color: _color('base-low')
+      $color: _shade(_color('base-high'), 16%)
     );
   }
 }

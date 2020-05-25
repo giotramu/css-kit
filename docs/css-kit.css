@@ -162,13 +162,15 @@ blockquote > * {
 
 button {
   display: inline-flex;
-  border: var(--ck-button-border, none);
+  border-width: var(--ck-button-border-width, 0);
+  border-color: var(--ck-button-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-button-border-radius, var(--ck-global-border-radius));
   padding: var(--ck-button-ypadding, 1em) var(--ck-button-xpadding, 2em);
   align-items: center;
   justify-content: center;
   color: var(--ck-button-foreground, #fafafa);
-  background: var(--ck-button-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-button-background, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-button-shadow, 0 8px 8px -8px #0084ff);
   font-size: inherit;
   font-weight: var(--ck-button-font-weight, 700);
@@ -184,11 +186,11 @@ button::-moz-focus-inner {
   border: none;
 }
 button:-moz-focusring {
-  outline: var(--ck-button-outline-size, var(--ck-outline-size)) var(--ck-button-outline-style, var(--ck-outline-style)) var(--ck-button-outline-color, var(--ck-outline-color));
+  outline: var(--ck-button-outline-width, var(--ck-outline-width)) solid var(--ck-button-outline-color, var(--ck-outline-color));
 }
 button:hover {
   border-color: var(--ck-button-hover-border-color, transparent);
-  background: var(--ck-button-hover-background, radial-gradient(135% 100% at 50% 100%, #007ff5 0%, #006df5 100%));
+  background: var(--ck-button-hover-background, radial-gradient(120% 120% at 50% 120%, rgba(20, 142, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(20, 142, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 button:disabled, button[aria-disabled=true] {
   border-color: var(--ck-button-disabled-border-color, transparent);
@@ -200,7 +202,7 @@ button:disabled, button[aria-disabled=true] {
 button:not(:disabled):not([aria-disabled=true]):active {
   border-color: var(--ck-button-active-border-color, transparent);
   transform: translateY(1px);
-  background: var(--ck-button-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background: var(--ck-button-active-background, radial-gradient(120% 120% at 50% 120%, rgba(41, 152, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(41, 152, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-button-active-shadow, 0 4px 4px -4px #0084ff);
 }
 button i,
@@ -218,9 +220,9 @@ button.rounded {
 }
 button.muted {
   --ck-button-foreground: #202d3a;
-  --ck-button-background:radial-gradient(135% 100% at 50% 100%, #fafafa 0%, #e1eaee 100%);
-  --ck-button-hover-background:radial-gradient(135% 100% at 50% 100%, whitesmoke 0%, #dde5e9 100%);
-  --ck-button-active-background:radial-gradient(135% 100% at 50% 100%, #f0f0f0 0%, #d8e1e4 100%);
+  --ck-button-background: radial-gradient(120% 120% at 50% 120%, rgba(250, 250, 250, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(250, 250, 250, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #e1eaee;
+  --ck-button-hover-background: radial-gradient(120% 120% at 50% 120%, rgba(250, 250, 250, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(250, 250, 250, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #e1eaee;
+  --ck-button-active-background: radial-gradient(120% 120% at 50% 120%, rgba(251, 251, 251, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(251, 251, 251, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #e1eaee;
   --ck-button-disabled-background: #e1eaee;
   --ck-button-shadow: 0 8px 8px -8px #e1eaee;
   --ck-button-active-shadow: 0 4px 4px -4px #e1eaee;
@@ -229,11 +231,13 @@ button.muted {
 input[type=checkbox] {
   width: var(--ck-checkradio-size, 20px);
   height: var(--ck-checkradio-size, 20px);
-  border: var(--ck-checkradio-border, none);
+  border-width: var(--ck-checkradio-border-width, 0);
+  border-color: var(--ck-checkradio-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-checkradio-border-radius, calc(var(--ck-global-border-radius) / 2));
   position: relative;
   vertical-align: middle;
-  background: var(--ck-checkradio-background, #cfd7db);
+  background: var(--ck-checkradio-background, #d8e1e4);
   cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -254,12 +258,12 @@ input[type=checkbox]::before {
   pointer-events: none;
 }
 input[type=checkbox]:not(:disabled):active {
-  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  border-color: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 input[type=checkbox]:checked {
-  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  border-color: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   color: var(--ck-checkradio-tick-color, #fafafa);
-  background: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 input[type=checkbox]:checked::before {
   opacity: 1;
@@ -274,7 +278,7 @@ input[type=checkbox]:disabled {
   cursor: not-allowed;
 }
 input[type=checkbox]:indeterminate {
-  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  border-color: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   color: var(--ck-checkradio-tick-color, #fafafa);
 }
 input[type=checkbox]:indeterminate::before {
@@ -325,14 +329,18 @@ input[type=color]::-webkit-color-swatch-wrapper {
   padding: 0;
 }
 input[type=color]::-moz-color-swatch {
-  border: var(--ck-color-picker-border, none);
+  border-width: var(--ck-color-picker-border-width, 0);
+  border-color: var(--ck-color-picker-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-color-picker-border-radius, 50%);
   box-shadow: var(--ck-color-picker-shadow, 0 8px 8px -8px #5a5c6a);
   -moz-transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, transform 0.1s ease-out;
 }
 input[type=color]::-webkit-color-swatch {
-  border: var(--ck-color-picker-border, none);
+  border-width: var(--ck-color-picker-border-width, 0);
+  border-color: var(--ck-color-picker-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-color-picker-border-radius, 50%);
   box-shadow: var(--ck-color-picker-shadow, 0 8px 8px -8px #5a5c6a);
 }
@@ -353,8 +361,8 @@ details {
   max-height: var(--ck-details-max-height, 280px);
   border-radius: var(--ck-details-border-radius, var(--ck-global-border-radius));
   position: relative;
-  background: var(--ck-details-background, #fafafa);
-  box-shadow: var(--ck-details-shadow, 0 0 4px #e1eaee, 0 8px 8px -8px #e1eaee);
+  background: var(--ck-details-background, #fff);
+  box-shadow: var(--ck-details-shadow, 0 0 8px #e1eaee, 0 16px 16px -16px #e1eaee);
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
@@ -380,7 +388,7 @@ details summary {
   position: sticky;
   top: 0;
   z-index: 1;
-  background: var(--ck-details-summary-background, #fafafa);
+  background: var(--ck-details-summary-background, #fff);
   background-size: 16px auto;
   font-size: initial;
   font-weight: var(--ck-details-summary-font-weight, 500);
@@ -454,7 +462,9 @@ dialog {
   height: -moz-fit-content;
   height: fit-content;
   margin: auto;
-  border: var(--ck-dialog-border, 0);
+  border-width: var(--ck-dialog-border-width, 0);
+  border-color: var(--ck-dialog-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-dialog-border-radius, var(--ck-global-border-radius));
   padding: var(--ck-dialog-ypadding, 2rem) var(--ck-dialog-xpadding, 2rem);
   position: fixed;
@@ -511,7 +521,7 @@ html {
 }
 
 *:focus {
-  outline: var(--ck-document-outline-size, var(--ck-outline-size)) var(--ck-document-outline-style, var(--ck-outline-style)) var(--ck-document-outline-color, var(--ck-outline-color));
+  outline: var(--ck-document-outline-width, var(--ck-outline-width)) solid var(--ck-document-outline-color, var(--ck-outline-color));
 }
 
 [tabindex="-1"] {
@@ -534,7 +544,9 @@ body {
 
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]) {
   min-height: var(--ck-field-min-height, 48px);
-  border: var(--ck-field-border, 1px solid #e1eaee);
+  border-width: var(--ck-field-border-width, 2px);
+  border-color: var(--ck-field-border-color, #e1eaee);
+  border-style: solid;
   border-radius: var(--ck-field-border-radius, var(--ck-global-border-radius));
   color: var(--ck-field-foreground, #5a5c6a);
   background: var(--ck-field-background, #fff);
@@ -562,7 +574,7 @@ input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color])
   font-weight: 400;
 }
 input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=file]):hover {
-  border-color: var(--ck-field-hover-border-color, #cfd7db);
+  border-color: var(--ck-field-hover-border-color, #d8e1e4);
   color: var(--ck-field-foreground, #5a5c6a);
   background: var(--ck-field-hover-background, #fff);
   box-shadow: var(--ck-field-hover-shadow, none);
@@ -634,7 +646,9 @@ input[type=search]::-webkit-search-decoration {
 
 textarea {
   min-height: var(--ck-field-min-height, 48px);
-  border: var(--ck-field-border, 1px solid #e1eaee);
+  border-width: var(--ck-field-border-width, 2px);
+  border-color: var(--ck-field-border-color, #e1eaee);
+  border-style: solid;
   border-radius: var(--ck-field-border-radius, var(--ck-global-border-radius));
   color: var(--ck-field-foreground, #5a5c6a);
   background: var(--ck-field-background, #fff);
@@ -663,7 +677,7 @@ textarea::placeholder {
   font-weight: 400;
 }
 textarea:hover {
-  border-color: var(--ck-field-hover-border-color, #cfd7db);
+  border-color: var(--ck-field-hover-border-color, #d8e1e4);
   color: var(--ck-field-foreground, #5a5c6a);
   background: var(--ck-field-hover-background, #fff);
   box-shadow: var(--ck-field-hover-shadow, none);
@@ -730,7 +744,7 @@ textarea:-moz-ui-invalid {
 fieldset {
   min-width: 0;
   margin: 0 0 1rem;
-  border: 0 solid transparent;
+  border: none;
   padding: 0;
 }
 
@@ -799,7 +813,7 @@ h6 {
 hr {
   display: block;
   width: 100%;
-  height: var(--ck-hr-height, 1px);
+  height: var(--ck-hr-height, 2px);
   margin-top: var(--ck-hr-margin, 48px);
   margin-bottom: var(--ck-hr-margin, 48px);
   border: none;
@@ -954,9 +968,8 @@ progress {
   overflow: hidden;
   width: 100%;
   height: var(--ck-progress-height, 16px);
-  border-width: var(--ck-progress-border-size, 1px);
+  border-width: var(--ck-progress-border-width, 1px);
   border-color: var(--ck-progress-border-color, #e1eaee);
-  border-style: solid;
   border-radius: var(--ck-progress-border-radius, 10px);
   position: relative;
   background: var(--ck-progress-background, transparent);
@@ -971,13 +984,13 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
   border-radius: var(--ck-progress-border-radius, 10px);
-  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-progress-filled-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   -webkit-transition: width 200ms ease-out;
   transition: width 200ms ease-out;
 }
 progress::-moz-progress-bar {
   border-radius: var(--ck-progress-border-radius, 10px);
-  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-progress-filled-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 progress:indeterminate {
   /* Safari only override */
@@ -985,45 +998,47 @@ progress:indeterminate {
 progress:indeterminate::after {
   content: "";
   display: block;
-  height: calc(var(--ck-progress-height, 16px) - var(--ck-progress-border-size, 1px) * 2);
+  height: calc(var(--ck-progress-height, 16px) - var(--ck-progress-border-width, 1px) * 2);
   border-radius: var(--ck-progress-border-radius, 10px);
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-progress-filled-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 progress:indeterminate::-webkit-progress-bar::after {
   content: "";
   display: block;
-  height: calc(var(--ck-progress-height, 16px) - var(--ck-progress-border-size, 1px) * 2);
+  height: calc(var(--ck-progress-height, 16px) - var(--ck-progress-border-width, 1px) * 2);
   border-radius: var(--ck-progress-border-radius, 10px);
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-progress-filled-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 progress:indeterminate::-moz-progress-bar {
   content: "";
   display: block;
-  height: calc(var(--ck-progress-height, 16px) - var(--ck-progress-border-size, 1px) * 2);
+  height: calc(var(--ck-progress-height, 16px) - var(--ck-progress-border-width, 1px) * 2);
   border-radius: var(--ck-progress-border-radius, 10px);
   position: absolute;
   top: 0;
   left: 0;
-  background: var(--ck-progress-filled-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-progress-filled-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   animation: moving-indeterminate 1s ease-in-out infinite;
 }
 
 input[type=radio] {
   width: var(--ck-checkradio-size, 20px);
   height: var(--ck-checkradio-size, 20px);
-  border: var(--ck-checkradio-border, none);
+  border-width: var(--ck-checkradio-border-width, 0);
+  border-color: var(--ck-checkradio-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-checkradio-border-radius, calc(var(--ck-global-border-radius) / 2));
   position: relative;
   vertical-align: middle;
-  background: var(--ck-checkradio-background, #cfd7db);
+  background: var(--ck-checkradio-background, #d8e1e4);
   cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -1045,12 +1060,12 @@ input[type=radio]::before {
   pointer-events: none;
 }
 input[type=radio]:not(:disabled):active {
-  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  border-color: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 input[type=radio]:checked {
-  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  border-color: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   color: var(--ck-checkradio-tick-color, #fafafa);
-  background: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 input[type=radio]:checked::before {
   opacity: 1;
@@ -1065,7 +1080,7 @@ input[type=radio]:disabled {
   cursor: not-allowed;
 }
 input[type=radio]:indeterminate {
-  border-color: var(--ck-checkradio-color, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  border-color: var(--ck-checkradio-color, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   color: var(--ck-checkradio-tick-color, #fafafa);
 }
 input[type=radio]:indeterminate::before {
@@ -1095,7 +1110,9 @@ input[type=range] {
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: var(--ck-range-height, 2px);
-  border: var(--ck-range-border, none);
+  border-width: var(--ck-range-border-width, 0);
+  border-color: var(--ck-range-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-range-border-radius, 10px);
   background: var(--ck-range-background, #e1eaee);
   box-shadow: var(--ck-range-shadow, 0 0 8px #fff);
@@ -1106,7 +1123,9 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-moz-range-track {
   width: 100%;
   height: var(--ck-range-height, 2px);
-  border: var(--ck-range-border, none);
+  border-width: var(--ck-range-border-width, 0);
+  border-color: var(--ck-range-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-range-border-radius, 10px);
   background: var(--ck-range-background, #e1eaee);
   box-shadow: var(--ck-range-shadow, 0 0 8px #fff);
@@ -1117,7 +1136,9 @@ input[type=range]::-moz-range-track {
 input[type=range]::-ms-track {
   width: 100%;
   height: var(--ck-range-height, 2px);
-  border: var(--ck-range-border, none);
+  border-width: var(--ck-range-border-width, 0);
+  border-color: var(--ck-range-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-range-border-radius, 10px);
   background: var(--ck-range-background, #e1eaee);
   box-shadow: var(--ck-range-shadow, 0 0 8px #fff);
@@ -1155,7 +1176,7 @@ input[type=range]::-webkit-slider-thumb {
   height: var(--ck-range-thumb-height, 24px);
   border-color: transparent;
   border-radius: var(--ck-range-thumb-radius, 50%);
-  background: var(--ck-range-thumb-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-range-thumb-background, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-range-thumb-shadow, 0 0 8px rgba(0, 132, 255, 0.72));
   -webkit-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
@@ -1167,7 +1188,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   cursor: grab;
 }
 input[type=range]::-webkit-slider-thumb:active, input[type=range]::-webkit-slider-thumb:focus {
-  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background: var(--ck-range-thumb-active-background, #0084ff);
   box-shadow: var(--ck-range-thumb-active-shadow, 0 0 4px rgba(0, 132, 255, 0.72));
   cursor: grabbing;
 }
@@ -1176,7 +1197,7 @@ input[type=range]::-moz-range-thumb {
   height: var(--ck-range-thumb-height, 24px);
   border-color: transparent;
   border-radius: var(--ck-range-thumb-radius, 50%);
-  background: var(--ck-range-thumb-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-range-thumb-background, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-range-thumb-shadow, 0 0 8px rgba(0, 132, 255, 0.72));
   -moz-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
@@ -1187,7 +1208,7 @@ input[type=range]::-moz-range-thumb:hover {
   cursor: grab;
 }
 input[type=range]::-moz-range-thumb:active, input[type=range]::-moz-range-thumb:focus {
-  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background: var(--ck-range-thumb-active-background, #0084ff);
   box-shadow: var(--ck-range-thumb-active-shadow, 0 0 4px rgba(0, 132, 255, 0.72));
   cursor: grabbing;
 }
@@ -1196,7 +1217,7 @@ input[type=range]::-ms-thumb {
   height: var(--ck-range-thumb-height, 24px);
   border-color: transparent;
   border-radius: var(--ck-range-thumb-radius, 50%);
-  background: var(--ck-range-thumb-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-range-thumb-background, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-range-thumb-shadow, 0 0 8px rgba(0, 132, 255, 0.72));
   -ms-transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
   transition: box-shadow 0.1s ease-out, background-color 0.1s ease-out;
@@ -1206,60 +1227,60 @@ input[type=range]::-ms-thumb:hover {
   cursor: grab;
 }
 input[type=range]::-ms-thumb:active, input[type=range]::-ms-thumb:focus {
-  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background: var(--ck-range-thumb-active-background, #0084ff);
   box-shadow: var(--ck-range-thumb-active-shadow, 0 0 4px rgba(0, 132, 255, 0.72));
   cursor: grabbing;
 }
 input[type=range]:active::-webkit-slider-thumb {
-  background-color: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background-color: var(--ck-range-thumb-active-background, #0084ff);
 }
 input[type=range]:active::-moz-range-thumb {
-  background-color: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background-color: var(--ck-range-thumb-active-background, #0084ff);
 }
 input[type=range]:active::-ms-thumb {
-  background-color: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background-color: var(--ck-range-thumb-active-background, #0084ff);
 }
 input[type=range]:not(:active):focus::-webkit-slider-thumb {
-  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
-  outline: var(--ck-range-outline-size, var(--ck-outline-size)) var(--ck-range-outline-style, var(--ck-outline-style)) var(--ck-range-outline-color, var(--ck-outline-color));
+  background: var(--ck-range-thumb-active-background, #0084ff);
+  outline: var(--ck-range-outline-width, var(--ck-outline-width)) solid var(--ck-range-outline-color, var(--ck-outline-color));
 }
 input[type=range]:not(:active):focus::-moz-range-thumb {
-  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
-  outline: var(--ck-range-outline-size, var(--ck-outline-size)) var(--ck-range-outline-style, var(--ck-outline-style)) var(--ck-range-outline-color, var(--ck-outline-color));
+  background: var(--ck-range-thumb-active-background, #0084ff);
+  outline: var(--ck-range-outline-width, var(--ck-outline-width)) solid var(--ck-range-outline-color, var(--ck-outline-color));
 }
 input[type=range]:not(:active):focus::-ms-thumb {
-  background: var(--ck-range-thumb-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
-  outline: var(--ck-range-outline-size, var(--ck-outline-size)) var(--ck-range-outline-style, var(--ck-outline-style)) var(--ck-range-outline-color, var(--ck-outline-color));
+  background: var(--ck-range-thumb-active-background, #0084ff);
+  outline: var(--ck-range-outline-width, var(--ck-outline-width)) solid var(--ck-range-outline-color, var(--ck-outline-color));
 }
 input[type=range]:disabled::-webkit-slider-runnable-track, input[type=range][aria-disabled=true]::-webkit-slider-runnable-track {
-  background-color: var(--ck-range-disabled-background, #e1eaee);
+  background: var(--ck-range-disabled-background, #e1eaee);
   box-shadow: none;
   cursor: not-allowed;
 }
 input[type=range]:disabled::-moz-range-track, input[type=range][aria-disabled=true]::-moz-range-track {
-  background-color: var(--ck-range-disabled-background, #e1eaee);
+  background: var(--ck-range-disabled-background, #e1eaee);
   box-shadow: none;
   cursor: not-allowed;
 }
 input[type=range]:disabled::-ms-track, input[type=range][aria-disabled=true]::-ms-track {
-  background-color: var(--ck-range-disabled-background, #e1eaee);
+  background: var(--ck-range-disabled-background, #e1eaee);
   box-shadow: none;
   cursor: not-allowed;
 }
 input[type=range]:disabled::-webkit-slider-thumb, input[type=range][aria-disabled=true]::-webkit-slider-thumb {
-  background-color: var(--ck-range-thumb-disabled-background, #cfd7db);
+  background: var(--ck-range-thumb-disabled-background, radial-gradient(120% 120% at 50% 120%, rgba(250, 250, 250, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(250, 250, 250, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #e1eaee);
   background-image: none;
   box-shadow: none;
   cursor: not-allowed;
 }
 input[type=range]:disabled::-moz-range-thumb, input[type=range][aria-disabled=true]::-moz-range-thumb {
-  background-color: var(--ck-range-thumb-disabled-background, #cfd7db);
+  background: var(--ck-range-thumb-disabled-background, radial-gradient(120% 120% at 50% 120%, rgba(250, 250, 250, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(250, 250, 250, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #e1eaee);
   background-image: none;
   box-shadow: none;
   cursor: not-allowed;
 }
 input[type=range]:disabled::-ms-thumb, input[type=range][aria-disabled=true]::-ms-thumb {
-  background-color: var(--ck-range-thumb-disabled-background, #cfd7db);
+  background: var(--ck-range-thumb-disabled-background, radial-gradient(120% 120% at 50% 120%, rgba(250, 250, 250, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(250, 250, 250, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #e1eaee);
   background-image: none;
   box-shadow: none;
   cursor: not-allowed;
@@ -1271,7 +1292,9 @@ select {
   width: var(--ck-select-width, 100%);
   min-height: var(--ck-select-min-height, 48px);
   margin: 0;
-  border: var(--ck-select-border, 1px solid #e1eaee);
+  border-width: var(--ck-select-border-width, 2px);
+  border-color: var(--ck-select-border-color, #e1eaee);
+  border-style: solid;
   border-radius: var(--ck-select-border-radius, var(--ck-global-border-radius));
   padding: var(--ck-select-ypadding, 0.5em) var(--ck-select-xpadding, 1em);
   padding-right: calc(var(--ck-select-xpadding, 1em) * 2 + var(--ck-select-icon-size, 1rem));
@@ -1386,13 +1409,15 @@ input[type=file] {
 }
 input[type=file]::-webkit-file-upload-button {
   display: inline-flex;
-  border: var(--ck-button-border, none);
+  border-width: var(--ck-button-border-width, 0);
+  border-color: var(--ck-button-border-color, transparent);
+  border-style: solid;
   border-radius: var(--ck-button-border-radius, var(--ck-global-border-radius));
   padding: var(--ck-button-ypadding, 1em) var(--ck-button-xpadding, 2em);
   align-items: center;
   justify-content: center;
   color: var(--ck-button-foreground, #fafafa);
-  background: var(--ck-button-background, radial-gradient(135% 100% at 50% 100%, #0084ff 0%, #0072ff 100%));
+  background: var(--ck-button-background, radial-gradient(120% 120% at 50% 120%, rgba(0, 132, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(0, 132, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-button-shadow, 0 8px 8px -8px #0084ff);
   font-size: inherit;
   font-weight: var(--ck-button-font-weight, 700);
@@ -1411,11 +1436,11 @@ input[type=file]::-webkit-file-upload-button::-moz-focus-inner {
   border: none;
 }
 input[type=file]::-webkit-file-upload-button:-moz-focusring {
-  outline: var(--ck-button-outline-size, var(--ck-outline-size)) var(--ck-button-outline-style, var(--ck-outline-style)) var(--ck-button-outline-color, var(--ck-outline-color));
+  outline: var(--ck-button-outline-width, var(--ck-outline-width)) solid var(--ck-button-outline-color, var(--ck-outline-color));
 }
 input[type=file]::-webkit-file-upload-button:hover {
   border-color: var(--ck-button-hover-border-color, transparent);
-  background: var(--ck-button-hover-background, radial-gradient(135% 100% at 50% 100%, #007ff5 0%, #006df5 100%));
+  background: var(--ck-button-hover-background, radial-gradient(120% 120% at 50% 120%, rgba(20, 142, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(20, 142, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
 }
 input[type=file]::-webkit-file-upload-button:disabled, input[type=file]::-webkit-file-upload-button[aria-disabled=true] {
   border-color: var(--ck-button-disabled-border-color, transparent);
@@ -1427,7 +1452,7 @@ input[type=file]::-webkit-file-upload-button:disabled, input[type=file]::-webkit
 input[type=file]::-webkit-file-upload-button:not(:disabled):not([aria-disabled=true]):active {
   border-color: var(--ck-button-active-border-color, transparent);
   transform: translateY(1px);
-  background: var(--ck-button-active-background, radial-gradient(135% 100% at 50% 100%, #0079eb 0%, #0069eb 100%));
+  background: var(--ck-button-active-background, radial-gradient(120% 120% at 50% 120%, rgba(41, 152, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(41, 152, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #0072ff);
   box-shadow: var(--ck-button-active-shadow, 0 4px 4px -4px #0084ff);
 }
 input[type=file]::-webkit-file-upload-button i,
@@ -1457,7 +1482,6 @@ input[type=file]::-webkit-file-upload-button:hover, input[type=file]::-webkit-fi
   --ck-global-border-radius: 8px;
   --ck-global-font-size: 1rem;
   --ck-global-line-height: 1.65;
-  --ck-outline-size: 2px;
-  --ck-outline-style:solid;
+  --ck-outline-width: 2px;
   --ck-outline-color: #0072ff;
 }

@@ -1,5 +1,6 @@
 $properties: (
-  border: none,
+  border-width: 0,
+  border-color: transparent,
   border-radius: 50%,
   shadow: _shadow('bottom', $size: 8, $color: _color('base-low')),
   focus-shadow: _shadow('bottom', $size: 4, $color: _color('base-low'))

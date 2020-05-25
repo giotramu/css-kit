@@ -1,16 +1,16 @@
-$shadow: _shadow('all', $size: 4, $color: _color('light-high')),
-  _shadow('bottom', $size: 8, $color: _color('light-high'));
+$shadow: _shadow('all', $size: 8, $color: _color('light-high')),
+  _shadow('bottom', $size: 16, $color: _color('light-high'));
 
 $properties: (
   max-height: 280px,
   border-radius: _var('global', 'border-radius'),
-  background: _color('light-low'),
+  background: #fff,
   shadow: $shadow,
   summary-padding: 16px,
   summary-font-size: initial,
   summary-font-weight: 500,
   summary-open-color: _color('accent-high'),
-  summary-background: _color('light-low'),
+  summary-background: #fff,
   separator: none,
   icon-size: 1rem,
   icon: svg-load('assets/details.svg', fill=#{_tint(_color('base-low'), 32%)})

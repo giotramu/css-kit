@@ -5,7 +5,9 @@ dialog {
   max-width: _config-var($dialog, 'max-width');
   height: fit-content;
   margin: auto;
-  border: _config-var($dialog, 'border');
+  border-width: _config-var($dialog, 'border-width');
+  border-color: _config-var($dialog, 'border-color');
+  border-style: solid;
   border-radius: _config-var($dialog, 'border-radius');
   padding: _config-var($dialog, 'ypadding') _config-var($dialog, 'xpadding');
   position: fixed;

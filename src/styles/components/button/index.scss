@@ -11,8 +11,8 @@ button {
   &.muted {
     #{_define-var('button', 'foreground')}: _color('base-high');
     #{_define-var('button', 'background')}: _gradient('light');
-    #{_define-var('button', 'hover-background')}: _gradient('light', 2%);
-    #{_define-var('button', 'active-background')}: _gradient('light', 4%);
+    #{_define-var('button', 'hover-background')}: _gradient('light', 8%);
+    #{_define-var('button', 'active-background')}: _gradient('light', 16%);
     #{_define-var('button', 'disabled-background')}: _color('light-high');
     #{_define-var('button', 'shadow')}: _shadow(
       'bottom',

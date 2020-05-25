@@ -1,7 +1,9 @@
 @mixin check {
   width: _config-var($checkradio, 'size');
   height: _config-var($checkradio, 'size');
-  border: _config-var($checkradio, 'border');
+  border-width: _config-var($checkradio, 'border-width');
+  border-color: _config-var($checkradio, 'border-color');
+  border-style: solid;
   border-radius: _config-var($checkradio, 'border-radius');
   position: relative;
   vertical-align: middle;

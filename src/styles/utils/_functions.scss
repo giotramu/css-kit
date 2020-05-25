@@ -29,10 +29,16 @@
 
 @function _gradient($type: 'accent', $percentage: 0%) {
   @return radial-gradient(
-    135% 100% at 50% 100%,
-    _shade(_color('#{$type}-low'), $percentage) 0%,
-    _shade(_color('#{$type}-high'), $percentage) 100%
-  );
+      120% 120% at 50% 120%,
+      rgba(_tint(_color('#{$type}-low'), $percentage), 0.32) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    radial-gradient(
+      120% 120% at 50% -20%,
+      rgba(_tint(_color('#{$type}-low'), $percentage), 0.64) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    _color('#{$type}-high');
 }
 
 @function _shadow($type: 'bottom', $size: 8, $color: _color('accent-high')) {

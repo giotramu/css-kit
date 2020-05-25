@@ -1,5 +1,7 @@
 @mixin color-swatch {
-  border: _config-var($color-picker, 'border');
+  border-width: _config-var($color-picker, 'border-width');
+  border-color: _config-var($color-picker, 'border-color');
+  border-style: solid;
   border-radius: _config-var($color-picker, 'border-radius');
   box-shadow: _config-var($color-picker, 'shadow');
 }

@@ -1,6 +1,8 @@
 @mixin button {
   display: inline-flex;
-  border: _config-var($button, 'border');
+  border-width: _config-var($button, 'border-width');
+  border-color: _config-var($button, 'border-color');
+  border-style: solid;
   border-radius: _config-var($button, 'border-radius');
   padding: _config-var($button, 'ypadding') _config-var($button, 'xpadding');
   align-items: center;
@@ -22,8 +24,7 @@
   }
 
   &:-moz-focusring {
-    outline: _config-var($button, 'outline-size')
-      _config-var($button, 'outline-style')
+    outline: _config-var($button, 'outline-width') solid
       _config-var($button, 'outline-color');
   }
 

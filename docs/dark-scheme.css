@@ -1,24 +1,24 @@
 html[data-color-scheme=dark] {
-  --ck-checkradio-background: #5a5c6a;
-  --ck-color-picker-shadow: 0 10px 10px -10px #131b23;
-  --ck-details-background: #202d3a;
-  --ck-details-summary-background: #202d3a;
-  --ck-details-shadow:none;
+  --ck-checkradio-background: radial-gradient(120% 120% at 50% 120%, rgba(143, 144, 154, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(143, 144, 154, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #202d3a;
+  --ck-color-picker-shadow: 0 10px 10px -10px #161f27;
+  --ck-details-background: #293542;
+  --ck-details-summary-background: #293542;
+  --ck-details-shadow: 0 0 8px #1d2935, 0 16px 16px -16px #1b2631;
   --ck-dialog-background: #202d3a;
-  --ck-dialog-shadow: 0 24px 24px -24px #131b23;
+  --ck-dialog-shadow: 0 32px 32px -32px #161f27;
   --ck-document-foreground: #fafafa;
   --ck-document-background: #202d3a;
   --ck-code-background: #444f5a;
   --ck-hr-background: #4c4d59;
-  --ck-icon-switch-before-color: #e1eaee;
-  --ck-icon-switch-after-color: #e1eaee;
+  --ck-icon-switch-before-color: #fafafa;
+  --ck-icon-switch-after-color: #fafafa;
   --ck-kdb-border-color: #444f5a;
   --ck-progress-border-color: #293542;
-  --ck-progress-shadow: inset 0 24px 24px -24px #323e4a, inset 0 -24px 24px -24px #323e4a;
+  --ck-progress-shadow: inset 0 32px 32px -32px #444f5a, inset 0 -32px 32px -32px #444f5a;
   --ck-table-head-separator: 2px solid #4c4d59;
   --ck-table-row-separator: 1px solid #4c4d59;
   --ck-table-striped-background: #293542;
-  --ck-field-border: 1px solid #5a5c6a;
+  --ck-field-border-color: #5a5c6a;
   --ck-field-hover-border-color: #676976;
   --ck-field-focus-border-color: #0072ff;
   --ck-field-disabled-border-color: #4c4d59;
@@ -40,7 +40,7 @@ html[data-color-scheme=dark] {
   --ck-range-disabled-background: #4c4d59;
   --ck-range-shadow: inset 0 8px 8px -8px #5a5c6a, inset 0 -8px 8px -8px #5a5c6a;
   --ck-range-thumb-disabled-background: #5a5c6a;
-  --ck-select-border: 1px solid #5a5c6a;
+  --ck-select-border-color: #5a5c6a;
   --ck-select-hover-border-color: #676976;
   --ck-select-focus-border-color: #0072ff;
   --ck-select-disabled-border-color: #4c4d59;
@@ -53,12 +53,12 @@ html[data-color-scheme=dark] {
 }
 html[data-color-scheme=dark] button.muted {
   --ck-button-foreground: #fafafa;
-  --ck-button-background:radial-gradient(135% 100% at 50% 100%, #5a5c6a 0%, #202d3a 100%);
-  --ck-button-hover-background:radial-gradient(135% 100% at 50% 100%, #585a68 0%, #1f2c39 100%);
-  --ck-button-active-background:radial-gradient(135% 100% at 50% 100%, #565866 0%, #1f2b38 100%);
+  --ck-button-background: radial-gradient(120% 120% at 50% 120%, rgba(90, 92, 106, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(90, 92, 106, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #202d3a;
+  --ck-button-hover-background: radial-gradient(120% 120% at 50% 120%, rgba(103, 105, 118, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(103, 105, 118, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #202d3a;
+  --ck-button-active-background: radial-gradient(120% 120% at 50% 120%, rgba(116, 118, 130, 0.32) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(120% 120% at 50% -20%, rgba(116, 118, 130, 0.64) 0%, rgba(255, 255, 255, 0) 100%), #202d3a;
   --ck-button-disabled-background: #5a5c6a;
-  --ck-button-shadow: 0 8px 8px -8px #5a5c6a;
-  --ck-button-active-shadow: 0 4px 4px -4px #5a5c6a;
+  --ck-button-shadow: 0 8px 8px -8px #1b2631;
+  --ck-button-active-shadow: 0 4px 4px -4px #1b2631;
 }
 
 .icon-switch[data-ck-trigger=set-color-scheme] {

@@ -6,9 +6,8 @@ progress {
   overflow: hidden;
   width: 100%;
   height: _config-var($progress, 'height');
-  border-width: _config-var($progress, 'border-size');
+  border-width: _config-var($progress, 'border-width');
   border-color: _config-var($progress, 'border-color');
-  border-style: solid;
   border-radius: _config-var($progress, 'border-radius');
   position: relative;
   background: _config-var($progress, 'background');

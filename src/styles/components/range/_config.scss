@@ -1,7 +1,8 @@
 $properties: (
   width: 100%,
   height: 2px,
-  border: none,
+  border-width: 0,
+  border-color: transparent,
   border-radius: 10px,
   background: _color('light-high'),
   focus-background: _shade(_color('light-high'), 4%),
@@ -13,13 +14,12 @@ $properties: (
   thumb-sripes-color: rgba(#fff, 0.15),
   thumb-sripes-active-color: rgba(#fff, 0.25),
   thumb-background: _gradient('accent'),
-  thumb-active-background: _gradient('accent', 8%),
-  thumb-disabled-background: _shade(_color('light-high'), 8%),
+  thumb-active-background: _color('accent-low'),
+  thumb-disabled-background: _gradient('light'),
   thumb-shadow:
     _shadow('all', $size: 8, $color: rgba(_color('accent-low'), 0.72)),
   thumb-active-shadow:
     _shadow('all', $size: 4, $color: rgba(_color('accent-low'), 0.72)),
-  outline-size: _var('outline', 'size'),
-  outline-style: _var('outline', 'style'),
+  outline-width: _var('outline', 'width'),
   outline-color: _var('outline', 'color')
 );

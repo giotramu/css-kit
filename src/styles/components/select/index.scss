@@ -10,7 +10,9 @@ select {
   width: _config-var($select, 'width');
   min-height: _config-var($select, 'min-height');
   margin: 0;
-  border: _config-var($select, 'border');
+  border-width: _config-var($select, 'border-width');
+  border-color: _config-var($select, 'border-color');
+  border-style: solid;
   border-radius: _config-var($select, 'border-radius');
   padding: $select-ypadding $select-xpadding;
   padding-right: unquote(

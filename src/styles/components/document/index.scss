@@ -12,8 +12,7 @@ html {
 }
 
 *:focus {
-  outline: _config-var($document, 'outline-size')
-    _config-var($document, 'outline-style')
+  outline: _config-var($document, 'outline-width') solid
     _config-var($document, 'outline-color');
 }
 
