@@ -33,7 +33,7 @@ Copy/paste the link tag in the head of your `index.html` document:
 - Normalizes styles for a wide range of elements.
 - The `css-kit.css` stylesheet provides useful defaults to plain HTML documents.
 - A separate stylesheet, `dark-scheme.css`, applies the dark color scheme.
-- A separate stylesheet, `custom-media.css`, injects the [Custom Media Queries][custom-mq-url].
+- The `custom-media.css` stylesheet injects the [Custom Media Queries][custom-mq-url].
 
 ## Webpack usage
 
@@ -84,8 +84,8 @@ Copy/paste the HTML tags in the head of your `index.html` document:
 />
 
 <script
-  crossorigin="anonymous"
   defer="true"
+  crossorigin="anonymous"
   src="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/color-scheme-switcher.js"
 ></script>
 ```
