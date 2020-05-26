@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
@@ -8,7 +7,6 @@
     "declaration": true,
     "declarationDir": "typings",
     "esModuleInterop": true,
-    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "lib": ["es6", "dom", "es2016.array.include"],
     "module": "esnext",
@@ -18,7 +16,6 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "sourceMap": false,
     "strict": true,
     "target": "esnext",
     "typeRoots": ["typings", "node_modules/@types"]
