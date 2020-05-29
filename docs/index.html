@@ -9,9 +9,23 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./fav/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./fav/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./fav/favicon-16.png"
+    />
 
     <link
       rel="stylesheet"
@@ -25,8 +39,8 @@
       crossorigin="anonymous"
       src="https://cdn.jsdelivr.net/npm/what-input@5.2.9/dist/what-input.min.js"
     ></script>
-    <script defer="true" src="./demo.js"></script>
     <script defer="true" src="./color-scheme-switcher.js"></script>
+    <script defer="true" src="./demo.js"></script>
   </head>
 
   <body>
@@ -315,229 +329,243 @@ p q r s t u v w x y z { | } ~</pre
       </section>
 
       <section>
-        <h3>Meter</h3>
-        <input type="password" value="342567rt" />
-        <meter
-          min="0"
-          max="100"
-          low="25"
-          high="75"
-          optimum="100"
-          value="10"
-        ></meter>
-        <meter
-          min="0"
-          max="100"
-          low="25"
-          high="75"
-          optimum="100"
-          value="50"
-        ></meter>
-        <meter
-          min="0"
-          max="100"
-          low="25"
-          high="75"
-          optimum="100"
-          value="80"
-        ></meter>
+        <form>
+          <h3>Meter</h3>
+          <input type="password" value="342567rt" />
+          <meter
+            min="0"
+            max="100"
+            low="25"
+            high="75"
+            optimum="100"
+            value="10"
+          ></meter>
+          <meter
+            min="0"
+            max="100"
+            low="25"
+            high="75"
+            optimum="100"
+            value="50"
+          ></meter>
+          <meter
+            min="0"
+            max="100"
+            low="25"
+            high="75"
+            optimum="100"
+            value="80"
+          ></meter>
+        </form>
       </section>
 
       <section>
-        <h3>Checkboxes &amp; Radio</h3>
-        <fieldset>
-          <legend>Checkbox</legend>
-          <label>
-            <input type="checkbox" />
-            Default
-          </label>
-          <label>
-            <input type="checkbox" checked />
-            Checked
-          </label>
-          <label>
-            <input type="checkbox" data-indeterminate />
-            Indeterminate
-          </label>
-        </fieldset>
+        <form>
+          <h3>Checkboxes &amp; Radio</h3>
+          <fieldset>
+            <legend>Checkbox</legend>
+            <label>
+              <input type="checkbox" />
+              Default
+            </label>
+            <label>
+              <input type="checkbox" checked />
+              Checked
+            </label>
+            <label>
+              <input type="checkbox" data-indeterminate />
+              Indeterminate
+            </label>
+          </fieldset>
 
-        <fieldset>
-          <legend>Checkbox</legend>
-          <label>
-            <input type="checkbox" disabled />
-            Default
-          </label>
-          <label>
-            <input type="checkbox" checked disabled />
-            Checked
-          </label>
-        </fieldset>
+          <fieldset>
+            <legend>Checkbox</legend>
+            <label>
+              <input type="checkbox" disabled />
+              Default
+            </label>
+            <label>
+              <input type="checkbox" checked disabled />
+              Checked
+            </label>
+          </fieldset>
 
-        <fieldset>
-          <legend>Radio</legend>
-          <label>
-            <input name="group" type="radio" />
-            Default
-          </label>
-          <label>
-            <input name="group" type="radio" checked />
-            Checked
-          </label>
-        </fieldset>
+          <fieldset>
+            <legend>Radio</legend>
+            <label>
+              <input name="group" type="radio" />
+              Default
+            </label>
+            <label>
+              <input name="group" type="radio" checked />
+              Checked
+            </label>
+          </fieldset>
 
-        <fieldset>
-          <legend>Disabled radio</legend>
-          <label>
-            <input name="disabled" type="radio" disabled />
-            Default
-          </label>
-          <label>
-            <input name="disabled" type="radio" checked disabled />
-            Checked &amp; disabled
-          </label>
-        </fieldset>
-      </section>
-
-      <section class="range-inputs">
-        <h3>Range</h3>
-        <input
-          type="range"
-          id="range"
-          name="range"
-          min="100"
-          max="500"
-          step="10"
-        />
-        <input
-          disabled
-          type="range"
-          id="range"
-          name="range"
-          min="100"
-          max="500"
-          step="10"
-        />
+          <fieldset>
+            <legend>Disabled radio</legend>
+            <label>
+              <input name="disabled" type="radio" disabled />
+              Default
+            </label>
+            <label>
+              <input name="disabled" type="radio" checked disabled />
+              Checked &amp; disabled
+            </label>
+          </fieldset>
+        </form>
       </section>
 
       <section>
-        <h3>Text fields</h3>
-        <p>
-          <input type="text" placeholder="Text" />
-        </p>
-        <p>
+        <form class="range-inputs">
+          <h3>Range</h3>
           <input
-            type="text"
+            type="range"
+            id="FooRange"
+            name="FooRange"
+            min="100"
+            max="500"
+            step="10"
+          />
+          <input
             disabled
-            placeholder="Text (Disabled placeholder)"
+            type="range"
+            id="BarRange"
+            name="BarRange"
+            min="100"
+            max="500"
+            step="10"
           />
-        </p>
-        <p>
-          <input
-            type="text"
-            disabled
-            value="Text (Disabled with content)"
-            placeholder="Text..."
-          />
-        </p>
-        <p>
-          <input type="text" readonly placeholder="Readonly placeholder" />
-        </p>
-        <p>
-          <input
-            type="text"
-            readonly
-            value="Readonly with content"
-            placeholder="Readonly placeholder"
-          />
-        </p>
-        <p>
-          <input type="password" placeholder="Password" />
-        </p>
-        <p>
-          <input type="url" placeholder="Url" />
-        </p>
-        <p>
-          <input type="email" placeholder="Email" />
-        </p>
-        <p>
-          <input type="tel" placeholder="Tel" />
-        </p>
-        <p>
-          <input type="search" placeholder="Search" />
-        </p>
-        <p>
-          <input type="number" valid required placeholder="Number" />
-        </p>
-        <p>
-          <input type="date" invalid required placeholder="Date" />
-        </p>
-        <p>
-          <input type="time" placeholder="Time" />
-        </p>
-        <p>
-          <input type="month" placeholder="Month" />
-        </p>
-        <p>
-          <input type="week" placeholder="Week" />
-        </p>
-        <p>
-          <input type="datetime-local" placeholder="Datetime Local" />
-        </p>
-        <p>
-          <textarea></textarea>
-        </p>
-        <p>
-          <input list="ice-cream-flavors" name="ice-cream-choice" />
-          <datalist id="ice-cream-flavors">
-            <option value="Chocolate"> </option>
-            <option value="Coconut"> </option>
-            <option value="Mint"> </option>
-            <option value="Strawberry"> </option>
-            <option value="Vanilla"> </option>
-          </datalist>
-        </p>
+        </form>
       </section>
 
       <section>
-        <h3>Select</h3>
-        <p>
-          <label for="select">Select</label>
-          <select id="select" name="select">
-            <option selected hidden>Choose an option...</option>
-            <optgroup label="Option Group">
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </optgroup>
-          </select>
-        </p>
+        <form>
+          <h3>Text fields</h3>
+          <p>
+            <input type="text" placeholder="Text" />
+          </p>
+          <p>
+            <input
+              type="text"
+              disabled
+              placeholder="Text (Disabled placeholder)"
+            />
+          </p>
+          <p>
+            <input
+              type="text"
+              disabled
+              value="Text (Disabled with content)"
+              placeholder="Text..."
+            />
+          </p>
+          <p>
+            <input type="text" readonly placeholder="Readonly placeholder" />
+          </p>
+          <p>
+            <input
+              type="text"
+              readonly
+              value="Readonly with content"
+              placeholder="Readonly placeholder"
+            />
+          </p>
+          <p>
+            <input
+              type="password"
+              placeholder="Password"
+              autocomplete="current-password"
+            />
+          </p>
+          <p>
+            <input type="url" placeholder="Url" />
+          </p>
+          <p>
+            <input type="email" placeholder="Email" />
+          </p>
+          <p>
+            <input type="tel" placeholder="Tel" />
+          </p>
+          <p>
+            <input type="search" placeholder="Search" />
+          </p>
+          <p>
+            <input type="number" valid required placeholder="Number" />
+          </p>
+          <p>
+            <input type="date" invalid required placeholder="Date" />
+          </p>
+          <p>
+            <input type="time" placeholder="Time" />
+          </p>
+          <p>
+            <input type="month" placeholder="Month" />
+          </p>
+          <p>
+            <input type="week" placeholder="Week" />
+          </p>
+          <p>
+            <input type="datetime-local" placeholder="Datetime Local" />
+          </p>
+          <p>
+            <textarea></textarea>
+          </p>
+          <p>
+            <input list="ice-cream-flavors" name="ice-cream-choice" />
+            <datalist id="ice-cream-flavors">
+              <option value="Chocolate"> </option>
+              <option value="Coconut"> </option>
+              <option value="Mint"> </option>
+              <option value="Strawberry"> </option>
+              <option value="Vanilla"> </option>
+            </datalist>
+          </p>
+        </form>
+      </section>
 
-        <p>
-          <label for="select">Disabled select</label>
-          <select id="select" name="select" disabled>
-            <optgroup label="Option Group">
-              <option selected>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </optgroup>
-          </select>
-        </p>
+      <section>
+        <form>
+          <h3>Select</h3>
+          <p>
+            <label for="FooSelect">Select</label>
+            <select id="FooSelect" name="select">
+              <option selected hidden>Choose an option...</option>
+              <optgroup label="Option Group">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </optgroup>
+            </select>
+          </p>
 
-        <p>
-          <label for="multi-select">Multi-select</label>
-          <select id="multi-select" size="8" multiple>
-            <optgroup label="Option Group 1">
-              <option>Option 1</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </optgroup>
-            <optgroup label="Option Group 2">
-              <option>Option 4</option>
-              <option>Option 5</option>
-              <option>Option 6</option>
-            </optgroup>
-          </select>
-        </p>
+          <p>
+            <label for="BarSelect">Disabled select</label>
+            <select id="BarSelect" name="select" disabled>
+              <optgroup label="Option Group">
+                <option selected>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </optgroup>
+            </select>
+          </p>
+
+          <p>
+            <label for="multi-select">Multi-select</label>
+            <select id="multi-select" size="8" multiple>
+              <optgroup label="Option Group 1">
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+              </optgroup>
+              <optgroup label="Option Group 2">
+                <option>Option 4</option>
+                <option>Option 5</option>
+                <option>Option 6</option>
+              </optgroup>
+            </select>
+          </p>
+        </form>
       </section>
 
       <section>
@@ -709,8 +737,8 @@ p q r s t u v w x y z { | } ~</pre
         cumque repellendus at. Repellendus molestias ea labore error iste dicta.
       </p>
       <footer>
-        <button>Yeah, confirm</button>
         <button id="DialogClose" class="muted">Cancel</button>
+        <button>Yeah, confirm</button>
       </footer>
     </dialog>
   </body>

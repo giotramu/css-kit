@@ -31,7 +31,7 @@ section > h3:first-of-type {
 }
 
 section.buttons button:not(:last-of-type) {
-  margin-right: 2.4rem;
+  margin-right: 1.6rem;
   margin-bottom: 1.6rem;
 }
 
@@ -41,4 +41,13 @@ section.progress-bars p:not(:last-of-type) {
 
 section.range-inputs input:not(:last-of-type) {
   margin-bottom: 2.4rem;
+}
+
+dialog > footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+dialog > footer button:not(:last-of-type) {
+  margin-right: 0.8rem;
 }
