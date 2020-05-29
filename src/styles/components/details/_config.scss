@@ -1,6 +1,9 @@
 $shadow: _shadow('all', $size: 8, $color: _color('light-high')),
   _shadow('bottom', $size: 16, $color: _color('light-high'));
 
+$dark-shadow: _shadow('all', $size: 8, $color: _shade(_color('base-high'), 8%)),
+  _shadow('bottom', $size: 16, $color: _shade(_color('base-high'), 16%));
+
 $properties: (
   max-height: 280px,
   border-radius: _var('global', 'border-radius'),
@@ -14,4 +17,10 @@ $properties: (
   separator: none,
   icon-size: 1rem,
   icon: svg-load('assets/details.svg', fill=#{_tint(_color('base-low'), 32%)})
+);
+
+$dark-overrides: (
+  background: _tint(_color('base-high'), 4%),
+  summary-background: _tint(_color('base-high'), 4%),
+  shadow: $dark-shadow
 );

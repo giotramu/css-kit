@@ -24,5 +24,23 @@ button {
       $size: 4,
       $color: _color('light-high')
     );
+
+    html[data-color-scheme='dark'] & {
+      #{_define-var('button', 'foreground')}: _color('light-low');
+      #{_define-var('button', 'background')}: _gradient('base');
+      #{_define-var('button', 'hover-background')}: _gradient('base', 8%);
+      #{_define-var('button', 'active-background')}: _gradient('base', 16%);
+      #{_define-var('button', 'disabled-background')}: _color('base-low');
+      #{_define-var('button', 'shadow')}: _shadow(
+        'bottom',
+        $size: 8,
+        $color: _shade(_color('base-high'), 16%)
+      );
+      #{_define-var('button', 'active-shadow')}: _shadow(
+        'bottom',
+        $size: 4,
+        $color: _shade(_color('base-high'), 16%)
+      );
+    }
   }
 }

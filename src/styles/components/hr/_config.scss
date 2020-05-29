@@ -3,3 +3,7 @@ $properties: (
   margin: 48px,
   background: _color('light-high')
 );
+
+$dark-overrides: (
+  background: _shade(_color('base-low'), 16%)
+);

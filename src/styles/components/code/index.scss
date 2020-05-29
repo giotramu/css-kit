@@ -11,3 +11,9 @@ p {
     background-color: _config-var($code, 'background');
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($code, $prop)}: $val;
+  }
+}

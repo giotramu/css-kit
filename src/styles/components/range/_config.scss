@@ -23,3 +23,11 @@ $properties: (
   outline-width: _var('outline', 'width'),
   outline-color: _var('outline', 'color')
 );
+
+$dark-overrides: (
+  background: _shade(_color('base-low'), 16%),
+  focus-background: _shade(_color('base-low'), 8%),
+  disabled-background: _shade(_color('base-low'), 16%),
+  shadow: _shadow('inset-top-bottom', $size: 8, $color: _color('base-low')),
+  thumb-disabled-background: _color('base-low')
+);

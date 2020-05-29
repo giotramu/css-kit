@@ -7,3 +7,9 @@ kbd {
   box-shadow: 0 3px 0 _config-var($kbd, 'border-color'),
     0 3px 10px rgba(0, 0, 0, 0.04);
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($kbd, $prop)}: $val;
+  }
+}

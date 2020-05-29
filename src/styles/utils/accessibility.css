@@ -1,0 +1,15 @@
+/**
+ * Use sr-only to hide an element visually
+ * without hiding it from screen readers
+ **/
+.sr-only {
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border-width: 0;
+  padding: 0;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

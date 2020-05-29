@@ -2,3 +2,8 @@ $properties: (
   foreground: _color('accent-high'),
   active-foreground: _color('accent-low')
 );
+
+$dark-overrides: (
+  foreground: _tint(_color('accent-low'), 16%),
+  active-foreground: _tint(_color('accent-low'), 32%)
+);

@@ -4,3 +4,9 @@
 input[type='checkbox'] {
   @include check;
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($checkradio, $prop)}: $val;
+  }
+}

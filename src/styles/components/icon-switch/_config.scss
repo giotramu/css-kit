@@ -6,3 +6,8 @@ $properties: (
   after: svg-load('assets/power.svg'),
   after-color: _color('base-high')
 );
+
+$dark-overrides: (
+  before-color: _color('light-low'),
+  after-color: _color('light-low')
+);

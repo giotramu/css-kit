@@ -117,3 +117,9 @@ details {
     opacity: 1;
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($details, $prop)}: $val;
+  }
+}

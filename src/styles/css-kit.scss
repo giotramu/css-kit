@@ -1,13 +1,22 @@
 @import './abstracts/theme';
-@import './utils/functions';
+@import './abstracts/functions';
 @import './utils/normalizer';
+@import './utils/accessibility';
+@import './utils/custom-media';
 @import './components/bundle';
 
 :root {
+  // Define gradients CSS Custom Properties
+  #{_define-var('gradient', 'accent')}: _gradient('accent');
+  #{_define-var('gradient', 'base')}: _gradient('base');
+  #{_define-var('gradient', 'light')}: _gradient('light');
+
+  // Define color CSS Custom Properties
   @each $color, $hex in $colors {
     #{_define-var('color', $color)}: $hex;
   }
 
+  // Define utils CSS Custom Properties
   @each $key, $val in $misc {
     #{_define-var($property: $key)}: $val;
   }

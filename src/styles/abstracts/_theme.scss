@@ -1,6 +1,14 @@
+$misc: (
+  global-border-radius: 8px,
+  global-font-size: 1rem,
+  global-line-height: 1.65,
+  outline-width: 2px,
+  outline-color: #0072ff
+);
+
 $colors: (
-  accent-high: #0072ff,
-  accent-low: #0084ff,
+  accent-high: #0c57fb,
+  accent-low: #0072ff,
   base-high: #202d3a,
   base-low: #5a5c6a,
   light-high: #e1eaee,
@@ -8,12 +16,4 @@ $colors: (
   ok: #13a699,
   ko: #ff2f6c,
   warn: #ffbe33
-);
-
-$misc: (
-  global-border-radius: 8px,
-  global-font-size: 1rem,
-  global-line-height: 1.65,
-  outline-width: 2px,
-  outline-color: #0072ff
 );

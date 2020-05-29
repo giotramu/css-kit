@@ -51,3 +51,9 @@ dialog {
     opacity: initial;
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($dialog, $prop)}: $val;
+  }
+}

@@ -24,17 +24,19 @@
   "files": [
     "color-scheme-switcher.js",
     "css-kit.css",
-    "custom-media.css",
     "font/",
+    "src/styles/utils/",
     "typings/"
   ],
   "scripts": {
+    "clean": "rimraf css-kit.css color-scheme-switcher.js",
     "check:src": "tsc --noEmit",
     "lint:css": "stylelint ./src/**/*.scss",
     "lint:src": "eslint . --ext .js,.ts",
     "lint": "run-s -cln lint:*",
     "build:css": "postcss ./src/styles/*.scss --ext css",
     "build:ts": "tsc",
+    "prebuild": "npm run clean",
     "build": "run-s \"build:css -- --dir .\" \"build:ts -- --outDir .\"",
     "watch:css": "watch \"npm run build:css -- --dir ./docs\" ./src/styles",
     "watch:ts": "npm run build:ts -- --outDir ./docs -w",
@@ -52,6 +54,7 @@
     "postcss-cli": "^7.1.1",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.2",
     "serve": "^11.3.1",
     "stylelint": "^13.5.0",
     "stylelint-scss": "^3.17.2",

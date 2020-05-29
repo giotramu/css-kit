@@ -10,7 +10,7 @@ $properties: (
   min-height: 48px,
   ypadding: 0.5em,
   xpadding: 1em,
-  border-width: 2px,
+  border-width: 1px,
   border-color: _color('light-high'),
   border-radius: _var('global', 'border-radius'),
   hover-border-color: _shade(_color('light-high'), 8%),
@@ -29,4 +29,17 @@ $properties: (
   option-checked-background: _color('accent-high'),
   icon-size: 1rem,
   icon: svg-load('assets/select.svg', fill=#{_tint(_color('base-low'), 32%)})
+);
+
+$dark-overrides: (
+  border-color: _color('base-low'),
+  hover-border-color: _tint(_color('base-low'), 8%),
+  focus-border-color: _color('accent-high'),
+  disabled-border-color: _shade(_color('base-low'), 16%),
+  foreground: _color('light-low'),
+  disabled-foreground: _tint(_color('base-low'), 16%),
+  background: _tint(_color('base-high'), 4%),
+  hover-background: _tint(_color('base-high'), 4%),
+  focus-background: _tint(_color('base-high'), 8%),
+  disabled-background: _color('base-high')
 );

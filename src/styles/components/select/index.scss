@@ -106,3 +106,9 @@ select {
     line-height: inherit;
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($select, $prop)}: $val;
+  }
+}

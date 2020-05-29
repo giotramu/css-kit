@@ -13,6 +13,7 @@ A tiny CSS scaffold for quick, consistent, and scalable user interface developme
 - [CSS-Kit](#css-kit)
   - [CDN Usage](#cdn-usage)
   - [Webpack usage](#webpack-usage)
+  - [Color palette](#color-palette)
   - [Dark color scheme](#dark-color-scheme)
   - [Font](#font)
   - [Custom media queries](#custom-media-queries)
@@ -73,16 +74,24 @@ module.exports = {
 };
 ```
 
+## Color palette
+
+CSS-Kit has a pre-configured color palette. [Test foreground and background color combos][contrast-grid-url] for compliance with WCAG 2.0 minimum contrast.
+
+|     Color      | CSS Custom Property           |     Value |
+| :------------: | :---------------------------- | --------: |
+| ![accent-high] | `var(--ck-color-accent-high)` | `#0c57fb` |
+| ![accent-low]  | `var(--ck-color-accent-low)`  | `#0072ff` |
+|  ![base-high]  | `var(--ck-color-base-high)`   | `#202d3a` |
+|  ![base-low]   | `var(--ck-color-base-low)`    | `#5a5c6a` |
+| ![light-high]  | `var(--ck-color-light-high)`  | `#e1eaee` |
+|  ![light-low]  | `var(--ck-color-light-low)`   | `#fafafa` |
+
 ## Dark color scheme
 
-Copy/paste the HTML tags in the head of your `index.html` document:
+Copy/paste the following script tag in the head of your `index.html` document:
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/dark-scheme.css"
-/>
-
 <script
   defer="true"
   crossorigin="anonymous"
@@ -93,18 +102,14 @@ Copy/paste the HTML tags in the head of your `index.html` document:
 Set the triggers for switch the color scheme light/dark:
 
 ```html
-<button
-  aria-label="Toggle color scheme"
-  data-ck-trigger="set-color-scheme"
-  class="icon-switch rounded"
-></button>
+<button data-ck-trigger="set-color-scheme" class="icon-switch rounded muted">
+  <span class="sr-only">Toggle color scheme</span>
+</button>
 
 <!-- Totally optional -->
-<button
-  aria-label="Unset color scheme"
-  data-ck-trigger="unset-color-scheme"
-  class="icon-switch rounded"
-></button>
+<button data-ck-trigger="unset-color-scheme" class="icon-switch rounded muted">
+  <span class="sr-only">Unset color scheme</span>
+</button>
 ```
 
 Optionally, you can set the initial color scheme by adding the attribute `data-color-scheme` to the root tag, with the `light` or `dark` keywords:
@@ -150,13 +155,13 @@ Install the [Webpack bundler][webpack-url] by following the official documentati
 Import Custom Media Queries in CSS:
 
 ```css
-@import '~@giotramu/css-kit/custom-media.css';
+@import '~@giotramu/css-kit/src/styles/utils/custom-media.css';
 ```
 
 Otherwise, import CSS-Kit in JavaScript:
 
 ```js
-import '@giotramu/css-kit/custom-media.css';
+import '@giotramu/css-kit/src/styles/utils/custom-media.css';
 ```
 
 In `webpack.config.js`, be sure to use the appropriate loaders and the [postcss-custom-media][postcss-custom-media-url] plugin:
@@ -202,7 +207,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 [MIT License](./LICENSE)
 
 <!---
-  B A D G E S
+  I M A G E S
 -->
 
 [bundlephobia-img]: https://badgen.net/bundlephobia/minzip/@giotramu/css-kit
@@ -211,16 +216,28 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
 [npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?label=npm%20package
 
+<!-- Color scheme -->
+
+[accent-high]: https://via.placeholder.com/40/0c57fb/0c57fb.png
+[accent-low]: https://via.placeholder.com/40/0072ff/0072ff.png
+[base-high]: https://via.placeholder.com/40/202d3a/202d3a.png
+[base-low]: https://via.placeholder.com/40/5a5c6a/5a5c6a.png
+[light-high]: https://via.placeholder.com/40/e1eaee/e1eaee.png
+[light-low]: https://via.placeholder.com/40/fafafa/fafafa.png
+[white]: https://via.placeholder.com/40/fff/fff.png
+[black]: https://via.placeholder.com/40/000/000.png
+
 <!---
   L I N K S
 -->
 
 [bundlephobia-url]: https://bundlephobia.com/result?p=@giotramu/css-kit
 [ci-url]: https://github.com/giotramu/css-kit/actions
-[custom-mq-url]: ./src/styles/custom-media.scss
+[custom-mq-url]: ./src/styles/utils/custom-media.css
 [deps-url]: https://david-dm.org/giotramu/css-kit
 [devdeps-url]: https://david-dm.org/giotramu/css-kit?type=dev
 [npm-url]: https://www.npmjs.com/package/@giotramu/css-kit
 [postcss-config-url]: https://github.com/giotramu/postcss-config
 [postcss-custom-media-url]: https://github.com/postcss/postcss-custom-media
 [webpack-url]: https://webpack.js.org
+[contrast-grid-url]: http://contrast-grid.eightshapes.com/?background-colors=&foreground-colors=%230c57fb%2C%20accent-high%0D%0A%230072ff%2C%20accent-low%0D%0A%23202D3A%2C%20base-high%0D%0A%235A5C6A%2C%20base-low%0D%0A%23E1EAEE%2C%20light-high%0D%0A%23FAFAFA%2C%20light-low%0D%0A%2313A699%2C%20ok%0D%0A%23FF2F6C%2C%20ko%0D%0A%23FFBE33%2C%20warn%0D%0A%23000%2C%20black%0D%0A%23FFF%2C%20white&es-color-form__tile-size=compact

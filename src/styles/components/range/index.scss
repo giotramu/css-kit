@@ -124,3 +124,9 @@ input[type='range'] {
     }
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($range, $prop)}: $val;
+  }
+}

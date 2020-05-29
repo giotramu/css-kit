@@ -43,3 +43,19 @@
     }
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($icon-switch, $prop)}: $val;
+  }
+}
+
+// Use `icon-switch` component as color scheme trigger
+.icon-switch[data-ck-trigger='set-color-scheme'] {
+  #{_define-var($icon-switch, 'before')}: svg-load('assets/sun.svg');
+  #{_define-var($icon-switch, 'after')}: svg-load('assets/moon.svg');
+}
+
+.icon-switch[data-ck-trigger='unset-color-scheme'] {
+  #{_define-var($icon-switch, 'before')}: svg-load('assets/reset.svg');
+}

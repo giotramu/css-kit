@@ -6,3 +6,9 @@ $properties: (
   background: transparent,
   striped-background: _tint(_color('light-high'), 56%)
 );
+
+$dark-overrides: (
+  head-separator: 2px solid _shade(_color('base-low'), 16%),
+  row-separator: 1px solid _shade(_color('base-low'), 16%),
+  striped-background: _tint(_color('base-high'), 4%)
+);

@@ -33,3 +33,9 @@ input[type='color'] {
     box-shadow: _config-var($color-picker, 'focus-shadow');
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($color-picker, $prop)}: $val;
+  }
+}

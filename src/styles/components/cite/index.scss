@@ -11,3 +11,9 @@ blockquote cite {
     margin-right: 4px;
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($cite, $prop)}: $val;
+  }
+}

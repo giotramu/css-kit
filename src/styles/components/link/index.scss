@@ -10,3 +10,9 @@ a:visited {
     color: _config-var($link, 'active-foreground');
   }
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($link, $prop)}: $val;
+  }
+}

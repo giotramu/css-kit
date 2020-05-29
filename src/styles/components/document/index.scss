@@ -33,3 +33,9 @@ body {
   font-weight: _config-var($document, 'font-weight');
   line-height: _config-var($document, 'line-height');
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($document, $prop)}: $val;
+  }
+}

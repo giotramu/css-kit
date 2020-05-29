@@ -24,3 +24,9 @@ tr + tr {
 table.striped tr:nth-child(even) {
   background-color: _config-var($table, 'striped-background');
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($table, $prop)}: $val;
+  }
+}

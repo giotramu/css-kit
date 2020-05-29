@@ -10,3 +10,8 @@ $properties: (
   backdrop: rgba(0, 0, 0, 0.3),
   backdrop-filter: blur(10px)
 );
+
+$dark-overrides: (
+  background: _color('base-high'),
+  shadow: _shadow('bottom', $size: 32, $color: _shade(_color('base-high'), 32%))
+);

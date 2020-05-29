@@ -2,3 +2,7 @@ $properties: (
   border-radius: 2px,
   background: _shade(_color('light-low'), 8%)
 );
+
+$dark-overrides: (
+  background: _tint(_color('base-high'), 16%)
+);

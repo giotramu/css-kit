@@ -12,3 +12,8 @@ $properties: (
   selection-foreground: _color('light-low'),
   selection-background: _color('accent-high')
 );
+
+$dark-overrides: (
+  foreground: _color('light-low'),
+  background: _color('base-high')
+);

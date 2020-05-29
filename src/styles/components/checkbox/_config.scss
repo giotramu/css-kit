@@ -10,3 +10,7 @@ $properties: (
   shadow: _shadow('all', $size: 4, $color: rgba(_color('accent-low'), 0.72)),
   tick-color: _color('light-low')
 );
+
+$dark-overrides: (
+  background: _gradient('base', 32%)
+);

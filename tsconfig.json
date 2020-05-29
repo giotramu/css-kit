@@ -8,7 +8,7 @@
     "declarationDir": "typings",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["es6", "dom", "es2016.array.include"],
+    "lib": ["es2017", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "noEmitOnError": true,
@@ -17,7 +17,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    "target": "esnext",
+    "target": "es2017",
     "typeRoots": ["typings", "node_modules/@types"]
   },
   "include": ["src/scripts/**/*"],

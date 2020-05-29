@@ -7,3 +7,13 @@ $properties: (
   background: transparent,
   shadow: _shadow('inset-top-bottom', $size: 8, $color: _color('light-high'))
 );
+
+$dark-overrides: (
+  border-color: _tint(_color('base-high'), 4%),
+  shadow:
+    _shadow(
+      'inset-top-bottom',
+      $size: 32,
+      $color: _tint(_color('base-high'), 16%)
+    )
+);

@@ -9,18 +9,20 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit/font/giotramu-sans.css"
     />
-    <link rel="stylesheet" href="./custom-media.css" />
     <link rel="stylesheet" href="./css-kit.css" />
-    <link rel="stylesheet" href="./dark-scheme.css" />
     <link rel="stylesheet" href="./demo.css" />
 
     <script
-      crossorigin="anonymous"
       defer="true"
+      crossorigin="anonymous"
       src="https://cdn.jsdelivr.net/npm/what-input@5.2.9/dist/what-input.min.js"
     ></script>
     <script defer="true" src="./demo.js"></script>
@@ -684,13 +686,17 @@ p q r s t u v w x y z { | } ~</pre
         aria-label="Toggle color scheme"
         data-ck-trigger="set-color-scheme"
         class="icon-switch rounded muted"
-      ></button>
+      >
+        <span class="sr-only">Toggle color scheme</span>
+      </button>
 
       <button
-        aria-label="Clear local storage"
+        aria-label="Unset color scheme"
         data-ck-trigger="unset-color-scheme"
         class="icon-switch rounded muted"
-      ></button>
+      >
+        <span class="sr-only">Unset color scheme</span>
+      </button>
     </div>
 
     <dialog data-dialog="native-dialog">

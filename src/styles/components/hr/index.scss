@@ -9,3 +9,9 @@ hr {
   border: none;
   background-color: _config-var($hr, 'background');
 }
+
+html[data-color-scheme='dark'] {
+  @each $prop, $val in $dark-overrides {
+    #{_define-var($hr, $prop)}: $val;
+  }
+}

@@ -2,3 +2,7 @@ $properties: (
   border-radius: _var('global', 'border-radius'),
   border-color: _shade(_color('light-low'), 16%)
 );
+
+$dark-overrides: (
+  border-color: _tint(_color('base-high'), 16%)
+);
