@@ -1,6 +1,6 @@
 {
   "name": "@giotramu/css-kit",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "A tiny CSS scaffold for quick, consistent, and scalable user interface development.",
   "author": "giotramu <https://twitter.com/giotramu>",
   "homepage": "https://github.com/giotramu/css-kit#readme",
@@ -44,8 +44,8 @@
     "dev": "run-p -cln watch:** serve"
   },
   "devDependencies": {
-    "@giotramu/postcss-config": "^3.2.0",
-    "@giotramu/stylelint-config": "^3.1.0",
+    "@giotramu/postcss-config": "^3.3.0",
+    "@giotramu/stylelint-config": "^3.2.0",
     "eslint": "^7.1.0",
     "eslint-config-contactlab": "^4.2.2",
     "eslint-config-prettier": "^6.11.0",
