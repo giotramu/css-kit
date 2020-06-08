@@ -1,5 +1,6 @@
-css-kit.css
-custom-media.css
-dark-scheme.css
-color-scheme-switcher.js
-/typings
+/css-kit.css
+/color-scheme-switcher.js
+/typings/
+
+.cache
+node_modules/

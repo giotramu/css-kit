@@ -1,1 +1,5 @@
-docs/
+/css-kit.css
+/docs/
+
+.cache
+node_modules/

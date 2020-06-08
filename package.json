@@ -29,13 +29,13 @@
     "typings/"
   ],
   "scripts": {
-    "clean": "rimraf css-kit.css color-scheme-switcher.js",
     "check:src": "tsc --noEmit",
     "lint:css": "stylelint ./src/**/*.scss",
     "lint:src": "eslint . --ext .js,.ts",
     "lint": "run-s -cln lint:*",
     "build:css": "postcss ./src/styles/*.scss --ext css",
     "build:ts": "tsc",
+    "clean": "rimraf ./css-kit.css ./color-scheme-switcher.js",
     "prebuild": "npm run clean",
     "build": "run-s \"build:css -- --dir .\" \"build:ts -- --outDir .\"",
     "watch:css": "watch \"npm run build:css -- --dir ./docs\" ./src/styles",
@@ -46,7 +46,7 @@
   "devDependencies": {
     "@giotramu/postcss-config": "^3.3.0",
     "@giotramu/stylelint-config": "^3.2.0",
-    "eslint": "^7.1.0",
+    "eslint": "^7.2.0",
     "eslint-config-contactlab": "^5.0.0",
     "eslint-config-prettier": "^6.11.0",
     "husky": "^4.2.5",
@@ -55,10 +55,10 @@
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1",
     "rimraf": "^3.0.2",
-    "serve": "^11.3.1",
-    "stylelint": "^13.5.0",
+    "serve": "^11.3.2",
+    "stylelint": "^13.6.0",
     "stylelint-scss": "^3.17.2",
-    "typescript": "^3.9.3",
+    "typescript": "^3.9.5",
     "watch": "^1.0.2"
   },
   "keywords": [
