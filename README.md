@@ -11,7 +11,9 @@ A tiny CSS scaffold for quick, consistent, and scalable user interface developme
 ## Table of contents
 
 - [CSS-Kit](#css-kit)
-  - [CDN Usage](#cdn-usage)
+  - [Table of contents](#table-of-contents)
+  - [CDN usage](#cdn-usage)
+    - [What does it do?](#what-does-it-do)
   - [Webpack usage](#webpack-usage)
   - [Color palette](#color-palette)
   - [Dark color scheme](#dark-color-scheme)
@@ -211,7 +213,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 -->
 
 [bundlephobia-img]: https://badgen.net/bundlephobia/minzip/@giotramu/css-kit
-[ci-img]: https://github.com/giotramu/css-kit/workflows/test%20+%20build/badge.svg?branch=master
+[ci-img]: https://github.com/giotramu/css-kit/workflows/test%20+%20build/badge.svg?branch=stable
 [deps-img]: https://badgen.net/david/dep/giotramu/css-kit
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
 [npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?label=npm%20package
