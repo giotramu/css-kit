@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@giotramu/postcss-config": "^3.3.0",
-    "@giotramu/stylelint-config": "^4.0.0",
+    "@giotramu/stylelint-config": "^5.0.0",
     "eslint": "^7.8.1",
     "eslint-config-contactlab": "^5.0.0",
     "eslint-config-prettier": "^6.11.0",
