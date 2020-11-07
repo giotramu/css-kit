@@ -17,7 +17,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    "target": "es2017",
+    "target": "es6",
     "typeRoots": ["./typings", "./node_modules/@types"]
   },
   "include": ["./src/scripts/**/*"],

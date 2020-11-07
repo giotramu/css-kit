@@ -1,6 +1,6 @@
-/css-kit.css
-/color-scheme-switcher.js
-/typings/
-
 .cache
-node_modules/
+/*.config.js
+color-scheme-switcher.js
+css-kit.css
+/typings/
+node_modules

@@ -1,5 +1,5 @@
-color-scheme-switcher.js
-/typings/
-
 .cache
-node_modules/
+/*.config.js
+/typings/
+color-scheme-switcher.js
+node_modules

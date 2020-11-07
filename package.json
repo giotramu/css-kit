@@ -13,7 +13,7 @@
     "url": "https://github.com/giotramu/css-kit/issues"
   },
   "engines": {
-    "node": ">=12.x",
+    "node": ">=14.x",
     "npm": ">=6.x"
   },
   "publishConfig": {
@@ -46,19 +46,19 @@
   "devDependencies": {
     "@giotramu/postcss-config": "^3.4.0",
     "@giotramu/stylelint-config": "^5.1.0",
-    "eslint": "^7.11.0",
+    "eslint": "^7.13.0",
     "eslint-config-contactlab": "^5.0.0",
-    "eslint-config-prettier": "^6.12.0",
+    "eslint-config-prettier": "^6.15.0",
     "husky": "^4.3.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.2",
     "prettier": "^2.1.2",
-    "pretty-quick": "^3.0.2",
+    "pretty-quick": "^3.1.0",
     "rimraf": "^3.0.2",
     "serve": "^11.3.2",
     "stylelint": "^13.7.2",
     "stylelint-scss": "^3.18.0",
-    "typescript": "^4.0.3",
+    "typescript": "^4.0.5",
     "watch": "^1.0.2"
   },
   "keywords": [

@@ -16,7 +16,7 @@ jobs:
       - name: 'Setup .npmrc file to publish to npm'
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
 
       - name: 'Install dependencies'
@@ -36,7 +36,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@giotramu' # defaults to the user or organization that owns the workflow file
+          scope: '@giotramu'
 
       - name: 'Publish to GitHub Packages'
         run: npm publish
