@@ -64,7 +64,7 @@ In `webpack.config.js`, be sure to use the appropriate loaders:
 
 ```js
 module.exports = {
-  //--- other webpack configuration stuffs...
+  //--- Other webpack configuration stuffs...
   module: {
     rules: [
       {
@@ -170,7 +170,7 @@ In `webpack.config.js`, be sure to use the appropriate loaders and the [postcss-
 
 ```js
 module.exports = {
-  //--- other webpack configuration stuffs...
+  //--- Other webpack configuration stuffs...
   module: {
     rules: [
       {
@@ -218,7 +218,9 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 [devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
 [npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?label=npm%20package
 
-<!-- Color scheme -->
+<!---
+  C O L O R S
+-->
 
 [accent-high]: https://via.placeholder.com/40/0c57fb/0c57fb.png
 [accent-low]: https://via.placeholder.com/40/0072ff/0072ff.png
