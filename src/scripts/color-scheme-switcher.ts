@@ -107,9 +107,11 @@
       return 'dark';
     }
 
-    // If the local storage returns null
-    // If the prefers-color-scheme is `light`
-    // If the prefers-color-scheme is `no-preferences`
+    /**
+     * If the local storage returns null,
+     * and if the prefers-color-scheme is `light`,
+     * and if the prefers-color-scheme is `no-preferences`
+     **/
     return 'light';
   }
 })(window);
