@@ -28,7 +28,7 @@ jobs:
 
       - name: 'Run TSC compiler and linters'
         run: |
-          npm run check:src --if-present
+          npm run typecheck --if-present
           npm run lint --if-present
 
       - name: 'Build the artifact'

@@ -29,7 +29,7 @@
     "typings/"
   ],
   "scripts": {
-    "check:src": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
     "lint:css": "stylelint ./src/**/*.scss",
     "lint:src": "eslint . --ext .js,.ts",
     "lint": "run-s -cln lint:*",
