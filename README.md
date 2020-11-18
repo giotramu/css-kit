@@ -210,9 +210,9 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   I M A G E S
 -->
 
-[bundlephobia-img]: https://img.shields.io/bundlephobia/min/@giotramu/css-kit?label=bundle%20size&style=flat&colorA=0c57fb&colorB=0c57fb
-[ci-img]: https://img.shields.io/github/workflow/status/giotramu/css-kit/test%20+%20build?style=flat&colorA=0c57fb&colorB=0c57fb
-[npm-img]: https://img.shields.io/npm/v/@giotramu/css-kit?style=flat&colorA=0c57fb&colorB=0c57fb
+[bundlephobia-img]: https://img.shields.io/bundlephobia/min/@giotramu/css-kit?label=bundle%20size&style=flat-square&colorA=0c57fb&colorB=0c57fb
+[ci-img]: https://img.shields.io/github/workflow/status/giotramu/css-kit/test%20+%20build?style=flat-square&colorA=0c57fb&colorB=0c57fb
+[npm-img]: https://img.shields.io/npm/v/@giotramu/css-kit?style=flat-square&colorA=0c57fb&colorB=0c57fb
 
 <!---
   C O L O R S
