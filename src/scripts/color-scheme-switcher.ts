@@ -135,4 +135,4 @@ interface SetColorScheme {
   storage: Storage;
 }
 
-interface UnsetColorScheme extends Omit<SetColorScheme, 'scheme'> {}
+type UnsetColorScheme = Omit<SetColorScheme, 'scheme'>;

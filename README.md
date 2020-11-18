@@ -1,12 +1,10 @@
 # CSS-Kit
 
-A tiny CSS scaffold for quick, consistent, and scalable user interface development.
+A tiny and opinionated CSS scaffold for quick, consistent, and scalable user interface development.
 
 [![NPM][npm-img]][npm-url]
 [![Bundlephobia][bundlephobia-img]][bundlephobia-url]
-[![Test Status][ci-img]][ci-url]
-[![Dependencies][deps-img]][deps-url]
-[![Dev Dependencies][devdeps-img]][devdeps-url]
+[![CI Status][ci-img]][ci-url]
 
 ## Table of contents
 
@@ -212,11 +210,9 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
   I M A G E S
 -->
 
-[bundlephobia-img]: https://badgen.net/bundlephobia/minzip/@giotramu/css-kit
-[ci-img]: https://github.com/giotramu/css-kit/workflows/test%20+%20build/badge.svg?branch=stable
-[deps-img]: https://badgen.net/david/dep/giotramu/css-kit
-[devdeps-img]: https://badgen.net/david/dev/giotramu/css-kit
-[npm-img]: https://badgen.net/npm/v/@giotramu/css-kit?label=npm%20package
+[bundlephobia-img]: https://img.shields.io/bundlephobia/min/@giotramu/css-kit?label=bundle%20size&style=flat&colorA=0c57fb&colorB=0c57fb
+[ci-img]: https://img.shields.io/github/workflow/status/giotramu/css-kit/test%20+%20build?style=flat&colorA=0c57fb&colorB=0c57fb
+[npm-img]: https://img.shields.io/npm/v/@giotramu/css-kit?style=flat&colorA=0c57fb&colorB=0c57fb
 
 <!---
   C O L O R S
@@ -238,8 +234,6 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 [bundlephobia-url]: https://bundlephobia.com/result?p=@giotramu/css-kit
 [ci-url]: https://github.com/giotramu/css-kit/actions
 [custom-mq-url]: ./src/styles/utils/custom-media.css
-[deps-url]: https://david-dm.org/giotramu/css-kit
-[devdeps-url]: https://david-dm.org/giotramu/css-kit?type=dev
 [npm-url]: https://www.npmjs.com/package/@giotramu/css-kit
 [postcss-config-url]: https://github.com/giotramu/postcss-config
 [postcss-custom-media-url]: https://github.com/postcss/postcss-custom-media
