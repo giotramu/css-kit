@@ -6,10 +6,7 @@ A tiny and opinionated CSS scaffold for quick, consistent, and scalable user int
 [![Bundlephobia][bundlephobia-img]][bundlephobia-url]
 [![CI Status][ci-img]][ci-url]
 
-## Table of contents
-
 - [CSS-Kit](#css-kit)
-  - [Table of contents](#table-of-contents)
   - [CDN usage](#cdn-usage)
     - [What does it do?](#what-does-it-do)
   - [Webpack usage](#webpack-usage)
@@ -41,7 +38,7 @@ Copy/paste the link tag in the head of your `index.html` document:
 Install CSS-Kit and save them to your package.json `dependencies`:
 
 ```sh
-npm install @giotramu/css-kit --save
+npm install --save @giotramu/css-kit
 ```
 
 Install the [Webpack bundler][webpack-url] by following the official documentation and import the `css-kit.css` as a dependency in the CSS or JavaScript file of your choice.
