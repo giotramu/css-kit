@@ -2,6 +2,24 @@
 
 All notable changes to the project will be documented in this file.
 
+## 2.5.0 (2020-11-22)
+
+### Added
+
+- Distribute the `CHANGELOG.md` (this file) with NPM and GitHub packages
+
+### Changed
+
+- Rewrite the `color-scheme-switcher` script without changing the external APIs
+- Simplify the development workflow
+- Update dependencies
+
+### Fixed
+
+--
+
+---
+
 ## 2.4.1 (2020-05-30)
 
 ### Added
@@ -15,7 +33,7 @@ All notable changes to the project will be documented in this file.
 
 ### Fixed
 
----
+--
 
 ---
 
