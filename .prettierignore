@@ -1,6 +1,7 @@
 .cache
 /*.config.js
+/typings
 color-scheme-switcher.js
 css-kit.css
-/typings/
+custom-media.css
 node_modules

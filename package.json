@@ -26,7 +26,8 @@
     "css-kit.css",
     "font/",
     "src/styles/utils/",
-    "typings/"
+    "typings/",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
@@ -47,18 +48,20 @@
     "serve": "serve ./www -l 3333",
     "dev": "run-p -cln watch:** serve"
   },
+  "prettier": "@giotramu/prettier-config",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*": "prettier --write",
+    "*": "prettier -w -u",
     "*.{ts,tsx}": "eslint --fix",
     "*.{css}": "stylelint --fix"
   },
   "devDependencies": {
     "@giotramu/postcss-config": "^3.4.0",
+    "@giotramu/prettier-config": "^1.1.0",
     "@giotramu/stylelint-config": "^5.1.0",
     "eslint": "^7.14.0",
     "eslint-config-contactlab": "^5.0.0",
