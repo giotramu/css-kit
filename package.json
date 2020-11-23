@@ -60,7 +60,7 @@
     "*.{css}": "stylelint --fix"
   },
   "devDependencies": {
-    "@giotramu/postcss-config": "^3.4.0",
+    "@giotramu/postcss-config": "^3.4.1",
     "@giotramu/prettier-config": "^1.1.0",
     "@giotramu/stylelint-config": "^5.1.0",
     "eslint": "^7.14.0",

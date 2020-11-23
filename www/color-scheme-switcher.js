@@ -81,7 +81,7 @@ function readUserPreferences({ htmlRoot, mediaQuery, storage }) {
      * 2. Read the `color-scheme` key from browser local storage, and ignore the rest;
      * 3. Finally, read the `prefers-color-scheme` media queries, and if the prefers-color-scheme is `light` or `no-preferences`, returns `light`.
      */
-    return ((_b = (_a = readSchemeFromHtmlRoot(htmlRoot)) !== null && _a !== void 0 ? _a : readSchemeFromStorage(storage)) !== null && _b !== void 0 ? _b : readSchemeFromMediaQuery(mediaQuery) /* 3 */);
+    return ((_b = (_a = readSchemeFromHtmlRoot(htmlRoot)) !== null && _a !== void 0 ? _a : readSchemeFromStorage(storage)) !== null && _b !== void 0 ? _b : readSchemeFromMediaQuery(mediaQuery));
 }
 function readSchemeFromHtmlRoot(htmlRoot) {
     const scheme = htmlRoot.dataset.colorScheme;
