@@ -8,7 +8,7 @@ A tiny and opinionated CSS scaffold for quick, consistent, and scalable user int
 
 - [CSS-Kit](#css-kit)
   - [CDN usage](#cdn-usage)
-    - [What does it do?](#what-does-it-do)
+  - [How and why](#how-and-why)
   - [Webpack usage](#webpack-usage)
   - [Color palette](#color-palette)
   - [Dark color scheme](#dark-color-scheme)
@@ -25,7 +25,7 @@ Copy/paste the link tag in the head of your `index.html` document:
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@giotramu/css-kit" />
 ```
 
-#### What does it do?
+## How and why
 
 - Corrects bugs and common browser inconsistencies.
 - Normalizes styles for a wide range of elements.
@@ -203,15 +203,15 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 
 [MIT License](./LICENSE)
 
-<!---
+<!--
   I M A G E S
 -->
 
-[bundlephobia-img]: https://img.shields.io/bundlephobia/min/@giotramu/css-kit?label=bundle%20size&style=flat-square&colorA=0c57fb&colorB=0c57fb
-[ci-img]: https://img.shields.io/github/workflow/status/giotramu/css-kit/test%20+%20build?style=flat-square&colorA=0c57fb&colorB=0c57fb
-[npm-img]: https://img.shields.io/npm/v/@giotramu/css-kit?style=flat-square&colorA=0c57fb&colorB=0c57fb
+[bundlephobia-img]: https://img.shields.io/bundlephobia/min/@giotramu/css-kit?label=bundle%20size&style=flat-square&colorA=202d3a&colorB=0c57fb
+[ci-img]: https://img.shields.io/github/workflow/status/giotramu/css-kit/test%20+%20build?style=flat-square&colorA=202d3a&colorB=0c57fb
+[npm-img]: https://img.shields.io/npm/v/@giotramu/css-kit?style=flat-square&colorA=202d3a&colorB=0c57fb
 
-<!---
+<!--
   C O L O R S
 -->
 
@@ -224,7 +224,7 @@ Alternatively, you can use [@giotramu/postcss-config][postcss-config-url] in con
 [white]: https://via.placeholder.com/40/fff/fff.png
 [black]: https://via.placeholder.com/40/000/000.png
 
-<!---
+<!--
   L I N K S
 -->
 
