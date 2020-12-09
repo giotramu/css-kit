@@ -55,7 +55,7 @@
     }
   },
   "lint-staged": {
-    "*": "prettier -w -u",
+    "*": "prettier --write --ignore-unknown",
     "*.{ts,tsx}": "eslint --fix",
     "*.{css}": "stylelint --fix"
   },
