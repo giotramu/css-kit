@@ -1,5 +1,9 @@
 {
-  "extends": "@giotramu/stylelint-config/scss",
+  "extends": [
+    "@giotramu/stylelint-config",
+    "@giotramu/stylelint-config/scss",
+    "@giotramu/stylelint-config/prettier"
+  ],
   "rules": {
     "font-weight-notation": null,
     "scss/no-duplicate-dollar-variables": null

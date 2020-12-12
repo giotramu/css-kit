@@ -19,11 +19,13 @@ $progress-border-width: _config-var($progress, 'border-width');
     margin-right: 100%;
     margin-left: 0;
   }
+
   50% {
     width: 100%;
     margin-right: 0;
     margin-left: 0;
   }
+
   to {
     width: 0;
     margin-right: 0;
