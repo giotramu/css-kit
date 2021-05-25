@@ -4,7 +4,7 @@
     "declaration": true,
     "declarationDir": "./types",
     "forceConsistentCasingInFileNames": true,
-    "lib": ["DOM", "DOM.iterable", "esnext"],
+    "lib": ["esnext", "DOM", "DOM.iterable"],
     "module": "esnext",
     "moduleResolution": "Node",
     "noEmitOnError": true,
