@@ -13,20 +13,20 @@
     "url": "https://github.com/giotramu/css-kit/issues"
   },
   "engines": {
-    "node": ">=12.x",
+    "node": ">=14.x",
     "npm": ">=6.x"
   },
   "publishConfig": {
     "access": "public"
   },
   "main": "css-kit.css",
-  "types": "typings/css-kit.d.ts",
+  "types": "types/css-kit.d.ts",
   "files": [
     "color-scheme-switcher.js",
     "css-kit.css",
     "font/",
     "src/styles/utils/",
-    "typings/",
+    "types/",
     "CHANGELOG.md"
   ],
   "scripts": {
@@ -49,33 +49,22 @@
     "dev": "run-p -cln watch:** serve"
   },
   "prettier": "@giotramu/prettier-config",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*": "prettier --write --ignore-unknown",
-    "*.{ts,tsx}": "eslint --fix",
-    "*.{css,scss}": "stylelint --fix"
-  },
   "devDependencies": {
+    "@arkweid/lefthook": "^0.7.5",
     "@giotramu/postcss-config": "^3.4.4",
     "@giotramu/prettier-config": "^1.1.2",
     "@giotramu/stylelint-config": "^7.0.1",
-    "eslint": "^7.21.0",
-    "eslint-config-contactlab": "^6.1.0",
-    "eslint-config-prettier": "^8.1.0",
-    "husky": "^6.0.0",
-    "lint-staged": "^10.5.4",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.27.0",
+    "eslint-config-contactlab": "^6.2.1",
+    "eslint-config-prettier": "^8.3.0",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.2",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
+    "prettier": "^2.3.0",
     "serve": "^11.3.2",
-    "stylelint": "^13.12.0",
+    "stylelint": "^13.13.1",
     "stylelint-scss": "^3.19.0",
-    "typescript": "^4.2.3",
+    "typescript": "^4.2.4",
     "watch": "^1.0.2"
   },
   "keywords": [

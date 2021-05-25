@@ -1,15 +1,12 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
     "baseUrl": ".",
     "declaration": true,
-    "declarationDir": "typings",
-    "esModuleInterop": true,
+    "declarationDir": "./types",
     "forceConsistentCasingInFileNames": true,
-    "lib": ["esnext", "dom", "dom.iterable"],
+    "lib": ["DOM", "DOM.iterable", "esnext"],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "Node",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -17,8 +14,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    "target": "es6",
-    "typeRoots": ["./typings", "./node_modules/@types"]
+    "stripInternal": true,
+    "target": "ES6",
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["./src/scripts/**/*"],
   "exclude": ["node_modules"]
