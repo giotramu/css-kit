@@ -1,28 +1,23 @@
 /**
- * Use a more readable tab size.
- **/
-:root {
-  -moz-tab-size: 4;
-  tab-size: 4;
-}
-
-/**
- * 1. Use a better box model.
- * 2. Correct the line height in all browsers.
- * 3. Prevent adjustments of font size after orientation changes in iOS.
- **/
+* 1. Use a better box model.
+* 2. Use a more readable tab size.
+* 3. Correct the line height in all browsers.
+* 4. Prevent adjustments of font size after orientation changes in iOS.
+**/
 html {
   box-sizing: border-box; /* 1 */
-  line-height: 1.15; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 3 */
+  -moz-tab-size: 4; /* 2 */
+  tab-size: 4; /* 2 */
+  line-height: 1.15; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 4 */
 }
 
 /**
  * Inherit a better box model.
  **/
 *,
-*::before,
-*::after {
+::before,
+::after {
   box-sizing: inherit;
 }
 
